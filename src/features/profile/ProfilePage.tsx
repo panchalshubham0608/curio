@@ -1,13 +1,20 @@
 import { useEffect, useState, type FormEvent } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
+  ArrowUpRight,
+  BookmarkCheck,
   ChevronRight,
+  Cloud,
+  Compass,
   LogOut,
   Moon,
+  Puzzle,
+  RefreshCw,
   RotateCcw,
-  Shield,
+  ShieldCheck,
+  Smartphone,
+  Sparkles,
   Sun,
-  Trash2,
 } from 'lucide-react';
 import { useCurioApp } from '../../app/providers/appContext';
 import { normalizeTopicList } from '../../domain/user/UserPreferences';
@@ -62,6 +69,8 @@ export function ProfilePage() {
 
   const [completedSessions, setCompletedSessions] = useState(0);
   const [savedItemsCount, setSavedItemsCount] = useState(0);
+  const [solvedPuzzlesCount, setSolvedPuzzlesCount] = useState(0);
+  const [totalPuzzlesCount, setTotalPuzzlesCount] = useState(0);
   const [saving, setSaving] = useState(false);
   const [statusBanner, setStatusBanner] = useState<string | null>(null);
   const [errorBanner, setErrorBanner] = useState<string | null>(null);
@@ -84,13 +93,17 @@ export function ProfilePage() {
     let mounted = true;
     const loadStats = async () => {
       try {
-        const [overview, library] = await Promise.all([
+        const [overview, library, puzzles, solvedPuzzles] = await Promise.all([
           services.getFeed.execute(userId),
           services.getSavedLibrary.execute(userId),
+          services.puzzleProvider.listPuzzles(),
+          services.puzzleProvider.getSolvedIds(userId),
         ]);
         if (!mounted) return;
         setCompletedSessions(overview.completedSessionsCount);
         setSavedItemsCount(library.entries.length);
+        setTotalPuzzlesCount(puzzles.length);
+        setSolvedPuzzlesCount(solvedPuzzles.size);
       } catch {
         // Non-blocking overview stats
       }
@@ -202,82 +215,126 @@ export function ProfilePage() {
     .map((cat) => CATEGORY_METADATA[cat].shortLabel)
     .join(' · ');
   const extraInterestsCount = Math.max(0, interests.length - 4);
+  const heroDisplayName =
+    displayName.trim() ||
+    (isSignedIn ? (authUser?.displayName ?? 'Curious Reader') : 'Curious Reader');
+  const avatarInitial = heroDisplayName.charAt(0).toUpperCase();
+  const puzzleProgressPct =
+    totalPuzzlesCount > 0 ? Math.min(100, Math.round((solvedPuzzlesCount / totalPuzzlesCount) * 100)) : 0;
+  const interestProgressPct = Math.round((interests.length / CONTENT_CATEGORIES.length) * 100);
 
   return (
     <main className="curio-main curio-main--reading stack-lg">
-      <header className="masthead">
-        <div className="row-between">
-          <div>
-            <span className="curio-eyebrow">Editorial Controls</span>
-            <h1 className="masthead-headline" style={{ marginTop: 6 }}>
-              Preferences & Profile
-            </h1>
-          </div>
+      {/* Slim Editorial Top Bar */}
+      <header className="profile-topbar">
+        <h1 className="profile-topbar-title">Profile</h1>
 
+        <div className="profile-theme-switch" role="group" aria-label="Color theme">
           <button
             type="button"
-            className="curio-btn curio-btn--secondary curio-btn--sm"
-            onClick={toggleTheme}
+            className={`profile-theme-option${theme === 'light' ? ' profile-theme-option--active' : ''}`}
+            aria-pressed={theme === 'light'}
+            onClick={() => {
+              if (theme !== 'light') toggleTheme();
+            }}
           >
-            {theme === 'light' ? <Moon size={15} /> : <Sun size={15} />}
-            {theme === 'light' ? 'Evening Ink' : 'Archival Paper'}
+            <Sun size={14} aria-hidden="true" />
+            <span>Light</span>
+          </button>
+          <button
+            type="button"
+            className={`profile-theme-option${theme === 'dark' ? ' profile-theme-option--active' : ''}`}
+            aria-pressed={theme === 'dark'}
+            onClick={() => {
+              if (theme !== 'dark') toggleTheme();
+            }}
+          >
+            <Moon size={14} aria-hidden="true" />
+            <span>Dark</span>
           </button>
         </div>
-        <p className="masthead-prompt">
-          You stay in full control of what Curio selects. Update interests, choose your vibe,
-          sync with Google, or reset your personalization signals anytime.
-        </p>
       </header>
 
-      {/* Google Account & Cloud Sync Card */}
-      <section className="curio-card curio-card--padded stack-sm" aria-label="Account and sync">
-        <div className="row-between">
-          <div className="row-wrap" style={{ gap: 12 }}>
+      {/* Editorial User Identity Hero Card */}
+      <section className="profile-hero-card fade-in-card" aria-label="Account and sync">
+        <div className="profile-hero-top">
+          <div className="profile-hero-identity">
             {authUser?.photoURL ? (
               <img
                 src={authUser.photoURL}
                 alt=""
-                className="account-avatar"
-                style={{ width: 44, height: 44 }}
+                className="profile-hero-avatar"
                 referrerPolicy="no-referrer"
               />
             ) : (
-              <span
-                className="account-avatar"
-                style={{ width: 44, height: 44, fontSize: '1.15rem' }}
-                aria-hidden="true"
-              >
-                {(displayName || 'C').charAt(0).toUpperCase()}
+              <span className="profile-hero-avatar" aria-hidden="true">
+                {avatarInitial}
               </span>
             )}
-            <div className="stack-xs" style={{ gap: 2 }}>
-              <strong style={{ fontSize: '1.05rem' }}>
-                {isSignedIn ? (authUser?.displayName ?? 'Signed-in Reader') : 'Guest Local Reader'}
-              </strong>
-              <span className="mono-meta">
-                {isSignedIn && authUser?.email
-                  ? `${maskDisplayIdentifier(authUser.email)} · Synced across devices`
-                  : 'Sign in with Google to sync your profile and saved library'}
-              </span>
+            <div className="stack-xs" style={{ gap: 6, minWidth: 0 }}>
+              <h2 className="profile-hero-name">{heroDisplayName}</h2>
+              <div className="profile-hero-meta">
+                {isSignedIn ? (
+                  <>
+                    <span className="profile-status-pill profile-status-pill--synced">
+                      <span className="sync-dot" aria-hidden="true" />
+                      Synced
+                    </span>
+                    {authUser?.email && (
+                      <span className="profile-hero-email">
+                        {maskDisplayIdentifier(authUser.email)}
+                      </span>
+                    )}
+                  </>
+                ) : (
+                  <span className="profile-status-pill profile-status-pill--local">
+                    <Smartphone size={12} aria-hidden="true" />
+                    On this device
+                  </span>
+                )}
+              </div>
             </div>
           </div>
 
-          {isSignedIn ? (
-            <button
-              type="button"
-              className="curio-btn curio-btn--secondary curio-btn--sm"
-              disabled={authBusy}
-              onClick={() => void handleSignOut()}
-            >
-              <LogOut size={14} />
-              Sign out
-            </button>
-          ) : (
-            <GoogleSignInButton label="Sign in with Google" compact />
-          )}
+          <div className="profile-hero-action">
+            {isSignedIn ? (
+              <button
+                type="button"
+                className="curio-btn curio-btn--sm profile-hero-signout"
+                disabled={authBusy}
+                onClick={() => void handleSignOut()}
+              >
+                <LogOut size={14} />
+                Sign out
+              </button>
+            ) : (
+              <GoogleSignInButton label="Sign in with Google" compact />
+            )}
+          </div>
         </div>
+
+        <div className="profile-hero-footer">
+          <span className="profile-hero-vibe">
+            Current vibe: <strong>{getDiscoveryVibeTitle(preferredMix)}</strong>
+          </span>
+          <div className="palette-tray" aria-hidden="true">
+            {interests.slice(0, 5).map((cat) => (
+              <img
+                key={cat}
+                src={CATEGORY_METADATA[cat].coverImage}
+                alt=""
+                className="palette-thumb"
+                style={{ width: 28, height: 28, borderColor: '#26211c' }}
+              />
+            ))}
+            {interests.length > 5 && (
+              <span className="profile-hero-more-pill">+{interests.length - 5}</span>
+            )}
+          </div>
+        </div>
+
         {authError && (
-          <p role="alert" style={{ color: 'var(--accent-ochre)', fontSize: '0.86rem' }}>
+          <p role="alert" style={{ color: '#f7c59f', fontSize: '0.86rem' }}>
             {authError}
           </p>
         )}
@@ -315,33 +372,119 @@ export function ProfilePage() {
         </div>
       )}
 
-      {/* Healthy Personal Discovery Metrics */}
-      <section
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
-          gap: 12,
-        }}
-        aria-label="Personal discovery overview"
-      >
-        <div className="curio-card curio-card--padded stack-xs" style={{ padding: 18 }}>
-          <span className="curio-eyebrow">Mixes Explored</span>
-          <strong style={{ fontFamily: 'var(--font-serif)', fontSize: '1.75rem' }}>
-            {completedSessions}
-          </strong>
-        </div>
-        <div className="curio-card curio-card--padded stack-xs" style={{ padding: 18 }}>
-          <span className="curio-eyebrow">Discoveries Saved</span>
-          <strong style={{ fontFamily: 'var(--font-serif)', fontSize: '1.75rem' }}>
-            {savedItemsCount}
-          </strong>
-        </div>
-        <div className="curio-card curio-card--padded stack-xs" style={{ padding: 18 }}>
-          <span className="curio-eyebrow">Active Interests</span>
-          <strong style={{ fontFamily: 'var(--font-serif)', fontSize: '1.75rem' }}>
-            {interests.length} / {CONTENT_CATEGORIES.length}
-          </strong>
-        </div>
+      {/* Tactile 2x2 / 4-Column Personal Discovery Bento Statistics */}
+      <section className="profile-stats-grid" aria-label="Personal discovery overview">
+        <Link to="/explore" className="profile-stat-card profile-stat-card--terracotta">
+          <div className="profile-stat-head">
+            <span
+              className="profile-stat-icon"
+              style={{
+                background: 'var(--accent-primary-soft)',
+                color: 'var(--accent-primary)',
+              }}
+              aria-hidden="true"
+            >
+              <Compass size={17} />
+            </span>
+            <ArrowUpRight size={15} className="profile-stat-arrow" aria-hidden="true" />
+          </div>
+          <div className="profile-stat-body">
+            <strong className="profile-stat-value">{completedSessions}</strong>
+            <span className="profile-stat-label">Mixes explored</span>
+            <span className="profile-stat-hint">Explore topics</span>
+          </div>
+        </Link>
+
+        <Link to="/library" className="profile-stat-card profile-stat-card--indigo">
+          <div className="profile-stat-head">
+            <span
+              className="profile-stat-icon"
+              style={{
+                background: 'var(--accent-indigo-soft)',
+                color: 'var(--accent-indigo)',
+              }}
+              aria-hidden="true"
+            >
+              <BookmarkCheck size={17} />
+            </span>
+            <ArrowUpRight size={15} className="profile-stat-arrow" aria-hidden="true" />
+          </div>
+          <div className="profile-stat-body">
+            <strong className="profile-stat-value">{savedItemsCount}</strong>
+            <span className="profile-stat-label">Saved stories</span>
+            <span className="profile-stat-hint">Open library</span>
+          </div>
+        </Link>
+
+        <Link to="/puzzles" className="profile-stat-card profile-stat-card--sage">
+          <div className="profile-stat-head">
+            <span
+              className="profile-stat-icon"
+              style={{
+                background: 'var(--accent-sage-soft)',
+                color: 'var(--accent-sage)',
+              }}
+              aria-hidden="true"
+            >
+              <Puzzle size={17} />
+            </span>
+            <ArrowUpRight size={15} className="profile-stat-arrow" aria-hidden="true" />
+          </div>
+          <div className="profile-stat-body">
+            <strong className="profile-stat-value">
+              {solvedPuzzlesCount}
+              {totalPuzzlesCount > 0 && (
+                <span className="profile-stat-denom">/ {totalPuzzlesCount}</span>
+              )}
+            </strong>
+            <span className="profile-stat-label">Puzzles solved</span>
+            <div className="profile-stat-bar" aria-hidden="true">
+              <div
+                className="profile-stat-bar-fill"
+                style={{
+                  width: `${puzzleProgressPct}%`,
+                  background: 'var(--accent-sage)',
+                }}
+              />
+            </div>
+          </div>
+        </Link>
+
+        <button
+          type="button"
+          className="profile-stat-card profile-stat-card--ochre"
+          onClick={() => setInterestsModalOpen(true)}
+        >
+          <div className="profile-stat-head">
+            <span
+              className="profile-stat-icon"
+              style={{
+                background: 'var(--accent-ochre-soft)',
+                color: 'var(--accent-ochre)',
+              }}
+              aria-hidden="true"
+            >
+              <Sparkles size={17} />
+            </span>
+            <ArrowUpRight size={15} className="profile-stat-arrow" aria-hidden="true" />
+          </div>
+          <div className="profile-stat-body">
+            <strong className="profile-stat-value">
+              {interests.length}
+              <span className="profile-stat-denom">/ {CONTENT_CATEGORIES.length}</span>
+            </strong>
+            <span className="profile-stat-label">Active themes</span>
+            <div className="profile-stat-bar" aria-hidden="true">
+              <div
+                className="profile-stat-bar-fill"
+                style={{
+                  width: `${interestProgressPct}%`,
+                  background: 'var(--accent-ochre)',
+                }}
+              />
+            </div>
+          </div>
+        </button>
       </section>
 
       {/* Clean Interactive Personalization Summary Rows -> Independent Modals */}
@@ -438,39 +581,93 @@ export function ProfilePage() {
         </div>
       </section>
 
-      {/* Data & Privacy Controls */}
-      <section className="curio-card curio-card--padded stack-sm">
-        <div className="row-wrap" style={{ gap: 7 }}>
-          <Shield size={16} style={{ color: 'var(--accent-indigo)' }} aria-hidden="true" />
-          <h2 style={{ fontSize: '1.2rem' }}>Data & Privacy</h2>
+      {/* Reworked Data & Privacy Controls */}
+      <section className="curio-card curio-card--padded stack-sm" aria-label="Data and privacy">
+        <div className="profile-section-header">
+          <span
+            className="profile-stat-icon"
+            style={{
+              background: 'var(--accent-indigo-soft)',
+              color: 'var(--accent-indigo)',
+            }}
+            aria-hidden="true"
+          >
+            <ShieldCheck size={17} />
+          </span>
+          <div className="stack-xs" style={{ gap: 2 }}>
+            <h2 style={{ fontSize: '1.25rem' }}>Data &amp; Privacy</h2>
+            <p className="text-secondary" style={{ fontSize: '0.86rem' }}>
+              Private by default — no ad tracking or public profile.
+            </p>
+          </div>
         </div>
 
-        <p className="text-secondary" style={{ fontSize: '0.9rem' }}>
-          {services.mode === 'firebase'
-            ? 'Your interests, history, and saved collections are synced privately to your account.'
-            : 'Your interests and saved collections are currently stored privately on this device.'}
-        </p>
+        <div className="profile-privacy-banner">
+          <span
+            className="profile-privacy-banner-icon"
+            style={{
+              color: isSignedIn ? 'var(--accent-sage)' : 'var(--accent-ochre)',
+            }}
+            aria-hidden="true"
+          >
+            {isSignedIn ? <Cloud size={16} /> : <Smartphone size={16} />}
+          </span>
+          <div className="profile-privacy-banner-text">
+            <strong>
+              {isSignedIn
+                ? 'Synced privately to your Google account'
+                : 'Stored privately on this device'}
+            </strong>
+            <span>
+              {isSignedIn
+                ? 'Your interests, saved library, and puzzle progress stay private across your devices.'
+                : 'Your interests, saved stories, and puzzle progress stay right here until you choose to sign in.'}
+            </span>
+          </div>
+        </div>
 
-        <div className="row-wrap" style={{ paddingTop: 6 }}>
+        <div className="profile-settings-list">
           {services.contentRepository.clearCache && (
             <button
               type="button"
-              className="curio-btn curio-btn--secondary curio-btn--sm"
+              className="profile-setting-row profile-privacy-row"
               onClick={() => void handleClearCache()}
             >
-              <Trash2 size={14} />
-              Clear cached stories
+              <span className="profile-privacy-row-icon" aria-hidden="true">
+                <RefreshCw size={16} />
+              </span>
+              <div className="profile-setting-row-main">
+                <span className="profile-setting-row-title">Clear cached stories</span>
+                <span className="profile-setting-row-sub">
+                  Loads fresh discoveries next time. Saved stories and interests stay untouched.
+                </span>
+              </div>
+              <div className="profile-setting-row-right">
+                <span className="profile-privacy-action-pill">Clear</span>
+              </div>
             </button>
           )}
 
           <button
             type="button"
-            className="curio-btn curio-btn--ghost curio-btn--sm"
-            style={{ color: 'var(--accent-danger)' }}
+            className="profile-setting-row profile-privacy-row profile-privacy-row--danger"
             onClick={() => setResetModalOpen(true)}
           >
-            <RotateCcw size={14} />
-            Reset recommendations
+            <span
+              className="profile-privacy-row-icon profile-privacy-row-icon--danger"
+              aria-hidden="true"
+            >
+              <RotateCcw size={16} />
+            </span>
+            <div className="profile-setting-row-main">
+              <span className="profile-setting-row-title">Reset recommendations</span>
+              <span className="profile-setting-row-sub">
+                Clears likes, skips, and topic signals for a fresh start. Your saved library stays safe.
+              </span>
+            </div>
+            <div className="profile-setting-row-right">
+              <ChevronRight size={18} aria-hidden="true" />
+            </div>
           </button>
         </div>
       </section>

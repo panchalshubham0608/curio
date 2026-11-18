@@ -435,7 +435,7 @@ export function OnboardingPage() {
                   {selectedInterests.map((c) => CATEGORY_METADATA[c].shortLabel).join(' · ')}
                 </span>
                 <span className="mono-meta" style={{ color: 'rgba(250, 248, 244, 0.68)' }}>
-                  {isSignedIn ? 'Cloud Synced' : 'Local Mode'}
+                  {isSignedIn ? 'Synced' : 'On this device'}
                 </span>
               </div>
             </aside>

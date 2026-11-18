@@ -23,7 +23,7 @@ describe('ProfilePage independent personalization modals', () => {
     );
 
     expect(
-      await screen.findByRole('heading', { name: /Preferences & Profile/i })
+      await screen.findByRole('heading', { level: 1, name: /^Profile$/i })
     ).toBeInTheDocument();
 
     // 1. Update Visual Interests independently
@@ -71,7 +71,7 @@ describe('ProfilePage independent personalization modals', () => {
     );
 
     expect(
-      await screen.findByRole('heading', { name: /Preferences & Profile/i })
+      await screen.findByRole('heading', { level: 1, name: /^Profile$/i })
     ).toBeInTheDocument();
 
     await user.click(screen.getByRole('button', { name: /Reader name & topic filters/i }));
@@ -82,5 +82,55 @@ describe('ProfilePage independent personalization modals', () => {
     expect(await screen.findByText(/Reader details saved\./i)).toBeInTheDocument();
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
     expect(screen.getByRole('button', { name: /Reader name & topic filters.*Maya/i })).toBeInTheDocument();
+  });
+
+  it('renders the slim top bar, upgraded user hero card, bento statistics, and reworked Data & Privacy controls', async () => {
+    window.scrollTo = vi.fn();
+    const store = new SafeKeyValueStore('profile_hero_stats_test', false);
+    const services = buildCurioServices({ forceLocalStore: store });
+    const user = userEvent.setup();
+
+    render(
+      <AppProvider overrideServices={services}>
+        <MemoryRouter initialEntries={['/profile']}>
+          <AppRoutes />
+        </MemoryRouter>
+      </AppProvider>
+    );
+
+    expect(await screen.findByRole('heading', { level: 1, name: /^Profile$/i })).toBeInTheDocument();
+    const themeGroup = screen.getByRole('group', { name: /Color theme/i });
+    expect(within(themeGroup).getByRole('button', { name: /Light/i })).toBeInTheDocument();
+    expect(within(themeGroup).getByRole('button', { name: /Dark/i })).toBeInTheDocument();
+
+    const accountSection = screen.getByRole('region', { name: /Account and sync/i });
+    expect(within(accountSection).getByText('On this device')).toBeInTheDocument();
+    expect(
+      within(accountSection).queryByRole('button', { name: /Edit reader name/i })
+    ).not.toBeInTheDocument();
+
+    const statsSection = screen.getByRole('region', { name: /Personal discovery overview/i });
+    expect(within(statsSection).getByText(/Mixes explored/i)).toBeInTheDocument();
+    expect(within(statsSection).getByText(/Saved stories/i)).toBeInTheDocument();
+    expect(within(statsSection).getByText(/Puzzles solved/i)).toBeInTheDocument();
+    expect(within(statsSection).getByText(/Active themes/i)).toBeInTheDocument();
+
+    // Tapping Active themes bento card opens Visual Interests modal
+    await user.click(within(statsSection).getByRole('button', { name: /Active themes/i }));
+    const interestsDialog = await screen.findByRole('dialog');
+    expect(
+      within(interestsDialog).getByRole('heading', { name: /Choose your visual interests/i })
+    ).toBeInTheDocument();
+    await user.click(within(interestsDialog).getByRole('button', { name: /Close modal/i }));
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+
+    // Reworked Data & Privacy section opens confirmation modal on Reset recommendations
+    const privacySection = screen.getByRole('region', { name: /Data and privacy/i });
+    expect(within(privacySection).getByText(/Stored privately on this device/i)).toBeInTheDocument();
+    await user.click(within(privacySection).getByRole('button', { name: /Reset recommendations/i }));
+    const resetDialog = await screen.findByRole('dialog');
+    expect(
+      within(resetDialog).getByRole('heading', { name: /Reset personalization signals\?/i })
+    ).toBeInTheDocument();
   });
 });
