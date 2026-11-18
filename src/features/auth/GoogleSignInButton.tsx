@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useCurioApp } from '../../app/providers/appContext';
+import './GoogleSignInButton.css';
 
 interface GoogleSignInButtonProps {
   label?: string;

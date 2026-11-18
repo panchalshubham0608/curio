@@ -15,6 +15,7 @@ import {
   Smartphone,
   Sparkles,
   Sun,
+  UserX,
 } from 'lucide-react';
 import { useCurioApp } from '../../app/providers/appContext';
 import { normalizeTopicList } from '../../domain/user/UserPreferences';
@@ -36,6 +37,8 @@ import {
   DiscoveryVibeModal,
   VisualInterestsModal,
 } from './components/PreferencesFlowModal';
+import '../preferences/components/DiscoveryVibePicker.css';
+import './ProfilePage.css';
 
 export function ProfilePage() {
   const {
@@ -45,6 +48,7 @@ export function ProfilePage() {
     authBusy,
     authError,
     signOutAccount,
+    clearLocalGuestProfile,
     services,
     preferences,
     setPreferencesState,
@@ -79,6 +83,7 @@ export function ProfilePage() {
   const [vibeModalOpen, setVibeModalOpen] = useState(false);
   const [detailsModalOpen, setDetailsModalOpen] = useState(false);
   const [resetModalOpen, setResetModalOpen] = useState(false);
+  const [clearGuestModalOpen, setClearGuestModalOpen] = useState(false);
 
   useEffect(() => {
     if (!preferences) return;
@@ -188,6 +193,26 @@ export function ProfilePage() {
       setStatusBanner('Personalization signals and interaction history have been reset.');
     } catch (error: unknown) {
       setResetModalOpen(false);
+      setErrorBanner(getFriendlyErrorMessage(error, 'firestore'));
+    }
+  };
+
+  const handleConfirmClearGuestProfile = async () => {
+    setErrorBanner(null);
+    try {
+      const freshPrefs = await clearLocalGuestProfile();
+      setDisplayName(freshPrefs.displayName ?? '');
+      setInterests(freshPrefs.interests);
+      setKeywordsText('');
+      setExcludedText('');
+      setPreferredMix(freshPrefs.preferredMix);
+      setCompletedSessions(0);
+      setSavedItemsCount(0);
+      setSolvedPuzzlesCount(0);
+      setClearGuestModalOpen(false);
+      setStatusBanner('Local guest profile cleared. You are starting fresh on this device.');
+    } catch (error: unknown) {
+      setClearGuestModalOpen(false);
       setErrorBanner(getFriendlyErrorMessage(error, 'firestore'));
     }
   };
@@ -317,20 +342,24 @@ export function ProfilePage() {
           <span className="profile-hero-vibe">
             Current vibe: <strong>{getDiscoveryVibeTitle(preferredMix)}</strong>
           </span>
-          <div className="palette-tray" aria-hidden="true">
-            {interests.slice(0, 5).map((cat) => (
-              <img
-                key={cat}
-                src={CATEGORY_METADATA[cat].coverImage}
-                alt=""
-                className="palette-thumb"
-                style={{ width: 28, height: 28, borderColor: '#26211c' }}
-              />
-            ))}
-            {interests.length > 5 && (
-              <span className="profile-hero-more-pill">+{interests.length - 5}</span>
-            )}
-          </div>
+          {interests.length > 0 ? (
+            <div className="palette-tray" aria-hidden="true">
+              {interests.slice(0, 5).map((cat) => (
+                <img
+                  key={cat}
+                  src={CATEGORY_METADATA[cat].coverImage}
+                  alt=""
+                  className="palette-thumb"
+                  style={{ width: 28, height: 28, borderColor: '#26211c' }}
+                />
+              ))}
+              {interests.length > 5 && (
+                <span className="profile-hero-more-pill">+{interests.length - 5}</span>
+              )}
+            </div>
+          ) : (
+            <span className="profile-hero-vibe">No themes selected</span>
+          )}
         </div>
 
         {authError && (
@@ -509,23 +538,31 @@ export function ProfilePage() {
             <div className="profile-setting-row-main">
               <span className="profile-setting-row-title">Visual interests</span>
               <span className="profile-setting-row-sub">
-                {interestsSummary}
-                {extraInterestsCount > 0 ? ` +${extraInterestsCount} more` : ''}
+                {interests.length > 0 ? (
+                  <>
+                    {interestsSummary}
+                    {extraInterestsCount > 0 ? ` +${extraInterestsCount} more` : ''}
+                  </>
+                ) : (
+                  'No themes selected yet'
+                )}
               </span>
             </div>
 
             <div className="profile-setting-row-right">
-              <div className="palette-tray" aria-hidden="true">
-                {interests.slice(0, 4).map((cat) => (
-                  <img
-                    key={cat}
-                    src={CATEGORY_METADATA[cat].coverImage}
-                    alt=""
-                    className="palette-thumb"
-                    style={{ width: 28, height: 28 }}
-                  />
-                ))}
-              </div>
+              {interests.length > 0 && (
+                <div className="palette-tray" aria-hidden="true">
+                  {interests.slice(0, 4).map((cat) => (
+                    <img
+                      key={cat}
+                      src={CATEGORY_METADATA[cat].coverImage}
+                      alt=""
+                      className="palette-thumb"
+                      style={{ width: 28, height: 28 }}
+                    />
+                  ))}
+                </div>
+              )}
               <ChevronRight size={18} aria-hidden="true" />
             </div>
           </button>
@@ -650,11 +687,11 @@ export function ProfilePage() {
 
           <button
             type="button"
-            className="profile-setting-row profile-privacy-row profile-privacy-row--danger"
+            className="profile-setting-row profile-privacy-row"
             onClick={() => setResetModalOpen(true)}
           >
             <span
-              className="profile-privacy-row-icon profile-privacy-row-icon--danger"
+              className="profile-privacy-row-icon profile-privacy-row-icon--warn"
               aria-hidden="true"
             >
               <RotateCcw size={16} />
@@ -669,6 +706,30 @@ export function ProfilePage() {
               <ChevronRight size={18} aria-hidden="true" />
             </div>
           </button>
+
+          {!isSignedIn && (
+            <button
+              type="button"
+              className="profile-setting-row profile-privacy-row profile-privacy-row--danger"
+              onClick={() => setClearGuestModalOpen(true)}
+            >
+              <span
+                className="profile-privacy-row-icon profile-privacy-row-icon--danger"
+                aria-hidden="true"
+              >
+                <UserX size={16} />
+              </span>
+              <div className="profile-setting-row-main">
+                <span className="profile-setting-row-title">Clear local guest profile</span>
+                <span className="profile-setting-row-sub">
+                  Removes your local name, interests, saved library, mixes, and puzzle progress from this device.
+                </span>
+              </div>
+              <div className="profile-setting-row-right">
+                <ChevronRight size={18} aria-hidden="true" />
+              </div>
+            </button>
+          )}
         </div>
       </section>
 
@@ -753,7 +814,7 @@ export function ProfilePage() {
         </form>
       </ModalDialog>
 
-      {/* Reset Confirmation Modal */}
+      {/* Reset Recommendations Confirmation Modal */}
       <ModalDialog
         open={resetModalOpen}
         title="Reset personalization signals?"
@@ -777,6 +838,34 @@ export function ProfilePage() {
             onClick={() => void handleConfirmReset()}
           >
             Confirm reset
+          </button>
+        </div>
+      </ModalDialog>
+
+      {/* Clear Local Guest Profile Confirmation Modal */}
+      <ModalDialog
+        open={clearGuestModalOpen}
+        title="Clear local guest profile?"
+        onClose={() => setClearGuestModalOpen(false)}
+      >
+        <p className="text-secondary" style={{ fontSize: '0.93rem' }}>
+          This permanently removes your local reader name, chosen interests, saved library,
+          explored mixes, and puzzle progress from this browser.
+        </p>
+        <div className="row-between" style={{ paddingTop: 6 }}>
+          <button
+            type="button"
+            className="curio-btn curio-btn--ghost curio-btn--sm"
+            onClick={() => setClearGuestModalOpen(false)}
+          >
+            Cancel
+          </button>
+          <button
+            type="button"
+            className="curio-btn curio-btn--accent curio-btn--sm"
+            onClick={() => void handleConfirmClearGuestProfile()}
+          >
+            Clear guest profile
           </button>
         </div>
       </ModalDialog>

@@ -12,6 +12,7 @@ import {
   type Puzzle,
 } from '../../../shared/validation/puzzleSchemas';
 import { ModalDialog } from '../../feed/components/ModalDialog';
+import './PuzzlePopupModal.css';
 
 interface PuzzlePopupModalProps {
   puzzle: Puzzle | null;

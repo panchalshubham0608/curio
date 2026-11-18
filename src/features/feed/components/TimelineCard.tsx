@@ -1,5 +1,6 @@
 import { Clock } from 'lucide-react';
 import type { TimelineBlock } from '../../../shared/validation/contentSchemas';
+import './TimelineCard.css';
 
 interface TimelineCardProps {
   block: TimelineBlock;

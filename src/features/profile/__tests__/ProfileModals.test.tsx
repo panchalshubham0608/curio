@@ -133,4 +133,63 @@ describe('ProfilePage independent personalization modals', () => {
       within(resetDialog).getByRole('heading', { name: /Reset personalization signals\?/i })
     ).toBeInTheDocument();
   });
+
+  it('clears the local guest profile (name, puzzle progress, preferences) after confirmation', async () => {
+    window.scrollTo = vi.fn();
+    const store = new SafeKeyValueStore('profile_clear_guest_test', false);
+    const services = buildCurioServices({ forceLocalStore: store });
+    const user = userEvent.setup();
+
+    // Seed local guest preferences and a solved puzzle before mounting
+    await services.updatePreferences.execute('personal_local_reader', {
+      displayName: 'Aarav',
+      interests: ['facts', 'science', 'history', 'travel_food'],
+      preferredMix: 'deeper',
+      onboardingCompleted: true,
+    });
+    await services.puzzleProvider.markSolved('personal_local_reader', 'puz_odd_planets');
+
+    render(
+      <AppProvider overrideServices={services}>
+        <MemoryRouter initialEntries={['/profile']}>
+          <AppRoutes />
+        </MemoryRouter>
+      </AppProvider>
+    );
+
+    const accountSection = await screen.findByRole('region', { name: /Account and sync/i });
+    expect(
+      await within(accountSection).findByRole('heading', { name: 'Aarav' })
+    ).toBeInTheDocument();
+
+    const privacySection = screen.getByRole('region', { name: /Data and privacy/i });
+    await user.click(
+      within(privacySection).getByRole('button', { name: /Clear local guest profile/i })
+    );
+
+    const confirmDialog = await screen.findByRole('dialog');
+    expect(
+      within(confirmDialog).getByRole('heading', { name: /Clear local guest profile\?/i })
+    ).toBeInTheDocument();
+
+    await user.click(within(confirmDialog).getByRole('button', { name: /Clear guest profile/i }));
+
+    expect(await screen.findByText(/Local guest profile cleared/i)).toBeInTheDocument();
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    expect(
+      within(accountSection).getByRole('heading', { name: 'Curious Reader' })
+    ).toBeInTheDocument();
+
+    const statsSection = screen.getByRole('region', { name: /Personal discovery overview/i });
+    expect(
+      within(statsSection).getByRole('button', { name: /0\s*\/\s*8\s*Active themes/i })
+    ).toBeInTheDocument();
+    expect(screen.getByText(/No themes selected yet/i)).toBeInTheDocument();
+
+    const persistedAfterClear = await services.getPreferences.execute('personal_local_reader');
+    expect(persistedAfterClear.interests).toEqual([]);
+
+    const solvedAfterClear = await services.puzzleProvider.getSolvedIds('personal_local_reader');
+    expect(solvedAfterClear.size).toBe(0);
+  });
 });

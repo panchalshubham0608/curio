@@ -328,3 +328,15 @@ export class LocalVisualAssetRepository implements VisualAssetRepository {
     this.store.setJson(this.key, map);
   }
 }
+
+/**
+ * Removes all local persistence records belonging to a specific local/guest user.
+ */
+export function clearLocalUserData(store: SafeKeyValueStore, userId: string): void {
+  store.remove(`preferences:${userId}`);
+  store.remove(`sessions:${userId}`);
+  store.remove(`interactions:${userId}`);
+  store.remove(`saved_collections:${userId}`);
+  store.remove(`saved_items:${userId}`);
+  store.remove('content_pool');
+}

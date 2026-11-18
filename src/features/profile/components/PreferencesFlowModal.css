@@ -1,0 +1,30 @@
+/* Profile Personalization Modals Footer */
+.profile-modal-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-hairline);
+}
+
+.profile-modal-footer .journey-dock-next {
+  width: 100%;
+}
+
+.curio-modal .journey-rail {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+}
+
+@media (min-width: 640px) {
+  .profile-modal-footer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .profile-modal-footer .journey-dock-next {
+    width: auto;
+  }
+}

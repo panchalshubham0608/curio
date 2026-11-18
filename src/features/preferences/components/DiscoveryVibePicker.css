@@ -1,0 +1,19 @@
+/* Discovery Vibe Cadence Visualizer Bars */
+.cadence-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 24px;
+}
+
+.cadence-bar {
+  width: 6px;
+  border-radius: 3px;
+  background: var(--border-strong);
+  transition: background-color var(--duration-fast) ease,
+    transform var(--duration-med) var(--ease-spring);
+}
+
+.entry-card--active .cadence-bar {
+  background: var(--accent-primary);
+}

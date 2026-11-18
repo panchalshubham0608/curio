@@ -6,6 +6,7 @@ import {
   Sparkles,
   ThumbsDown,
 } from 'lucide-react';
+import './FeedbackActionBar.css';
 
 interface FeedbackActionBarProps {
   isSaved: boolean;

@@ -23,6 +23,7 @@ import { DiscoveryCardDispatcher } from './components/DiscoveryCardDispatcher';
 import { FeedbackActionBar } from './components/FeedbackActionBar';
 import { ModalDialog } from './components/ModalDialog';
 import { ProgressIndicator } from './components/ProgressIndicator';
+import './SessionPage.css';
 import { SessionCompletionView } from './components/SessionCompletionView';
 
 export function SessionPage() {

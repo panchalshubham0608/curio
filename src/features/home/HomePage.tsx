@@ -23,6 +23,8 @@ import {
   type SavedCollection,
 } from '../../shared/validation/contentSchemas';
 import { GoogleSignInButton } from '../auth/GoogleSignInButton';
+import '../feed/components/FeedbackActionBar.css';
+import './HomePage.css';
 import { CardSkeleton } from '../feed/components/CardSkeleton';
 import { DiscoveryCardDispatcher } from '../feed/components/DiscoveryCardDispatcher';
 import { ModalDialog } from '../feed/components/ModalDialog';
@@ -454,13 +456,15 @@ export function HomePage() {
             </p>
           </div>
 
-          <div className="row-wrap">
-            {preferences.interests.map((cat) => (
-              <span key={cat} className="curio-chip">
-                {CATEGORY_METADATA[cat].shortLabel}
-              </span>
-            ))}
-          </div>
+          {preferences.interests.length > 0 && (
+            <div className="row-wrap">
+              {preferences.interests.map((cat) => (
+                <span key={cat} className="curio-chip">
+                  {CATEGORY_METADATA[cat].shortLabel}
+                </span>
+              ))}
+            </div>
+          )}
 
           <div className="row-wrap" style={{ gap: 10, paddingTop: 2 }}>
             {!isSignedIn && <GoogleSignInButton label="Continue with Google" />}

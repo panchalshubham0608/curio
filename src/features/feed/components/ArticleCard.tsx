@@ -11,6 +11,7 @@ import {
 } from './ComponentRegistry';
 import { EditorialVisual } from './EditorialVisual';
 import { SourceAttributionRow } from './SourceAttributionRow';
+import './DiscoveryCard.css';
 
 interface ArticleCardProps {
   record: ContentRecord;

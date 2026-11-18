@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Sparkles } from 'lucide-react';
 import type { FactRevealBlock } from '../../../shared/validation/contentSchemas';
+import './FactRevealCard.css';
 
 interface FactRevealCardProps {
   block: FactRevealBlock;

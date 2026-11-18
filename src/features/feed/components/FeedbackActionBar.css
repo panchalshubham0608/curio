@@ -1,0 +1,25 @@
+/* Feedback Action Bar */
+.feedback-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  background: var(--bg-subtle);
+}
+
+.feedback-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 639px) {
+  .feedback-bar {
+    padding: 10px 12px;
+  }
+}

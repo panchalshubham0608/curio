@@ -1,0 +1,128 @@
+/* Onboarding Journey Shell, Progress Rail, Curiosity Palette Dock & Preview Card */
+.journey-shell {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(
+      circle at top right,
+      color-mix(in srgb, var(--accent-primary) 9%, transparent) 0%,
+      transparent 48%
+    ),
+    var(--bg-canvas);
+}
+
+.journey-header {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 20px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.journey-rail {
+  max-width: 920px;
+  width: calc(100% - 40px);
+  margin: 8px auto 0;
+  height: 5px;
+  border-radius: var(--radius-pill);
+  background: var(--border-hairline);
+  overflow: hidden;
+}
+
+.journey-rail-fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-ochre) 100%);
+  transition: width 360ms var(--ease-editorial);
+}
+
+.journey-stage {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px 20px 48px;
+  flex: 1;
+}
+
+.journey-panel {
+  animation: staggerUp 340ms var(--ease-editorial) both;
+}
+
+/* Onboarding Step 2 Curiosity Palette Dock */
+.journey-dock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px 16px;
+}
+
+.journey-dock-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-hairline);
+}
+
+@media (min-width: 680px) {
+  .journey-dock {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 18px;
+  }
+
+  .journey-dock-actions {
+    padding-top: 0;
+    border-top: 0;
+    flex-shrink: 0;
+  }
+}
+
+/* Personalized Feed Preview Card */
+.reader-pass {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: linear-gradient(135deg, #1b1917 0%, #2b2520 55%, #37251e 100%);
+  color: #faf8f4;
+  border: 1px solid rgba(250, 248, 244, 0.14);
+  box-shadow: var(--shadow-elevated);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.reader-pass-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.reader-pass-strip img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(250, 248, 244, 0.18);
+}
+
+@media (max-width: 767px) {
+  .journey-sticky-footer {
+    position: sticky;
+    bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+    z-index: 30;
+    background: color-mix(in srgb, var(--bg-surface) 94%, transparent);
+    backdrop-filter: blur(16px);
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .journey-header {
+    padding-top: calc(14px + env(safe-area-inset-top, 0px));
+  }
+}

@@ -1,0 +1,58 @@
+/* Discovery Cards (HeroImageCard, ArticleCard, DiscoveryCardDispatcher) */
+.curio-card--discovery {
+  overflow: hidden;
+}
+
+.discovery-card-body {
+  padding: 22px;
+}
+
+.discovery-card-footer {
+  border-top: 1px solid var(--border-hairline);
+  background: color-mix(in srgb, var(--bg-subtle) 65%, var(--bg-surface));
+  padding: 12px 22px;
+}
+
+.discovery-card-footer .feedback-bar {
+  margin-top: 0;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.blocks-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.editorial-paragraph {
+  font-size: 1.03rem;
+  line-height: 1.72;
+  color: var(--ink-primary);
+}
+
+@media (min-width: 640px) {
+  .discovery-card-body {
+    padding: 28px;
+  }
+
+  .discovery-card-footer {
+    padding: 13px 28px;
+  }
+}
+
+@media (max-width: 639px) {
+  .discovery-card-body {
+    padding: 18px;
+  }
+
+  .discovery-card-footer {
+    padding: 10px 18px;
+  }
+
+  .discovery-card-footer .feedback-bar {
+    padding: 0;
+  }
+}

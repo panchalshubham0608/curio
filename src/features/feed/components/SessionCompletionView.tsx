@@ -5,6 +5,8 @@ import {
   CATEGORY_METADATA,
   type ContentCategory,
 } from '../../../shared/validation/contentSchemas';
+import './ComparisonCard.css';
+import './RabbitHoleCard.css';
 
 interface SessionCompletionViewProps {
   summary: SessionSummaryStats;

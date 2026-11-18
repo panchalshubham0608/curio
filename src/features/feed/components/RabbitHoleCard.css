@@ -1,0 +1,12 @@
+/* Rabbit Hole Exploration Card */
+.rabbit-hole-card {
+  border-radius: var(--radius-md);
+  border: 1px solid color-mix(in srgb, var(--accent-sage) 40%, var(--border-hairline));
+  background: var(--accent-sage-soft);
+  padding: 18px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}

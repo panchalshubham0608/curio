@@ -1,0 +1,21 @@
+/* Session Progress Bar */
+.session-progress-track {
+  display: grid;
+  gap: 5px;
+  margin: 10px 0 6px;
+}
+
+.session-progress-segment {
+  height: 5px;
+  border-radius: var(--radius-pill);
+  background: var(--border-hairline);
+  transition: background-color var(--duration-med) var(--ease-editorial);
+}
+
+.session-progress-segment--done {
+  background: var(--accent-sage);
+}
+
+.session-progress-segment--active {
+  background: var(--accent-primary);
+}

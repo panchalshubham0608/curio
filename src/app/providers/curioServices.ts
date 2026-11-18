@@ -41,7 +41,9 @@ import {
   FirestoreUserRepository,
   FirestoreVisualAssetRepository,
 } from '../../infrastructure/persistence/FirestoreRepositories';
+import { createClearedUserPreferences } from '../../domain/user/UserPreferences';
 import {
+  clearLocalUserData,
   LocalContentRepository,
   LocalInteractionRepository,
   LocalSavedLibraryRepository,
@@ -54,6 +56,7 @@ import {
   CuratedPuzzleProvider,
   type PuzzleProvider,
 } from '../../infrastructure/puzzles/PuzzleProvider';
+import type { UserPreferences } from '../../shared/validation/contentSchemas';
 
 export interface CurioServices {
   readonly mode: 'firebase' | 'local';
@@ -71,6 +74,7 @@ export interface CurioServices {
   readonly getPreferences: GetPreferencesUseCase;
   readonly updatePreferences: UpdatePreferencesUseCase;
   readonly resetPersonalization: ResetPersonalizationUseCase;
+  readonly clearLocalGuestProfile: (guestUserId: string) => Promise<UserPreferences>;
   readonly contentRepository: ContentRepository;
   readonly puzzleProvider: PuzzleProvider;
 }
@@ -160,6 +164,13 @@ export function buildCurioServices(options?: {
       preferencesRepository,
       interactionRepository
     ),
+    clearLocalGuestProfile: async (guestUserId: string) => {
+      clearLocalUserData(localStore, guestUserId);
+      await puzzleProvider.clearSolved(guestUserId);
+      const cleared = createClearedUserPreferences(guestUserId);
+      await new LocalUserRepository(localStore).save(cleared);
+      return cleared;
+    },
     contentRepository,
     puzzleProvider,
   };

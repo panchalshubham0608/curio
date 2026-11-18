@@ -26,6 +26,7 @@ export interface AppContextValue {
   cloudNotice: string | null;
   signInWithGoogle: () => Promise<SignInOutcome>;
   signOutAccount: () => Promise<void>;
+  clearLocalGuestProfile: () => Promise<UserPreferences>;
   clearAuthError: () => void;
   clearCloudNotice: () => void;
   services: CurioServices;

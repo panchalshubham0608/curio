@@ -11,6 +11,8 @@ import { RateLimitExceededError } from '../../../application/ai/AskContentQuesti
 import type { QuickAIPromptAction } from '../../../application/ports';
 import { useCurioApp } from '../../../app/providers/appContext';
 import { getFriendlyErrorMessage } from '../../../shared/errors/firebaseErrorMapper';
+import './SourceAttributionRow.css';
+import './AIExplanationPanel.css';
 import type {
   AIAnswer,
   ContentRecord,

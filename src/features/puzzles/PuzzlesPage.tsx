@@ -17,6 +17,7 @@ import {
   type PuzzleKind,
 } from '../../shared/validation/puzzleSchemas';
 import { PuzzlePopupModal } from './components/PuzzlePopupModal';
+import './PuzzlesPage.css';
 
 const KIND_ICONS: Record<PuzzleKind, typeof PuzzleIcon> = {
   odd_one_out: Shapes,

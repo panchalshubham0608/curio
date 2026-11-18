@@ -3,6 +3,7 @@ import type {
   ContentCategory,
   RabbitHoleBlock,
 } from '../../../shared/validation/contentSchemas';
+import './RabbitHoleCard.css';
 
 interface RabbitHoleCardProps {
   block: RabbitHoleBlock;

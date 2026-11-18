@@ -1,0 +1,48 @@
+/* Interactive Quiz Block */
+.quiz-card {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-elevated);
+  padding: 20px;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 14px;
+}
+
+.quiz-option {
+  width: 100%;
+  text-align: left;
+  padding: 12px 15px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-surface);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.95rem;
+  transition: border-color var(--duration-fast) var(--ease-editorial),
+    background-color var(--duration-fast) var(--ease-editorial);
+}
+
+.quiz-option:hover:not(:disabled) {
+  border-color: var(--ink-primary);
+  background: var(--bg-subtle);
+}
+
+.quiz-option--correct {
+  border-color: var(--accent-sage);
+  background: var(--accent-sage-soft);
+  color: var(--accent-sage);
+  font-weight: 600;
+}
+
+.quiz-option--wrong {
+  border-color: var(--accent-danger);
+  background: var(--accent-danger-soft);
+  color: var(--accent-danger);
+}

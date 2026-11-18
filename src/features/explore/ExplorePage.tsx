@@ -8,6 +8,8 @@ import {
   CONTENT_CATEGORIES,
   type ContentCategory,
 } from '../../shared/validation/contentSchemas';
+import '../preferences/components/InterestGalleryPicker.css';
+import './ExplorePage.css';
 
 interface CuratedCollectionPreset {
   id: string;

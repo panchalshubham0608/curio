@@ -38,6 +38,19 @@ export function createDefaultUserPreferences(
   };
 }
 
+/**
+ * Blank profile state after a local guest explicitly clears their profile on this device.
+ */
+export function createClearedUserPreferences(
+  userId: string,
+  nowIso = new Date().toISOString()
+): UserPreferences {
+  return {
+    ...createDefaultUserPreferences(userId, nowIso),
+    interests: [],
+  };
+}
+
 export function normalizeTopicList(rawInput: string): string[] {
   return Array.from(
     new Set(

@@ -1,5 +1,6 @@
 import { useEffect, type ReactNode } from 'react';
 import { X } from 'lucide-react';
+import './ModalDialog.css';
 
 interface ModalDialogProps {
   open: boolean;

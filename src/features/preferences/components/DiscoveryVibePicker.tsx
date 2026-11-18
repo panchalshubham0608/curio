@@ -1,5 +1,6 @@
 import type { ContentMix } from '../../../shared/validation/contentSchemas';
 import { DISCOVERY_VIBE_OPTIONS } from '../discoveryVibeOptions';
+import './DiscoveryVibePicker.css';
 
 interface DiscoveryVibePickerProps {
   value: ContentMix;

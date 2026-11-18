@@ -1,0 +1,143 @@
+/* Interactive Fact Reveal Card */
+.fact-reveal-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  border: 1px solid color-mix(in srgb, var(--accent-primary) 24%, var(--border-hairline));
+  background: linear-gradient(
+    135deg,
+    var(--bg-subtle) 0%,
+    color-mix(in srgb, var(--accent-primary-soft) 68%, var(--bg-surface)) 100%
+  );
+  overflow: hidden;
+  transition: border-color var(--duration-fast) ease,
+    background-color var(--duration-med) var(--ease-editorial),
+    box-shadow var(--duration-fast) ease,
+    transform var(--duration-fast) var(--ease-spring);
+}
+
+.fact-reveal-card:hover {
+  border-color: color-mix(in srgb, var(--accent-primary) 46%, var(--border-hairline));
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--accent-primary) 10%, transparent);
+}
+
+.fact-reveal-card--open {
+  background: var(--bg-elevated);
+  border-color: color-mix(in srgb, var(--accent-primary) 34%, var(--border-hairline));
+  box-shadow: inset 3.5px 0 0 var(--accent-primary);
+}
+
+.fact-reveal-trigger {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  padding: 15px 17px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.fact-reveal-trigger:active {
+  transform: scale(0.994);
+}
+
+.fact-reveal-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.fact-reveal-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--accent-primary) 14%, var(--bg-surface));
+  color: var(--accent-primary);
+  transition: background-color var(--duration-fast) ease,
+    color var(--duration-fast) ease,
+    transform var(--duration-fast) var(--ease-spring);
+}
+
+.fact-reveal-card:hover .fact-reveal-icon {
+  transform: rotate(-8deg) scale(1.04);
+}
+
+.fact-reveal-card--open .fact-reveal-icon {
+  background: var(--accent-primary);
+  color: #faf8f4;
+  transform: none;
+}
+
+.fact-reveal-heading {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.fact-reveal-label {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink-primary);
+}
+
+.fact-reveal-hint {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  color: var(--accent-primary);
+}
+
+.fact-reveal-teaser {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding-left: 43px;
+}
+
+.fact-reveal-bar {
+  display: block;
+  height: 7px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--ink-primary) 10%, transparent);
+  transition: background-color var(--duration-fast) ease;
+}
+
+.fact-reveal-bar--long {
+  width: 84%;
+}
+
+.fact-reveal-bar--short {
+  width: 52%;
+}
+
+.fact-reveal-card:hover .fact-reveal-bar {
+  background: color-mix(in srgb, var(--accent-primary) 18%, transparent);
+}
+
+.fact-reveal-body {
+  margin: 0;
+  padding: 0 17px 16px 60px;
+  color: var(--ink-secondary);
+  font-size: 0.96rem;
+  line-height: 1.66;
+  animation: fadeSlideIn var(--duration-med) var(--ease-editorial);
+}
+
+@media (max-width: 479px) {
+  .fact-reveal-teaser {
+    padding-left: 0;
+  }
+
+  .fact-reveal-body {
+    padding: 0 17px 16px 17px;
+  }
+}

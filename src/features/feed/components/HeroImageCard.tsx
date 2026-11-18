@@ -10,6 +10,7 @@ import {
 } from './ComponentRegistry';
 import { EditorialVisual } from './EditorialVisual';
 import { SourceAttributionRow } from './SourceAttributionRow';
+import './DiscoveryCard.css';
 
 const FORMAT_LABELS: Record<ContentFormat, string> = {
   quick_bite: 'Insight',

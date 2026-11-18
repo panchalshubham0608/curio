@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { CheckCircle2, HelpCircle, XCircle } from 'lucide-react';
 import type { QuizBlock } from '../../../shared/validation/contentSchemas';
+import './QuizCard.css';
 
 interface QuizCardProps {
   block: QuizBlock;

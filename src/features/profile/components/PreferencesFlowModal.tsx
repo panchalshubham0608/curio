@@ -8,6 +8,7 @@ import {
 import { ModalDialog } from '../../feed/components/ModalDialog';
 import { DiscoveryVibePicker } from '../../preferences/components/DiscoveryVibePicker';
 import { InterestGalleryPicker } from '../../preferences/components/InterestGalleryPicker';
+import './PreferencesFlowModal.css';
 
 interface VisualInterestsModalProps {
   open: boolean;

@@ -358,7 +358,7 @@ export type AIAnswer = z.infer<typeof AIAnswerSchema>;
 export const UserPreferencesSchema = z.object({
   userId: z.string().trim().min(1).max(128),
   displayName: z.string().trim().max(80).optional(),
-  interests: z.array(z.enum(CONTENT_CATEGORIES)).min(1).max(8),
+  interests: z.array(z.enum(CONTENT_CATEGORIES)).max(8).default([]),
   topicKeywords: z.array(z.string().trim().min(1).max(50)).max(30).default([]),
   excludedTopics: z.array(z.string().trim().min(1).max(50)).max(30).default([]),
   preferredMix: z.enum(CONTENT_MIX_OPTIONS).default('balanced'),

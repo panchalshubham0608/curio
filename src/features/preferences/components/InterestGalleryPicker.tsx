@@ -4,6 +4,7 @@ import {
   CONTENT_CATEGORIES,
   type ContentCategory,
 } from '../../../shared/validation/contentSchemas';
+import './InterestGalleryPicker.css';
 
 interface InterestGalleryPickerProps {
   selectedInterests: readonly ContentCategory[];

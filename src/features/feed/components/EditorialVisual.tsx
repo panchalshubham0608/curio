@@ -5,6 +5,7 @@ import {
   type VisualReference,
 } from '../../../shared/validation/contentSchemas';
 import { isSafeImageUrl } from '../../../shared/validation/urlValidation';
+import './EditorialVisual.css';
 
 interface EditorialVisualProps {
   visual: VisualReference;

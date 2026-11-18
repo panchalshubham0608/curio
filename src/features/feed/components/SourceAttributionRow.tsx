@@ -2,6 +2,7 @@ import { ExternalLink, Sparkles, ShieldCheck } from 'lucide-react';
 import { formatEditorialDate } from '../../../shared/utils/time';
 import type { ContentRecord } from '../../../shared/validation/contentSchemas';
 import { isSafeHttpsUrl } from '../../../shared/validation/urlValidation';
+import './SourceAttributionRow.css';
 
 interface SourceAttributionRowProps {
   record: ContentRecord;

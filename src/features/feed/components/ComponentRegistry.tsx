@@ -8,6 +8,7 @@ import { FactRevealCard } from './FactRevealCard';
 import { QuizCard } from './QuizCard';
 import { RabbitHoleCard } from './RabbitHoleCard';
 import { TimelineCard } from './TimelineCard';
+import './DiscoveryCard.css';
 
 export interface BlockRenderHandlers {
   onStartRabbitHole?: (topic: string, category: ContentCategory) => void;

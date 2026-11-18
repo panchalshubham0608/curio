@@ -1,5 +1,6 @@
 import { Scale } from 'lucide-react';
 import type { ComparisonBlock } from '../../../shared/validation/contentSchemas';
+import './ComparisonCard.css';
 
 interface ComparisonCardProps {
   block: ComparisonBlock;

@@ -22,6 +22,7 @@ export interface PuzzleProvider {
   generateNextPuzzle(options?: PuzzleQueryOptions): Promise<Puzzle | null>;
   getSolvedIds(userId: string): Promise<Set<string>>;
   markSolved(userId: string, puzzleId: string): Promise<Set<string>>;
+  clearSolved(userId: string): Promise<void>;
 }
 
 const RAW_CURATED_PUZZLES: readonly unknown[] = [
@@ -266,5 +267,9 @@ export class CuratedPuzzleProvider implements PuzzleProvider {
     existing.add(puzzleId);
     this.store.setJson(this.solvedKey(userId), Array.from(existing));
     return existing;
+  }
+
+  async clearSolved(userId: string): Promise<void> {
+    this.store.remove(this.solvedKey(userId));
   }
 }

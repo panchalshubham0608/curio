@@ -1,3 +1,5 @@
+import './ProgressIndicator.css';
+
 interface ProgressIndicatorProps {
   currentIndex: number;
   totalItems: number;

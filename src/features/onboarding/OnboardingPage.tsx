@@ -18,6 +18,7 @@ import { GoogleSignInButton } from '../auth/GoogleSignInButton';
 import { DiscoveryVibePicker } from '../preferences/components/DiscoveryVibePicker';
 import { InterestGalleryPicker } from '../preferences/components/InterestGalleryPicker';
 import { getDiscoveryVibeTitle } from '../preferences/discoveryVibeOptions';
+import './OnboardingPage.css';
 
 /**
  * Interactive 3-step Profile & Interest Creation Journey with visual category photography,

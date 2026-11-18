@@ -1,0 +1,36 @@
+/* AI Explanation Panel & Mobile Bottom Sheet */
+.ai-panel {
+  margin-top: 20px;
+  border-radius: var(--radius-lg);
+  border: 1px solid color-mix(in srgb, var(--accent-indigo) 32%, var(--border-hairline));
+  background: var(--accent-indigo-soft);
+  padding: 20px;
+  animation: fadeSlideIn var(--duration-med) var(--ease-editorial);
+}
+
+@media (max-width: 639px) {
+  .ai-sheet-wrapper {
+    position: fixed;
+    inset: 0;
+    z-index: 65;
+    background: rgba(18, 17, 15, 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .ai-sheet-wrapper .ai-panel {
+    width: 100%;
+    margin-top: 0;
+    border-radius: 24px 24px 0 0;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    max-height: 84dvh;
+    overflow-y: auto;
+    background: var(--bg-surface);
+    padding: 16px 18px calc(22px + env(safe-area-inset-bottom, 0px));
+    box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.24);
+    animation: sheetSlideUp 280ms var(--ease-editorial) both;
+  }
+}

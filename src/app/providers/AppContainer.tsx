@@ -254,6 +254,15 @@ export function AppProvider({ children, overrideServices }: AppProviderProps) {
     }
   }, [runtime]);
 
+  const clearLocalGuestProfile = useCallback(async (): Promise<UserPreferences> => {
+    const freshPrefs = await services.clearLocalGuestProfile(LOCAL_GUEST_USER_ID);
+    if (!authUser) {
+      setPreferences(freshPrefs);
+    }
+    logInfo('Cleared local guest profile');
+    return freshPrefs;
+  }, [authUser, services]);
+
   const clearAuthError = useCallback(() => setAuthError(null), []);
   const clearCloudNotice = useCallback(() => setCloudNotice(null), []);
 
@@ -268,6 +277,7 @@ export function AppProvider({ children, overrideServices }: AppProviderProps) {
       cloudNotice,
       signInWithGoogle,
       signOutAccount,
+      clearLocalGuestProfile,
       clearAuthError,
       clearCloudNotice,
       services,
@@ -287,6 +297,7 @@ export function AppProvider({ children, overrideServices }: AppProviderProps) {
       cloudNotice,
       signInWithGoogle,
       signOutAccount,
+      clearLocalGuestProfile,
       clearAuthError,
       clearCloudNotice,
       services,

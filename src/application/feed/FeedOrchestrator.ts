@@ -7,6 +7,7 @@ import type {
   GeneratedFeed,
 } from '../../domain/feed/Feed';
 import { SESSION_DURATION_TARGETS } from '../../domain/feed/FeedRules';
+import { DEFAULT_INTERESTS } from '../../domain/user/UserPreferences';
 import { mapFirebaseError } from '../../shared/errors/firebaseErrorMapper';
 import { logInfo, logWarn } from '../../shared/utils/logger';
 import { withRetry, withTimeout } from '../../shared/utils/retry';
@@ -118,7 +119,9 @@ export class FeedOrchestrator {
 
       const categoriesToDiscover: ContentCategory[] = request.categoryFocus
         ? [request.categoryFocus]
-        : preferences.interests;
+        : preferences.interests.length > 0
+          ? preferences.interests
+          : DEFAULT_INTERESTS;
 
       const needsDiscovery =
         cachedPool.length < desiredPoolSize ||
