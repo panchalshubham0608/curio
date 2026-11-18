@@ -6,7 +6,6 @@ import {
   Sparkles,
   XCircle,
 } from 'lucide-react';
-import { CATEGORY_METADATA } from '../../../shared/validation/contentSchemas';
 import {
   PUZZLE_KIND_METADATA,
   type Puzzle,
@@ -66,7 +65,6 @@ function PuzzlePopupBody({
   const [showHint, setShowHint] = useState(false);
 
   const kindMeta = PUZZLE_KIND_METADATA[puzzle.kind];
-  const categoryMeta = CATEGORY_METADATA[puzzle.category];
   const answered = selectedIndex !== null;
   const isCorrect = selectedIndex === puzzle.correctIndex;
 
@@ -100,9 +98,6 @@ function PuzzlePopupBody({
             {kindMeta.label}
           </span>
           <span className="curio-chip">{puzzle.difficulty}</span>
-          <span className="mono-meta" style={{ marginLeft: 'auto' }}>
-            {categoryMeta.shortLabel}
-          </span>
         </div>
 
         {/* Prompt */}

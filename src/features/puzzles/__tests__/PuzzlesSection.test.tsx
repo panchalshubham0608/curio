@@ -42,7 +42,7 @@ describe('Curio Puzzles section and interactive popup modal', () => {
     );
 
     expect(
-      await screen.findByRole('heading', { name: /Curio Puzzles/i })
+      await screen.findByRole('heading', { level: 1, name: /^Puzzles$/i })
     ).toBeInTheDocument();
     expect(
       await screen.findByText(/0 of 12 solved/i)
@@ -52,6 +52,7 @@ describe('Curio Puzzles section and interactive popup modal', () => {
     await user.click(screen.getByRole('button', { name: /Solar Spin/i }));
     const dialog = await screen.findByRole('dialog');
     expect(within(dialog).getByRole('heading', { name: /Solar Spin/i })).toBeInTheDocument();
+    expect(within(dialog).queryByText(/^Science$/i)).not.toBeInTheDocument();
 
     // Reveal hint inside the popup
     await user.click(within(dialog).getByRole('button', { name: /Need a hint\?/i }));
@@ -76,11 +77,23 @@ describe('Curio Puzzles section and interactive popup modal', () => {
     // Close popup cleanly
     await user.click(within(screen.getByRole('dialog')).getByRole('button', { name: /^Close$/i }));
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+
+    // Solved puzzle ("Solar Spin") moves down below the remaining unsolved puzzles
+    expect(screen.getByText(/Solved \(1\)/i)).toBeInTheDocument();
+    const listSection = screen.getByLabelText(/Available puzzles/i);
+    const puzzleButtons = within(listSection)
+      .getAllByRole('button')
+      .filter((btn) => !/Pick an unsolved puzzle/i.test(btn.textContent ?? ''));
+    expect(puzzleButtons[puzzleButtons.length - 1]?.textContent).toMatch(/Solar Spin/i);
+    expect(puzzleButtons[0]?.textContent).not.toMatch(/Solar Spin/i);
+
+    // End-of-puzzles caught-up card renders cleanly
+    expect(screen.getByRole('heading', { name: /You’re all caught up/i })).toBeInTheDocument();
   });
 
-  it('filters puzzles by type and supports Surprise me popup launch', async () => {
+  it('hides puzzle category filter tabs and topic tags while launching a teaser from Surprise me', async () => {
     window.scrollTo = vi.fn();
-    const store = new SafeKeyValueStore('puzzles_filter_test', false);
+    const store = new SafeKeyValueStore('puzzles_surprise_test', false);
     const services = buildCurioServices({ forceLocalStore: store });
     const user = userEvent.setup();
 
@@ -93,15 +106,20 @@ describe('Curio Puzzles section and interactive popup modal', () => {
     );
 
     expect(
-      await screen.findByRole('heading', { name: /Curio Puzzles/i })
+      await screen.findByRole('heading', { level: 1, name: /^Puzzles$/i })
     ).toBeInTheDocument();
 
-    await user.click(screen.getByRole('tab', { name: /Patterns/i }));
+    expect(screen.queryByRole('tablist')).not.toBeInTheDocument();
     const listSection = screen.getByLabelText(/Available puzzles/i);
-    expect(within(listSection).getAllByRole('button').length).toBe(3);
+    const puzzleCards = within(listSection)
+      .getAllByRole('button')
+      .filter((btn) => !/Pick an unsolved puzzle/i.test(btn.textContent ?? ''));
+    expect(puzzleCards.length).toBe(12);
+    expect(within(listSection).queryByText(/^Science$/i)).not.toBeInTheDocument();
+    expect(within(listSection).queryByText(/^Tech & AI$/i)).not.toBeInTheDocument();
 
     await user.click(screen.getByRole('button', { name: /Surprise me/i }));
     const dialog = await screen.findByRole('dialog');
-    expect(within(dialog).getByLabelText(/Pattern sequence/i)).toBeInTheDocument();
+    expect(within(dialog).getByRole('radiogroup')).toBeInTheDocument();
   });
 });
