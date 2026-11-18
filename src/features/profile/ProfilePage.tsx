@@ -1,14 +1,13 @@
 import { useEffect, useState, type FormEvent } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
-  Check,
+  ChevronRight,
   LogOut,
   Moon,
   RotateCcw,
   Shield,
   Sun,
   Trash2,
-  Wand2,
 } from 'lucide-react';
 import { useCurioApp } from '../../app/providers/appContext';
 import { normalizeTopicList } from '../../domain/user/UserPreferences';
@@ -17,18 +16,19 @@ import { maskDisplayIdentifier } from '../../shared/utils/sanitize';
 import {
   CATEGORY_METADATA,
   CONTENT_CATEGORIES,
-  CONTENT_MIX_OPTIONS,
   type ContentCategory,
   type ContentMix,
 } from '../../shared/validation/contentSchemas';
 import { GoogleSignInButton } from '../auth/GoogleSignInButton';
 import { ModalDialog } from '../feed/components/ModalDialog';
-
-const MIX_LABELS: Record<ContentMix, string> = {
-  quick: 'Quick Sparks',
-  balanced: 'Balanced Mix',
-  deeper: 'Deep Cuts',
-};
+import {
+  DISCOVERY_VIBE_OPTIONS,
+  getDiscoveryVibeTitle,
+} from '../preferences/discoveryVibeOptions';
+import {
+  DiscoveryVibeModal,
+  VisualInterestsModal,
+} from './components/PreferencesFlowModal';
 
 export function ProfilePage() {
   const {
@@ -65,6 +65,10 @@ export function ProfilePage() {
   const [saving, setSaving] = useState(false);
   const [statusBanner, setStatusBanner] = useState<string | null>(null);
   const [errorBanner, setErrorBanner] = useState<string | null>(null);
+
+  const [interestsModalOpen, setInterestsModalOpen] = useState(false);
+  const [vibeModalOpen, setVibeModalOpen] = useState(false);
+  const [detailsModalOpen, setDetailsModalOpen] = useState(false);
   const [resetModalOpen, setResetModalOpen] = useState(false);
 
   useEffect(() => {
@@ -97,17 +101,49 @@ export function ProfilePage() {
     };
   }, [services, userId]);
 
-  const toggleInterest = (category: ContentCategory) => {
-    setInterests((prev) => {
-      if (prev.includes(category)) {
-        if (prev.length === 1) return prev;
-        return prev.filter((item) => item !== category);
-      }
-      return [...prev, category];
-    });
+  const handleSaveInterests = async (nextInterests: ContentCategory[]) => {
+    setSaving(true);
+    setStatusBanner(null);
+    setErrorBanner(null);
+    try {
+      const updated = await services.updatePreferences.execute(userId, {
+        interests: nextInterests,
+        onboardingCompleted: true,
+      });
+      setPreferencesState(updated);
+      setInterests(updated.interests);
+      setInterestsModalOpen(false);
+      setStatusBanner('Visual interests updated.');
+    } catch (error: unknown) {
+      setInterestsModalOpen(false);
+      setErrorBanner(getFriendlyErrorMessage(error, 'firestore'));
+    } finally {
+      setSaving(false);
+    }
   };
 
-  const handleSave = async (event: FormEvent) => {
+  const handleSaveVibe = async (nextMix: ContentMix) => {
+    setSaving(true);
+    setStatusBanner(null);
+    setErrorBanner(null);
+    try {
+      const updated = await services.updatePreferences.execute(userId, {
+        preferredMix: nextMix,
+        onboardingCompleted: true,
+      });
+      setPreferencesState(updated);
+      setPreferredMix(updated.preferredMix);
+      setVibeModalOpen(false);
+      setStatusBanner('Discovery vibe updated.');
+    } catch (error: unknown) {
+      setVibeModalOpen(false);
+      setErrorBanner(getFriendlyErrorMessage(error, 'firestore'));
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const handleSaveReaderDetails = async (event: FormEvent) => {
     event.preventDefault();
     setSaving(true);
     setStatusBanner(null);
@@ -115,15 +151,15 @@ export function ProfilePage() {
     try {
       const updated = await services.updatePreferences.execute(userId, {
         displayName: displayName.trim() || undefined,
-        interests,
         topicKeywords: normalizeTopicList(keywordsText),
         excludedTopics: normalizeTopicList(excludedText),
-        preferredMix,
         onboardingCompleted: true,
       });
       setPreferencesState(updated);
-      setStatusBanner('Preferences updated. Your next mix will reflect these choices.');
+      setDetailsModalOpen(false);
+      setStatusBanner('Reader details saved.');
     } catch (error: unknown) {
+      setDetailsModalOpen(false);
       setErrorBanner(getFriendlyErrorMessage(error, 'firestore'));
     } finally {
       setSaving(false);
@@ -147,7 +183,7 @@ export function ProfilePage() {
     setErrorBanner(null);
     try {
       await services.contentRepository.clearCache?.();
-      setStatusBanner('Cached discoveries cleared. Fresh cards will load on your next mix.');
+      setStatusBanner('Cached discoveries cleared. Fresh cards will load on your next refresh.');
     } catch (error: unknown) {
       setErrorBanner(getFriendlyErrorMessage(error, 'firestore'));
     }
@@ -157,6 +193,15 @@ export function ProfilePage() {
     await signOutAccount();
     navigate('/', { replace: true });
   };
+
+  const activeVibe =
+    DISCOVERY_VIBE_OPTIONS.find((option) => option.id === preferredMix) ??
+    DISCOVERY_VIBE_OPTIONS[1];
+  const interestsSummary = interests
+    .slice(0, 4)
+    .map((cat) => CATEGORY_METADATA[cat].shortLabel)
+    .join(' · ');
+  const extraInterestsCount = Math.max(0, interests.length - 4);
 
   return (
     <main className="curio-main curio-main--reading stack-lg">
@@ -169,24 +214,18 @@ export function ProfilePage() {
             </h1>
           </div>
 
-          <div className="row-wrap">
-            <Link to="/onboarding" className="curio-btn curio-btn--secondary curio-btn--sm">
-              <Wand2 size={14} />
-              Visual Journey
-            </Link>
-            <button
-              type="button"
-              className="curio-btn curio-btn--secondary curio-btn--sm"
-              onClick={toggleTheme}
-            >
-              {theme === 'light' ? <Moon size={15} /> : <Sun size={15} />}
-              {theme === 'light' ? 'Evening Ink' : 'Archival Paper'}
-            </button>
-          </div>
+          <button
+            type="button"
+            className="curio-btn curio-btn--secondary curio-btn--sm"
+            onClick={toggleTheme}
+          >
+            {theme === 'light' ? <Moon size={15} /> : <Sun size={15} />}
+            {theme === 'light' ? 'Evening Ink' : 'Archival Paper'}
+          </button>
         </div>
         <p className="masthead-prompt">
-          You stay in full control of what Curio selects. Update interests, sync with Google,
-          or reset your personalization signals anytime.
+          You stay in full control of what Curio selects. Update interests, choose your vibe,
+          sync with Google, or reset your personalization signals anytime.
         </p>
       </header>
 
@@ -305,104 +344,99 @@ export function ProfilePage() {
         </div>
       </section>
 
-      {/* Editable Preferences Form */}
-      <form
-        onSubmit={(e) => void handleSave(e)}
-        className="curio-card curio-card--padded stack-md"
+      {/* Clean Interactive Personalization Summary Rows -> Independent Modals */}
+      <section
+        className="curio-card curio-card--padded stack-sm"
+        aria-label="Personalization preferences"
       >
-        <h2 style={{ fontSize: '1.35rem' }}>Personalization Settings</h2>
-
-        <div className="stack-xs">
-          <label htmlFor="pref-name" style={{ fontWeight: 600, fontSize: '0.92rem' }}>
-            Reader name
-          </label>
-          <input
-            id="pref-name"
-            type="text"
-            className="curio-input"
-            maxLength={60}
-            placeholder="Optional greeting name"
-            value={displayName}
-            onChange={(e) => setDisplayName(e.target.value)}
-          />
+        <div className="stack-xs" style={{ gap: 2 }}>
+          <h2 style={{ fontSize: '1.3rem' }}>Personalization</h2>
+          <p className="text-secondary" style={{ fontSize: '0.88rem' }}>
+            Tap any option below to update it anytime.
+          </p>
         </div>
 
-        <div className="stack-xs">
-          <span style={{ fontWeight: 600, fontSize: '0.92rem' }}>Broad interest categories</span>
-          <div className="row-wrap">
-            {CONTENT_CATEGORIES.map((catId) => {
-              const selected = interests.includes(catId);
-              return (
-                <button
-                  key={catId}
-                  type="button"
-                  aria-pressed={selected}
-                  className={`curio-chip curio-chip--selectable ${
-                    selected ? 'curio-chip--selected' : ''
-                  }`}
-                  onClick={() => toggleInterest(catId)}
-                >
-                  {selected && <Check size={13} aria-hidden="true" />}
-                  {CATEGORY_METADATA[catId].shortLabel}
-                </button>
-              );
-            })}
-          </div>
-        </div>
+        <div className="profile-settings-list">
+          {/* Row 1: Visual Interests -> opens standalone interests modal */}
+          <button
+            type="button"
+            className="profile-setting-row"
+            onClick={() => setInterestsModalOpen(true)}
+          >
+            <div className="profile-setting-row-main">
+              <span className="profile-setting-row-title">Visual interests</span>
+              <span className="profile-setting-row-sub">
+                {interestsSummary}
+                {extraInterestsCount > 0 ? ` +${extraInterestsCount} more` : ''}
+              </span>
+            </div>
 
-        <div className="stack-xs">
-          <label htmlFor="pref-keywords" style={{ fontWeight: 600, fontSize: '0.92rem' }}>
-            Topic keywords to prioritize (comma-separated)
-          </label>
-          <input
-            id="pref-keywords"
-            type="text"
-            className="curio-input"
-            placeholder="e.g., neuroscience, japan, linguistics, clean energy"
-            value={keywordsText}
-            onChange={(e) => setKeywordsText(e.target.value)}
-          />
-        </div>
+            <div className="profile-setting-row-right">
+              <div className="palette-tray" aria-hidden="true">
+                {interests.slice(0, 4).map((cat) => (
+                  <img
+                    key={cat}
+                    src={CATEGORY_METADATA[cat].coverImage}
+                    alt=""
+                    className="palette-thumb"
+                    style={{ width: 28, height: 28 }}
+                  />
+                ))}
+              </div>
+              <ChevronRight size={18} aria-hidden="true" />
+            </div>
+          </button>
 
-        <div className="stack-xs">
-          <label htmlFor="pref-excluded" style={{ fontWeight: 600, fontSize: '0.92rem' }}>
-            Excluded topics (comma-separated)
-          </label>
-          <input
-            id="pref-excluded"
-            type="text"
-            className="curio-input"
-            placeholder="Topics you never want Curio to include"
-            value={excludedText}
-            onChange={(e) => setExcludedText(e.target.value)}
-          />
-        </div>
+          {/* Row 2: Discovery Vibe -> opens standalone vibe modal */}
+          <button
+            type="button"
+            className="profile-setting-row"
+            onClick={() => setVibeModalOpen(true)}
+          >
+            <div className="profile-setting-row-main">
+              <span className="profile-setting-row-title">Discovery vibe</span>
+              <span className="profile-setting-row-sub">
+                {getDiscoveryVibeTitle(preferredMix)}
+              </span>
+            </div>
 
-        <div className="stack-xs">
-          <span style={{ fontWeight: 600, fontSize: '0.92rem' }}>Preferred feed vibe</span>
-          <div className="row-wrap">
-            {CONTENT_MIX_OPTIONS.map((mix) => (
-              <button
-                key={mix}
-                type="button"
-                aria-pressed={preferredMix === mix}
-                className={`curio-chip curio-chip--selectable ${
-                  preferredMix === mix ? 'curio-chip--selected' : ''
-                }`}
-                onClick={() => setPreferredMix(mix)}
-              >
-                {MIX_LABELS[mix]}
-              </button>
-            ))}
-          </div>
-        </div>
+            <div className="profile-setting-row-right">
+              <div className="cadence-bars" aria-hidden="true">
+                {activeVibe.bars.map((height, bIdx) => (
+                  <span
+                    key={bIdx}
+                    className="cadence-bar"
+                    style={{
+                      height: Math.round(height * 0.8),
+                      background: 'var(--accent-primary)',
+                    }}
+                  />
+                ))}
+              </div>
+              <ChevronRight size={18} aria-hidden="true" />
+            </div>
+          </button>
 
-        <div>
-          <button type="submit" className="curio-btn curio-btn--primary" disabled={saving}>
-            {saving ? 'Saving…' : 'Save preferences'}
+          {/* Row 3: Reader Name & Topic Filters -> opens compact details modal */}
+          <button
+            type="button"
+            className="profile-setting-row"
+            onClick={() => setDetailsModalOpen(true)}
+          >
+            <div className="profile-setting-row-main">
+              <span className="profile-setting-row-title">Reader name &amp; topic filters</span>
+              <span className="profile-setting-row-sub">
+                {displayName.trim() ? displayName.trim() : 'Set your greeting name'}
+                {keywordsText.trim() ? ` · Priority: ${keywordsText.trim()}` : ''}
+              </span>
+            </div>
+
+            <div className="profile-setting-row-right">
+              <ChevronRight size={18} aria-hidden="true" />
+            </div>
           </button>
         </div>
-      </form>
+      </section>
 
       {/* Data & Privacy Controls */}
       <section className="curio-card curio-card--padded stack-sm">
@@ -441,6 +475,88 @@ export function ProfilePage() {
         </div>
       </section>
 
+      {/* Independent Visual Interests Modal */}
+      <VisualInterestsModal
+        open={interestsModalOpen}
+        initialInterests={interests}
+        saving={saving}
+        onClose={() => setInterestsModalOpen(false)}
+        onSave={handleSaveInterests}
+      />
+
+      {/* Independent Discovery Vibe Modal */}
+      <DiscoveryVibeModal
+        open={vibeModalOpen}
+        initialMix={preferredMix}
+        saving={saving}
+        onClose={() => setVibeModalOpen(false)}
+        onSave={handleSaveVibe}
+      />
+
+      {/* Focused Reader Name & Topic Filters Modal */}
+      <ModalDialog
+        open={detailsModalOpen}
+        title="Reader name & topic filters"
+        maxWidth={500}
+        onClose={() => setDetailsModalOpen(false)}
+      >
+        <form onSubmit={(e) => void handleSaveReaderDetails(e)} className="stack-md">
+          <div className="stack-xs">
+            <label htmlFor="pref-name" style={{ fontWeight: 600, fontSize: '0.92rem' }}>
+              Reader name
+            </label>
+            <input
+              id="pref-name"
+              type="text"
+              className="curio-input"
+              maxLength={60}
+              placeholder="Optional greeting name"
+              value={displayName}
+              onChange={(e) => setDisplayName(e.target.value)}
+            />
+          </div>
+
+          <div className="stack-xs">
+            <label htmlFor="pref-keywords" style={{ fontWeight: 600, fontSize: '0.9rem' }}>
+              Priority topics (optional, comma-separated)
+            </label>
+            <input
+              id="pref-keywords"
+              type="text"
+              className="curio-input"
+              placeholder="e.g., neuroscience, japan, linguistics"
+              value={keywordsText}
+              onChange={(e) => setKeywordsText(e.target.value)}
+            />
+          </div>
+
+          <div className="stack-xs">
+            <label htmlFor="pref-excluded" style={{ fontWeight: 600, fontSize: '0.9rem' }}>
+              Topics to skip (optional, comma-separated)
+            </label>
+            <input
+              id="pref-excluded"
+              type="text"
+              className="curio-input"
+              placeholder="Topics you prefer not to see"
+              value={excludedText}
+              onChange={(e) => setExcludedText(e.target.value)}
+            />
+          </div>
+
+          <div className="journey-step-actions" style={{ paddingTop: 4 }}>
+            <button
+              type="submit"
+              className="curio-btn curio-btn--accent journey-dock-next"
+              disabled={saving}
+            >
+              {saving ? 'Saving…' : 'Save details'}
+            </button>
+          </div>
+        </form>
+      </ModalDialog>
+
+      {/* Reset Confirmation Modal */}
       <ModalDialog
         open={resetModalOpen}
         title="Reset personalization signals?"

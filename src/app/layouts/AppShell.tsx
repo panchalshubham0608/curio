@@ -1,9 +1,10 @@
 import { Link, NavLink, Outlet, useMatch } from 'react-router-dom';
-import { Bookmark, Compass, Home, SlidersHorizontal } from 'lucide-react';
+import { Bookmark, Compass, Home, Puzzle, SlidersHorizontal } from 'lucide-react';
 import { useCurioApp } from '../providers/appContext';
 
 const NAV_ITEMS = [
   { to: '/', label: 'Home', icon: Home, end: true },
+  { to: '/puzzles', label: 'Puzzles', icon: Puzzle, end: false },
   { to: '/explore', label: 'Explore', icon: Compass, end: false },
   { to: '/library', label: 'Saved', icon: Bookmark, end: false },
   { to: '/profile', label: 'Profile', icon: SlidersHorizontal, end: false },

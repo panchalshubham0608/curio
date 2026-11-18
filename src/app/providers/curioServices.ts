@@ -50,6 +50,10 @@ import {
   LocalVisualAssetRepository,
 } from '../../infrastructure/persistence/LocalRepositories';
 import { SafeKeyValueStore } from '../../infrastructure/persistence/LocalStorageStore';
+import {
+  CuratedPuzzleProvider,
+  type PuzzleProvider,
+} from '../../infrastructure/puzzles/PuzzleProvider';
 
 export interface CurioServices {
   readonly mode: 'firebase' | 'local';
@@ -68,6 +72,7 @@ export interface CurioServices {
   readonly updatePreferences: UpdatePreferencesUseCase;
   readonly resetPersonalization: ResetPersonalizationUseCase;
   readonly contentRepository: ContentRepository;
+  readonly puzzleProvider: PuzzleProvider;
 }
 
 export function buildCurioServices(options?: {
@@ -76,6 +81,7 @@ export function buildCurioServices(options?: {
 }): CurioServices {
   const runtime = options?.forceLocalStore ? null : getFirebaseRuntime();
   const useFirebase = Boolean(runtime && options?.useCloudFirestore !== false);
+  const localStore = options?.forceLocalStore ?? new SafeKeyValueStore('curio_v1', true);
 
   let contentRepository: ContentRepository;
   let sessionRepository: SessionRepository;
@@ -92,13 +98,12 @@ export function buildCurioServices(options?: {
     savedLibraryRepository = new FirestoreSavedLibraryRepository(runtime.firestore);
     visualAssetRepository = new FirestoreVisualAssetRepository(runtime.firestore);
   } else {
-    const store = options?.forceLocalStore ?? new SafeKeyValueStore('curio_v1', true);
-    contentRepository = new LocalContentRepository(store);
-    sessionRepository = new LocalSessionRepository(store);
-    preferencesRepository = new LocalUserRepository(store);
-    interactionRepository = new LocalInteractionRepository(store);
-    savedLibraryRepository = new LocalSavedLibraryRepository(store);
-    visualAssetRepository = new LocalVisualAssetRepository(store);
+    contentRepository = new LocalContentRepository(localStore);
+    sessionRepository = new LocalSessionRepository(localStore);
+    preferencesRepository = new LocalUserRepository(localStore);
+    interactionRepository = new LocalInteractionRepository(localStore);
+    savedLibraryRepository = new LocalSavedLibraryRepository(localStore);
+    visualAssetRepository = new LocalVisualAssetRepository(localStore);
   }
 
   const aiProvider: AIEnrichmentProvider =
@@ -127,6 +132,7 @@ export function buildCurioServices(options?: {
   });
 
   const feedExecutor = new OnDemandFeedExecutor(orchestrator);
+  const puzzleProvider: PuzzleProvider = new CuratedPuzzleProvider(localStore);
 
   return {
     mode: useFirebase ? 'firebase' : 'local',
@@ -155,5 +161,6 @@ export function buildCurioServices(options?: {
       interactionRepository
     ),
     contentRepository,
+    puzzleProvider,
   };
 }

@@ -6,6 +6,7 @@ import { HomePage } from '../../features/home/HomePage';
 import { LibraryPage } from '../../features/library/LibraryPage';
 import { OnboardingPage } from '../../features/onboarding/OnboardingPage';
 import { ProfilePage } from '../../features/profile/ProfilePage';
+import { PuzzlesPage } from '../../features/puzzles/PuzzlesPage';
 
 /**
  * Starts directly on the Home editorial screen without a hard onboarding redirect wall.
@@ -18,6 +19,7 @@ export function AppRoutes() {
       <Route path="/onboarding" element={<OnboardingPage />} />
       <Route element={<AppShell />}>
         <Route path="/" element={<HomePage />} />
+        <Route path="/puzzles" element={<PuzzlesPage />} />
         <Route path="/session/:sessionId" element={<SessionPage />} />
         <Route path="/explore" element={<ExplorePage />} />
         <Route path="/library" element={<LibraryPage />} />

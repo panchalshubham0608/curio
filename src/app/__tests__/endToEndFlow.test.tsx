@@ -65,27 +65,20 @@ describe('Project Curio Phase 1 end-to-end user journeys', () => {
     await user.type(screen.getByLabelText(/What should Curio call you/i), 'Sam');
     await user.click(screen.getByRole('button', { name: /Choose visual interests/i }));
 
-    // Step 2: Visual Interest Gallery
+    // Step 2: Visual Interest Gallery -> straight to Discovery Vibe (Step 3 of 3)
     expect(
       screen.getByRole('heading', { name: /What sparks your curiosity\?/i })
     ).toBeInTheDocument();
     await user.click(screen.getByRole('button', { name: /Travel & Food/i }));
-    await user.click(screen.getByRole('button', { name: /Fine-tune topics/i }));
-
-    // Step 3: Sub-topics
-    expect(
-      screen.getByRole('heading', { name: /Pick favorite threads/i })
-    ).toBeInTheDocument();
-    await user.click(screen.getByRole('button', { name: /^space$/i }));
     await user.click(screen.getByRole('button', { name: /Pick your discovery vibe/i }));
 
-    // Step 4: Discovery Vibe + Live Reader Pass Preview (no minute-duration selectors)
+    // Step 3: Discovery Vibe + Live Reader Pass Preview (no minute-duration selectors)
     expect(
       screen.getByRole('heading', { name: /Choose your favorite feed vibe/i })
     ).toBeInTheDocument();
     expect(screen.queryByRole('button', { name: /5 minutes/i })).not.toBeInTheDocument();
     expect(screen.getByText('Sam')).toBeInTheDocument();
-    expect(screen.getByText(/Curio Reader Pass/i)).toBeInTheDocument();
+    expect(screen.queryByText(/Curio Reader Pass/i)).not.toBeInTheDocument();
 
     // Launch first personalized swipe deck straight from the Reader Pass reveal
     await user.click(screen.getByRole('button', { name: /Start discovering/i }));

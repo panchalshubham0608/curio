@@ -1,10 +1,11 @@
-import type { ReactNode } from 'react';
+import { useEffect, type ReactNode } from 'react';
 import { X } from 'lucide-react';
 
 interface ModalDialogProps {
   open: boolean;
   title: string;
   onClose: () => void;
+  maxWidth?: number;
   children: ReactNode;
 }
 
@@ -13,7 +14,22 @@ interface ModalDialogProps {
  * on mobile phones and a centered modal on larger screens.
  * Replaces browser-blocking alert()/confirm()/prompt().
  */
-export function ModalDialog({ open, title, onClose, children }: ModalDialogProps) {
+export function ModalDialog({
+  open,
+  title,
+  onClose,
+  maxWidth,
+  children,
+}: ModalDialogProps) {
+  useEffect(() => {
+    if (!open) return;
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [open, onClose]);
+
   if (!open) return null;
 
   return (
@@ -26,7 +42,10 @@ export function ModalDialog({ open, title, onClose, children }: ModalDialogProps
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="curio-modal stack-md">
+      <div
+        className="curio-modal stack-md"
+        style={maxWidth ? { maxWidth } : undefined}
+      >
         <div className="sheet-handle" aria-hidden="true" />
         <div className="row-between">
           <h2 id="curio-modal-title" style={{ fontSize: '1.22rem' }}>

@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
   ArrowLeft,
@@ -8,47 +8,20 @@ import {
   X,
 } from 'lucide-react';
 import { useCurioApp } from '../../app/providers/appContext';
-import { normalizeTopicList } from '../../domain/user/UserPreferences';
 import { getFriendlyErrorMessage } from '../../shared/errors/firebaseErrorMapper';
 import {
   CATEGORY_METADATA,
-  CONTENT_CATEGORIES,
   type ContentCategory,
   type ContentMix,
 } from '../../shared/validation/contentSchemas';
 import { GoogleSignInButton } from '../auth/GoogleSignInButton';
-
-const MIX_OPTIONS: ReadonlyArray<{
-  id: ContentMix;
-  title: string;
-  subtitle: string;
-  bars: number[];
-}> = [
-  {
-    id: 'quick',
-    title: 'Quick Sparks',
-    subtitle: 'Crisp bite-sized facts, tap-to-reveal twists, and playful quizzes.',
-    bars: [9, 12, 10, 14, 11],
-  },
-  {
-    id: 'balanced',
-    title: 'Balanced Mix',
-    subtitle: 'A magazine blend of quick insights, visual timelines, and short stories.',
-    bars: [10, 18, 13, 22, 14],
-  },
-  {
-    id: 'deeper',
-    title: 'Deep Cuts',
-    subtitle: 'Rich historical narratives, structured comparisons, and mental models.',
-    bars: [16, 22, 20, 24, 19],
-  },
-];
-
-const QUICK_EXCLUSIONS = ['politics', 'celebrity gossip', 'crypto', 'sports'];
+import { DiscoveryVibePicker } from '../preferences/components/DiscoveryVibePicker';
+import { InterestGalleryPicker } from '../preferences/components/InterestGalleryPicker';
+import { getDiscoveryVibeTitle } from '../preferences/discoveryVibeOptions';
 
 /**
- * Interactive 4-step Profile & Interest Creation Journey with visual category photography,
- * spring micro-animations, dynamic sub-topic discovery pills, and live Reader Pass reveal.
+ * Interactive 3-step Profile & Interest Creation Journey with visual category photography,
+ * spring micro-animations, discovery vibe selection, and live preview card.
  */
 export function OnboardingPage() {
   const {
@@ -62,7 +35,7 @@ export function OnboardingPage() {
   } = useCurioApp();
   const navigate = useNavigate();
 
-  const [step, setStep] = useState<1 | 2 | 3 | 4>(1);
+  const [step, setStep] = useState<1 | 2 | 3>(1);
   const [guestOptedIn, setGuestOptedIn] = useState<boolean>(false);
   const [displayName, setDisplayName] = useState(
     preferences?.displayName ?? authUser?.displayName?.split(/\s+/)[0] ?? ''
@@ -70,17 +43,9 @@ export function OnboardingPage() {
   const [selectedInterests, setSelectedInterests] = useState<ContentCategory[]>(
     preferences?.interests ?? ['science', 'technology', 'facts', 'history']
   );
-  const [selectedSubTopics, setSelectedSubTopics] = useState<string[]>(
-    preferences?.topicKeywords ?? []
-  );
-  const [customKeywordsText, setCustomKeywordsText] = useState('');
-  const [excludedTopics, setExcludedTopics] = useState<string[]>(
-    preferences?.excludedTopics ?? []
-  );
   const [preferredMix, setPreferredMix] = useState<ContentMix>(
     preferences?.preferredMix ?? 'balanced'
   );
-  const [saving, setSaving] = useState(false);
   const [launchingFirst, setLaunchingFirst] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
@@ -90,41 +55,11 @@ export function OnboardingPage() {
   const googleFirstName = authUser?.displayName?.split(/\s+/)[0] ?? '';
   const displayedNameInput = displayName || (isSignedIn ? googleFirstName : '');
 
-  const availableSubTopics = useMemo(() => {
-    const topics: Array<{ topic: string; category: ContentCategory }> = [];
-    const seen = new Set<string>();
-    for (const cat of selectedInterests) {
-      for (const topic of CATEGORY_METADATA[cat].suggestedTopics) {
-        if (!seen.has(topic)) {
-          seen.add(topic);
-          topics.push({ topic, category: cat });
-        }
-      }
-    }
-    return topics;
-  }, [selectedInterests]);
-
   const toggleInterest = (category: ContentCategory) => {
     setSelectedInterests((prev) =>
       prev.includes(category)
         ? prev.filter((item) => item !== category)
         : [...prev, category]
-    );
-  };
-
-  const toggleSubTopic = (topic: string) => {
-    setSelectedSubTopics((prev) =>
-      prev.includes(topic)
-        ? prev.filter((item) => item !== topic)
-        : [...prev, topic]
-    );
-  };
-
-  const toggleExclusion = (topic: string) => {
-    setExcludedTopics((prev) =>
-      prev.includes(topic)
-        ? prev.filter((item) => item !== topic)
-        : [...prev, topic]
     );
   };
 
@@ -135,33 +70,14 @@ export function OnboardingPage() {
       return null;
     }
 
-    const mergedKeywords = Array.from(
-      new Set([...selectedSubTopics, ...normalizeTopicList(customKeywordsText)])
-    ).slice(0, 30);
-
     const updated = await services.updatePreferences.execute(userId, {
       displayName: displayedNameInput.trim() || undefined,
       interests: selectedInterests,
-      topicKeywords: mergedKeywords,
-      excludedTopics,
       preferredMix,
       onboardingCompleted: true,
     });
     setPreferencesState(updated);
     return updated;
-  };
-
-  const handleSaveAndGoHome = async () => {
-    setSaving(true);
-    setErrorMsg(null);
-    try {
-      const saved = await persistProfile();
-      if (saved) navigate('/', { replace: true });
-    } catch (error: unknown) {
-      setErrorMsg(getFriendlyErrorMessage(error, 'firestore'));
-    } finally {
-      setSaving(false);
-    }
   };
 
   const handleSaveAndLaunchSession = async () => {
@@ -188,26 +104,36 @@ export function OnboardingPage() {
     }
   };
 
-  const progressPercent = (step / 4) * 100;
+  const progressPercent = (step / 3) * 100;
   const effectiveName = displayedNameInput.trim() || 'Curious Reader';
-  const activeMixLabel =
-    MIX_OPTIONS.find((option) => option.id === preferredMix)?.title ?? 'Balanced Mix';
+  const activeMixLabel = getDiscoveryVibeTitle(preferredMix);
 
   return (
     <div className="journey-shell">
       <header className="journey-header">
-        <Link to="/" className="curio-brand" aria-label="Curio Home">
-          <img
-            src="/curio-icon.svg"
-            alt=""
-            className="curio-brand-mark"
-            width={28}
-            height={28}
-          />
-          <span className="curio-brand-title">Curio</span>
-        </Link>
+        {step > 1 ? (
+          <button
+            type="button"
+            className="curio-btn curio-btn--ghost curio-btn--sm"
+            onClick={() => setStep((prev) => (prev - 1) as 1 | 2 | 3)}
+          >
+            <ArrowLeft size={16} aria-hidden="true" />
+            <span>Back</span>
+          </button>
+        ) : (
+          <Link to="/" className="curio-brand" aria-label="Curio Home">
+            <img
+              src="/curio-icon.svg"
+              alt=""
+              className="curio-brand-mark"
+              width={28}
+              height={28}
+            />
+            <span className="curio-brand-title">Curio</span>
+          </Link>
+        )}
 
-        <span className="mono-meta">Step {step} of 4</span>
+        <span className="mono-meta">Step {step} of 3</span>
 
         <Link to="/" className="curio-btn curio-btn--ghost curio-btn--sm">
           <X size={15} />
@@ -220,7 +146,7 @@ export function OnboardingPage() {
         role="progressbar"
         aria-valuenow={step}
         aria-valuemin={1}
-        aria-valuemax={4}
+        aria-valuemax={3}
       >
         <div className="journey-rail-fill" style={{ width: `${progressPercent}%` }} />
       </div>
@@ -304,8 +230,8 @@ export function OnboardingPage() {
                   </div>
                 )}
 
-                <div className="row-between" style={{ paddingTop: 4 }}>
-                  {!guestOptedIn ? (
+                <div className="journey-step-actions" style={{ paddingTop: 4 }}>
+                  {!guestOptedIn && (
                     <button
                       type="button"
                       className="curio-btn curio-btn--ghost"
@@ -313,20 +239,16 @@ export function OnboardingPage() {
                     >
                       Continue without signing in
                     </button>
-                  ) : (
-                    <Link to="/" className="curio-btn curio-btn--ghost">
-                      Back to Home
-                    </Link>
                   )}
 
                   {canPersonalizeName && (
                     <button
                       type="button"
-                      className="curio-btn curio-btn--primary"
+                      className="curio-btn curio-btn--accent journey-dock-next"
                       onClick={() => setStep(2)}
                     >
-                      Choose visual interests
-                      <ArrowRight size={16} />
+                      <span>Choose visual interests</span>
+                      <ArrowRight size={16} className="btn-arrow" aria-hidden="true" />
                     </button>
                   )}
                 </div>
@@ -375,17 +297,14 @@ export function OnboardingPage() {
                   />
                 </div>
 
-                <div className="row-between" style={{ paddingTop: 4 }}>
-                  <Link to="/" className="curio-btn curio-btn--ghost">
-                    Skip for now
-                  </Link>
+                <div className="journey-step-actions" style={{ paddingTop: 4 }}>
                   <button
                     type="button"
-                    className="curio-btn curio-btn--primary"
+                    className="curio-btn curio-btn--accent journey-dock-next"
                     onClick={() => setStep(2)}
                   >
-                    Choose visual interests
-                    <ArrowRight size={16} />
+                    <span>Choose visual interests</span>
+                    <ArrowRight size={16} className="btn-arrow" aria-hidden="true" />
                   </button>
                 </div>
               </div>
@@ -403,54 +322,20 @@ export function OnboardingPage() {
               </h1>
               <p className="text-secondary">
                 Tap the worlds you love exploring. Curio blends your picks with occasional
-                surprising detours so sessions never feel stale.
+                surprising detours so your feed always feels fresh.
               </p>
             </div>
 
-            <div className="interest-grid">
-              {CONTENT_CATEGORIES.map((categoryId, idx) => {
-                const meta = CATEGORY_METADATA[categoryId];
-                const isSelected = selectedInterests.includes(categoryId);
-                return (
-                  <button
-                    key={categoryId}
-                    type="button"
-                    aria-pressed={isSelected}
-                    className={`interest-tile ${isSelected ? 'interest-tile--selected' : ''}`}
-                    style={{ animationDelay: `${idx * 45}ms` }}
-                    onClick={() => toggleInterest(categoryId)}
-                  >
-                    <img src={meta.coverImage} alt="" loading="lazy" />
-                    <div className="interest-tile-scrim">
-                      <span className="interest-check-badge" aria-hidden="true">
-                        {isSelected ? <Check size={15} strokeWidth={3} /> : null}
-                      </span>
-                      <div className="stack-xs" style={{ gap: 3 }}>
-                        <strong style={{ fontFamily: 'var(--font-serif)', fontSize: '1.08rem' }}>
-                          {meta.shortLabel}
-                        </strong>
-                        <span
-                          className="interest-tile-desc"
-                          style={{
-                            fontSize: '0.79rem',
-                            color: 'rgba(250, 248, 244, 0.84)',
-                            lineHeight: 1.32,
-                          }}
-                        >
-                          {meta.description}
-                        </span>
-                      </div>
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
+            <InterestGalleryPicker
+              selectedInterests={selectedInterests}
+              onToggle={toggleInterest}
+            />
 
-            {/* Live Curiosity Palette Bar (sticks to bottom thumb zone on mobile) */}
-            <div className="curio-card curio-card--padded row-between journey-sticky-footer" style={{ padding: '14px 18px' }}>
-              <div className="row-wrap" style={{ gap: 12 }}>
+            {/* Live Curiosity Palette Dock (sticks to bottom thumb zone on mobile) */}
+            <div className="curio-card journey-sticky-footer journey-dock">
+              <div className="journey-dock-summary">
                 <div className="palette-tray" aria-hidden="true">
-                  {selectedInterests.slice(0, 6).map((cat) => (
+                  {selectedInterests.slice(0, 5).map((cat) => (
                     <img
                       key={cat}
                       src={CATEGORY_METADATA[cat].coverImage}
@@ -459,196 +344,57 @@ export function OnboardingPage() {
                     />
                   ))}
                 </div>
-                <div className="stack-xs" style={{ gap: 2 }}>
-                  <strong style={{ fontSize: '0.92rem' }}>
+                <div className="journey-dock-meta">
+                  <strong>
                     {selectedInterests.length} theme{selectedInterests.length === 1 ? '' : 's'}{' '}
                     selected
                   </strong>
                   <span className="mono-meta">
                     {selectedInterests.length >= 3
-                      ? 'Great variety for balanced editions'
-                      : 'Pick 3+ for maximum variety'}
+                      ? 'Good selection — great variety'
+                      : 'Pick 3+ for more variety'}
                   </span>
                 </div>
               </div>
 
-              <div className="row-wrap">
+              <div className="journey-dock-actions">
                 <button
                   type="button"
-                  className="curio-btn curio-btn--ghost"
-                  onClick={() => setStep(1)}
-                >
-                  <ArrowLeft size={16} />
-                  Back
-                </button>
-                <button
-                  type="button"
-                  className="curio-btn curio-btn--primary"
+                  className="curio-btn curio-btn--accent journey-dock-next"
                   disabled={selectedInterests.length === 0}
                   onClick={() => {
                     setErrorMsg(null);
                     setStep(3);
                   }}
                 >
-                  Fine-tune topics
-                  <ArrowRight size={16} />
+                  <span>Pick your discovery vibe</span>
+                  <ArrowRight size={16} className="btn-arrow" aria-hidden="true" />
                 </button>
               </div>
             </div>
           </section>
         )}
 
-        {/* STEP 3: Interactive Sub-Topic Chips & Exclusions */}
+        {/* STEP 3: Discovery Vibe + Live Preview */}
         {step === 3 && (
-          <section key="step-3" className="curio-card curio-card--padded stack-lg journey-panel">
-            <div className="stack-xs">
-              <span className="curio-eyebrow">Step 3 · Fine-Tune Your Curiosity</span>
-              <h1 style={{ fontSize: 'clamp(1.65rem, 3.8vw, 2.2rem)' }}>
-                Pick favorite threads (optional)
-              </h1>
-              <p className="text-secondary">
-                Tap specific topics from your chosen themes to boost them higher in your editions.
-              </p>
-            </div>
-
-            <div className="row-wrap" style={{ gap: 9 }}>
-              {availableSubTopics.map(({ topic }) => {
-                const active = selectedSubTopics.includes(topic);
-                return (
-                  <button
-                    key={topic}
-                    type="button"
-                    aria-pressed={active}
-                    className={`curio-chip curio-chip--selectable ${
-                      active ? 'curio-chip--selected' : ''
-                    }`}
-                    onClick={() => toggleSubTopic(topic)}
-                  >
-                    {active && <Check size={13} aria-hidden="true" />}
-                    <span>{topic}</span>
-                  </button>
-                );
-              })}
-            </div>
-
-            <div className="stack-xs">
-              <label htmlFor="journey-custom-kw" style={{ fontWeight: 600, fontSize: '0.92rem' }}>
-                Add your own keywords (comma-separated)
-              </label>
-              <input
-                id="journey-custom-kw"
-                type="text"
-                className="curio-input"
-                placeholder="e.g., typography, deep sea, linguistics, urbanism"
-                value={customKeywordsText}
-                onChange={(e) => setCustomKeywordsText(e.target.value)}
-              />
-            </div>
-
-            <div className="stack-xs">
-              <span style={{ fontWeight: 600, fontSize: '0.92rem' }}>
-                Anything you’d rather skip?
-              </span>
-              <div className="row-wrap">
-                {QUICK_EXCLUSIONS.map((term) => {
-                  const active = excludedTopics.includes(term);
-                  return (
-                    <button
-                      key={term}
-                      type="button"
-                      aria-pressed={active}
-                      className={`curio-chip curio-chip--selectable ${
-                        active ? 'curio-chip--selected' : ''
-                      }`}
-                      onClick={() => toggleExclusion(term)}
-                    >
-                      {active ? `Excluded: ${term}` : `Hide ${term}`}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            <div className="row-between">
-              <button
-                type="button"
-                className="curio-btn curio-btn--ghost"
-                onClick={() => setStep(2)}
-              >
-                <ArrowLeft size={16} />
-                Back
-              </button>
-              <button
-                type="button"
-                className="curio-btn curio-btn--primary"
-                onClick={() => setStep(4)}
-              >
-                Pick your discovery vibe
-                <ArrowRight size={16} />
-              </button>
-            </div>
-          </section>
-        )}
-
-        {/* STEP 4: Discovery Vibe + Live Reader Pass Reveal */}
-        {step === 4 && (
-          <section key="step-4" className="stack-lg journey-panel">
+          <section key="step-3" className="stack-lg journey-panel">
             <div className="curio-card curio-card--padded stack-md">
               <div className="stack-xs">
-                <span className="curio-eyebrow">Step 4 · Discovery Vibe</span>
+                <span className="curio-eyebrow">Step 3 · Discovery Vibe</span>
                 <h1 style={{ fontSize: 'clamp(1.65rem, 3.8vw, 2.2rem)' }}>
                   Choose your favorite feed vibe
                 </h1>
                 <p className="text-secondary">
-                  Pick the kind of discoveries you reach for most often. You can switch vibes
-                  anytime right on Home.
+                  Pick the kind of discoveries you reach for most often. You can update this
+                  anytime in Profile.
                 </p>
               </div>
 
-              <div
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-                  gap: 12,
-                }}
-              >
-                {MIX_OPTIONS.map((option) => {
-                  const active = preferredMix === option.id;
-                  return (
-                    <button
-                      key={option.id}
-                      type="button"
-                      aria-pressed={active}
-                      className={`entry-card ${active ? 'entry-card--active' : ''}`}
-                      style={{
-                        borderColor: active ? 'var(--accent-primary)' : undefined,
-                        background: active ? 'var(--accent-primary-soft)' : undefined,
-                      }}
-                      onClick={() => setPreferredMix(option.id)}
-                    >
-                      <div className="row-between" style={{ width: '100%' }}>
-                        <strong>{option.title}</strong>
-                        <div className="cadence-bars" aria-hidden="true">
-                          {option.bars.map((height, bIdx) => (
-                            <span
-                              key={bIdx}
-                              className="cadence-bar"
-                              style={{ height }}
-                            />
-                          ))}
-                        </div>
-                      </div>
-                      <span className="text-secondary" style={{ fontSize: '0.86rem' }}>
-                        {option.subtitle}
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
+              <DiscoveryVibePicker value={preferredMix} onChange={setPreferredMix} />
             </div>
 
             {/* Live Editorial Reader Pass Preview */}
-            <aside className="reader-pass" aria-label="Your personalized reader pass">
+            <aside className="reader-pass" aria-label="Your personalized feed preview">
               <div className="row-between">
                 <div className="row-wrap" style={{ gap: 10 }}>
                   <img
@@ -658,17 +404,9 @@ export function OnboardingPage() {
                     height={32}
                     style={{ borderRadius: 8 }}
                   />
-                  <div className="stack-xs" style={{ gap: 2 }}>
-                    <span
-                      className="curio-eyebrow"
-                      style={{ color: 'rgba(250, 248, 244, 0.72)' }}
-                    >
-                      Curio Reader Pass
-                    </span>
-                    <strong style={{ fontFamily: 'var(--font-serif)', fontSize: '1.35rem' }}>
-                      {effectiveName}
-                    </strong>
-                  </div>
+                  <strong style={{ fontFamily: 'var(--font-serif)', fontSize: '1.35rem' }}>
+                    {effectiveName}
+                  </strong>
                 </div>
                 <span
                   className="curio-chip"
@@ -702,35 +440,16 @@ export function OnboardingPage() {
               </div>
             </aside>
 
-            <div className="row-between">
+            <div className="journey-step-actions">
               <button
                 type="button"
-                className="curio-btn curio-btn--ghost"
-                onClick={() => setStep(3)}
+                className="curio-btn curio-btn--accent journey-dock-next"
+                disabled={launchingFirst}
+                onClick={() => void handleSaveAndLaunchSession()}
               >
-                <ArrowLeft size={16} />
-                Back
+                <span>{launchingFirst ? 'Curating…' : 'Start discovering'}</span>
+                <ArrowRight size={16} className="btn-arrow" aria-hidden="true" />
               </button>
-
-              <div className="row-wrap" style={{ gap: 10 }}>
-                <button
-                  type="button"
-                  className="curio-btn curio-btn--secondary"
-                  disabled={saving || launchingFirst}
-                  onClick={() => void handleSaveAndGoHome()}
-                >
-                  {saving ? 'Saving…' : 'Go to Home feed'}
-                </button>
-                <button
-                  type="button"
-                  className="curio-btn curio-btn--accent"
-                  disabled={saving || launchingFirst}
-                  onClick={() => void handleSaveAndLaunchSession()}
-                >
-                  {launchingFirst ? 'Curating your first mix…' : 'Start discovering'}
-                  <ArrowRight size={16} />
-                </button>
-              </div>
             </div>
           </section>
         )}
