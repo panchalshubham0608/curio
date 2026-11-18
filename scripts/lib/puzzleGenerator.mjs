@@ -361,14 +361,18 @@ export function buildPuzzlesPrompt({ kinds, batchSize, recentTitles = [] }) {
     '- Return strictly valid JSON only: { "puzzles": [ ... ] }',
     '- NEVER return HTML tags, raw <svg> markup, JavaScript code, Markdown formatting, or external URLs.',
     '- Every puzzle must be 100% logically verifiable and unambiguous.',
+    '- Verify all clues, math, and grid solutions internally BEFORE writing JSON. Never write scratchpad thinking or self-corrections (like "Wait:" or "That contradicts") inside explanation.',
+    '- Keep explanation crisp, factual, and 1 to 2 sentences.',
+    'REQUIRED top-level JSON fields for EVERY puzzle object:',
+    '  { "kind": string, "title": string (3-90 chars), "category": string, "difficulty": "Warm-up"|"Clever"|"Tricky", "prompt": string (the puzzle question/instructions, 8-420 chars), "hint": string (optional short nudge), "explanation": string (1-2 crisp factual sentences) }',
     'Kind specifications:',
-    '1. "odd_one_out": 4 concise options where 3 share a clear factual property and 1 breaks it.',
-    '2. "lateral_riddle": witty short riddle with 3-4 options + correctIndex.',
-    '3. "pattern_sequence": include "sequenceItems" (4-6 short tokens ending with "?") and 4 options + correctIndex.',
-    '4. "true_or_myth" (Fact Check): surprising verifiable claim with 2 options ["True — Real Fact", "Myth — False"] + correctIndex.',
-    '5. "logic_reasoning": deductive mini-mystery with "clues" (3-4 short numbered clue sentences) and 4 options + correctIndex.',
+    '1. "odd_one_out": 4 concise options where 3 share a clear factual property and 1 breaks it. Include "options" and "correctIndex".',
+    '2. "lateral_riddle": witty short riddle with "options" (3-4) and "correctIndex".',
+    '3. "pattern_sequence": include "sequenceItems" (4-6 short tokens ending with "?") plus "options" (4) and "correctIndex".',
+    '4. "true_or_myth" (Fact Check): surprising verifiable claim with "options": ["True — Real Fact", "Myth — False"] and "correctIndex".',
+    '5. "logic_reasoning": deductive mini-mystery with "clues" (3-4 short numbered clue sentences) plus "options" (4) and "correctIndex".',
     '6. "order_sequence": ranking/chronology puzzle with "orderItems" (4 shuffled strings) and "correctOrder" (array of 0-based indices from 1st to 4th; omit options/correctIndex).',
-    '7. "visual_diagram": geometric/spatial visual puzzle with declarative "svgDiagram": { "caption": string, "background": "#FAF8F4", "shapes": Array<rect|circle|line|polygon|text> } inside a 320x200 canvas using ONLY 6-digit hex colors (e.g. "#C84B31", "#3B4F75", "#2D6A4F") plus 4 options + correctIndex.',
+    '7. "visual_diagram": geometric/spatial visual puzzle with declarative "svgDiagram": { "caption": string, "background": "#FAF8F4", "shapes": Array<rect|circle|line|polygon|text> } inside a 320x200 canvas using ONLY 6-digit hex colors (e.g. "#C84B31", "#3B4F75", "#2D6A4F") plus "options" (4) and "correctIndex".',
     '   Allowed shapes: {"shape":"rect","x":N,"y":N,"width":N,"height":N,"rx"?:N,"fill"?:HEX,"stroke"?:HEX,"strokeWidth"?:N}, {"shape":"circle","cx":N,"cy":N,"r":N,...}, {"shape":"line","x1":N,"y1":N,"x2":N,"y2":N,"stroke"?:HEX,"strokeWidth"?:N}, {"shape":"polygon","points":[[x,y],...],"fill"?:HEX,"stroke"?:HEX}, {"shape":"text","x":N,"y":N,"text":"short","fontSize":14,"fill":HEX,"anchor":"middle"}.',
     '8. "interactive_grid": playable live grid puzzle (omit options/correctIndex) with "gridPuzzle": { "mode": "target_sum"|"select_cells"|"lights_out", "rows": 3, "cols": 3, "instruction": string, "cells": [{"label": string, "value"?: number, "initialOn": boolean}], "targetSum"?: number, "exactCount"?: number, "goalState"?: "all_on"|"all_off", "solutionIndices"?: number[] }.',
     '   Ensure target_sum has at least one valid combination of exactCount cells summing to targetSum, and lights_out is solvable in 2-4 taps.',
@@ -381,6 +385,8 @@ export function buildPuzzlesPrompt({ kinds, batchSize, recentTitles = [] }) {
     .filter(Boolean)
     .join('\n');
 }
+
+const SCRATCHPAD_CONTRADICTION_REGEX = /\b(?:wait:|that contradicts|contradiction|let's re-?verify|actually,\s*let's|oops)\b/i;
 
 /**
  * Validates and sanitizes raw Gemini puzzle output into strict Curio Puzzle objects.
@@ -398,11 +404,13 @@ export function validateAndNormalizeGeneratedPuzzles(
         : [];
 
   const puzzles = [];
+  const rejectionReasons = [];
   let rejectedCount = 0;
 
   for (const rawItem of rawList) {
     if (!rawItem || typeof rawItem !== 'object') {
       rejectedCount += 1;
+      rejectionReasons.push('non-object item');
       continue;
     }
 
@@ -419,8 +427,13 @@ export function validateAndNormalizeGeneratedPuzzles(
         ? rawItem.sequenceItems.map((tok) => sanitizeText(tok, 32)).filter(Boolean).slice(0, 7)
         : undefined;
 
-    const sanitizedOrderItems = Array.isArray(rawItem.orderItems)
-      ? rawItem.orderItems.map((entry) => sanitizeText(entry, 120)).filter(Boolean).slice(0, 5)
+    const rawOrderList = Array.isArray(rawItem.orderItems)
+      ? rawItem.orderItems
+      : Array.isArray(rawItem.items)
+        ? rawItem.items
+        : undefined;
+    const sanitizedOrderItems = rawOrderList
+      ? rawOrderList.map((entry) => sanitizeText(entry, 120)).filter(Boolean).slice(0, 5)
       : undefined;
 
     const sanitizedCorrectOrder = Array.isArray(rawItem.correctOrder)
@@ -430,12 +443,22 @@ export function validateAndNormalizeGeneratedPuzzles(
     const isInteractiveBoard =
       rawItem.kind === 'order_sequence' || rawItem.kind === 'interactive_grid';
 
+    const rawPromptText =
+      typeof rawItem.prompt === 'string' && rawItem.prompt.trim()
+        ? rawItem.prompt
+        : typeof rawItem.question === 'string'
+          ? rawItem.question
+          : '';
+
+    const rawCorrectIndex =
+      rawItem.correctIndex ?? rawItem.correctOptionIndex ?? rawItem.answerIndex;
+
     const candidate = {
       kind: rawItem.kind,
       title: sanitizeText(rawItem.title, 90),
       category: CONTENT_CATEGORIES.includes(rawItem.category) ? rawItem.category : 'facts',
       difficulty: PUZZLE_DIFFICULTIES.includes(rawItem.difficulty) ? rawItem.difficulty : 'Clever',
-      prompt: sanitizeText(rawItem.prompt, 420),
+      prompt: sanitizeText(rawPromptText, 420),
       clues: rawItem.kind === 'logic_reasoning' ? sanitizedClues : undefined,
       sequenceItems: rawItem.kind === 'pattern_sequence' ? sanitizedSequence : undefined,
       orderItems: rawItem.kind === 'order_sequence' ? sanitizedOrderItems : undefined,
@@ -451,8 +474,8 @@ export function validateAndNormalizeGeneratedPuzzles(
       hint: rawItem.hint ? sanitizeText(rawItem.hint, 220) : undefined,
       options: !isInteractiveBoard ? sanitizedOptions : undefined,
       correctIndex:
-        !isInteractiveBoard && rawItem.correctIndex !== undefined
-          ? Number(rawItem.correctIndex)
+        !isInteractiveBoard && rawCorrectIndex !== undefined
+          ? Number(rawCorrectIndex)
           : undefined,
       explanation: sanitizeText(rawItem.explanation, 480),
     };
@@ -460,6 +483,16 @@ export function validateAndNormalizeGeneratedPuzzles(
     const parsed = RawGeneratedPuzzleSchema.safeParse(candidate);
     if (!parsed.success) {
       rejectedCount += 1;
+      const issueSummary = parsed.error.issues
+        .slice(0, 2)
+        .map((iss) => `${iss.path.join('.') || 'root'}: ${iss.message}`)
+        .join('; ');
+      rejectionReasons.push(`${String(rawItem.kind || 'unknown')} (${issueSummary})`);
+      continue;
+    }
+    if (SCRATCHPAD_CONTRADICTION_REGEX.test(parsed.data.explanation)) {
+      rejectedCount += 1;
+      rejectionReasons.push(`${parsed.data.kind} (scratchpad contradiction in explanation)`);
       continue;
     }
 
@@ -492,7 +525,7 @@ export function validateAndNormalizeGeneratedPuzzles(
     });
   }
 
-  return { puzzles, rejectedCount };
+  return { puzzles, rejectedCount, rejectionReasons };
 }
 
 /**
@@ -502,7 +535,7 @@ export function validateAndNormalizeGeneratedPuzzles(
 export function mergeGeneratedPuzzles(
   existingEnvelope,
   newPuzzles,
-  { maxItems = 48, nowIso = new Date().toISOString(), modelName = 'gemini-2.5-flash' } = {}
+  { maxItems = 48, nowIso = new Date().toISOString(), modelName = 'gemini-flash-latest' } = {}
 ) {
   const existingItems = Array.isArray(existingEnvelope?.items) ? existingEnvelope.items : [];
   const seenIds = new Set();

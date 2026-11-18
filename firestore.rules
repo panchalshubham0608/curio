@@ -77,10 +77,10 @@ service cloud.firestore {
       }
     }
 
-    // Shared normalized & cached content pool
-    // TODO(security): In Phase 2, restrict writes on /content and /visualAssets to server-side workers only.
+    // Shared normalized & AI-generated content pool.
+    // Readable by both guests and signed-in readers; scheduled GitHub Actions publish via Firebase Admin SDK.
     match /content/{contentId} {
-      allow read: if isSignedIn();
+      allow read: if true;
       allow create, update: if isSignedIn()
         && request.resource.data.schemaVersion == 1
         && request.resource.data.title is string
@@ -88,6 +88,12 @@ service cloud.firestore {
         && request.resource.data.title.size() <= 240
         && request.resource.data.qualityStatus in ['unreviewed', 'approved', 'rejected'];
       allow delete: if false;
+    }
+
+    // Shared AI-generated puzzle catalog — public read, server-side Firebase Admin SDK writes only
+    match /puzzles/{puzzleId} {
+      allow read: if true;
+      allow write: if false;
     }
 
     // Shared visual asset attribution cache

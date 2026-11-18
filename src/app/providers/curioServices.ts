@@ -123,6 +123,7 @@ export function buildCurioServices(options?: {
     options?.contentProvider ??
     new CompositeContentProvider([
       new GeneratedFeedProvider({
+        firestore: runtime?.firestore ?? null,
         enableRemoteGenerated: !options?.forceLocalStore,
       }),
       new NasaContentProvider(liveDiscoveryEnabled),
@@ -146,6 +147,7 @@ export function buildCurioServices(options?: {
   const puzzleProvider: PuzzleProvider =
     options?.puzzleProvider ??
     new GeneratedPuzzleProvider(localStore, {
+      firestore: runtime?.firestore ?? null,
       enableRemoteGenerated: !options?.forceLocalStore,
     });
 

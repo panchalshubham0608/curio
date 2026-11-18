@@ -469,7 +469,7 @@ export function validateAndNormalizeGeneratedBatch(rawPayload, nowIso = new Date
 export function mergeGeneratedFeed(
   existingEnvelope,
   newRecords,
-  { maxItems = 60, nowIso = new Date().toISOString(), modelName = 'gemini-2.5-flash' } = {}
+  { maxItems = 60, nowIso = new Date().toISOString(), modelName = 'gemini-flash-latest' } = {}
 ) {
   const existingItems = Array.isArray(existingEnvelope?.items) ? existingEnvelope.items : [];
   const seenIds = new Set();
@@ -583,10 +583,10 @@ export function evaluateGenerationNeed({
  */
 export async function requestGeminiTextualFeed({
   apiKey,
-  modelName = 'gemini-2.5-flash',
+  modelName = 'gemini-flash-latest',
   prompt,
   fetchImpl = fetch,
-  timeoutMs = 45_000,
+  timeoutMs = 120_000,
 }) {
   const cleanKey = typeof apiKey === 'string' ? apiKey.trim() : '';
   if (!cleanKey) {
@@ -624,14 +624,26 @@ export async function requestGeminiTextualFeed({
         responseMimeType: 'application/json',
         temperature: 0.7,
         maxOutputTokens: 8192,
+        thinkingConfig: {
+          thinkingBudget: 2048,
+        },
       },
     }),
     signal: AbortSignal.timeout(timeoutMs),
   });
 
   if (!response.ok) {
-    // Do not include headers or API key in thrown error details.
-    throw new Error(`Gemini API request failed with HTTP status ${response.status}.`);
+    // Extract safe API error message only; never include headers or API key.
+    let detail = '';
+    try {
+      const errBody = await response.json();
+      if (typeof errBody?.error?.message === 'string') {
+        detail = ` (${sanitizeText(errBody.error.message, 220)})`;
+      }
+    } catch {
+      // Ignore unparseable error body
+    }
+    throw new Error(`Gemini API request failed with HTTP status ${response.status}${detail}.`);
   }
 
   const body = await response.json();

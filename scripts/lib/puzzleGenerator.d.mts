@@ -30,6 +30,7 @@ export declare function validateAndNormalizeGeneratedPuzzles(
 ): {
   puzzles: Puzzle[];
   rejectedCount: number;
+  rejectionReasons: string[];
 };
 
 export declare function mergeGeneratedPuzzles(

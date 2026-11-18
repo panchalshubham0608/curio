@@ -10,6 +10,12 @@ import {
   validateModelName,
 } from './lib/feedGenerator.mjs';
 import {
+  createFirestoreAdminClient,
+  mergeExistingItemsForPool,
+  readFirestoreCollectionItems,
+  writeFirestoreCollectionItems,
+} from './lib/firestoreAdmin.mjs';
+import {
   buildPuzzlesPrompt,
   mergeGeneratedPuzzles,
   selectPuzzleBatchKinds,
@@ -31,7 +37,7 @@ async function readExistingPuzzles(outputPath) {
 }
 
 async function run() {
-  const modelName = validateModelName(process.env.GEMINI_MODEL || 'gemini-2.5-flash');
+  const modelName = validateModelName(process.env.GEMINI_MODEL || 'gemini-flash-latest');
   const batchSize = parseBoundedInt(process.env.PUZZLES_BATCH_SIZE, 3, 1, 8);
   const minThreshold = parseBoundedInt(process.env.PUZZLES_MIN_THRESHOLD, 12, 1, 60);
   const maxItems = parseBoundedInt(process.env.PUZZLES_MAX_ITEMS, 48, minThreshold, 100);
@@ -41,7 +47,20 @@ async function run() {
 
   const { allowedDir, outputPath } = resolveSafeOutputPath(REPO_ROOT, outputFileName);
   const existingEnvelope = await readExistingPuzzles(outputPath);
-  const existingItems = Array.isArray(existingEnvelope.items) ? existingEnvelope.items : [];
+  const localItems = Array.isArray(existingEnvelope.items) ? existingEnvelope.items : [];
+
+  const firestoreAdmin = await createFirestoreAdminClient();
+  let firestoreItems = [];
+  if (firestoreAdmin) {
+    firestoreItems = await readFirestoreCollectionItems(firestoreAdmin.db, 'puzzles', {
+      limit: maxItems,
+    });
+    console.info(
+      `[Curio Puzzle Generator] Connected to Firestore (project=${firestoreAdmin.projectId}, existing=${firestoreItems.length}).`
+    );
+  }
+
+  const existingItems = mergeExistingItemsForPool(firestoreItems, localItems);
 
   const decision = evaluateGenerationNeed({
     existingItems,
@@ -92,12 +111,27 @@ async function run() {
   });
 
   const nowIso = new Date().toISOString();
-  const { puzzles, rejectedCount } = validateAndNormalizeGeneratedPuzzles(rawPayload, nowIso);
+  const { puzzles, rejectedCount, rejectionReasons } = validateAndNormalizeGeneratedPuzzles(
+    rawPayload,
+    nowIso
+  );
+
+  if (rejectionReasons.length > 0) {
+    console.warn(
+      `[Curio Puzzle Generator] Rejected ${rejectedCount} puzzle(s): ${rejectionReasons.join(' | ')}`
+    );
+  }
 
   if (puzzles.length === 0) {
     throw new Error(
       `Gemini returned 0 schema-valid puzzles (${rejectedCount} rejected).`
     );
+  }
+
+  let firestoreWritten = 0;
+  if (firestoreAdmin) {
+    const result = await writeFirestoreCollectionItems(firestoreAdmin.db, 'puzzles', puzzles);
+    firestoreWritten = result.writtenCount;
   }
 
   const { addedCount, envelope } = mergeGeneratedPuzzles(existingEnvelope, puzzles, {
@@ -116,7 +150,7 @@ async function run() {
   await rename(tempPath, outputPath);
 
   console.info(
-    `[Curio Puzzle Generator] Done: added=${addedCount}, rejected=${rejectedCount}, total=${envelope.itemCount}, file=public/generated/${path.basename(outputPath)}`
+    `[Curio Puzzle Generator] Done: added=${addedCount}, rejected=${rejectedCount}, firestoreWritten=${firestoreWritten}, totalLocal=${envelope.itemCount}, file=public/generated/${path.basename(outputPath)}`
   );
 }
 

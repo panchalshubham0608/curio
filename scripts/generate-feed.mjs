@@ -13,6 +13,12 @@ import {
   validateAndNormalizeGeneratedBatch,
   validateModelName,
 } from './lib/feedGenerator.mjs';
+import {
+  createFirestoreAdminClient,
+  mergeExistingItemsForPool,
+  readFirestoreCollectionItems,
+  writeFirestoreCollectionItems,
+} from './lib/firestoreAdmin.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -29,7 +35,7 @@ async function readExistingFeed(outputPath) {
 }
 
 async function run() {
-  const modelName = validateModelName(process.env.GEMINI_MODEL || 'gemini-2.5-flash');
+  const modelName = validateModelName(process.env.GEMINI_MODEL || 'gemini-flash-latest');
   const batchSize = parseBoundedInt(process.env.FEED_BATCH_SIZE, 4, 1, 8);
   const minThreshold = parseBoundedInt(process.env.FEED_MIN_THRESHOLD, 12, 1, 60);
   const maxItems = parseBoundedInt(process.env.FEED_MAX_ITEMS, 60, minThreshold, 120);
@@ -39,7 +45,20 @@ async function run() {
 
   const { allowedDir, outputPath } = resolveSafeOutputPath(REPO_ROOT, outputFileName);
   const existingEnvelope = await readExistingFeed(outputPath);
-  const existingItems = Array.isArray(existingEnvelope.items) ? existingEnvelope.items : [];
+  const localItems = Array.isArray(existingEnvelope.items) ? existingEnvelope.items : [];
+
+  const firestoreAdmin = await createFirestoreAdminClient();
+  let firestoreItems = [];
+  if (firestoreAdmin) {
+    firestoreItems = await readFirestoreCollectionItems(firestoreAdmin.db, 'content', {
+      limit: maxItems,
+    });
+    console.info(
+      `[Curio Feed Generator] Connected to Firestore (project=${firestoreAdmin.projectId}, existing=${firestoreItems.length}).`
+    );
+  }
+
+  const existingItems = mergeExistingItemsForPool(firestoreItems, localItems);
 
   const decision = evaluateGenerationNeed({
     existingItems,
@@ -98,6 +117,12 @@ async function run() {
     );
   }
 
+  let firestoreWritten = 0;
+  if (firestoreAdmin) {
+    const result = await writeFirestoreCollectionItems(firestoreAdmin.db, 'content', records);
+    firestoreWritten = result.writtenCount;
+  }
+
   const { addedCount, envelope } = mergeGeneratedFeed(existingEnvelope, records, {
     maxItems,
     nowIso,
@@ -114,7 +139,7 @@ async function run() {
   await rename(tempPath, outputPath);
 
   console.info(
-    `[Curio Feed Generator] Done: added=${addedCount}, rejected=${rejectedCount}, total=${envelope.itemCount}, file=public/generated/${path.basename(outputPath)}`
+    `[Curio Feed Generator] Done: added=${addedCount}, rejected=${rejectedCount}, firestoreWritten=${firestoreWritten}, totalLocal=${envelope.itemCount}, file=public/generated/${path.basename(outputPath)}`
   );
 }
 

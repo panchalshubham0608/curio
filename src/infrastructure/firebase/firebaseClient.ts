@@ -68,7 +68,7 @@ export function getFirebaseRuntime(): FirebaseRuntime | null {
     const auth = getAuth(app);
 
     const enableAI = import.meta.env.VITE_ENABLE_FIREBASE_AI === 'true';
-    const geminiModelName = import.meta.env.VITE_GEMINI_MODEL?.trim() || 'gemini-2.5-flash';
+    const geminiModelName = import.meta.env.VITE_GEMINI_MODEL?.trim() || 'gemini-flash-latest';
 
     let ai: AI | null = null;
     if (enableAI) {

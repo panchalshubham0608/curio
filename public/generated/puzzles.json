@@ -1,8 +1,317 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-18T00:00:00.000Z",
+  "generatedAt": "2026-11-18T16:03:08.364Z",
   "generator": "gemini-textual-puzzles",
-  "model": "gemini-2.5-flash",
-  "itemCount": 0,
-  "items": []
+  "model": "gemini-flash-latest",
+  "itemCount": 8,
+  "items": [
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_844d0a5176d4",
+      "kind": "pattern_sequence",
+      "title": "Fractional Decay",
+      "category": "science",
+      "difficulty": "Clever",
+      "prompt": "Identify the number that logically replaces the question mark in this mathematical sequence.",
+      "sequenceItems": [
+        "120",
+        "60",
+        "20",
+        "5",
+        "?"
+      ],
+      "hint": "Examine the divisor applied at each step.",
+      "options": [
+        "1",
+        "1.25",
+        "0.5",
+        "2.5"
+      ],
+      "correctIndex": 0,
+      "explanation": "Each term is divided by an incrementing integer: 120 / 2 = 60, 60 / 3 = 20, 20 / 4 = 5, and 5 / 5 = 1.",
+      "origin": "ai",
+      "createdAt": "2026-11-18T16:03:08.364Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_3cf66f2ad80d",
+      "kind": "true_or_myth",
+      "title": "Cloud Weight Reality",
+      "category": "science",
+      "difficulty": "Warm-up",
+      "prompt": "A typical white cumulus cloud weighs as much as about 100 elephants (roughly 500,000 kg).",
+      "hint": "Consider the vast volume of water droplets suspended in the air.",
+      "options": [
+        "True — Real Fact",
+        "Myth — False"
+      ],
+      "correctIndex": 0,
+      "explanation": "A typical cumulus cloud has a volume of around one cubic kilometer and contains approximately 500,000 kilograms of liquid water droplets.",
+      "origin": "ai",
+      "createdAt": "2026-11-18T16:03:08.364Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_03b816b368a9",
+      "kind": "visual_diagram",
+      "title": "Segment Counter",
+      "category": "growth",
+      "difficulty": "Tricky",
+      "prompt": "How many individual, non-overlapping unit triangles are shown inside the central geometric figure?",
+      "svgDiagram": {
+        "caption": "Regular hexagon subdivided into internal triangular units",
+        "background": "#FAF8F4",
+        "shapes": [
+          {
+            "shape": "polygon",
+            "points": [
+              [
+                160,
+                30
+              ],
+              [
+                220,
+                65
+              ],
+              [
+                220,
+                135
+              ],
+              [
+                160,
+                170
+              ],
+              [
+                100,
+                135
+              ],
+              [
+                100,
+                65
+              ]
+            ],
+            "fill": "#EAE5D9",
+            "stroke": "#3B4F75",
+            "strokeWidth": 3
+          },
+          {
+            "shape": "line",
+            "x1": 160,
+            "y1": 30,
+            "x2": 160,
+            "y2": 170,
+            "stroke": "#C84B31",
+            "strokeWidth": 2
+          },
+          {
+            "shape": "line",
+            "x1": 220,
+            "y1": 65,
+            "x2": 100,
+            "y2": 135,
+            "stroke": "#C84B31",
+            "strokeWidth": 2
+          },
+          {
+            "shape": "line",
+            "x1": 220,
+            "y1": 135,
+            "x2": 100,
+            "y2": 65,
+            "stroke": "#C84B31",
+            "strokeWidth": 2
+          },
+          {
+            "shape": "circle",
+            "cx": 160,
+            "cy": 100,
+            "r": 4,
+            "fill": "#2D6A4F"
+          },
+          {
+            "shape": "text",
+            "x": 160,
+            "y": 190,
+            "text": "Hexagonal Unit",
+            "fontSize": 12,
+            "fill": "#3B4F75",
+            "anchor": "middle"
+          }
+        ]
+      },
+      "hint": "Count the smallest triangular sectors radiating from the center.",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "8"
+      ],
+      "correctIndex": 2,
+      "explanation": "A regular hexagon divided by diagonals passing through its center forms exactly 6 non-overlapping equilateral unit triangles.",
+      "origin": "ai",
+      "createdAt": "2026-11-18T16:03:08.364Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_da8711d873f2",
+      "kind": "logic_reasoning",
+      "title": "The Museum Shift",
+      "category": "history",
+      "difficulty": "Clever",
+      "prompt": "Four docents—Elena, Marcus, Priya, and David—each guard a different hall: Antiquities, Coins, Fossils, or Textiles. Who guards the Fossils?",
+      "clues": [
+        "1. Marcus and David guard neither Coins nor Textiles.",
+        "2. Elena guards Antiquities.",
+        "3. Marcus does not guard Fossils."
+      ],
+      "hint": "Start by identifying Marcus's hall once Elena takes Antiquities.",
+      "options": [
+        "Elena",
+        "Marcus",
+        "Priya",
+        "David"
+      ],
+      "correctIndex": 3,
+      "explanation": "With Elena at Antiquities, Marcus and David must split Coins and Fossils; because Marcus cannot guard Fossils, David must guard Fossils.",
+      "origin": "ai",
+      "createdAt": "2026-11-18T16:02:10.578Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_c9d6ce6dcb09",
+      "kind": "odd_one_out",
+      "title": "Elemental Oddity",
+      "category": "science",
+      "difficulty": "Warm-up",
+      "prompt": "Which of these chemical elements does not share a key physical trait with the other three at standard room temperature and pressure?",
+      "hint": "Consider standard classification into metals and nonmetals.",
+      "options": [
+        "Bromine",
+        "Mercury",
+        "Gallium",
+        "Cesium"
+      ],
+      "correctIndex": 0,
+      "explanation": "Bromine is a nonmetal (halogen), whereas Mercury, Gallium, and Cesium are all metals.",
+      "origin": "ai",
+      "createdAt": "2026-11-18T16:02:10.578Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_3c7cf8435c8d",
+      "kind": "order_sequence",
+      "title": "Planetary Distance Ladder",
+      "category": "science",
+      "difficulty": "Tricky",
+      "prompt": "Arrange these four Solar System bodies in increasing order of their average distance from the Sun (closest to farthest).",
+      "orderItems": [
+        "Ceres",
+        "Mars",
+        "Venus",
+        "Jupiter"
+      ],
+      "correctOrder": [
+        2,
+        1,
+        0,
+        3
+      ],
+      "hint": "Remember the asteroid belt lies between the inner rocky planets and the gas giants.",
+      "explanation": "Venus orbits at ~0.72 AU, Mars at ~1.52 AU, the dwarf planet Ceres in the asteroid belt at ~2.77 AU, and Jupiter at ~5.20 AU.",
+      "origin": "ai",
+      "createdAt": "2026-11-18T16:02:10.578Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_9f68151e644c",
+      "kind": "interactive_grid",
+      "title": "Orbital Energy Sum",
+      "category": "science",
+      "difficulty": "Clever",
+      "prompt": "Select exactly 3 energy nodes on the grid so their combined values total exactly 50 gigajoules.",
+      "gridPuzzle": {
+        "mode": "target_sum",
+        "rows": 3,
+        "cols": 3,
+        "instruction": "Select exactly 3 cells that add up to 50.",
+        "cells": [
+          {
+            "label": "12",
+            "value": 12,
+            "initialOn": false
+          },
+          {
+            "label": "14",
+            "value": 14,
+            "initialOn": false
+          },
+          {
+            "label": "25",
+            "value": 25,
+            "initialOn": false
+          },
+          {
+            "label": "9",
+            "value": 9,
+            "initialOn": false
+          },
+          {
+            "label": "18",
+            "value": 18,
+            "initialOn": false
+          },
+          {
+            "label": "31",
+            "value": 31,
+            "initialOn": false
+          },
+          {
+            "label": "7",
+            "value": 7,
+            "initialOn": false
+          },
+          {
+            "label": "18",
+            "value": 18,
+            "initialOn": false
+          },
+          {
+            "label": "22",
+            "value": 22,
+            "initialOn": false
+          }
+        ],
+        "targetSum": 50,
+        "exactCount": 3,
+        "goalState": "all_on",
+        "solutionIndices": [
+          1,
+          4,
+          7
+        ]
+      },
+      "explanation": "Selecting nodes 14 (index 1), 18 (index 4), and 18 (index 7) yields 14 + 18 + 18 = 50. No other 3-cell combination sums to 50.",
+      "origin": "ai",
+      "createdAt": "2026-11-18T15:58:39.217Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_6a26e08cc5d9",
+      "kind": "lateral_riddle",
+      "title": "The Silent Carrier",
+      "category": "humour",
+      "difficulty": "Warm-up",
+      "prompt": "I have a spine, but no bones. I have leaves, but no branches. I can transport you across centuries without taking a single step. What am I?",
+      "options": [
+        "A book",
+        "A weeping willow tree",
+        "A paleontologist",
+        "A vintage map"
+      ],
+      "correctIndex": 0,
+      "explanation": "A book features a binding spine and pages (traditionally called leaves), carrying readers through historic tales without moving anywhere.",
+      "origin": "ai",
+      "createdAt": "2026-11-18T15:58:39.217Z"
+    }
+  ]
 }

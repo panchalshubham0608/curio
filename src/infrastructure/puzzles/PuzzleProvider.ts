@@ -1,4 +1,12 @@
 import {
+  collection,
+  getDocs,
+  limit as fsLimit,
+  orderBy,
+  query,
+  type Firestore,
+} from 'firebase/firestore';
+import {
   PuzzleSchema,
   type Puzzle,
   type PuzzleKind,
@@ -33,11 +41,13 @@ const GENERATED_PUZZLES_ENDPOINT = withBasePath('/generated/puzzles.json');
 const PUZZLE_CACHE_TTL_MS = 5 * 60 * 1000;
 
 /**
- * Curio puzzle provider backed strictly by scheduled AI-generated puzzles
- * (`/curio/generated/puzzles.json`) with Zod runtime validation and local solved state.
+ * Curio puzzle provider backed by live Firestore `/puzzles` (published via Firebase Admin SDK)
+ * with graceful fallback to static `/curio/generated/puzzles.json` and Zod runtime validation.
  */
 export class GeneratedPuzzleProvider implements PuzzleProvider {
   private readonly store: SafeKeyValueStore;
+  private readonly firestore: Firestore | null;
+  private readonly loadFromFirestoreOverride: (() => Promise<unknown[]>) | null;
   private readonly fetchImpl: typeof fetch | null;
   private readonly enableRemoteGenerated: boolean;
   private readonly hasCustomFetch: boolean;
@@ -46,9 +56,16 @@ export class GeneratedPuzzleProvider implements PuzzleProvider {
 
   constructor(
     store: SafeKeyValueStore,
-    options?: { fetchImpl?: typeof fetch; enableRemoteGenerated?: boolean }
+    options?: {
+      firestore?: Firestore | null;
+      loadFromFirestore?: () => Promise<unknown[]>;
+      fetchImpl?: typeof fetch;
+      enableRemoteGenerated?: boolean;
+    }
   ) {
     this.store = store;
+    this.firestore = options?.firestore ?? null;
+    this.loadFromFirestoreOverride = options?.loadFromFirestore ?? null;
     this.hasCustomFetch = Boolean(options?.fetchImpl);
     this.fetchImpl =
       options?.fetchImpl ?? (typeof fetch === 'function' ? fetch.bind(globalThis) : null);
@@ -59,17 +76,41 @@ export class GeneratedPuzzleProvider implements PuzzleProvider {
     return `puzzles_solved_${userId}`;
   }
 
-  private async loadGeneratedPuzzles(): Promise<Puzzle[]> {
-    if (!this.enableRemoteGenerated || !this.fetchImpl) {
+  private async readRawFirestorePuzzles(): Promise<unknown[]> {
+    if (this.loadFromFirestoreOverride) {
+      try {
+        return await this.loadFromFirestoreOverride();
+      } catch {
+        return [];
+      }
+    }
+
+    if (!this.firestore) {
       return [];
     }
 
-    if (
-      this.cachedGenerated &&
-      this.cachedGenerated.length > 0 &&
-      Date.now() - this.cachedAtMs < PUZZLE_CACHE_TTL_MS
-    ) {
-      return this.cachedGenerated;
+    const colRef = collection(this.firestore, 'puzzles');
+    try {
+      const snap = await getDocs(query(colRef, orderBy('createdAt', 'desc'), fsLimit(80)));
+      if (snap.docs.length > 0) {
+        return snap.docs.map((d) => ({ ...d.data(), id: d.id }));
+      }
+      // Fallback if existing docs were written without createdAt
+      const fallbackSnap = await getDocs(query(colRef, fsLimit(80)));
+      return fallbackSnap.docs.map((d) => ({ ...d.data(), id: d.id }));
+    } catch {
+      try {
+        const fallbackSnap = await getDocs(query(colRef, fsLimit(80)));
+        return fallbackSnap.docs.map((d) => ({ ...d.data(), id: d.id }));
+      } catch {
+        return [];
+      }
+    }
+  }
+
+  private async readRawStaticPuzzles(): Promise<unknown[]> {
+    if (!this.enableRemoteGenerated || !this.fetchImpl) {
+      return [];
     }
 
     let requestUrl = GENERATED_PUZZLES_ENDPOINT;
@@ -93,30 +134,48 @@ export class GeneratedPuzzleProvider implements PuzzleProvider {
       if (!response.ok) {
         return [];
       }
-
       const envelope = (await response.json()) as GeneratedPuzzlesEnvelope;
-      const rawItems = Array.isArray(envelope?.items) ? envelope.items : [];
-      const valid: Puzzle[] = [];
-      const seenIds = new Set<string>();
-
-      for (const item of rawItems) {
-        const parsed = PuzzleSchema.safeParse(item);
-        if (parsed.success && !seenIds.has(parsed.data.id)) {
-          seenIds.add(parsed.data.id);
-          valid.push(parsed.data);
-        }
-      }
-
-      if (valid.length > 0) {
-        this.cachedGenerated = valid;
-        this.cachedAtMs = Date.now();
-      } else {
-        this.cachedGenerated = null;
-      }
-      return valid;
+      return Array.isArray(envelope?.items) ? envelope.items : [];
     } catch {
       return [];
     }
+  }
+
+  private async loadGeneratedPuzzles(): Promise<Puzzle[]> {
+    if (
+      this.cachedGenerated &&
+      this.cachedGenerated.length > 0 &&
+      Date.now() - this.cachedAtMs < PUZZLE_CACHE_TTL_MS
+    ) {
+      return this.cachedGenerated;
+    }
+
+    const [firestoreRaw, staticRaw] = await Promise.all([
+      this.readRawFirestorePuzzles(),
+      this.readRawStaticPuzzles(),
+    ]);
+
+    const valid: Puzzle[] = [];
+    const seenIds = new Set<string>();
+
+    // Prefer live Firestore puzzles first, then merge any static fallback items
+    for (const item of [...firestoreRaw, ...staticRaw]) {
+      const parsed = PuzzleSchema.safeParse(item);
+      if (parsed.success && !seenIds.has(parsed.data.id)) {
+        seenIds.add(parsed.data.id);
+        valid.push(parsed.data);
+      }
+    }
+
+    valid.sort((a, b) => (b.createdAt ?? '').localeCompare(a.createdAt ?? ''));
+
+    if (valid.length > 0) {
+      this.cachedGenerated = valid;
+      this.cachedAtMs = Date.now();
+    } else {
+      this.cachedGenerated = null;
+    }
+    return valid;
   }
 
   async listPuzzles(options?: PuzzleQueryOptions): Promise<Puzzle[]> {
