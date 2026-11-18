@@ -1,10 +1,287 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-18T16:37:33.296Z",
+  "generatedAt": "2026-11-18T22:39:32.414Z",
   "generator": "gemini-textual-feed",
   "model": "gemini-flash-latest",
-  "itemCount": 4,
+  "itemCount": 8,
   "items": [
+    {
+      "id": "curio_gen_627e5eb0205b",
+      "schemaVersion": 1,
+      "contentType": "short_story",
+      "cardVariant": "article",
+      "title": "The Global Seed Vault's First Withdrawal",
+      "subtitle": "How war in the Fertile Crescent triggered the Arctic backup system",
+      "category": "news",
+      "region": "global",
+      "topics": [
+        "agriculture",
+        "biodiversity",
+        "geopolitics",
+        "arctic"
+      ],
+      "estimatedDurationSeconds": 130,
+      "source": {
+        "publisher": "The Guardian",
+        "title": "Syrian war causes first withdrawal from Svalbard 'doomsday' seed vault",
+        "url": "https://www.theguardian.com/environment/2015/oct/19/syrian-war-causes-first-withdrawal-from-svalbard-doomsday-seed-vault",
+        "publishedAt": "2026-11-18T22:39:32.414Z",
+        "retrievedAt": "2026-11-18T22:39:32.414Z"
+      },
+      "summary": "Deep inside a frozen mountain on Spitsbergen island, the Svalbard Global Seed Vault holds millions of duplicate crop samples. In 2015, the vault faced its very first withdrawal after conflict devastated an ancient seed bank in Aleppo.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Buried more than one hundred meters inside a permafrost mountain on the Norwegian archipelago of Svalbard rests humanity's agricultural insurance policy. Opened in 2008, the facility was designed to remain untouched for centuries, quietly safeguarding backup duplicates of the world's most critical crops against natural disaster, climate collapse, or warfare."
+        },
+        {
+          "type": "paragraph",
+          "text": "The safety net was tested far sooner than planners anticipated. The International Center for Agricultural Research in the Dry Areas (ICARDA) had long maintained an indispensable gene bank in Aleppo, Syria, housing drought-tolerant varieties of wheat, barley, and lentils cultivated since the dawn of farming. When ongoing civil conflict forced scientists to abandon the facility, they turned to Svalbard to retrieve their deposited seeds."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Replanting Miracle",
+          "text": "ICARDA withdrew over 38,000 seed samples in 2015, successfully regenerated them in new research fields across Lebanon and Morocco, and subsequently returned newly harvested replacement seeds back into the Arctic vault by 2017."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Resilience in Action",
+          "points": [
+            "The Svalbard repository does not own the seeds; it acts as a black box safety deposit system for national and regional gene banks.",
+            "The successful retrieval proved that global botanical redundancy can rescue millennia of agricultural breeding from modern geopolitics."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Global Seed Vault's First Withdrawal editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#C84B31"
+      },
+      "followUps": [
+        "How are seeds dried and frozen to survive for centuries?",
+        "What other deep-storage preservation projects exist globally?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-18T22:39:32.414Z",
+      "enrichedAt": "2026-11-18T22:39:32.414Z"
+    },
+    {
+      "id": "curio_gen_136be0f1df7e",
+      "schemaVersion": 1,
+      "contentType": "interactive_fact",
+      "cardVariant": "interactive_feature",
+      "title": "The Mystery of the Singing Dunes",
+      "subtitle": "When sand grains synchronize into a desert acoustic pipe",
+      "category": "science",
+      "region": "global",
+      "topics": [
+        "physics",
+        "geology",
+        "acoustics",
+        "deserts"
+      ],
+      "estimatedDurationSeconds": 110,
+      "source": {
+        "publisher": "Smithsonian Magazine",
+        "title": "Why Do Some Sand Dunes Sing?",
+        "url": "https://www.smithsonianmag.com/science-nature/why-do-some-sand-dunes-sing-180959435/",
+        "publishedAt": "2026-11-18T22:39:32.414Z",
+        "retrievedAt": "2026-11-18T22:39:32.414Z"
+      },
+      "summary": "In roughly three dozen deserts around the globe, shifting dunes emit an eerie, resonant hum resembling an airplane motor or cello chord.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "For centuries, travelers crossing arid landscapes from the Sahara to the Gobi reported hearing low, booming notes rising from shifting sand dunes. Early explorers attributed the droning tones to supernatural forces or whistling mountain winds, but the actual cause is an astonishing demonstration of collective acoustic physics."
+        },
+        {
+          "type": "quiz",
+          "question": "What primary physical condition is required for a sand dune to generate a sustained musical note?",
+          "options": [
+            "Grains of nearly identical size shearing together under strictly dry conditions",
+            "High concentrations of quartz crystal vibrating due to seismic tremors",
+            "Moisture trapped in lower layers vaporizing rapidly under afternoon heat"
+          ],
+          "correctOptionIndex": 0,
+          "explanation": "Sand grains must be well-sorted to roughly the same diameter and thoroughly dry. As an avalanche cascades down the dune face, the grains collide at a uniform frequency, synchronizing into a powerful acoustic wave."
+        },
+        {
+          "type": "paragraph",
+          "text": "When a slab of sand slides down the slip face, individual grain collisions occur thousands of times per second. If the grains are uniform in shape and diameter, these tiny impacts synchronize, turning the sliding layer into a loudspeaker membrane that produces a drone reaching up to 105 decibels."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Mystery of the Singing Dunes editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#3B4F75"
+      },
+      "followUps": [
+        "Why do rounded grains sing while jagged grains remain silent?",
+        "Where can you experience booming dunes in person today?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-18T22:39:32.414Z",
+      "enrichedAt": "2026-11-18T22:39:32.414Z"
+    },
+    {
+      "id": "curio_gen_2b20e7fa582b",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The 100-Baud Glass Cables on the Ocean Floor",
+      "subtitle": "The fragility and quiet genius of global intercontinental data",
+      "category": "technology",
+      "region": "global",
+      "topics": [
+        "internet infrastructure",
+        "telecommunications",
+        "oceanography"
+      ],
+      "estimatedDurationSeconds": 150,
+      "source": {
+        "publisher": "Wired",
+        "title": "The Secret Life of the Cables That Run the Internet",
+        "url": "https://www.wired.com/story/inside-the-subsea-cable-boom/",
+        "publishedAt": "2026-11-18T22:39:32.414Z",
+        "retrievedAt": "2026-11-18T22:39:32.414Z"
+      },
+      "summary": "Satellites may handle orbital communication, but more than 95 percent of international internet traffic travels through narrow glass cables running across abyssal plains.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "While wireless and satellite networks dominate the public imagination, nearly the entirety of our transcontinental internet flows through unheralded physical tubes resting on the seabed. Over 500 submarine cable systems trace the floor of the world's oceans, stretching around 1.4 million kilometers in total length."
+        },
+        {
+          "type": "comparison",
+          "heading": "Deep Ocean vs. Shallow Waters",
+          "leftTitle": "Shallow Water (Continental Shelf)",
+          "rightTitle": "Deep Abyssal Plain",
+          "leftPoints": [
+            "Cables are heavily armored with steel wire and buried in seabed trenches.",
+            "Must withstand trawler nets, maritime anchors, and dredging operations.",
+            "Can be as thick as a soda can."
+          ],
+          "rightPoints": [
+            "Cables are unarmored, relying on deep water for protection.",
+            "Rests directly on the sediment with no burial required.",
+            "Often only as thick as an ordinary garden hose."
+          ]
+        },
+        {
+          "type": "timeline",
+          "heading": "Evolution of Underwater Signal Transmission",
+          "events": [
+            {
+              "year": "1858",
+              "title": "First Transatlantic Telegraph",
+              "detail": "Queen Victoria sent a 98-word telegram to President Buchanan; the signal took over 16 hours to transit."
+            },
+            {
+              "year": "1956",
+              "title": "TAT-1 Coaxial Telephone Cable",
+              "detail": "Enabled the first voice calls between North America and Europe, supporting 36 simultaneous channels."
+            },
+            {
+              "year": "1988",
+              "title": "TAT-8 Optical Fiber Cable",
+              "detail": "The first transatlantic fiber-optic system launched, expanding digital capacity thousands of times over."
+            }
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The 100-Baud Glass Cables on the Ocean Floor editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#2563EB"
+      },
+      "followUps": [
+        "How do specialized ships repair snapped cables thousands of meters below sea level?",
+        "How do optical amplifiers function without external power on the sea floor?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-18T22:39:32.414Z",
+      "enrichedAt": "2026-11-18T22:39:32.414Z"
+    },
+    {
+      "id": "curio_gen_88eb8d08e61a",
+      "schemaVersion": 1,
+      "contentType": "short_story",
+      "cardVariant": "article",
+      "title": "The Saffron Hunters of the High Atlas",
+      "subtitle": "Why three purple threads per flower created the planet's costliest spice",
+      "category": "travel_food",
+      "region": "global",
+      "topics": [
+        "culinary history",
+        "agriculture",
+        "morocco",
+        "spices"
+      ],
+      "estimatedDurationSeconds": 120,
+      "source": {
+        "publisher": "BBC Travel",
+        "title": "The red gold of Morocco's High Atlas",
+        "url": "https://www.bbc.com/travel/article/20211116-the-red-gold-of-moroccos-high-atlas",
+        "publishedAt": "2026-11-18T22:39:32.414Z",
+        "retrievedAt": "2026-11-18T22:39:32.414Z"
+      },
+      "summary": "In the arid plateaus of Taliouine, Morocco, harvesting saffron requires picking delicate Crocus sativus blossoms before sunrise, yielding a spice valued higher than silver.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "High on the volcanic slopes of Morocco's Anti-Atlas mountains lies the small Berber town of Taliouine, one of the premier saffron capitals of the Mediterranean basin. For two brief weeks every autumn, the barren landscape erupts into a sea of lilac-purple petals that must be harvested entirely by hand before the morning sun wilts the blooms."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Labor of Milligrams",
+          "text": "It takes approximately 75,000 Crocus sativus flowers to yield just one single pound (453 grams) of dried saffron threads, as each blossom produces precisely three scarlet stigmas."
+        },
+        {
+          "type": "paragraph",
+          "text": "Because mechanical harvesting would pulverize the fragile pistils, entire families work in silence at dawn, stooping to pinch off whole flowers before spending afternoons plucking out the crimson filaments. The resulting spice, prized for its grassy, honeyed aroma and golden dye, remains one of the few culinary goods completely resistant to industrial automation."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Culinary Footprint",
+          "points": [
+            "The chemical compound safranal creates the characteristic aroma, while crocin provides the radiant yellow pigment.",
+            "Genuine saffron stigmas will color warm water golden-orange, while counterfeit safflower or dyed corn silk releases a harsh red stain."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Saffron Hunters of the High Atlas editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#0F766E"
+      },
+      "followUps": [
+        "How did saffron cultivation spread from ancient Greece across Asia and North Africa?",
+        "What chemical tests identify adulterated saffron in international trade?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-18T22:39:32.414Z",
+      "enrichedAt": "2026-11-18T22:39:32.414Z"
+    },
     {
       "id": "curio_gen_425fad2408f1",
       "schemaVersion": 1,

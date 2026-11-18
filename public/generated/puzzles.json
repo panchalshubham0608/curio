@@ -1,10 +1,129 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-18T16:03:08.364Z",
+  "generatedAt": "2026-11-18T22:40:07.075Z",
   "generator": "gemini-textual-puzzles",
   "model": "gemini-flash-latest",
-  "itemCount": 8,
+  "itemCount": 11,
   "items": [
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_f9b370871220",
+      "kind": "interactive_grid",
+      "title": "Subatomic Charge Balance",
+      "category": "science",
+      "difficulty": "Clever",
+      "prompt": "Select exactly 3 particle sensors whose recorded values sum to an electric charge of +15.",
+      "gridPuzzle": {
+        "mode": "target_sum",
+        "rows": 3,
+        "cols": 3,
+        "instruction": "Select 3 cells that add up to 15",
+        "cells": [
+          {
+            "label": "+11",
+            "value": 11,
+            "initialOn": false
+          },
+          {
+            "label": "+4",
+            "value": 4,
+            "initialOn": false
+          },
+          {
+            "label": "-2",
+            "value": -2,
+            "initialOn": false
+          },
+          {
+            "label": "+8",
+            "value": 8,
+            "initialOn": false
+          },
+          {
+            "label": "-7",
+            "value": -7,
+            "initialOn": false
+          },
+          {
+            "label": "+6",
+            "value": 6,
+            "initialOn": false
+          },
+          {
+            "label": "-4",
+            "value": -4,
+            "initialOn": false
+          },
+          {
+            "label": "+3",
+            "value": 3,
+            "initialOn": false
+          },
+          {
+            "label": "+1",
+            "value": 1,
+            "initialOn": false
+          }
+        ],
+        "targetSum": 15,
+        "exactCount": 3,
+        "goalState": "all_on",
+        "solutionIndices": [
+          0,
+          3,
+          6
+        ]
+      },
+      "hint": "Try combining two large positive readings with one small negative reading.",
+      "explanation": "Selecting +11, +8, and -4 yields a total sum of +15 (11 + 8 - 4 = 15).",
+      "origin": "ai",
+      "createdAt": "2026-11-18T22:40:07.075Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_5df42e50c9c2",
+      "kind": "lateral_riddle",
+      "title": "The Resilient Traveler",
+      "category": "travel_food",
+      "difficulty": "Warm-up",
+      "prompt": "I can travel around the entire world while permanently staying stuck in a single corner. What am I?",
+      "hint": "You affix me to send something through traditional mail.",
+      "options": [
+        "A compass needle",
+        "A postage stamp",
+        "A satellite antenna",
+        "A ship anchor"
+      ],
+      "correctIndex": 1,
+      "explanation": "A postage stamp stays fixed to the upper corner of an envelope as it journeys anywhere across the globe.",
+      "origin": "ai",
+      "createdAt": "2026-11-18T22:40:07.075Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_fc59791100ae",
+      "kind": "logic_reasoning",
+      "title": "Server Rack Sleuth",
+      "category": "technology",
+      "difficulty": "Tricky",
+      "prompt": "Four distinct servers—Alpha, Beta, Gamma, and Delta—are mounted in racks 1 to 4 from top to bottom. Determine which server is in Rack 3.",
+      "clues": [
+        "1. Gamma occupies Rack 1 at the very top.",
+        "2. Beta is installed immediately below Delta.",
+        "3. Alpha is situated higher up than Beta."
+      ],
+      "hint": "Place Gamma on top first, then find Beta's position relative to Delta.",
+      "options": [
+        "Alpha",
+        "Beta",
+        "Gamma",
+        "Delta"
+      ],
+      "correctIndex": 3,
+      "explanation": "Gamma is in Rack 1; Delta must be in Rack 3 and Beta in Rack 4 so Beta sits directly below Delta, leaving Alpha in Rack 2.",
+      "origin": "ai",
+      "createdAt": "2026-11-18T22:40:07.075Z"
+    },
     {
       "schemaVersion": 1,
       "id": "puz_ai_844d0a5176d4",
