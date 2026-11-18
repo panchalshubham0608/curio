@@ -22,6 +22,9 @@ export interface FirestoreLikeDb {
     };
     limit(n: number): { get(): Promise<{ docs: FirestoreLikeDoc[] }> };
   };
+  collectionGroup?(name: string): {
+    limit(n: number): { get(): Promise<{ docs: FirestoreLikeDoc[] }> };
+  };
   batch(): FirestoreLikeBatch;
 }
 
@@ -50,3 +53,13 @@ export declare function writeFirestoreCollectionItems(
   collectionName: 'content' | 'puzzles',
   items: ReadonlyArray<Record<string, unknown> & { id: string }>
 ): Promise<{ writtenCount: number }>;
+
+export declare function readSolvedPuzzleIds(
+  db: FirestoreLikeDb,
+  options?: { limit?: number }
+): Promise<Set<string>>;
+
+export declare function readSeenContentIds(
+  db: FirestoreLikeDb,
+  options?: { limit?: number }
+): Promise<Set<string>>;

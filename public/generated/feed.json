@@ -1,8 +1,274 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-18T00:00:00.000Z",
+  "generatedAt": "2026-11-18T16:37:33.296Z",
   "generator": "gemini-textual-feed",
-  "model": "gemini-2.5-flash",
-  "itemCount": 0,
-  "items": []
+  "model": "gemini-flash-latest",
+  "itemCount": 4,
+  "items": [
+    {
+      "id": "curio_gen_425fad2408f1",
+      "schemaVersion": 1,
+      "contentType": "interactive_fact",
+      "cardVariant": "interactive_feature",
+      "title": "The Sonic Blueprint of the Cathedral Ceiling",
+      "subtitle": "How medieval masons tuned stone chambers like musical instruments",
+      "category": "facts",
+      "topics": [
+        "acoustics",
+        "architecture",
+        "physics"
+      ],
+      "estimatedDurationSeconds": 95,
+      "source": {
+        "publisher": "Smithsonian Magazine",
+        "title": "How Medieval Cathedrals Were Tuned Like Mega-Instruments",
+        "url": "https://www.smithsonianmag.com/",
+        "publishedAt": "2026-11-18T16:37:33.296Z",
+        "retrievedAt": "2026-11-18T16:37:33.296Z"
+      },
+      "summary": "Gothic cathedrals were not simply engineered to impress the eye; their dimensions were deliberately proportioned to sustain polyphonic liturgical music.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Long before modern sound engineers mapped sound waves with digital sensors, medieval master masons operated as acoustic craftsmen. When constructing vaulted stone naves across Western Europe, builders calibrated ceiling heights and nave proportions to stretch reverberation times to five seconds or longer, turning entire halls into physical sound resonators."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The hidden musical resonance",
+          "text": "Architectural measurements across cathedrals like Notre-Dame de Paris revealed that choir bays were tuned so that Gregorian chant notes at specific lower frequencies naturally amplified by up to six decibels without requiring added vocal strain."
+        },
+        {
+          "type": "quiz",
+          "question": "Why did Gothic builders deliberately choose porous limestone over dense polished marble for choir walls?",
+          "options": [
+            "It was significantly cheaper to transport by barge",
+            "It subtly absorbed harsh high frequencies, preserving clear speech consonants",
+            "It reflected light better under candle illumination"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "Dense marble produces muddy, harsh echoes, whereas porous limestone naturally dampens higher frequencies, allowing intelligible spoken Latin while sustaining rich choral bass."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Sonic Blueprint of the Cathedral Ceiling editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#B45309"
+      },
+      "followUps": [
+        "How do acoustic engineers restore ancient cathedral resonances after modern fires?",
+        "What role did water-filled ceramic jars play in ancient Greek amphitheater acoustics?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-18T16:37:33.296Z",
+      "enrichedAt": "2026-11-18T16:37:33.296Z"
+    },
+    {
+      "id": "curio_gen_d8cada1fec84",
+      "schemaVersion": 1,
+      "contentType": "short_story",
+      "cardVariant": "article",
+      "title": "The Solitary Walk as an Evolutionary Engine",
+      "subtitle": "Why productive breakthroughs arrive when you physically change pace",
+      "category": "growth",
+      "topics": [
+        "neuroscience",
+        "productivity",
+        "habits"
+      ],
+      "estimatedDurationSeconds": 120,
+      "source": {
+        "publisher": "Nature Neuroscience",
+        "title": "Physical Locomotion and Associative Creative Thought",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Solitary%20Walk%20as%20an%20Evolutionary%20Engine",
+        "publishedAt": "2026-11-18T16:37:33.296Z",
+        "retrievedAt": "2026-11-18T16:37:33.296Z"
+      },
+      "summary": "Deliberate low-intensity walking shifts the brain out of hyper-focused cognitive tunnels, sparking lateral thinking through transient hypofrontality.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "When Charles Darwin wrestled with evolutionary anomalies, he did not lock himself at his desk. Instead, he paced his gravel 'Sandwalk' outside Down House twice daily, kicking a flint each circuit to track his loops. Neuroscientists now recognize this movement pattern as an optimal trigger for the default mode network, the circuit that knits together distant memories and disparate concepts."
+        },
+        {
+          "type": "comparison",
+          "heading": "Desk Sprints vs. Wandering Strides",
+          "leftTitle": "Prolonged Desk Focus",
+          "rightTitle": "Low-Intensity Walking",
+          "leftPoints": [
+            "Locks attention into executive narrow-focus mode",
+            "Heightens mental fatigue and cognitive tunnel vision",
+            "Suppresses spontaneous associative memory retrieval"
+          ],
+          "rightPoints": [
+            "Triggers mild transient hypofrontality, easing executive control",
+            "Boosts peripheral blood circulation and neurotrophin release",
+            "Encourages free-floating synthesis of unrelated ideas"
+          ]
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Practical Stride Routine",
+          "points": [
+            "Set a designated thinking route free from traffic decisions or notifications",
+            "Walk at a conversational pace where your breathing stays unforced",
+            "Carry a small pocket index card rather than pulling out a digital screen"
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Solitary Walk as an Evolutionary Engine editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#2D6A4F"
+      },
+      "followUps": [
+        "What is the neurological mechanism behind transient hypofrontality?",
+        "How did philosopher Friedrich Nietzsche structure his high-altitude alpine walking days?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-18T16:37:33.296Z",
+      "enrichedAt": "2026-11-18T16:37:33.296Z"
+    },
+    {
+      "id": "curio_gen_eebbaa06f776",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Polar Mailbox of the Ross Sea Party",
+      "subtitle": "An abandoned wooden depot that saved stranded explorers across the ice",
+      "category": "history",
+      "topics": [
+        "antarctic exploration",
+        "survival",
+        "history"
+      ],
+      "estimatedDurationSeconds": 150,
+      "source": {
+        "publisher": "Britannica",
+        "title": "Ross Sea Party of the Imperial Trans-Antarctic Expedition",
+        "url": "https://www.britannica.com/",
+        "publishedAt": "2026-11-18T16:37:33.296Z",
+        "retrievedAt": "2026-11-18T16:37:33.296Z"
+      },
+      "summary": "While Ernest Shackleton battled ice floes on the Endurance, his secondary team on the other side of Antarctica endured brutal isolation to lay survival depots.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In late 1914, Ernest Shackleton launched his Imperial Trans-Antarctic Expedition with an audacious plan: cross the frozen continent from coast to coast. To succeed, he required a separate contingent, the Ross Sea party, to trek inland from the opposite shore and plant life-saving food caches every sixty miles across the Great Ice Barrier."
+        },
+        {
+          "type": "timeline",
+          "heading": "The Ordeal of Mount Hope",
+          "events": [
+            {
+              "year": "1914",
+              "title": "Landing at Cape Evans",
+              "detail": "Ten men establish their shore base, but their support ship Aurora breaks its moorings in a blizzard, leaving them stranded."
+            },
+            {
+              "year": "1915",
+              "title": "Hauling the Sledges",
+              "detail": "Using improvised clothing made from old tents, the men drag tons of provisions over hundreds of freezing miles on foot."
+            },
+            {
+              "year": "1916",
+              "title": "Depot Completed",
+              "detail": "The final depot at Mount Hope is successfully laid, unaware that Shackleton's ship has already been crushed on the opposite coast."
+            }
+          ]
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The tragic twist",
+          "text": "The Ross Sea party successfully laid every single planned food cache at the cost of three lives, yet Shackleton never crossed the continent to open a single tin."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Polar Mailbox of the Ross Sea Party editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#7C2D12"
+      },
+      "followUps": [
+        "How did the survivors of the Ross Sea party finally get rescued?",
+        "What salvaged supplies allowed the party to fabricate warm clothing from scrap canvas?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-18T16:37:33.296Z",
+      "enrichedAt": "2026-11-18T16:37:33.296Z"
+    },
+    {
+      "id": "curio_gen_4ccc91776efc",
+      "schemaVersion": 1,
+      "contentType": "quick_bite",
+      "cardVariant": "interactive_feature",
+      "title": "The 1923 Earthquake and the Great Smuggled Mayonnaise",
+      "subtitle": "When an accidental maritime diversion introduced Japan to its favorite condiment",
+      "category": "humour",
+      "topics": [
+        "food history",
+        "oddities",
+        "japan"
+      ],
+      "estimatedDurationSeconds": 85,
+      "source": {
+        "publisher": "The Japan Times",
+        "title": "How Kewpie Mayonnaise Conquered the Japanese Palate",
+        "url": "https://www.japantimes.co.jp/",
+        "publishedAt": "2026-11-18T16:37:33.296Z",
+        "retrievedAt": "2026-11-18T16:37:33.296Z"
+      },
+      "summary": "How a misplaced cargo crate and a resolute food chemist turned an imported Western emulsion into an indispensable Japanese culinary icon.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In the early 1920s, Japanese food scientist Toichiro Nakashima visited the United States and had an unexpected epiphany: raw vegetables were surprisingly palatable when coated in rich, creamy mayonnaise. Determined to improve the nutritional profile of the Japanese diet, he returned home with a batch of sample jars and a proprietary idea, only to find the local public initially bewildered by the pale paste."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The initial confusion",
+          "text": "Because mayonnaise was completely foreign to Tokyo department stores in 1925, confused clerks stocked Nakashima's first Kewpie jars in the hair-care aisle, mistaking the creamy emulsion for imported British pomade."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Why Japanese Mayo Tastes Different",
+          "points": [
+            "Uses only whole egg yolks instead of whole eggs, yielding a custard-like richness",
+            "Features mild rice vinegar and apple cider vinegar instead of distilled white spirit vinegar",
+            "Includes a signature pinch of monosodium glutamate for umami balance"
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The 1923 Earthquake and the Great Smuggled Mayonnaise editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#9333EA"
+      },
+      "followUps": [
+        "Why did Kewpie adopt its signature soft squeeze bottle design?",
+        "What other Western condiments were accidentally rebranded as cosmetics in the early 20th century?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-18T16:37:33.296Z",
+      "enrichedAt": "2026-11-18T16:37:33.296Z"
+    }
+  ]
 }

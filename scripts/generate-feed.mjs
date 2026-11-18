@@ -17,6 +17,7 @@ import {
   createFirestoreAdminClient,
   mergeExistingItemsForPool,
   readFirestoreCollectionItems,
+  readSeenContentIds,
   writeFirestoreCollectionItems,
 } from './lib/firestoreAdmin.mjs';
 
@@ -49,12 +50,14 @@ async function run() {
 
   const firestoreAdmin = await createFirestoreAdminClient();
   let firestoreItems = [];
+  let seenContentIds = new Set();
   if (firestoreAdmin) {
-    firestoreItems = await readFirestoreCollectionItems(firestoreAdmin.db, 'content', {
-      limit: maxItems,
-    });
+    [firestoreItems, seenContentIds] = await Promise.all([
+      readFirestoreCollectionItems(firestoreAdmin.db, 'content', { limit: maxItems }),
+      readSeenContentIds(firestoreAdmin.db),
+    ]);
     console.info(
-      `[Curio Feed Generator] Connected to Firestore (project=${firestoreAdmin.projectId}, existing=${firestoreItems.length}).`
+      `[Curio Feed Generator] Connected to Firestore (project=${firestoreAdmin.projectId}, existing=${firestoreItems.length}, seen=${seenContentIds.size}).`
     );
   }
 
@@ -62,6 +65,7 @@ async function run() {
 
   const decision = evaluateGenerationNeed({
     existingItems,
+    seenIds: seenContentIds,
     fallbackTimestamp: existingEnvelope.generatedAt,
     minThreshold,
     batchSize,

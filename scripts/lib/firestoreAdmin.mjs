@@ -220,3 +220,48 @@ export async function writeFirestoreCollectionItems(db, collectionName, items) {
 
   return { writtenCount };
 }
+
+/**
+ * Reads puzzle IDs already solved by users across `/users/{uid}/solvedPuzzles/{puzzleId}`
+ * so the scheduled generator replenishes fresh unseen puzzles automatically.
+ */
+export async function readSolvedPuzzleIds(db, { limit = 500 } = {}) {
+  const boundedLimit = Math.min(1000, Math.max(1, Number(limit) || 500));
+  try {
+    const snap = await db.collectionGroup('solvedPuzzles').limit(boundedLimit).get();
+    const seen = new Set();
+    for (const docSnap of snap.docs) {
+      const data = docSnap.data();
+      const id = typeof data?.puzzleId === 'string' && data.puzzleId.trim()
+        ? data.puzzleId.trim()
+        : docSnap.id;
+      if (SAFE_DOC_ID_REGEX.test(id)) {
+        seen.add(id);
+      }
+    }
+    return seen;
+  } catch {
+    return new Set();
+  }
+}
+
+/**
+ * Reads content IDs already interacted with by users across `/users/{uid}/interactions/{id}`
+ * so the scheduled feed generator replenishes fresh unseen stories automatically.
+ */
+export async function readSeenContentIds(db, { limit = 500 } = {}) {
+  const boundedLimit = Math.min(1000, Math.max(1, Number(limit) || 500));
+  try {
+    const snap = await db.collectionGroup('interactions').limit(boundedLimit).get();
+    const seen = new Set();
+    for (const docSnap of snap.docs) {
+      const data = docSnap.data();
+      if (typeof data?.contentId === 'string' && SAFE_DOC_ID_REGEX.test(data.contentId.trim())) {
+        seen.add(data.contentId.trim());
+      }
+    }
+    return seen;
+  } catch {
+    return new Set();
+  }
+}

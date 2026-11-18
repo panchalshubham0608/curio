@@ -75,6 +75,15 @@ service cloud.firestore {
           && request.resource.data.collectionId is string;
         allow delete: if isOwner(userId);
       }
+
+      // Solved puzzles progress
+      match /solvedPuzzles/{puzzleId} {
+        allow read: if isOwner(userId);
+        allow create, update: if isOwner(userId)
+          && request.resource.data.puzzleId == puzzleId
+          && request.resource.data.solvedAt is string;
+        allow delete: if isOwner(userId);
+      }
     }
 
     // Shared normalized & AI-generated content pool.

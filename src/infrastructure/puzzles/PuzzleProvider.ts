@@ -1,9 +1,12 @@
 import {
   collection,
+  doc,
   getDocs,
   limit as fsLimit,
   orderBy,
   query,
+  setDoc,
+  writeBatch,
   type Firestore,
 } from 'firebase/firestore';
 import {
@@ -19,6 +22,16 @@ export interface PuzzleQueryOptions {
   kind?: PuzzleKind;
   category?: ContentCategory;
   excludeIds?: readonly string[];
+}
+
+/**
+ * Optional remote persistence adapter for per-user solved puzzles (backed by Firestore
+ * `/users/{userId}/solvedPuzzles/{puzzleId}` when signed in).
+ */
+export interface RemoteSolvedPuzzlesAdapter {
+  listSolvedIds(userId: string): Promise<string[]>;
+  saveSolvedId(userId: string, puzzleId: string, solvedAt: string): Promise<void>;
+  clearSolvedIds(userId: string): Promise<void>;
 }
 
 /**
@@ -39,14 +52,48 @@ interface GeneratedPuzzlesEnvelope {
 
 const GENERATED_PUZZLES_ENDPOINT = withBasePath('/generated/puzzles.json');
 const PUZZLE_CACHE_TTL_MS = 5 * 60 * 1000;
+const SAFE_PUZZLE_ID_REGEX = /^[a-zA-Z0-9_-]{3,120}$/;
+
+function createFirestoreSolvedAdapter(db: Firestore): RemoteSolvedPuzzlesAdapter {
+  return {
+    async listSolvedIds(userId: string): Promise<string[]> {
+      const snap = await getDocs(collection(db, 'users', userId, 'solvedPuzzles'));
+      const ids: string[] = [];
+      for (const d of snap.docs) {
+        const data = d.data();
+        const candidate = typeof data.puzzleId === 'string' ? data.puzzleId : d.id;
+        if (SAFE_PUZZLE_ID_REGEX.test(candidate)) {
+          ids.push(candidate);
+        }
+      }
+      return ids;
+    },
+    async saveSolvedId(userId: string, puzzleId: string, solvedAt: string): Promise<void> {
+      if (!SAFE_PUZZLE_ID_REGEX.test(puzzleId)) return;
+      const ref = doc(db, 'users', userId, 'solvedPuzzles', puzzleId);
+      await setDoc(ref, { puzzleId, solvedAt }, { merge: true });
+    },
+    async clearSolvedIds(userId: string): Promise<void> {
+      const snap = await getDocs(collection(db, 'users', userId, 'solvedPuzzles'));
+      if (snap.empty) return;
+      const batch = writeBatch(db);
+      for (const d of snap.docs) {
+        batch.delete(d.ref);
+      }
+      await batch.commit();
+    },
+  };
+}
 
 /**
  * Curio puzzle provider backed by live Firestore `/puzzles` (published via Firebase Admin SDK)
- * with graceful fallback to static `/curio/generated/puzzles.json` and Zod runtime validation.
+ * with graceful fallback to static `/curio/generated/puzzles.json`, Zod validation, and
+ * Firestore-synced per-user solved progress (`/users/{uid}/solvedPuzzles/{puzzleId}`) when signed in.
  */
 export class GeneratedPuzzleProvider implements PuzzleProvider {
   private readonly store: SafeKeyValueStore;
   private readonly firestore: Firestore | null;
+  private readonly remoteProgress: RemoteSolvedPuzzlesAdapter | null;
   private readonly loadFromFirestoreOverride: (() => Promise<unknown[]>) | null;
   private readonly fetchImpl: typeof fetch | null;
   private readonly enableRemoteGenerated: boolean;
@@ -58,6 +105,8 @@ export class GeneratedPuzzleProvider implements PuzzleProvider {
     store: SafeKeyValueStore,
     options?: {
       firestore?: Firestore | null;
+      syncUserProgress?: boolean;
+      remoteProgressAdapter?: RemoteSolvedPuzzlesAdapter | null;
       loadFromFirestore?: () => Promise<unknown[]>;
       fetchImpl?: typeof fetch;
       enableRemoteGenerated?: boolean;
@@ -65,6 +114,11 @@ export class GeneratedPuzzleProvider implements PuzzleProvider {
   ) {
     this.store = store;
     this.firestore = options?.firestore ?? null;
+    this.remoteProgress =
+      options?.remoteProgressAdapter ??
+      (options?.syncUserProgress && this.firestore
+        ? createFirestoreSolvedAdapter(this.firestore)
+        : null);
     this.loadFromFirestoreOverride = options?.loadFromFirestore ?? null;
     this.hasCustomFetch = Boolean(options?.fetchImpl);
     this.fetchImpl =
@@ -74,6 +128,11 @@ export class GeneratedPuzzleProvider implements PuzzleProvider {
 
   private solvedKey(userId: string): string {
     return `puzzles_solved_${userId}`;
+  }
+
+  private readLocalSolvedIds(userId: string): Set<string> {
+    const saved = this.store.getJson<string[]>(this.solvedKey(userId)) ?? [];
+    return new Set(saved.filter((id) => typeof id === 'string' && SAFE_PUZZLE_ID_REGEX.test(id)));
   }
 
   private async readRawFirestorePuzzles(): Promise<unknown[]> {
@@ -207,18 +266,53 @@ export class GeneratedPuzzleProvider implements PuzzleProvider {
   }
 
   async getSolvedIds(userId: string): Promise<Set<string>> {
-    const saved = this.store.getJson<string[]>(this.solvedKey(userId)) ?? [];
-    return new Set(saved.filter((id) => typeof id === 'string'));
+    const localSet = this.readLocalSolvedIds(userId);
+    if (!this.remoteProgress) {
+      return localSet;
+    }
+
+    try {
+      const remoteIds = await this.remoteProgress.listSolvedIds(userId);
+      const merged = new Set<string>(localSet);
+      for (const id of remoteIds) {
+        if (SAFE_PUZZLE_ID_REGEX.test(id)) {
+          merged.add(id);
+        }
+      }
+      this.store.setJson(this.solvedKey(userId), Array.from(merged));
+      return merged;
+    } catch {
+      // Graceful fallback to local device cache if Firestore is offline or rules aren't deployed yet
+      return localSet;
+    }
   }
 
   async markSolved(userId: string, puzzleId: string): Promise<Set<string>> {
-    const current = await this.getSolvedIds(userId);
-    current.add(puzzleId);
-    this.store.setJson(this.solvedKey(userId), Array.from(current));
+    const current = this.readLocalSolvedIds(userId);
+    if (SAFE_PUZZLE_ID_REGEX.test(puzzleId)) {
+      current.add(puzzleId);
+      this.store.setJson(this.solvedKey(userId), Array.from(current));
+    }
+
+    if (this.remoteProgress && SAFE_PUZZLE_ID_REGEX.test(puzzleId)) {
+      try {
+        await this.remoteProgress.saveSolvedId(userId, puzzleId, new Date().toISOString());
+      } catch {
+        // Keep local solved progress intact if remote sync temporarily fails
+      }
+    }
+
     return current;
   }
 
   async clearSolved(userId: string): Promise<void> {
     this.store.remove(this.solvedKey(userId));
+    if (this.remoteProgress) {
+      try {
+        await this.remoteProgress.clearSolvedIds(userId);
+      } catch {
+        // Ignore remote clear failures when offline
+      }
+    }
   }
 }

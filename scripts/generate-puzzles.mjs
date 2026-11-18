@@ -13,6 +13,7 @@ import {
   createFirestoreAdminClient,
   mergeExistingItemsForPool,
   readFirestoreCollectionItems,
+  readSolvedPuzzleIds,
   writeFirestoreCollectionItems,
 } from './lib/firestoreAdmin.mjs';
 import {
@@ -51,12 +52,14 @@ async function run() {
 
   const firestoreAdmin = await createFirestoreAdminClient();
   let firestoreItems = [];
+  let solvedPuzzleIds = new Set();
   if (firestoreAdmin) {
-    firestoreItems = await readFirestoreCollectionItems(firestoreAdmin.db, 'puzzles', {
-      limit: maxItems,
-    });
+    [firestoreItems, solvedPuzzleIds] = await Promise.all([
+      readFirestoreCollectionItems(firestoreAdmin.db, 'puzzles', { limit: maxItems }),
+      readSolvedPuzzleIds(firestoreAdmin.db),
+    ]);
     console.info(
-      `[Curio Puzzle Generator] Connected to Firestore (project=${firestoreAdmin.projectId}, existing=${firestoreItems.length}).`
+      `[Curio Puzzle Generator] Connected to Firestore (project=${firestoreAdmin.projectId}, existing=${firestoreItems.length}, solved=${solvedPuzzleIds.size}).`
     );
   }
 
@@ -64,6 +67,7 @@ async function run() {
 
   const decision = evaluateGenerationNeed({
     existingItems,
+    seenIds: solvedPuzzleIds,
     fallbackTimestamp: existingEnvelope.generatedAt,
     minThreshold,
     batchSize,

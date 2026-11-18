@@ -4,13 +4,18 @@ import {
   mergeExistingItemsForPool,
   parseServiceAccountConfig,
   readFirestoreCollectionItems,
+  readSeenContentIds,
+  readSolvedPuzzleIds,
   stripUndefinedDeep,
   writeFirestoreCollectionItems,
   type FirestoreLikeDb,
 } from '../../../../scripts/lib/firestoreAdmin.mjs';
 import { GeneratedFeedProvider } from '../../content/GeneratedFeedProvider';
 import { SafeKeyValueStore } from '../../persistence/LocalStorageStore';
-import { GeneratedPuzzleProvider } from '../../puzzles/PuzzleProvider';
+import {
+  GeneratedPuzzleProvider,
+  type RemoteSolvedPuzzlesAdapter,
+} from '../../puzzles/PuzzleProvider';
 import { createTestContentRecords, createTestPuzzles } from '../../../test/fixtures';
 
 describe('Firebase Admin Firestore publisher & live client readers', () => {
@@ -81,6 +86,16 @@ describe('Firebase Admin Firestore publisher & live client readers', () => {
           get: async () => ({ docs: [] }),
         }),
       }),
+      collectionGroup: (name: string) => ({
+        limit: () => ({
+          get: async () => ({
+            docs:
+              name === 'solvedPuzzles'
+                ? [{ id: 'puz_ai_existing', data: () => ({ puzzleId: 'puz_ai_existing' }) }]
+                : [{ id: 'int_1', data: () => ({ contentId: 'curio_gen_001' }) }],
+          }),
+        }),
+      }),
       batch: () => ({
         set: (ref, data, options) => {
           setCalls.push({ ref, data, options });
@@ -115,6 +130,9 @@ describe('Firebase Admin Firestore publisher & live client readers', () => {
         createdAt: '2026-11-18T10:00:00.000Z',
       },
     ]);
+
+    expect(Array.from(await readSolvedPuzzleIds(mockDb))).toEqual(['puz_ai_existing']);
+    expect(Array.from(await readSeenContentIds(mockDb))).toEqual(['curio_gen_001']);
 
     const mergedPool = mergeExistingItemsForPool(readBack, [
       { id: 'puz_ai_existing', title: 'Stale Local Copy' },
@@ -171,5 +189,57 @@ describe('Firebase Admin Firestore publisher & live client readers', () => {
     expect(candidates).toHaveLength(2);
     const firstMatch = candidates.find((c) => c.id === feedA.id);
     expect(firstMatch?.title).toBe(feedA.title); // Live Firestore wins over static duplicate
+  });
+
+  it('syncs per-user solved puzzles with Firestore remote adapter and falls back gracefully if offline', async () => {
+    const store = new SafeKeyValueStore('firestore_solved_sync_test', false);
+    const remoteRecords = new Set<string>(['puz_remote_01']);
+
+    const remoteAdapter: RemoteSolvedPuzzlesAdapter = {
+      listSolvedIds: vi.fn(async () => Array.from(remoteRecords)),
+      saveSolvedId: vi.fn(async (_uid, puzzleId) => {
+        remoteRecords.add(puzzleId);
+      }),
+      clearSolvedIds: vi.fn(async () => {
+        remoteRecords.clear();
+      }),
+    };
+
+    const provider = new GeneratedPuzzleProvider(store, {
+      enableRemoteGenerated: false,
+      remoteProgressAdapter: remoteAdapter,
+    });
+
+    // Merges remote Firestore solved IDs into local cache
+    const initial = await provider.getSolvedIds('user_abc');
+    expect(initial.has('puz_remote_01')).toBe(true);
+
+    // Marks solved both locally and in Firestore
+    const updated = await provider.markSolved('user_abc', 'puz_new_02');
+    expect(updated.has('puz_remote_01')).toBe(true);
+    expect(updated.has('puz_new_02')).toBe(true);
+    expect(remoteAdapter.saveSolvedId).toHaveBeenCalledWith(
+      'user_abc',
+      'puz_new_02',
+      expect.any(String)
+    );
+
+    // Clears both local and remote solved progress
+    await provider.clearSolved('user_abc');
+    expect((await provider.getSolvedIds('user_abc')).size).toBe(0);
+    expect(remoteAdapter.clearSolvedIds).toHaveBeenCalledWith('user_abc');
+
+    // Graceful offline fallback when remote throws
+    const offlineProvider = new GeneratedPuzzleProvider(store, {
+      enableRemoteGenerated: false,
+      remoteProgressAdapter: {
+        listSolvedIds: vi.fn().mockRejectedValue(new Error('permission-denied')),
+        saveSolvedId: vi.fn().mockRejectedValue(new Error('permission-denied')),
+        clearSolvedIds: vi.fn().mockRejectedValue(new Error('permission-denied')),
+      },
+    });
+    const offlineSolved = await offlineProvider.markSolved('user_abc', 'puz_offline_03');
+    expect(offlineSolved.has('puz_offline_03')).toBe(true);
+    expect((await offlineProvider.getSolvedIds('user_abc')).has('puz_offline_03')).toBe(true);
   });
 });

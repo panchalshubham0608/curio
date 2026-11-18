@@ -148,6 +148,7 @@ export function buildCurioServices(options?: {
     options?.puzzleProvider ??
     new GeneratedPuzzleProvider(localStore, {
       firestore: runtime?.firestore ?? null,
+      syncUserProgress: useFirebase,
       enableRemoteGenerated: !options?.forceLocalStore,
     });
 
