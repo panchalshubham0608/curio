@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { withBasePath } from '../utils/assetUrl';
 import { isSafeHttpsUrl, isSafeImageUrl } from './urlValidation';
 
 export const CURRENT_CONTENT_SCHEMA_VERSION = 1 as const;
@@ -34,7 +35,7 @@ export const CATEGORY_METADATA: Record<ContentCategory, CategoryMeta> = {
     shortLabel: 'Facts',
     description: 'Surprising phenomena, clever trivia, and overlooked truths.',
     accentHex: '#C84B31',
-    coverImage: '/images/categories/facts.jpg',
+    coverImage: withBasePath('/images/categories/facts.jpg'),
     suggestedTopics: ['fractals', 'weather', 'antiquity', 'myths'],
   },
   technology: {
@@ -43,7 +44,7 @@ export const CATEGORY_METADATA: Record<ContentCategory, CategoryMeta> = {
     shortLabel: 'Tech & AI',
     description: 'Computing breakthroughs, artificial intelligence, and design craft.',
     accentHex: '#2E5EAA',
-    coverImage: '/images/categories/technology.jpg',
+    coverImage: withBasePath('/images/categories/technology.jpg'),
     suggestedTopics: ['ai', 'infrastructure', 'algorithms', 'edge computing'],
   },
   travel_food: {
@@ -52,7 +53,7 @@ export const CATEGORY_METADATA: Record<ContentCategory, CategoryMeta> = {
     shortLabel: 'Travel & Food',
     description: 'Culinary origins, remarkable places, and cultural traditions.',
     accentHex: '#B86B27',
-    coverImage: '/images/categories/travel_food.jpg',
+    coverImage: withBasePath('/images/categories/travel_food.jpg'),
     suggestedTopics: ['architecture', 'japan', 'food science', 'culinary'],
   },
   news: {
@@ -61,7 +62,7 @@ export const CATEGORY_METADATA: Record<ContentCategory, CategoryMeta> = {
     shortLabel: 'Current Affairs',
     description: 'Clear, grounded context behind major global developments.',
     accentHex: '#335C67',
-    coverImage: '/images/categories/news.jpg',
+    coverImage: withBasePath('/images/categories/news.jpg'),
     suggestedTopics: ['energy', 'global trade', 'fintech', 'economics'],
   },
   humour: {
@@ -70,7 +71,7 @@ export const CATEGORY_METADATA: Record<ContentCategory, CategoryMeta> = {
     shortLabel: 'Culture & Wit',
     description: 'Clever comedy history, wordplay, games, and creative curiosities.',
     accentHex: '#8E4A6B',
-    coverImage: '/images/categories/humour.jpg',
+    coverImage: withBasePath('/images/categories/humour.jpg'),
     suggestedTopics: ['cinema', 'etymology', 'cartography', 'wordplay'],
   },
   history: {
@@ -79,7 +80,7 @@ export const CATEGORY_METADATA: Record<ContentCategory, CategoryMeta> = {
     shortLabel: 'History',
     description: 'Forgotten turning points, biographies, and vivid timelines.',
     accentHex: '#7A5438',
-    coverImage: '/images/categories/history.jpg',
+    coverImage: withBasePath('/images/categories/history.jpg'),
     suggestedTopics: ['archaeology', 'medicine', 'railroads', 'ancient greece'],
   },
   growth: {
@@ -88,7 +89,7 @@ export const CATEGORY_METADATA: Record<ContentCategory, CategoryMeta> = {
     shortLabel: 'Learning',
     description: 'Mental models, decision frameworks, and evidence-based habits.',
     accentHex: '#2D6A4F',
-    coverImage: '/images/categories/growth.jpg',
+    coverImage: withBasePath('/images/categories/growth.jpg'),
     suggestedTopics: ['mental models', 'memory', 'psychology', 'decision making'],
   },
   science: {
@@ -97,7 +98,7 @@ export const CATEGORY_METADATA: Record<ContentCategory, CategoryMeta> = {
     shortLabel: 'Science',
     description: 'Cosmos, biology, physics, and how the natural world works.',
     accentHex: '#3B4F75',
-    coverImage: '/images/categories/science.jpg',
+    coverImage: withBasePath('/images/categories/science.jpg'),
     suggestedTopics: ['space', 'neuroscience', 'ocean', 'astronomy'],
   },
 };

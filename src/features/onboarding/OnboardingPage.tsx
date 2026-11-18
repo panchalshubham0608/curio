@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import { useCurioApp } from '../../app/providers/appContext';
 import { getFriendlyErrorMessage } from '../../shared/errors/firebaseErrorMapper';
+import { withBasePath } from '../../shared/utils/assetUrl';
 import {
   CATEGORY_METADATA,
   type ContentCategory,
@@ -124,7 +125,7 @@ export function OnboardingPage() {
         ) : (
           <Link to="/" className="curio-brand" aria-label="Curio Home">
             <img
-              src="/curio-icon.svg"
+              src={withBasePath('/curio-icon.svg')}
               alt=""
               className="curio-brand-mark"
               width={28}
@@ -399,7 +400,7 @@ export function OnboardingPage() {
               <div className="row-between">
                 <div className="row-wrap" style={{ gap: 10 }}>
                   <img
-                    src="/curio-icon.svg"
+                    src={withBasePath('/curio-icon.svg')}
                     alt=""
                     width={32}
                     height={32}

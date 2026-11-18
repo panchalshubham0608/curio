@@ -1,5 +1,6 @@
 import type { ContentDiscoveryRequest, ContentProvider } from '../../application/ports';
 import type { ContentCandidate } from '../../domain/content/Content';
+import { withBasePath } from '../../shared/utils/assetUrl';
 import {
   ContentRecordSchema,
   type ContentRecord,
@@ -9,7 +10,7 @@ interface GeneratedFeedEnvelope {
   items?: unknown[];
 }
 
-const FEED_ENDPOINT = '/generated/feed.json';
+const FEED_ENDPOINT = withBasePath('/generated/feed.json');
 const CACHE_TTL_MS = 5 * 60 * 1000;
 
 /**
@@ -19,26 +20,47 @@ const CACHE_TTL_MS = 5 * 60 * 1000;
  */
 export class GeneratedFeedProvider implements ContentProvider {
   public readonly name = 'scheduled_gemini_textual_feed';
+  private readonly fetchImpl: typeof fetch | null;
+  private readonly enableRemoteGenerated: boolean;
+  private readonly hasCustomFetch: boolean;
   private cachedRecords: ContentRecord[] | null = null;
   private cachedAtMs = 0;
 
-  private async loadValidatedRecords(): Promise<ContentRecord[]> {
-    if (this.cachedRecords && Date.now() - this.cachedAtMs < CACHE_TTL_MS) {
-      return this.cachedRecords;
-    }
+  constructor(options?: { fetchImpl?: typeof fetch; enableRemoteGenerated?: boolean }) {
+    this.hasCustomFetch = Boolean(options?.fetchImpl);
+    this.fetchImpl =
+      options?.fetchImpl ?? (typeof fetch === 'function' ? fetch.bind(globalThis) : null);
+    this.enableRemoteGenerated = options?.enableRemoteGenerated ?? true;
+  }
 
-    if (typeof window === 'undefined' || typeof fetch !== 'function') {
+  private async loadValidatedRecords(): Promise<ContentRecord[]> {
+    if (!this.enableRemoteGenerated || !this.fetchImpl) {
       return [];
     }
 
-    // Avoid relative-URL fetch noise in non-HTTP unit test runners (e.g., jsdom with about:blank)
-    const origin = window.location?.origin;
-    if (!origin || origin === 'null' || !/^https?:\/\//i.test(origin)) {
+    if (
+      this.cachedRecords &&
+      this.cachedRecords.length > 0 &&
+      Date.now() - this.cachedAtMs < CACHE_TTL_MS
+    ) {
+      return this.cachedRecords;
+    }
+
+    let requestUrl = FEED_ENDPOINT;
+    if (this.hasCustomFetch) {
+      requestUrl = `https://curio.local${FEED_ENDPOINT}`;
+    } else if (typeof window !== 'undefined') {
+      const origin = window.location?.origin;
+      if (!origin || origin === 'null' || !/^https?:\/\//i.test(origin)) {
+        return [];
+      }
+      requestUrl = `${origin}${FEED_ENDPOINT}`;
+    } else {
       return [];
     }
 
     try {
-      const response = await fetch(`${origin}${FEED_ENDPOINT}`, {
+      const response = await this.fetchImpl(requestUrl, {
         method: 'GET',
         headers: { Accept: 'application/json' },
       });
@@ -57,8 +79,12 @@ export class GeneratedFeedProvider implements ContentProvider {
         }
       }
 
-      this.cachedRecords = validated;
-      this.cachedAtMs = Date.now();
+      if (validated.length > 0) {
+        this.cachedRecords = validated;
+        this.cachedAtMs = Date.now();
+      } else {
+        this.cachedRecords = null;
+      }
       return validated;
     } catch {
       return [];

@@ -11,6 +11,7 @@ import {
 } from '../../application/library/SavedLibraryUseCases';
 import type {
   AIEnrichmentProvider,
+  ContentProvider,
   ContentRepository,
   FeedExecutor,
   InteractionRepository,
@@ -28,7 +29,6 @@ import { GeminiProvider } from '../../infrastructure/ai/GeminiProvider';
 import { LocalFallbackAIProvider } from '../../infrastructure/ai/LocalFallbackAIProvider';
 import { VisualAssetService } from '../../infrastructure/assets/VisualAssetService';
 import { CompositeContentProvider } from '../../infrastructure/content/CompositeContentProvider';
-import { EvergreenSeedProvider } from '../../infrastructure/content/EvergreenSeedProvider';
 import { GeneratedFeedProvider } from '../../infrastructure/content/GeneratedFeedProvider';
 import { NasaContentProvider } from '../../infrastructure/content/NasaContentProvider';
 import { RssContentProvider } from '../../infrastructure/content/RssContentProvider';
@@ -54,7 +54,7 @@ import {
 } from '../../infrastructure/persistence/LocalRepositories';
 import { SafeKeyValueStore } from '../../infrastructure/persistence/LocalStorageStore';
 import {
-  CuratedPuzzleProvider,
+  GeneratedPuzzleProvider,
   type PuzzleProvider,
 } from '../../infrastructure/puzzles/PuzzleProvider';
 import type { UserPreferences } from '../../shared/validation/contentSchemas';
@@ -83,6 +83,8 @@ export interface CurioServices {
 export function buildCurioServices(options?: {
   forceLocalStore?: SafeKeyValueStore;
   useCloudFirestore?: boolean;
+  contentProvider?: ContentProvider;
+  puzzleProvider?: PuzzleProvider;
 }): CurioServices {
   const runtime = options?.forceLocalStore ? null : getFirebaseRuntime();
   const useFirebase = Boolean(runtime && options?.useCloudFirestore !== false);
@@ -117,12 +119,15 @@ export function buildCurioServices(options?: {
       : new LocalFallbackAIProvider();
 
   const liveDiscoveryEnabled = import.meta.env.VITE_ENABLE_LIVE_DISCOVERY === 'true';
-  const contentProvider = new CompositeContentProvider([
-    new GeneratedFeedProvider(),
-    new EvergreenSeedProvider(),
-    new NasaContentProvider(liveDiscoveryEnabled),
-    new RssContentProvider(undefined, liveDiscoveryEnabled),
-  ]);
+  const contentProvider: ContentProvider =
+    options?.contentProvider ??
+    new CompositeContentProvider([
+      new GeneratedFeedProvider({
+        enableRemoteGenerated: !options?.forceLocalStore,
+      }),
+      new NasaContentProvider(liveDiscoveryEnabled),
+      new RssContentProvider(undefined, liveDiscoveryEnabled),
+    ]);
 
   const visualAssetResolver = new VisualAssetService(visualAssetRepository);
 
@@ -138,7 +143,11 @@ export function buildCurioServices(options?: {
   });
 
   const feedExecutor = new OnDemandFeedExecutor(orchestrator);
-  const puzzleProvider: PuzzleProvider = new CuratedPuzzleProvider(localStore);
+  const puzzleProvider: PuzzleProvider =
+    options?.puzzleProvider ??
+    new GeneratedPuzzleProvider(localStore, {
+      enableRemoteGenerated: !options?.forceLocalStore,
+    });
 
   return {
     mode: useFirebase ? 'firebase' : 'local',

@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import { getRouterBasename, withBasePath } from '../../utils/assetUrl';
 import { RateLimiter } from '../../utils/rateLimiter';
 import {
   maskDisplayIdentifier,
@@ -44,6 +45,15 @@ describe('URL validation & canonicalization security', () => {
       true
     );
     expect(isSafeImageUrl('/curio-icon.svg')).toBe(true);
+    expect(isSafeImageUrl('/curio/curio-icon.svg')).toBe(true);
+    expect(isSafeImageUrl('/curio/images/categories/facts.jpg')).toBe(true);
+
+    expect(getRouterBasename()).toBe('/curio');
+    expect(withBasePath('/curio-icon.svg')).toBe('/curio/curio-icon.svg');
+    expect(withBasePath('/curio/curio-icon.svg')).toBe('/curio/curio-icon.svg');
+    expect(withBasePath('https://upload.wikimedia.org/example.jpg')).toBe(
+      'https://upload.wikimedia.org/example.jpg'
+    );
 
     expect(isSafeImageUrl('https://untrusted-tracker.example/pixel.png')).toBe(false);
     expect(isSafeImageUrl('/../etc/passwd.png')).toBe(false);

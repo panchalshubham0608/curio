@@ -321,21 +321,11 @@ export function ProfilePage() {
             </div>
           </div>
 
-          <div className="profile-hero-action">
-            {isSignedIn ? (
-              <button
-                type="button"
-                className="curio-btn curio-btn--sm profile-hero-signout"
-                disabled={authBusy}
-                onClick={() => void handleSignOut()}
-              >
-                <LogOut size={14} />
-                Sign out
-              </button>
-            ) : (
+          {!isSignedIn && (
+            <div className="profile-hero-action">
               <GoogleSignInButton label="Sign in with Google" compact />
-            )}
-          </div>
+            </div>
+          )}
         </div>
 
         <div className="profile-hero-footer">
@@ -732,6 +722,20 @@ export function ProfilePage() {
           )}
         </div>
       </section>
+
+      {isSignedIn && (
+        <div className="profile-signout-footer">
+          <button
+            type="button"
+            className="profile-signout-btn"
+            disabled={authBusy}
+            onClick={() => void handleSignOut()}
+          >
+            <LogOut size={16} aria-hidden="true" />
+            <span>Sign out</span>
+          </button>
+        </div>
+      )}
 
       {/* Independent Visual Interests Modal */}
       <VisualInterestsModal

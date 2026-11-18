@@ -1,8 +1,8 @@
-name: Generate Curio Textual Feed
+name: Generate Curio Textual Feed & Puzzles
 
 on:
   schedule:
-    # Run every 30 minutes to refresh Curio's textual discovery feed
+    # Run every 30 minutes to refresh Curio's textual discovery feed and puzzles
     - cron: '*/30 * * * *'
   workflow_dispatch:
     inputs:
@@ -11,18 +11,29 @@ on:
         required: false
         default: '4'
         type: string
+      puzzles_batch_size:
+        description: 'Number of puzzles to generate per run (1-8)'
+        required: false
+        default: '3'
+        type: string
+      force_generate:
+        description: 'Bypass minimum unseen threshold check and generate immediately'
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
 
 concurrency:
-  group: generate-curio-feed
+  group: generate-curio-content
   cancel-in-progress: false
 
 jobs:
-  generate-feed:
-    name: Generate Textual Feed via Gemini
+  generate-content:
+    name: Generate Textual Feed & Puzzles via Gemini
     runs-on: ubuntu-latest
+    environment: cron-jobs
     timeout-minutes: 10
 
     steps:
@@ -40,28 +51,36 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Generate textual feed items with Gemini API
+      - name: Generate textual feed and puzzles with Gemini API
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash' }}
           FEED_BATCH_SIZE: ${{ inputs.batch_size || '4' }}
+          FEED_MIN_THRESHOLD: ${{ vars.FEED_MIN_THRESHOLD || '12' }}
+          FEED_FRESH_WINDOW_HOURS: ${{ vars.FEED_FRESH_WINDOW_HOURS || '24' }}
           FEED_MAX_ITEMS: '60'
+          PUZZLES_BATCH_SIZE: ${{ inputs.puzzles_batch_size || '3' }}
+          PUZZLES_MIN_THRESHOLD: ${{ vars.PUZZLES_MIN_THRESHOLD || '12' }}
+          PUZZLES_FRESH_WINDOW_HOURS: ${{ vars.PUZZLES_FRESH_WINDOW_HOURS || '24' }}
+          PUZZLES_MAX_ITEMS: '48'
+          FORCE_GENERATE: ${{ inputs.force_generate && 'true' || 'false' }}
         run: |
           if [ -z "$GEMINI_API_KEY" ]; then
-            echo "::error::Missing repository secret GEMINI_API_KEY. Add it under Settings -> Secrets and variables -> Actions."
+            echo "::error::Missing secret GEMINI_API_KEY in the 'cron-jobs' environment."
             exit 1
           fi
           npm run generate:feed
+          npm run generate:puzzles
 
-      - name: Commit updated feed if changed
+      - name: Commit updated feed and puzzles if changed
         run: |
-          if git diff --quiet -- public/generated/feed.json; then
-            echo "No new textual feed items to commit."
+          if git diff --quiet -- public/generated/feed.json public/generated/puzzles.json; then
+            echo "No new textual feed items or puzzles to commit."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/generated/feed.json
-          git commit -m "chore(feed): update scheduled textual feed [skip ci]"
+          git add public/generated/feed.json public/generated/puzzles.json
+          git commit -m "chore(content): update scheduled textual feed and puzzles [skip ci]"
           git push

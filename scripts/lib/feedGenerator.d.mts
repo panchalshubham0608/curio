@@ -47,6 +47,31 @@ export declare function mergeGeneratedFeed(
   newRecords: readonly Partial<ContentRecord>[],
   options?: { maxItems?: number; nowIso?: string; modelName?: string }
 ): { addedCount: number; envelope: GeneratedFeedEnvelope };
+export interface GenerationNeedDecision {
+  shouldGenerate: boolean;
+  itemsToGenerate: number;
+  freshUnseenCount: number;
+  deficit: number;
+  reason: 'threshold_met' | 'below_threshold' | 'forced';
+}
+
+export declare function evaluateGenerationNeed(options?: {
+  existingItems?: ReadonlyArray<{
+    id?: string;
+    createdAt?: string;
+    generatedAt?: string;
+    seenAt?: string;
+    seenCount?: number;
+  }>;
+  seenIds?: ReadonlySet<string> | readonly string[];
+  fallbackTimestamp?: string;
+  minThreshold?: number;
+  batchSize?: number;
+  freshWindowHours?: number;
+  nowMs?: number;
+  forceGenerate?: boolean;
+}): GenerationNeedDecision;
+
 export declare function requestGeminiTextualFeed(options: {
   apiKey: string;
   modelName?: string;

@@ -502,6 +502,8 @@ export function mergeGeneratedFeed(
     }
   }
 
+  const bounded = merged.slice(0, maxItems);
+
   return {
     addedCount,
     envelope: {
@@ -509,9 +511,69 @@ export function mergeGeneratedFeed(
       generatedAt: nowIso,
       generator: 'gemini-textual-feed',
       model: modelName,
-      itemCount: merged.length,
-      items: merged.slice(0, maxItems),
+      itemCount: bounded.length,
+      items: bounded,
     },
+  };
+}
+
+/**
+ * Evaluates whether scheduled generation should call Gemini or skip to save quota
+ * because at least `minThreshold` fresh, unseen entries are already ready in the pool.
+ */
+export function evaluateGenerationNeed({
+  existingItems = [],
+  seenIds = new Set(),
+  fallbackTimestamp,
+  minThreshold = 12,
+  batchSize = 4,
+  freshWindowHours = 24,
+  nowMs = Date.now(),
+  forceGenerate = false,
+} = {}) {
+  const seenSet = seenIds instanceof Set ? seenIds : new Set(seenIds);
+  const windowMs = Math.max(1, freshWindowHours) * 60 * 60 * 1000;
+  let freshUnseenCount = 0;
+
+  for (const item of existingItems) {
+    if (!item || typeof item !== 'object') continue;
+    const id = typeof item.id === 'string' ? item.id : '';
+    const alreadySeen =
+      (id && seenSet.has(id)) ||
+      Boolean(item.seenAt) ||
+      (typeof item.seenCount === 'number' && item.seenCount > 0);
+    if (alreadySeen) continue;
+
+    const tsRaw = item.createdAt ?? item.generatedAt ?? fallbackTimestamp;
+    const parsedMs = typeof tsRaw === 'string' ? Date.parse(tsRaw) : Number.NaN;
+    const isFresh = Number.isNaN(parsedMs) ? true : nowMs - parsedMs <= windowMs;
+    if (isFresh) {
+      freshUnseenCount += 1;
+    }
+  }
+
+  const deficit = Math.max(0, minThreshold - freshUnseenCount);
+
+  if (!forceGenerate && freshUnseenCount >= minThreshold) {
+    return {
+      shouldGenerate: false,
+      itemsToGenerate: 0,
+      freshUnseenCount,
+      deficit: 0,
+      reason: 'threshold_met',
+    };
+  }
+
+  const itemsToGenerate = forceGenerate
+    ? Math.max(1, batchSize)
+    : Math.min(Math.max(1, batchSize), Math.max(1, deficit));
+
+  return {
+    shouldGenerate: true,
+    itemsToGenerate,
+    freshUnseenCount,
+    deficit,
+    reason: forceGenerate ? 'forced' : 'below_threshold',
   };
 }
 

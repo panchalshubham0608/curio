@@ -2,6 +2,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { ContentRecordSchema } from '../../../shared/validation/contentSchemas';
 import {
   buildTextualFeedPrompt,
+  evaluateGenerationNeed,
   mergeGeneratedFeed,
   requestGeminiTextualFeed,
   resolveSafeOutputPath,
@@ -159,5 +160,88 @@ describe('Scheduled Gemini textual feed generator pipeline', () => {
     expect(merged.envelope.items).toHaveLength(2);
     expect(merged.envelope.items[0].id).toBe('curio_gen_new');
     expect(merged.envelope.items[1].id).toBe('curio_gen_1');
+  });
+
+  it('skips Gemini generation when minimum fresh unseen threshold is met and only replenishes exact deficits', () => {
+    const nowMs = Date.parse('2026-11-18T12:00:00.000Z');
+    const freshTs = '2026-11-18T10:00:00.000Z';
+    const staleTs = '2026-11-16T08:00:00.000Z';
+
+    const freshItems = Array.from({ length: 12 }, (_, idx) => ({
+      id: `item_${idx}`,
+      createdAt: freshTs,
+    }));
+
+    // 1. Threshold already met -> skip API call completely
+    const skipDecision = evaluateGenerationNeed({
+      existingItems: freshItems,
+      minThreshold: 12,
+      batchSize: 4,
+      freshWindowHours: 24,
+      nowMs,
+    });
+    expect(skipDecision).toEqual({
+      shouldGenerate: false,
+      itemsToGenerate: 0,
+      freshUnseenCount: 12,
+      deficit: 0,
+      reason: 'threshold_met',
+    });
+
+    // 2. Two items seen by users -> deficit is 2, so cap generation count to 2 (not full batchSize 4)
+    const partialDecision = evaluateGenerationNeed({
+      existingItems: freshItems,
+      seenIds: new Set(['item_0', 'item_1']),
+      minThreshold: 12,
+      batchSize: 4,
+      freshWindowHours: 24,
+      nowMs,
+    });
+    expect(partialDecision).toEqual({
+      shouldGenerate: true,
+      itemsToGenerate: 2,
+      freshUnseenCount: 10,
+      deficit: 2,
+      reason: 'below_threshold',
+    });
+
+    // 3. Items older than freshWindowHours or marked seenAt/seenCount do not count toward unseen pool
+    const mixedItems = [
+      { id: 'fresh_1', createdAt: freshTs },
+      { id: 'seen_at', createdAt: freshTs, seenAt: '2026-11-18T11:00:00.000Z' },
+      { id: 'seen_cnt', createdAt: freshTs, seenCount: 3 },
+      { id: 'stale_1', createdAt: staleTs },
+    ];
+    const replenishDecision = evaluateGenerationNeed({
+      existingItems: mixedItems,
+      minThreshold: 6,
+      batchSize: 4,
+      freshWindowHours: 24,
+      nowMs,
+    });
+    expect(replenishDecision).toEqual({
+      shouldGenerate: true,
+      itemsToGenerate: 4,
+      freshUnseenCount: 1,
+      deficit: 5,
+      reason: 'below_threshold',
+    });
+
+    // 4. forceGenerate bypasses threshold check explicitly
+    const forcedDecision = evaluateGenerationNeed({
+      existingItems: freshItems,
+      minThreshold: 12,
+      batchSize: 3,
+      freshWindowHours: 24,
+      nowMs,
+      forceGenerate: true,
+    });
+    expect(forcedDecision).toEqual({
+      shouldGenerate: true,
+      itemsToGenerate: 3,
+      freshUnseenCount: 12,
+      deficit: 0,
+      reason: 'forced',
+    });
   });
 });

@@ -6,6 +6,192 @@
   color: var(--ink-primary);
 }
 
+/* Deductive Reasoning Clue Deck */
+.puzzle-clues-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.puzzle-clue-card {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 13px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-hairline);
+  background: var(--bg-subtle);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color var(--duration-fast) ease,
+    background-color var(--duration-fast) ease,
+    opacity var(--duration-fast) ease;
+}
+
+.puzzle-clue-card:hover {
+  border-color: var(--border-strong);
+}
+
+.puzzle-clue-card--checked {
+  opacity: 0.62;
+  background: var(--bg-surface);
+}
+
+.puzzle-clue-card--checked .puzzle-clue-text {
+  text-decoration: line-through;
+}
+
+.puzzle-clue-num {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  background: var(--accent-indigo-soft);
+  color: var(--accent-indigo);
+}
+
+.puzzle-clue-text {
+  font-size: 0.89rem;
+  line-height: 1.46;
+  color: var(--ink-primary);
+}
+
+/* Sanitized Declarative SVG Visual Diagram */
+.puzzle-svg-frame {
+  margin: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-hairline);
+  background: var(--bg-subtle);
+}
+
+.puzzle-svg-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 230px;
+}
+
+.puzzle-svg-caption {
+  padding: 7px 12px;
+  font-size: 0.76rem;
+  color: var(--ink-muted);
+  border-top: 1px solid var(--border-hairline);
+  background: var(--bg-surface);
+}
+
+/* Put-in-Order Board */
+.puzzle-order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.puzzle-order-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.puzzle-order-badge {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-strong);
+  color: var(--ink-muted);
+}
+
+.puzzle-order-item--selected {
+  border-color: var(--accent-primary);
+  background: var(--accent-primary-soft);
+}
+
+.puzzle-order-item--selected .puzzle-order-badge {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: #ffffff;
+}
+
+/* Playable Interactive Grid Board */
+.puzzle-grid-hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.puzzle-grid-instruction {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--ink-secondary);
+}
+
+.puzzle-interactive-grid {
+  display: grid;
+  gap: 9px;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-hairline);
+}
+
+.puzzle-grid-cell {
+  min-height: 58px;
+  padding: 8px 6px;
+  border-radius: 12px;
+  border: 1.5px solid var(--border-strong);
+  background: var(--bg-surface);
+  color: var(--ink-primary);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform var(--duration-fast) var(--ease-spring),
+    background-color var(--duration-fast) ease,
+    border-color var(--duration-fast) ease,
+    color var(--duration-fast) ease,
+    box-shadow var(--duration-fast) ease;
+}
+
+.puzzle-grid-cell:hover:not(:disabled) {
+  border-color: var(--accent-primary);
+  transform: translateY(-1px);
+}
+
+.puzzle-grid-cell:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.puzzle-grid-cell--on {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: #ffffff;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--accent-primary) 34%, transparent);
+}
+
+.puzzle-grid-cell--solution {
+  box-shadow: 0 0 0 2.5px var(--accent-sage);
+}
+
 .puzzle-sequence-strip {
   display: flex;
   flex-wrap: wrap;

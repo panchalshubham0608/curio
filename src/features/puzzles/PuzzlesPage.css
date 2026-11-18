@@ -286,25 +286,29 @@
     box-shadow var(--duration-fast) ease;
 }
 
-.puzzle-tile--odd_one_out {
+.puzzle-tile--odd_one_out,
+.puzzle-tile--visual_diagram {
   background:
     radial-gradient(circle at 100% 0%, var(--accent-primary-soft) 0%, transparent 56%),
     var(--bg-surface);
 }
 
-.puzzle-tile--lateral_riddle {
+.puzzle-tile--lateral_riddle,
+.puzzle-tile--logic_reasoning {
   background:
     radial-gradient(circle at 100% 0%, var(--accent-indigo-soft) 0%, transparent 56%),
     var(--bg-surface);
 }
 
-.puzzle-tile--pattern_sequence {
+.puzzle-tile--pattern_sequence,
+.puzzle-tile--order_sequence {
   background:
     radial-gradient(circle at 100% 0%, var(--accent-ochre-soft) 0%, transparent 56%),
     var(--bg-surface);
 }
 
-.puzzle-tile--true_or_myth {
+.puzzle-tile--true_or_myth,
+.puzzle-tile--interactive_grid {
   background:
     radial-gradient(circle at 100% 0%, var(--accent-sage-soft) 0%, transparent 56%),
     var(--bg-surface);

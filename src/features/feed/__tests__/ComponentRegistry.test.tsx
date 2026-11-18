@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { RegisteredBlockRenderer } from '../components/ComponentRegistry';
 import { SourceAttributionRow } from '../components/SourceAttributionRow';
-import { getEvergreenSeedRecords } from '../../../infrastructure/content/EvergreenSeedProvider';
+import { createTestContentRecords } from '../../../test/fixtures';
 
 describe('Schema-driven ComponentRegistry & safe rendering', () => {
   it('safely omits unknown or malicious block types without executing or injecting HTML', () => {
@@ -117,7 +117,7 @@ describe('Schema-driven ComponentRegistry & safe rendering', () => {
   });
 
   it('renders SourceAttributionRow with safe target=_blank rel=noopener noreferrer link', () => {
-    const record = getEvergreenSeedRecords()[0]!;
+    const record = createTestContentRecords()[0]!;
     render(<SourceAttributionRow record={record} />);
 
     const link = screen.getByRole('link', { name: /Read original source/i });

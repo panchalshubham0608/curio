@@ -8,7 +8,7 @@ import {
   scoreCandidate,
 } from '../personalization/RankingEngine';
 import { createDefaultUserPreferences } from '../user/UserPreferences';
-import { getEvergreenSeedRecords } from '../../infrastructure/content/EvergreenSeedProvider';
+import { createTestContentRecords } from '../../test/fixtures';
 import type {
   ContentCategory,
   ContentFormat,
@@ -80,7 +80,7 @@ describe('FeedRules lifecycle transitions', () => {
 });
 
 describe('RankingEngine hybrid scoring & interaction rules', () => {
-  const seedRecords = getEvergreenSeedRecords();
+  const seedRecords = createTestContentRecords();
   const catalog = new Map(seedRecords.map((r) => [r.id, r]));
   const prefs = {
     ...createDefaultUserPreferences('u1'),
@@ -176,7 +176,7 @@ describe('RankingEngine hybrid scoring & interaction rules', () => {
 });
 
 describe('ContentSelector finite sizing, exclusions, diversity, and exploration', () => {
-  const candidates = getEvergreenSeedRecords();
+  const candidates = createTestContentRecords();
   const nowMs = Date.parse('2026-11-18T12:00:00.000Z');
 
   it('builds finite duration-appropriate sessions for 5, 10, and 15 minutes', () => {

@@ -6,13 +6,37 @@ import { AppProvider } from '../providers/AppContainer';
 import { buildCurioServices } from '../providers/curioServices';
 import { AppRoutes } from '../routes/AppRoutes';
 import { SafeKeyValueStore } from '../../infrastructure/persistence/LocalStorageStore';
+import { TestContentProvider } from '../../test/fixtures';
 
 describe('Project Curio Phase 1 end-to-end user journeys', () => {
+  it('shows a calm editorial empty state on HomePage when no AI feed items are published yet', async () => {
+    window.scrollTo = vi.fn();
+    const store = new SafeKeyValueStore('e2e_empty_ai_feed_test', false);
+    const services = buildCurioServices({ forceLocalStore: store });
+
+    render(
+      <AppProvider overrideServices={services}>
+        <MemoryRouter initialEntries={['/']}>
+          <AppRoutes />
+        </MemoryRouter>
+      </AppProvider>
+    );
+
+    expect(
+      await screen.findByRole('heading', { name: /Fresh discoveries are on the way/i })
+    ).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Check for new drops/i })).toBeInTheDocument();
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+  });
+
   it('starts directly on HomePage with a clean hero, scrollable visual feed, and interactive Profile Journey', async () => {
     window.scrollTo = vi.fn();
 
     const store = new SafeKeyValueStore('e2e_journey_test', false);
-    const services = buildCurioServices({ forceLocalStore: store });
+    const services = buildCurioServices({
+      forceLocalStore: store,
+      contentProvider: new TestContentProvider(),
+    });
     const user = userEvent.setup();
 
     render(
@@ -131,7 +155,10 @@ describe('Project Curio Phase 1 end-to-end user journeys', () => {
   it('lets visitors save a card directly from the Home feed and load more discoveries', async () => {
     window.scrollTo = vi.fn();
     const store = new SafeKeyValueStore('e2e_guest_test', false);
-    const services = buildCurioServices({ forceLocalStore: store });
+    const services = buildCurioServices({
+      forceLocalStore: store,
+      contentProvider: new TestContentProvider(),
+    });
     const user = userEvent.setup();
 
     render(
@@ -169,7 +196,10 @@ describe('Project Curio Phase 1 end-to-end user journeys', () => {
   it('supports controlled horizontal touch swipe navigation in the swipe deck while ignoring vertical scrolls', async () => {
     window.scrollTo = vi.fn();
     const store = new SafeKeyValueStore('e2e_swipe_test', false);
-    const services = buildCurioServices({ forceLocalStore: store });
+    const services = buildCurioServices({
+      forceLocalStore: store,
+      contentProvider: new TestContentProvider(),
+    });
     const user = userEvent.setup();
 
     const { container } = render(

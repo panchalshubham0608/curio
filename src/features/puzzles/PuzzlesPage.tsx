@@ -1,10 +1,14 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   ArrowRight,
+  Brain,
   Check,
   CheckCircle2,
   Dices,
+  Eye,
+  Grid3x3,
   HelpCircle,
+  ListOrdered,
   Puzzle as PuzzleIcon,
   Shapes,
   ShieldCheck,
@@ -24,6 +28,10 @@ const KIND_ICONS: Record<PuzzleKind, typeof PuzzleIcon> = {
   lateral_riddle: HelpCircle,
   pattern_sequence: Sparkles,
   true_or_myth: ShieldCheck,
+  logic_reasoning: Brain,
+  order_sequence: ListOrdered,
+  visual_diagram: Eye,
+  interactive_grid: Grid3x3,
 };
 
 export function PuzzlesPage() {
@@ -35,25 +43,39 @@ export function PuzzlesPage() {
   const [loading, setLoading] = useState(true);
   const [loadingNext, setLoadingNext] = useState(false);
 
+  const loadPuzzles = useCallback(async () => {
+    setLoading(true);
+    try {
+      const [allPuzzles, solved] = await Promise.all([
+        services.puzzleProvider.listPuzzles(),
+        services.puzzleProvider.getSolvedIds(userId),
+      ]);
+      setPuzzles(allPuzzles);
+      setSolvedIds(solved);
+    } finally {
+      setLoading(false);
+    }
+  }, [services, userId]);
+
   useEffect(() => {
-    let mounted = true;
-    const load = async () => {
+    let active = true;
+    const init = async () => {
       setLoading(true);
       try {
         const [allPuzzles, solved] = await Promise.all([
           services.puzzleProvider.listPuzzles(),
           services.puzzleProvider.getSolvedIds(userId),
         ]);
-        if (!mounted) return;
+        if (!active) return;
         setPuzzles(allPuzzles);
         setSolvedIds(solved);
       } finally {
-        if (mounted) setLoading(false);
+        if (active) setLoading(false);
       }
     };
-    void load();
+    void init();
     return () => {
-      mounted = false;
+      active = false;
     };
   }, [services, userId]);
 
@@ -101,6 +123,7 @@ export function PuzzlesPage() {
   const unsolvedCount = unsolvedPuzzles.length;
   const solvedPct = totalCount > 0 ? Math.min(100, Math.round((solvedCount / totalCount) * 100)) : 0;
   const allSolved = totalCount > 0 && unsolvedCount === 0;
+  const isEmpty = !loading && totalCount === 0;
 
   const renderPuzzleCard = (puzzle: Puzzle, idx: number, isSolved: boolean) => {
     const kindMeta = PUZZLE_KIND_METADATA[puzzle.kind];
@@ -175,12 +198,18 @@ export function PuzzlesPage() {
       <section className="puzzles-hero-card fade-in-card" aria-label="Quick puzzle launcher">
         <div className="puzzles-hero-copy">
           <h2 className="puzzles-hero-headline">
-            {allSolved ? 'Every teaser solved!' : 'Ready for a quick brain teaser?'}
+            {isEmpty
+              ? 'Fresh puzzles are on the way'
+              : allSolved
+                ? 'Every teaser solved!'
+                : 'Ready for a quick brain teaser?'}
           </h2>
           <p className="puzzles-hero-sub">
-            {allSolved
-              ? 'You cracked the entire set. Roll a favorite again or revisit any card below.'
-              : 'Patterns, riddles, and clever twists — pick any card below or roll a surprise.'}
+            {isEmpty
+              ? 'AI-crafted reasoning mysteries, fact checks, visual logic, and interactive boards appear here as new batches publish.'
+              : allSolved
+                ? 'You cracked the entire set. Roll a favorite again or revisit any card below.'
+                : 'Patterns, riddles, and clever twists — pick any card below or roll a surprise.'}
           </p>
           <div className="puzzles-hero-progress" aria-hidden="true">
             <div className="puzzles-hero-progress-fill" style={{ width: `${solvedPct}%` }} />
@@ -200,7 +229,11 @@ export function PuzzlesPage() {
           <span className="surprise-btn-text">
             <strong>{loadingNext ? 'Picking one…' : 'Surprise me'}</strong>
             <span>
-              {unsolvedCount > 0 ? `${unsolvedCount} unseen waiting` : 'Replay a favorite'}
+              {isEmpty
+                ? 'Waiting for first batch'
+                : unsolvedCount > 0
+                  ? `${unsolvedCount} unseen waiting`
+                  : 'Replay a favorite'}
             </span>
           </span>
           <Sparkles size={16} className="surprise-btn-sparkle" aria-hidden="true" />
@@ -215,6 +248,28 @@ export function PuzzlesPage() {
           <div className="skeleton" style={{ height: 168 }} />
           <div className="skeleton" style={{ height: 168 }} />
         </div>
+      ) : isEmpty ? (
+        <section className="stack-lg" aria-label="Available puzzles">
+          <div className="curio-card puzzles-caught-up-card fade-in-card" role="status">
+            <span className="puzzles-caught-up-emblem" aria-hidden="true">
+              <Sparkles size={20} strokeWidth={2.3} />
+            </span>
+            <h2 className="puzzles-caught-up-title">No puzzles published yet</h2>
+            <p className="puzzles-caught-up-subcopy">
+              New AI-generated puzzles appear here automatically once the scheduled generator
+              publishes its next batch.
+            </p>
+            <button
+              type="button"
+              className="curio-btn curio-btn--accent curio-btn--sm"
+              style={{ marginTop: 6 }}
+              onClick={() => void loadPuzzles()}
+            >
+              <Sparkles size={14} aria-hidden="true" />
+              <span>Check for puzzles</span>
+            </button>
+          </div>
+        </section>
       ) : (
         <section className="stack-lg" aria-label="Available puzzles">
           {unsolvedPuzzles.length > 0 && (

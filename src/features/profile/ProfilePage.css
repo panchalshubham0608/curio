@@ -190,17 +190,6 @@
   color: #f7deb4;
 }
 
-.profile-hero-signout {
-  background: rgba(250, 248, 244, 0.12);
-  border-color: rgba(250, 248, 244, 0.22);
-  color: #faf8f4;
-}
-
-.profile-hero-signout:hover:not(:disabled) {
-  background: rgba(250, 248, 244, 0.22);
-  color: #ffffff;
-}
-
 .profile-hero-card .google-signin-btn {
   background: #ffffff;
   color: #171614;
@@ -547,4 +536,45 @@ a.profile-stat-card:active {
   color: var(--ink-primary);
   font-size: 0.78rem;
   font-weight: 600;
+}
+
+.profile-signout-footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 4px;
+}
+
+.profile-signout-btn {
+  width: 100%;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: var(--radius-lg);
+  border: 1px solid color-mix(in srgb, var(--accent-danger) 28%, var(--border-hairline));
+  background: var(--bg-surface);
+  color: var(--accent-danger);
+  font-size: 0.94rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  transition: background-color var(--duration-fast) ease,
+    border-color var(--duration-fast) ease,
+    transform var(--duration-fast) var(--ease-editorial);
+}
+
+.profile-signout-btn:hover:not(:disabled) {
+  background: var(--accent-danger-soft);
+  border-color: color-mix(in srgb, var(--accent-danger) 48%, transparent);
+}
+
+.profile-signout-btn:active:not(:disabled) {
+  transform: scale(0.985);
+}
+
+.profile-signout-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
 }

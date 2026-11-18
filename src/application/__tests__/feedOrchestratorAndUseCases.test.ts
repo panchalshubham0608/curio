@@ -10,9 +10,9 @@ import type { AIEnrichmentProvider, ContentProvider } from '../ports';
 import { LocalFallbackAIProvider } from '../../infrastructure/ai/LocalFallbackAIProvider';
 import { VisualAssetService } from '../../infrastructure/assets/VisualAssetService';
 import {
-  EvergreenSeedProvider,
-  getEvergreenSeedRecords,
-} from '../../infrastructure/content/EvergreenSeedProvider';
+  createTestContentRecords,
+  TestContentProvider,
+} from '../../test/fixtures';
 import { parseRssXmlSafely } from '../../infrastructure/content/RssContentProvider';
 import { OnDemandFeedExecutor } from '../../infrastructure/execution/OnDemandFeedExecutor';
 import {
@@ -42,7 +42,7 @@ describe('OnDemandFeedExecutor & FeedOrchestrator workflow', () => {
   it('generates an idempotent finite session and restores it cleanly across refreshes', async () => {
     const repos = createInMemoryRepos();
     const orchestrator = new FeedOrchestrator({
-      contentProvider: new EvergreenSeedProvider(),
+      contentProvider: new TestContentProvider(),
       contentRepository: repos.contentRepo,
       sessionRepository: repos.sessionRepo,
       preferencesRepository: repos.userRepo,
@@ -88,7 +88,7 @@ describe('OnDemandFeedExecutor & FeedOrchestrator workflow', () => {
   it('falls back gracefully to cached content when live discovery and single-item AI enrichment fail', async () => {
     const repos = createInMemoryRepos();
     // Seed cache with unenriched records so enrichment gets exercised
-    const cachedRecords = getEvergreenSeedRecords()
+    const cachedRecords = createTestContentRecords()
       .slice(0, 8)
       .map((item) => ({ ...item, isAiEnriched: false }));
     await repos.contentRepo.saveMany(cachedRecords);
@@ -140,7 +140,7 @@ describe('OnDemandFeedExecutor & FeedOrchestrator workflow', () => {
 
 describe('AskContentQuestion, SavedLibrary, and Safe RSS parsing', () => {
   it('returns grounded answers, flags out-of-scope questions, and enforces rate limits', async () => {
-    const record = getEvergreenSeedRecords()[0]!;
+    const record = createTestContentRecords()[0]!;
     const askUseCase = new AskContentQuestionUseCase(
       new LocalFallbackAIProvider(),
       new RateLimiter(2, 60_000)
@@ -185,7 +185,7 @@ describe('AskContentQuestion, SavedLibrary, and Safe RSS parsing', () => {
     expect(initial.collections.map((c) => c.name)).toContain("Interesting Things I've Learned");
     expect(initial.collections.map((c) => c.name)).toContain('Read Later');
 
-    const record = getEvergreenSeedRecords()[0]!;
+    const record = createTestContentRecords()[0]!;
     await saveContent.save('u1', record, 'col_learned', 'sess_1');
     const customCol = await saveContent.createCollection('u1', 'Weekend Deep Dives');
 

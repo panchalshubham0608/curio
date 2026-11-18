@@ -15,6 +15,7 @@ import {
 import { useCurioApp } from '../../app/providers/appContext';
 import type { GeneratedFeed } from '../../domain/feed/Feed';
 import { getFriendlyErrorMessage } from '../../shared/errors/firebaseErrorMapper';
+import { withBasePath } from '../../shared/utils/assetUrl';
 import { formatMastheadDate, getTimeOfDayGreeting } from '../../shared/utils/time';
 import {
   CATEGORY_METADATA,
@@ -70,6 +71,10 @@ export function HomePage() {
 
       if (result.status === 'ready' && result.feed) {
         return result.feed;
+      }
+
+      if (result.error?.code === 'EMPTY_CANDIDATE_POOL') {
+        return null;
       }
 
       throw new Error(result.error?.message ?? 'Could not load discoveries right now.');
@@ -131,18 +136,20 @@ export function HomePage() {
     const existingIds = new Set(existingItems.map((item) => item.id));
     try {
       const next = await loadFeedBatch(Array.from(existingIds), 5);
-      const uniqueNew = next.items.filter((item) => !existingIds.has(item.id));
-      if (uniqueNew.length > 0) {
+      const uniqueNew = next ? next.items.filter((item) => !existingIds.has(item.id)) : [];
+      if (next && uniqueNew.length > 0) {
         setFeed({
           ...next,
           items: [...existingItems, ...uniqueNew],
         });
       } else {
-        // Every item in the current pool has been shown — start a fresh shuffled set at top
+        // Every item in the current pool has been shown (or pool is refreshing) — fetch fresh set
         const cycled = await loadFeedBatch([], 10);
         setDismissedIds(new Set());
         setFeed(cycled);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (cycled) {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
       }
     } catch (error: unknown) {
       setErrorMsg(getFriendlyErrorMessage(error, 'firestore'));
@@ -262,7 +269,7 @@ export function HomePage() {
 
       {/* Immersive Full-Bleed Editorial Cover Card */}
       <section className="hero-cover" aria-label="Curio Daily Edition Hero">
-        <img src="/images/hero/edition.jpg" alt="" className="hero-cover-bg" />
+        <img src={withBasePath('/images/hero/edition.jpg')} alt="" className="hero-cover-bg" />
         <div className="hero-cover-scrim" aria-hidden="true" />
 
         <div className="hero-cover-content">
@@ -396,18 +403,20 @@ export function HomePage() {
           })
         )}
 
-        {/* Calm "All Caught Up" Boundary Card */}
-        {!loadingFeed && (
+        {/* Calm Empty Feed or "All Caught Up" Boundary Card */}
+        {!loadingFeed && visibleItems.length === 0 ? (
           <section
             className="curio-card caught-up-card fade-in-card"
-            aria-label="All caught up"
+            aria-label="Fresh discoveries coming soon"
+            role="status"
           >
             <span className="caught-up-emblem" aria-hidden="true">
-              <Check size={20} strokeWidth={2.5} />
+              <Sparkles size={20} strokeWidth={2.3} />
             </span>
-            <h2 className="caught-up-title">You’re all caught up</h2>
+            <h2 className="caught-up-title">Fresh discoveries are on the way</h2>
             <p className="caught-up-subcopy">
-              You’ve seen the latest picks for now.
+              AI-crafted textual stories and facts publish automatically on schedule. Check back
+              soon or refresh below.
             </p>
             <div className="caught-up-actions">
               <button
@@ -419,21 +428,60 @@ export function HomePage() {
                 {loadingMore ? (
                   <>
                     <Loader2 size={16} className="curio-spin" aria-hidden="true" />
-                    <span>Loading…</span>
+                    <span>Checking…</span>
                   </>
                 ) : (
                   <>
-                    <Plus size={16} strokeWidth={2.3} aria-hidden="true" />
-                    <span>Load more</span>
+                    <Sparkles size={15} aria-hidden="true" />
+                    <span>Check for new drops</span>
                   </>
                 )}
               </button>
-              <Link to="/explore" className="caught-up-link">
-                <span>Explore themes</span>
+              <Link to="/puzzles" className="caught-up-link">
+                <span>Try puzzles</span>
                 <ArrowRight size={14} aria-hidden="true" />
               </Link>
             </div>
           </section>
+        ) : (
+          !loadingFeed && (
+            <section
+              className="curio-card caught-up-card fade-in-card"
+              aria-label="All caught up"
+            >
+              <span className="caught-up-emblem" aria-hidden="true">
+                <Check size={20} strokeWidth={2.5} />
+              </span>
+              <h2 className="caught-up-title">You’re all caught up</h2>
+              <p className="caught-up-subcopy">
+                You’ve seen the latest picks for now.
+              </p>
+              <div className="caught-up-actions">
+                <button
+                  type="button"
+                  className="curio-btn caught-up-primary-btn"
+                  disabled={loadingMore}
+                  onClick={() => void handleLoadMore()}
+                >
+                  {loadingMore ? (
+                    <>
+                      <Loader2 size={16} className="curio-spin" aria-hidden="true" />
+                      <span>Loading…</span>
+                    </>
+                  ) : (
+                    <>
+                      <Plus size={16} strokeWidth={2.3} aria-hidden="true" />
+                      <span>Load more</span>
+                    </>
+                  )}
+                </button>
+                <Link to="/explore" className="caught-up-link">
+                  <span>Explore themes</span>
+                  <ArrowRight size={14} aria-hidden="true" />
+                </Link>
+              </div>
+            </section>
+          )
         )}
       </section>
 

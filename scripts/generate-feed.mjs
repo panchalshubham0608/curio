@@ -4,6 +4,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   buildTextualFeedPrompt,
+  evaluateGenerationNeed,
   mergeGeneratedFeed,
   parseBoundedInt,
   requestGeminiTextualFeed,
@@ -28,6 +29,34 @@ async function readExistingFeed(outputPath) {
 }
 
 async function run() {
+  const modelName = validateModelName(process.env.GEMINI_MODEL || 'gemini-2.5-flash');
+  const batchSize = parseBoundedInt(process.env.FEED_BATCH_SIZE, 4, 1, 8);
+  const minThreshold = parseBoundedInt(process.env.FEED_MIN_THRESHOLD, 12, 1, 60);
+  const maxItems = parseBoundedInt(process.env.FEED_MAX_ITEMS, 60, minThreshold, 120);
+  const freshWindowHours = parseBoundedInt(process.env.FEED_FRESH_WINDOW_HOURS, 24, 1, 168);
+  const forceGenerate = process.env.FORCE_GENERATE === 'true';
+  const outputFileName = process.env.FEED_OUTPUT_FILE || 'feed.json';
+
+  const { allowedDir, outputPath } = resolveSafeOutputPath(REPO_ROOT, outputFileName);
+  const existingEnvelope = await readExistingFeed(outputPath);
+  const existingItems = Array.isArray(existingEnvelope.items) ? existingEnvelope.items : [];
+
+  const decision = evaluateGenerationNeed({
+    existingItems,
+    fallbackTimestamp: existingEnvelope.generatedAt,
+    minThreshold,
+    batchSize,
+    freshWindowHours,
+    forceGenerate,
+  });
+
+  if (!decision.shouldGenerate) {
+    console.info(
+      `[Curio Feed Generator] Skipping Gemini API call: ${decision.freshUnseenCount} fresh unseen items already ready (minimum threshold: ${minThreshold}).`
+    );
+    return;
+  }
+
   const apiKey = process.env.GEMINI_API_KEY?.trim();
   if (!apiKey) {
     console.error(
@@ -37,16 +66,8 @@ async function run() {
     return;
   }
 
-  const modelName = validateModelName(process.env.GEMINI_MODEL || 'gemini-2.5-flash');
-  const batchSize = parseBoundedInt(process.env.FEED_BATCH_SIZE, 4, 1, 8);
-  const maxItems = parseBoundedInt(process.env.FEED_MAX_ITEMS, 60, 10, 120);
-  const outputFileName = process.env.FEED_OUTPUT_FILE || 'feed.json';
-
-  const { allowedDir, outputPath } = resolveSafeOutputPath(REPO_ROOT, outputFileName);
-  const existingEnvelope = await readExistingFeed(outputPath);
-  const existingItems = Array.isArray(existingEnvelope.items) ? existingEnvelope.items : [];
-
-  const targetCategories = selectBatchCategories(existingItems, batchSize);
+  const targetCount = decision.itemsToGenerate;
+  const targetCategories = selectBatchCategories(existingItems, targetCount);
   const recentTitles = existingItems
     .slice(0, 24)
     .map((item) => (typeof item?.title === 'string' ? item.title : ''))
@@ -54,12 +75,12 @@ async function run() {
 
   const prompt = buildTextualFeedPrompt({
     categories: targetCategories,
-    batchSize,
+    batchSize: targetCount,
     recentTitles,
   });
 
   console.info(
-    `[Curio Feed Generator] Requesting ${batchSize} textual items from ${modelName} for categories: ${targetCategories.join(', ')}`
+    `[Curio Feed Generator] Requesting ${targetCount} textual items (unseen=${decision.freshUnseenCount}/${minThreshold}) from ${modelName} for categories: ${targetCategories.join(', ')}`
   );
 
   const rawPayload = await requestGeminiTextualFeed({

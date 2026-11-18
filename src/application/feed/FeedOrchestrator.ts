@@ -171,10 +171,17 @@ export class FeedOrchestrator {
       });
 
       if (selection.selected.length === 0) {
-        const errorInfo = {
-          code: 'EMPTY_CANDIDATE_POOL',
-          message: 'No eligible discoveries matched your current filters. Try adjusting excluded topics.',
-        };
+        const errorInfo =
+          mergedCandidates.length === 0
+            ? {
+                code: 'EMPTY_CANDIDATE_POOL',
+                message: 'Fresh AI discoveries are on the way. Check back soon!',
+              }
+            : {
+                code: 'EMPTY_CANDIDATE_POOL',
+                message:
+                  'No eligible discoveries matched your current filters. Try adjusting excluded topics.',
+              };
         await this.deps.sessionRepository.update(request.userId, request.sessionId, {
           status: 'failed',
           error: errorInfo,

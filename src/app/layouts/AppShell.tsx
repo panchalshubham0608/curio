@@ -1,6 +1,7 @@
 import { Link, NavLink, Outlet, useMatch } from 'react-router-dom';
 import { Bookmark, Compass, Home, Puzzle, SlidersHorizontal } from 'lucide-react';
 import { useCurioApp } from '../providers/appContext';
+import { withBasePath } from '../../shared/utils/assetUrl';
 import './AppShell.css';
 
 const NAV_ITEMS = [
@@ -30,7 +31,7 @@ export function AppShell() {
         <div className="curio-topbar-inner">
           <Link to="/" className="curio-brand" aria-label="Curio Home">
             <img
-              src="/curio-icon.svg"
+              src={withBasePath('/curio-icon.svg')}
               alt=""
               className="curio-brand-mark"
               width={30}

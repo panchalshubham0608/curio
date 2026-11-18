@@ -11,6 +11,9 @@ import {
   type Puzzle,
 } from '../../../shared/validation/puzzleSchemas';
 import { ModalDialog } from '../../feed/components/ModalDialog';
+import { InteractiveGridBoard } from './InteractiveGridBoard';
+import { OrderSequenceBoard } from './OrderSequenceBoard';
+import { SanitizedSvgDiagram } from './SanitizedSvgDiagram';
 import './PuzzlePopupModal.css';
 
 interface PuzzlePopupModalProps {
@@ -23,7 +26,8 @@ interface PuzzlePopupModalProps {
 
 /**
  * Interactive puzzle popup dialog (mobile slide-up sheet / desktop centered modal).
- * Keyed by `puzzle.id` from the caller or reset internally when the puzzle switches.
+ * Supports choice teasers, deductive reasoning clues, fact checks, tap-to-order sequences,
+ * sanitized declarative SVG diagrams, and playable interactive grid boards.
  */
 export function PuzzlePopupModal({
   puzzle,
@@ -62,11 +66,17 @@ function PuzzlePopupBody({
   loadingNext,
 }: PuzzlePopupBodyProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [boardResult, setBoardResult] = useState<'correct' | 'wrong' | null>(null);
+  const [checkedClues, setCheckedClues] = useState<Set<number>>(new Set());
   const [showHint, setShowHint] = useState(false);
 
   const kindMeta = PUZZLE_KIND_METADATA[puzzle.kind];
-  const answered = selectedIndex !== null;
-  const isCorrect = selectedIndex === puzzle.correctIndex;
+  const isInteractiveBoard =
+    puzzle.kind === 'order_sequence' || puzzle.kind === 'interactive_grid';
+  const answered = isInteractiveBoard ? boardResult !== null : selectedIndex !== null;
+  const isCorrect = isInteractiveBoard
+    ? boardResult === 'correct'
+    : selectedIndex === puzzle.correctIndex;
 
   const handleSelectOption = (index: number) => {
     if (answered) return;
@@ -76,13 +86,30 @@ function PuzzlePopupBody({
     }
   };
 
+  const handleBoardComplete = (solved: boolean) => {
+    if (answered) return;
+    setBoardResult(solved ? 'correct' : 'wrong');
+    if (solved) {
+      onSolved(puzzle.id);
+    }
+  };
+
+  const toggleClueChecked = (idx: number) => {
+    setCheckedClues((prev) => {
+      const next = new Set(prev);
+      if (next.has(idx)) next.delete(idx);
+      else next.add(idx);
+      return next;
+    });
+  };
+
   const optionsLayoutClass =
     puzzle.kind === 'odd_one_out' || puzzle.kind === 'true_or_myth'
       ? 'puzzle-options-grid'
       : 'puzzle-options-list';
 
   return (
-    <ModalDialog open title={puzzle.title} maxWidth={540} onClose={onClose}>
+    <ModalDialog open title={puzzle.title} maxWidth={560} onClose={onClose}>
       <div className="stack-md">
         {/* Top Metadata Pills */}
         <div className="row-wrap" style={{ gap: 8 }}>
@@ -103,11 +130,43 @@ function PuzzlePopupBody({
         {/* Prompt */}
         <p className="puzzle-popup-prompt">{puzzle.prompt}</p>
 
+        {/* Deductive Reasoning Clues (tappable to check off while reasoning) */}
+        {puzzle.clues && puzzle.clues.length > 0 && (
+          <div className="puzzle-clues-list" role="group" aria-label="Reasoning clues">
+            {puzzle.clues.map((clue, idx) => {
+              const checked = checkedClues.has(idx);
+              return (
+                <button
+                  key={`${puzzle.id}-clue-${idx}`}
+                  type="button"
+                  aria-pressed={checked}
+                  className={`puzzle-clue-card ${checked ? 'puzzle-clue-card--checked' : ''}`}
+                  onClick={() => toggleClueChecked(idx)}
+                >
+                  <span className="puzzle-clue-num" aria-hidden="true">
+                    {idx + 1}
+                  </span>
+                  <span className="puzzle-clue-text">{clue}</span>
+                </button>
+              );
+            })}
+          </div>
+        )}
+
+        {/* Sanitized Declarative SVG Visual Diagram */}
+        {puzzle.svgDiagram && (
+          <SanitizedSvgDiagram diagram={puzzle.svgDiagram} title={puzzle.title} />
+        )}
+
         {/* Pattern Sequence Tiles */}
         {puzzle.sequenceItems && puzzle.sequenceItems.length > 0 && (
           <div className="puzzle-sequence-strip" aria-label="Pattern sequence">
             {puzzle.sequenceItems.map((token, idx) => {
               const isBlank = token === '?';
+              const revealedToken =
+                typeof puzzle.correctIndex === 'number'
+                  ? puzzle.options?.[puzzle.correctIndex] ?? token
+                  : token;
               return (
                 <span
                   key={`${puzzle.id}-seq-${idx}`}
@@ -115,7 +174,7 @@ function PuzzlePopupBody({
                     isBlank ? 'puzzle-sequence-tile--blank' : ''
                   }`}
                 >
-                  {isBlank && answered ? puzzle.options[puzzle.correctIndex] : token}
+                  {isBlank && answered ? revealedToken : token}
                 </span>
               );
             })}
@@ -143,36 +202,51 @@ function PuzzlePopupBody({
           </div>
         )}
 
-        {/* Interactive Options */}
-        <div className={optionsLayoutClass} role="radiogroup" aria-label={puzzle.title}>
-          {puzzle.options.map((option, index) => {
-            const isChoice = selectedIndex === index;
-            const isAnswer = index === puzzle.correctIndex;
-            let stateClass = '';
-            if (answered && isAnswer) stateClass = 'puzzle-option--correct';
-            else if (answered && isChoice && !isAnswer) stateClass = 'puzzle-option--wrong';
+        {/* Interactive Board Mechanics OR Choice Options */}
+        {puzzle.kind === 'order_sequence' && puzzle.orderItems && puzzle.correctOrder ? (
+          <OrderSequenceBoard
+            items={puzzle.orderItems}
+            correctOrder={puzzle.correctOrder}
+            answered={answered}
+            onComplete={handleBoardComplete}
+          />
+        ) : puzzle.kind === 'interactive_grid' && puzzle.gridPuzzle ? (
+          <InteractiveGridBoard
+            grid={puzzle.gridPuzzle}
+            answered={answered}
+            onComplete={handleBoardComplete}
+          />
+        ) : puzzle.options && puzzle.options.length > 0 ? (
+          <div className={optionsLayoutClass} role="radiogroup" aria-label={puzzle.title}>
+            {puzzle.options.map((option, index) => {
+              const isChoice = selectedIndex === index;
+              const isAnswer = index === puzzle.correctIndex;
+              let stateClass = '';
+              if (answered && isAnswer) stateClass = 'puzzle-option--correct';
+              else if (answered && isChoice && !isAnswer) stateClass = 'puzzle-option--wrong';
 
-            return (
-              <button
-                key={`${puzzle.id}-opt-${index}`}
-                type="button"
-                role="radio"
-                aria-checked={isChoice}
-                disabled={answered}
-                className={`puzzle-option ${stateClass}`}
-                onClick={() => handleSelectOption(index)}
-              >
-                <span>{option}</span>
-                {answered && isAnswer && (
-                  <CheckCircle2 size={17} aria-hidden="true" style={{ flexShrink: 0 }} />
-                )}
-                {answered && isChoice && !isAnswer && (
-                  <XCircle size={17} aria-hidden="true" style={{ flexShrink: 0 }} />
-                )}
-              </button>
-            );
-          })}
-        </div>
+              return (
+                <button
+                  key={`${puzzle.id}-opt-${index}`}
+                  type="button"
+                  role="radio"
+                  aria-checked={isChoice}
+                  disabled={answered}
+                  className={`puzzle-option ${stateClass}`}
+                  onClick={() => handleSelectOption(index)}
+                >
+                  <span>{option}</span>
+                  {answered && isAnswer && (
+                    <CheckCircle2 size={17} aria-hidden="true" style={{ flexShrink: 0 }} />
+                  )}
+                  {answered && isChoice && !isAnswer && (
+                    <XCircle size={17} aria-hidden="true" style={{ flexShrink: 0 }} />
+                  )}
+                </button>
+              );
+            })}
+          </div>
+        ) : null}
 
         {/* Result & Explanation */}
         {answered && (
