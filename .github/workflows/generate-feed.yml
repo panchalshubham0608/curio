@@ -21,6 +21,11 @@ on:
         required: false
         default: false
         type: boolean
+      target_regions:
+        description: 'Optional comma-separated extra editions to seed (e.g. IN,US,UK)'
+        required: false
+        default: ''
+        type: string
 
 permissions:
   contents: write
@@ -48,6 +53,9 @@ jobs:
           node-version: '22'
           cache: 'npm'
 
+      - name: Verify lockfile uses public npm registry
+        run: npm run lockfile:check
+
       - name: Install dependencies
         run: npm ci
 
@@ -57,9 +65,12 @@ jobs:
           FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-flash-latest' }}
           FEED_BATCH_SIZE: ${{ inputs.batch_size || '4' }}
+          FEED_REGIONAL_BATCH_SIZE: ${{ vars.FEED_REGIONAL_BATCH_SIZE || '2' }}
           FEED_MIN_THRESHOLD: ${{ vars.FEED_MIN_THRESHOLD || '12' }}
+          FEED_REGIONAL_MIN_THRESHOLD: ${{ vars.FEED_REGIONAL_MIN_THRESHOLD || '6' }}
           FEED_FRESH_WINDOW_HOURS: ${{ vars.FEED_FRESH_WINDOW_HOURS || '24' }}
-          FEED_MAX_ITEMS: '60'
+          FEED_TARGET_REGIONS: ${{ inputs.target_regions || vars.FEED_TARGET_REGIONS || '' }}
+          FEED_MAX_ITEMS: '80'
           PUZZLES_BATCH_SIZE: ${{ inputs.puzzles_batch_size || '3' }}
           PUZZLES_MIN_THRESHOLD: ${{ vars.PUZZLES_MIN_THRESHOLD || '12' }}
           PUZZLES_FRESH_WINDOW_HOURS: ${{ vars.PUZZLES_FRESH_WINDOW_HOURS || '24' }}

@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import {
   CATEGORY_METADATA,
+  REGION_METADATA,
   type ContentFormat,
   type ContentRecord,
 } from '../../../shared/validation/contentSchemas';
@@ -32,6 +33,10 @@ interface DiscoveryCardProps {
  */
 export function HeroImageCard({ record, handlers, footer }: DiscoveryCardProps) {
   const categoryMeta = CATEGORY_METADATA[record.category];
+  const regionBadge =
+    record.region && record.region !== 'global'
+      ? REGION_METADATA[record.region].shortLabel
+      : null;
 
   return (
     <article className="curio-card curio-card--discovery fade-in-card">
@@ -53,7 +58,10 @@ export function HeroImageCard({ record, handlers, footer }: DiscoveryCardProps) 
           >
             {categoryMeta.shortLabel}
           </span>
-          <span className="mono-meta">{FORMAT_LABELS[record.contentType]}</span>
+          <span className="mono-meta">
+            {FORMAT_LABELS[record.contentType]}
+            {regionBadge ? ` · ${regionBadge}` : ''}
+          </span>
         </div>
 
         <h2 style={{ fontSize: 'clamp(1.38rem, 3.4vw, 1.85rem)', marginBottom: 10 }}>

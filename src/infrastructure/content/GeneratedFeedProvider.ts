@@ -144,6 +144,7 @@ export class GeneratedFeedProvider implements ContentProvider {
     const records = await this.loadValidatedRecords();
     if (records.length === 0) return [];
 
+    const preferredRegion = input.region ?? 'global';
     const focus = input.topicFocus?.toLowerCase();
     const ordered = [...records].sort((a, b) => {
       if (focus) {
@@ -155,6 +156,12 @@ export class GeneratedFeedProvider implements ContentProvider {
           : 0;
         if (aHit !== bHit) return bHit - aHit;
       }
+      const aReg =
+        a.region === preferredRegion ? 2 : a.region === 'global' ? 1 : 0;
+      const bReg =
+        b.region === preferredRegion ? 2 : b.region === 'global' ? 1 : 0;
+      if (aReg !== bReg) return bReg - aReg;
+
       const aCat = input.categories.includes(a.category) ? 1 : 0;
       const bCat = input.categories.includes(b.category) ? 1 : 0;
       if (aCat !== bCat) return bCat - aCat;
@@ -166,6 +173,7 @@ export class GeneratedFeedProvider implements ContentProvider {
       title: record.title,
       subtitle: record.subtitle,
       category: record.category,
+      region: record.region,
       topics: record.topics,
       contentType: record.contentType,
       cardVariant: record.cardVariant,

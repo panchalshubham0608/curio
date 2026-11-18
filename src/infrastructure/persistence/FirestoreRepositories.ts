@@ -50,11 +50,18 @@ function stripUndefined<T extends Record<string, unknown>>(obj: T): Record<strin
   return clean;
 }
 
+/**
+ * Read-only Firestore content catalog backed by an optional device-local cache.
+ * Shared `/content` documents are written exclusively by server-side background jobs
+ * via the Firebase Admin SDK; client apps never write to `/content`.
+ */
 export class FirestoreContentRepository implements ContentRepository {
   private readonly db: Firestore;
+  private readonly localCache?: ContentRepository;
 
-  constructor(db: Firestore) {
+  constructor(db: Firestore, localCache?: ContentRepository) {
     this.db = db;
+    this.localCache = localCache;
   }
 
   public async findCandidates(input: CandidateQuery): Promise<ContentRecord[]> {
@@ -63,21 +70,39 @@ export class FirestoreContentRepository implements ContentRepository {
     const snap = await getDocs(q);
     const allowed = input.categories ? new Set(input.categories) : null;
 
-    const results: ContentRecord[] = [];
+    const merged = new Map<string, ContentRecord>();
     for (const d of snap.docs) {
       const parsed = ContentRecordSchema.safeParse({ ...d.data(), id: d.id });
       if (parsed.success && (!allowed || allowed.has(parsed.data.category))) {
-        results.push(parsed.data);
+        merged.set(parsed.data.id, parsed.data);
       }
     }
-    return results;
+
+    if (this.localCache) {
+      const cached = await this.localCache.findCandidates(input);
+      for (const item of cached) {
+        if (!merged.has(item.id)) {
+          merged.set(item.id, item);
+        }
+      }
+    }
+
+    const results = Array.from(merged.values()).sort((a, b) =>
+      b.createdAt.localeCompare(a.createdAt)
+    );
+    return typeof input.limit === 'number' ? results.slice(0, input.limit) : results;
   }
 
   public async getById(id: string): Promise<ContentRecord | null> {
     const snap = await getDoc(doc(this.db, 'content', id));
-    if (!snap.exists()) return null;
-    const parsed = ContentRecordSchema.safeParse({ ...snap.data(), id: snap.id });
-    return parsed.success ? parsed.data : null;
+    if (snap.exists()) {
+      const parsed = ContentRecordSchema.safeParse({ ...snap.data(), id: snap.id });
+      if (parsed.success) return parsed.data;
+    }
+    if (this.localCache) {
+      return this.localCache.getById(id);
+    }
+    return null;
   }
 
   public async getByIds(ids: string[]): Promise<ContentRecord[]> {
@@ -87,17 +112,12 @@ export class FirestoreContentRepository implements ContentRepository {
   }
 
   public async saveMany(items: ContentRecord[]): Promise<void> {
-    if (items.length === 0) return;
-    const batch = writeBatch(this.db);
-    for (const item of items) {
-      const parsed = ContentRecordSchema.safeParse(item);
-      if (parsed.success) {
-        batch.set(doc(this.db, 'content', parsed.data.id), stripUndefined(parsed.data), {
-          merge: true,
-        });
-      }
-    }
-    await batch.commit();
+    if (items.length === 0 || !this.localCache) return;
+    await this.localCache.saveMany(items);
+  }
+
+  public async clearCache(): Promise<void> {
+    await this.localCache?.clearCache?.();
   }
 }
 

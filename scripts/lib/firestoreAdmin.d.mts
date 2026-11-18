@@ -63,3 +63,8 @@ export declare function readSeenContentIds(
   db: FirestoreLikeDb,
   options?: { limit?: number }
 ): Promise<Set<string>>;
+
+export declare function readActiveUserRegions(
+  db: FirestoreLikeDb,
+  options?: { limit?: number }
+): Promise<string[]>;

@@ -11,6 +11,8 @@
     "generate:puzzles": "node scripts/generate-puzzles.mjs",
     "generate:all": "npm run generate:feed && npm run generate:puzzles",
     "lint": "eslint .",
+    "lockfile:check": "node scripts/normalize-lockfile.mjs --check",
+    "lockfile:normalize": "node scripts/normalize-lockfile.mjs",
     "preview": "vite preview",
     "preview:mobile": "vite preview --host",
     "test": "vitest run",

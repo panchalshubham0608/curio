@@ -69,6 +69,7 @@ export function normalizeCandidateToContentRecord(
     title: cleanTitle,
     subtitle: cleanSubtitle,
     category: candidate.category,
+    region: candidate.region ?? 'global',
     topics: cleanTopics,
     estimatedDurationSeconds: Math.min(900, Math.max(25, Math.round(estimatedDuration))),
     source: {

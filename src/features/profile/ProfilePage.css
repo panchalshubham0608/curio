@@ -453,6 +453,19 @@ a.profile-stat-card:active {
   color: var(--ink-muted);
 }
 
+.profile-edition-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-hairline);
+  background: var(--bg-subtle);
+  color: var(--ink-secondary);
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
 /* Data & Privacy Section */
 .profile-section-header {
   display: flex;

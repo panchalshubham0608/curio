@@ -3,6 +3,7 @@ import {
   UserPreferencesSchema,
   type ContentCategory,
   type ContentMix,
+  type ContentRegion,
   type SessionDurationMinutes,
   type UserPreferences,
 } from '../../shared/validation/contentSchemas';
@@ -10,6 +11,7 @@ import type { InteractionRepository, UserPreferencesRepository } from '../ports'
 
 export interface UpdatePreferencesPatch {
   displayName?: string;
+  region?: ContentRegion;
   interests?: ContentCategory[];
   topicKeywords?: string[];
   excludedTopics?: string[];
@@ -52,6 +54,7 @@ export class UpdatePreferencesUseCase {
         patch.displayName !== undefined
           ? patch.displayName.trim() || undefined
           : current.displayName,
+      region: patch.region ?? current.region ?? 'global',
       interests: nextInterests,
       topicKeywords: patch.topicKeywords ?? current.topicKeywords,
       excludedTopics: patch.excludedTopics ?? current.excludedTopics,

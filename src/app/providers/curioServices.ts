@@ -98,7 +98,10 @@ export function buildCurioServices(options?: {
   let visualAssetRepository: VisualAssetRepository;
 
   if (useFirebase && runtime) {
-    contentRepository = new FirestoreContentRepository(runtime.firestore);
+    contentRepository = new FirestoreContentRepository(
+      runtime.firestore,
+      new LocalContentRepository(localStore)
+    );
     sessionRepository = new FirestoreSessionRepository(runtime.firestore);
     preferencesRepository = new FirestoreUserRepository(runtime.firestore);
     interactionRepository = new FirestoreInteractionRepository(runtime.firestore);

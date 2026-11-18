@@ -2,6 +2,7 @@ import type {
   ContentCategory,
   ContentFormat,
   ContentRecord,
+  ContentRegion,
   VisualReference,
 } from '../../shared/validation/contentSchemas';
 
@@ -13,6 +14,7 @@ export interface ContentCandidate {
   title: string;
   subtitle?: string;
   category: ContentCategory;
+  region?: ContentRegion;
   topics: string[];
   contentType: ContentFormat;
   cardVariant?: 'hero_image' | 'article' | 'interactive_feature';

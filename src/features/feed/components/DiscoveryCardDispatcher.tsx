@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import {
   CATEGORY_METADATA,
+  REGION_METADATA,
   type ContentFormat,
   type ContentRecord,
 } from '../../../shared/validation/contentSchemas';
@@ -47,6 +48,11 @@ export function DiscoveryCardDispatcher({
   }
 
   const categoryMeta = CATEGORY_METADATA[record.category];
+  const regionBadge =
+    record.region && record.region !== 'global'
+      ? REGION_METADATA[record.region].shortLabel
+      : null;
+
   return (
     <article className="curio-card curio-card--discovery fade-in-card">
       <div className="discovery-card-body">
@@ -61,7 +67,10 @@ export function DiscoveryCardDispatcher({
           >
             {categoryMeta.shortLabel}
           </span>
-          <span className="mono-meta">{FORMAT_LABELS[record.contentType]}</span>
+          <span className="mono-meta">
+            {FORMAT_LABELS[record.contentType]}
+            {regionBadge ? ` · ${regionBadge}` : ''}
+          </span>
         </div>
 
         <EditorialVisual

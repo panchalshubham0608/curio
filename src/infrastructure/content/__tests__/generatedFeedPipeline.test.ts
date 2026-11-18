@@ -4,12 +4,15 @@ import {
   buildTextualFeedPrompt,
   evaluateGenerationNeed,
   mergeGeneratedFeed,
+  parseRegionList,
+  planRegionalGenerationBatches,
   requestGeminiTextualFeed,
   resolveSafeOutputPath,
   selectBatchCategories,
   validateAndNormalizeGeneratedBatch,
   validateModelName,
 } from '../../../../scripts/lib/feedGenerator.mjs';
+import { normalizeResolvedTarballUrl } from '../../../../scripts/normalize-lockfile.mjs';
 
 describe('Scheduled Gemini textual feed generator pipeline', () => {
   it('sends GEMINI_API_KEY strictly via x-goog-api-key header (never URL params) and fails closed when missing', async () => {
@@ -243,5 +246,109 @@ describe('Scheduled Gemini textual feed generator pipeline', () => {
       deficit: 0,
       reason: 'forced',
     });
+  });
+
+  it('plans demand-driven regional batches for global + active user editions and tags regional output', () => {
+    const nowMs = Date.parse('2026-11-18T12:00:00.000Z');
+    const freshTs = '2026-11-18T10:00:00.000Z';
+
+    expect(parseRegionList('in, US, global, INVALID, uk, in')).toEqual(['IN', 'US', 'UK']);
+
+    const promptIN = buildTextualFeedPrompt({
+      categories: ['science', 'history'],
+      batchSize: 2,
+      recentTitles: [],
+      region: 'IN',
+    });
+    expect(promptIN).toContain('India');
+
+    const { records } = validateAndNormalizeGeneratedBatch(
+      {
+        items: [
+          {
+            title: 'How Stepwells Engineered Passive Cooling Across Western India',
+            subtitle: 'Ancient stone geometry lowered summer temperatures by degrees.',
+            category: 'history',
+            contentType: 'short_story',
+            topics: ['Architecture', 'India', 'Water'],
+            estimatedDurationSeconds: 120,
+            summary:
+              'Stepwells in Gujarat and Rajasthan combined subterranean water tables with terraced stone shafts to cool travelers and store monsoon water.',
+            blocks: [
+              {
+                type: 'paragraph',
+                text: 'Descending hundreds of shaded steps created a microclimate noticeably cooler than the surface heat above.',
+              },
+              {
+                type: 'fact_reveal',
+                label: 'Built-in air conditioning',
+                text: 'Air at the bottom of deep stepwells like Rani ki Vav can stay 5 to 6 degrees Celsius cooler than street level.',
+              },
+            ],
+            followUps: ['How did Rani ki Vav survive centuries of silt?'],
+            sourcePublisher: 'Curio Desk',
+            sourceTitle: 'Indian Stepwell Engineering',
+            sourceUrl: 'https://en.wikipedia.org/wiki/Stepwell',
+          },
+        ],
+      },
+      '2026-11-18T12:00:00.000Z',
+      { region: 'IN' }
+    );
+    expect(records).toHaveLength(1);
+    expect(ContentRecordSchema.parse(records[0]).region).toBe('IN');
+
+    // Global already has 12 fresh items (skip); IN has 1/6 (generate 2); UK already has 6/6 (skip)
+    const existingItems = [
+      ...Array.from({ length: 12 }, (_, idx) => ({
+        id: `global_${idx}`,
+        region: 'global',
+        createdAt: freshTs,
+      })),
+      { id: 'in_0', region: 'IN', createdAt: freshTs },
+      ...Array.from({ length: 6 }, (_, idx) => ({
+        id: `uk_${idx}`,
+        region: 'UK',
+        createdAt: freshTs,
+      })),
+    ];
+
+    const plans = planRegionalGenerationBatches({
+      existingItems,
+      activeRegions: ['IN', 'UK', 'US', 'JP'],
+      globalMinThreshold: 12,
+      regionalMinThreshold: 6,
+      globalBatchSize: 4,
+      regionalBatchSize: 2,
+      freshWindowHours: 24,
+      nowMs,
+      maxRegionsPerRun: 2, // global + at most 2 active non-global regions (IN, UK)
+    });
+
+    expect(plans.map((p) => p.region)).toEqual(['global', 'IN', 'UK']);
+    expect(plans[0]?.decision.shouldGenerate).toBe(false);
+    expect(plans[1]?.decision.shouldGenerate).toBe(true);
+    expect(plans[1]?.decision.itemsToGenerate).toBe(2);
+    expect(plans[2]?.decision.shouldGenerate).toBe(false);
+  });
+
+  it('normalizes proxy-hosted and scoped lockfile tarball URLs to public registry.npmjs.org', () => {
+    expect(
+      normalizeResolvedTarballUrl(
+        'http://internal-proxy.example:999/npm/repo/@ampproject/remapping/-/@ampproject/remapping-2.3.0.tgz'
+      )
+    ).toBe('https://registry.npmjs.org/@ampproject/remapping/-/remapping-2.3.0.tgz');
+
+    expect(
+      normalizeResolvedTarballUrl(
+        'http://internal-proxy.example:999/npm/repo/lru-cache/-/lru-cache-10.4.3.tgz'
+      )
+    ).toBe('https://registry.npmjs.org/lru-cache/-/lru-cache-10.4.3.tgz');
+
+    expect(
+      normalizeResolvedTarballUrl(
+        'https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.29.7.tgz'
+      )
+    ).toBe('https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.29.7.tgz');
   });
 });

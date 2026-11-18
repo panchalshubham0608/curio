@@ -139,6 +139,7 @@ export class FeedOrchestrator {
                     topicKeywords: preferences.topicKeywords,
                     limit: 30,
                     topicFocus: request.topicFocus,
+                    region: preferences.region,
                   }),
                 DISCOVERY_TIMEOUT_MS
               ),

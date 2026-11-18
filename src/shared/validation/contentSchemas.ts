@@ -18,6 +18,78 @@ export const CONTENT_CATEGORIES = [
 
 export type ContentCategory = (typeof CONTENT_CATEGORIES)[number];
 
+export const CONTENT_REGIONS = [
+  'global',
+  'IN',
+  'US',
+  'UK',
+  'EU',
+  'JP',
+  'AU',
+  'CA',
+] as const;
+
+export const ContentRegionSchema = z.enum(CONTENT_REGIONS);
+export type ContentRegion = z.infer<typeof ContentRegionSchema>;
+
+export interface RegionMeta {
+  id: ContentRegion;
+  label: string;
+  shortLabel: string;
+  description: string;
+}
+
+export const REGION_METADATA: Record<ContentRegion, RegionMeta> = {
+  global: {
+    id: 'global',
+    label: 'Global Edition',
+    shortLabel: 'Global',
+    description: 'World-spanning discoveries across every culture and science frontier.',
+  },
+  IN: {
+    id: 'IN',
+    label: 'India',
+    shortLabel: 'India',
+    description: 'Blends global picks with Indian heritage, innovation, cuisine, and current affairs.',
+  },
+  US: {
+    id: 'US',
+    label: 'United States',
+    shortLabel: 'United States',
+    description: 'Blends global picks with North American science, history, culture, and current affairs.',
+  },
+  UK: {
+    id: 'UK',
+    label: 'United Kingdom',
+    shortLabel: 'UK',
+    description: 'Blends global picks with British history, science, wit, and cultural discoveries.',
+  },
+  EU: {
+    id: 'EU',
+    label: 'Europe',
+    shortLabel: 'Europe',
+    description: 'Blends global picks with European architecture, art, history, and breakthroughs.',
+  },
+  JP: {
+    id: 'JP',
+    label: 'Japan',
+    shortLabel: 'Japan',
+    description: 'Blends global picks with Japanese craft, food science, architecture, and tech.',
+  },
+  AU: {
+    id: 'AU',
+    label: 'Australia & Oceania',
+    shortLabel: 'Australia',
+    description: 'Blends global picks with Asia-Pacific nature, science, and culture.',
+  },
+  CA: {
+    id: 'CA',
+    label: 'Canada',
+    shortLabel: 'Canada',
+    description: 'Blends global picks with Canadian nature, history, science, and culture.',
+  },
+};
+
 export interface CategoryMeta {
   id: ContentCategory;
   label: string;
@@ -264,6 +336,7 @@ export const ContentRecordSchema = z.object({
   title: z.string().trim().min(2).max(220),
   subtitle: z.string().trim().max(280).optional(),
   category: z.enum(CONTENT_CATEGORIES),
+  region: ContentRegionSchema.default('global'),
   topics: z.array(z.string().trim().min(1).max(60)).min(1).max(12),
   estimatedDurationSeconds: z.number().int().min(20).max(900),
   source: ContentSourceSchema,
@@ -359,6 +432,7 @@ export type AIAnswer = z.infer<typeof AIAnswerSchema>;
 export const UserPreferencesSchema = z.object({
   userId: z.string().trim().min(1).max(128),
   displayName: z.string().trim().max(80).optional(),
+  region: ContentRegionSchema.default('global'),
   interests: z.array(z.enum(CONTENT_CATEGORIES)).max(8).default([]),
   topicKeywords: z.array(z.string().trim().min(1).max(50)).max(30).default([]),
   excludedTopics: z.array(z.string().trim().min(1).max(50)).max(30).default([]),

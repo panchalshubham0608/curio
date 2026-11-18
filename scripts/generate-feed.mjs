@@ -4,9 +4,10 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   buildTextualFeedPrompt,
-  evaluateGenerationNeed,
   mergeGeneratedFeed,
   parseBoundedInt,
+  parseRegionList,
+  planRegionalGenerationBatches,
   requestGeminiTextualFeed,
   resolveSafeOutputPath,
   selectBatchCategories,
@@ -16,6 +17,7 @@ import {
 import {
   createFirestoreAdminClient,
   mergeExistingItemsForPool,
+  readActiveUserRegions,
   readFirestoreCollectionItems,
   readSeenContentIds,
   writeFirestoreCollectionItems,
@@ -37,11 +39,14 @@ async function readExistingFeed(outputPath) {
 
 async function run() {
   const modelName = validateModelName(process.env.GEMINI_MODEL || 'gemini-flash-latest');
-  const batchSize = parseBoundedInt(process.env.FEED_BATCH_SIZE, 4, 1, 8);
-  const minThreshold = parseBoundedInt(process.env.FEED_MIN_THRESHOLD, 12, 1, 60);
-  const maxItems = parseBoundedInt(process.env.FEED_MAX_ITEMS, 60, minThreshold, 120);
+  const globalBatchSize = parseBoundedInt(process.env.FEED_BATCH_SIZE, 4, 1, 8);
+  const regionalBatchSize = parseBoundedInt(process.env.FEED_REGIONAL_BATCH_SIZE, 2, 1, 4);
+  const globalMinThreshold = parseBoundedInt(process.env.FEED_MIN_THRESHOLD, 12, 1, 60);
+  const regionalMinThreshold = parseBoundedInt(process.env.FEED_REGIONAL_MIN_THRESHOLD, 6, 1, 30);
+  const maxItems = parseBoundedInt(process.env.FEED_MAX_ITEMS, 80, globalMinThreshold, 160);
   const freshWindowHours = parseBoundedInt(process.env.FEED_FRESH_WINDOW_HOURS, 24, 1, 168);
   const forceGenerate = process.env.FORCE_GENERATE === 'true';
+  const envTargetRegions = parseRegionList(process.env.FEED_TARGET_REGIONS || '');
   const outputFileName = process.env.FEED_OUTPUT_FILE || 'feed.json';
 
   const { allowedDir, outputPath } = resolveSafeOutputPath(REPO_ROOT, outputFileName);
@@ -51,31 +56,42 @@ async function run() {
   const firestoreAdmin = await createFirestoreAdminClient();
   let firestoreItems = [];
   let seenContentIds = new Set();
+  let firestoreActiveRegions = [];
+
   if (firestoreAdmin) {
-    [firestoreItems, seenContentIds] = await Promise.all([
+    [firestoreItems, seenContentIds, firestoreActiveRegions] = await Promise.all([
       readFirestoreCollectionItems(firestoreAdmin.db, 'content', { limit: maxItems }),
       readSeenContentIds(firestoreAdmin.db),
+      readActiveUserRegions(firestoreAdmin.db),
     ]);
     console.info(
-      `[Curio Feed Generator] Connected to Firestore (project=${firestoreAdmin.projectId}, existing=${firestoreItems.length}, seen=${seenContentIds.size}).`
+      `[Curio Feed Generator] Connected to Firestore (project=${firestoreAdmin.projectId}, existing=${firestoreItems.length}, seen=${seenContentIds.size}, activeRegions=${firestoreActiveRegions.join(',') || 'none'}).`
     );
   }
 
   const existingItems = mergeExistingItemsForPool(firestoreItems, localItems);
+  const activeRegions = parseRegionList([...firestoreActiveRegions, ...envTargetRegions]);
 
-  const decision = evaluateGenerationNeed({
+  const plans = planRegionalGenerationBatches({
     existingItems,
     seenIds: seenContentIds,
+    activeRegions,
     fallbackTimestamp: existingEnvelope.generatedAt,
-    minThreshold,
-    batchSize,
+    globalMinThreshold,
+    regionalMinThreshold,
+    globalBatchSize,
+    regionalBatchSize,
     freshWindowHours,
     forceGenerate,
   });
 
-  if (!decision.shouldGenerate) {
+  const duePlans = plans.filter((plan) => plan.decision.shouldGenerate);
+  if (duePlans.length === 0) {
+    const summary = plans
+      .map((p) => `${p.region}=${p.decision.freshUnseenCount}/${p.minThreshold}`)
+      .join(', ');
     console.info(
-      `[Curio Feed Generator] Skipping Gemini API call: ${decision.freshUnseenCount} fresh unseen items already ready (minimum threshold: ${minThreshold}).`
+      `[Curio Feed Generator] Skipping Gemini API call: all editions meet unseen thresholds (${summary}).`
     );
     return;
   }
@@ -89,45 +105,59 @@ async function run() {
     return;
   }
 
-  const targetCount = decision.itemsToGenerate;
-  const targetCategories = selectBatchCategories(existingItems, targetCount);
+  const nowIso = new Date().toISOString();
+  const allNewRecords = [];
+  let totalRejected = 0;
+
   const recentTitles = existingItems
-    .slice(0, 24)
+    .slice(0, 32)
     .map((item) => (typeof item?.title === 'string' ? item.title : ''))
     .filter(Boolean);
 
-  const prompt = buildTextualFeedPrompt({
-    categories: targetCategories,
-    batchSize: targetCount,
-    recentTitles,
-  });
+  for (const plan of duePlans) {
+    const targetCount = plan.decision.itemsToGenerate;
+    const targetCategories = selectBatchCategories(plan.existingRegionItems, targetCount);
+    const prompt = buildTextualFeedPrompt({
+      categories: targetCategories,
+      batchSize: targetCount,
+      recentTitles: [...recentTitles, ...allNewRecords.map((r) => r.title)],
+      region: plan.region,
+    });
 
-  console.info(
-    `[Curio Feed Generator] Requesting ${targetCount} textual items (unseen=${decision.freshUnseenCount}/${minThreshold}) from ${modelName} for categories: ${targetCategories.join(', ')}`
-  );
+    console.info(
+      `[Curio Feed Generator] Requesting ${targetCount} textual items for region=${plan.region} (unseen=${plan.decision.freshUnseenCount}/${plan.minThreshold}) from ${modelName} for categories: ${targetCategories.join(', ')}`
+    );
 
-  const rawPayload = await requestGeminiTextualFeed({
-    apiKey,
-    modelName,
-    prompt,
-  });
+    const rawPayload = await requestGeminiTextualFeed({
+      apiKey,
+      modelName,
+      prompt,
+    });
 
-  const nowIso = new Date().toISOString();
-  const { records, rejectedCount } = validateAndNormalizeGeneratedBatch(rawPayload, nowIso);
+    const { records, rejectedCount } = validateAndNormalizeGeneratedBatch(rawPayload, nowIso, {
+      region: plan.region,
+    });
+    totalRejected += rejectedCount;
+    allNewRecords.push(...records);
+  }
 
-  if (records.length === 0) {
+  if (allNewRecords.length === 0) {
     throw new Error(
-      `Gemini returned 0 schema-valid textual feed items (${rejectedCount} rejected).`
+      `Gemini returned 0 schema-valid textual feed items (${totalRejected} rejected).`
     );
   }
 
   let firestoreWritten = 0;
   if (firestoreAdmin) {
-    const result = await writeFirestoreCollectionItems(firestoreAdmin.db, 'content', records);
+    const result = await writeFirestoreCollectionItems(
+      firestoreAdmin.db,
+      'content',
+      allNewRecords
+    );
     firestoreWritten = result.writtenCount;
   }
 
-  const { addedCount, envelope } = mergeGeneratedFeed(existingEnvelope, records, {
+  const { addedCount, envelope } = mergeGeneratedFeed(existingEnvelope, allNewRecords, {
     maxItems,
     nowIso,
     modelName,
@@ -143,7 +173,7 @@ async function run() {
   await rename(tempPath, outputPath);
 
   console.info(
-    `[Curio Feed Generator] Done: added=${addedCount}, rejected=${rejectedCount}, firestoreWritten=${firestoreWritten}, totalLocal=${envelope.itemCount}, file=public/generated/${path.basename(outputPath)}`
+    `[Curio Feed Generator] Done: added=${addedCount}, rejected=${totalRejected}, firestoreWritten=${firestoreWritten}, totalLocal=${envelope.itemCount}, file=public/generated/${path.basename(outputPath)}`
   );
 }
 

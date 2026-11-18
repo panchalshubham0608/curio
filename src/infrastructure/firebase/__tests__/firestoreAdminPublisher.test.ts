@@ -3,6 +3,7 @@ import {
   createFirestoreAdminClient,
   mergeExistingItemsForPool,
   parseServiceAccountConfig,
+  readActiveUserRegions,
   readFirestoreCollectionItems,
   readSeenContentIds,
   readSolvedPuzzleIds,
@@ -10,7 +11,10 @@ import {
   writeFirestoreCollectionItems,
   type FirestoreLikeDb,
 } from '../../../../scripts/lib/firestoreAdmin.mjs';
+import type { Firestore } from 'firebase/firestore';
 import { GeneratedFeedProvider } from '../../content/GeneratedFeedProvider';
+import { FirestoreContentRepository } from '../../persistence/FirestoreRepositories';
+import { LocalContentRepository } from '../../persistence/LocalRepositories';
 import { SafeKeyValueStore } from '../../persistence/LocalStorageStore';
 import {
   GeneratedPuzzleProvider,
@@ -83,7 +87,18 @@ describe('Firebase Admin Firestore publisher & live client readers', () => {
           }),
         }),
         limit: () => ({
-          get: async () => ({ docs: [] }),
+          get: async () => ({
+            docs:
+              name === 'users'
+                ? [
+                    { id: 'u1', data: () => ({ region: 'IN' }) },
+                    { id: 'u2', data: () => ({ region: 'global' }) },
+                    { id: 'u3', data: () => ({ region: 'UK' }) },
+                    { id: 'u4', data: () => ({ region: 'IN' }) },
+                    { id: 'u5', data: () => ({ region: 'UNSUPPORTED' }) },
+                  ]
+                : [],
+          }),
         }),
       }),
       collectionGroup: (name: string) => ({
@@ -133,6 +148,7 @@ describe('Firebase Admin Firestore publisher & live client readers', () => {
 
     expect(Array.from(await readSolvedPuzzleIds(mockDb))).toEqual(['puz_ai_existing']);
     expect(Array.from(await readSeenContentIds(mockDb))).toEqual(['curio_gen_001']);
+    expect(await readActiveUserRegions(mockDb)).toEqual(['IN', 'UK']);
 
     const mergedPool = mergeExistingItemsForPool(readBack, [
       { id: 'puz_ai_existing', title: 'Stale Local Copy' },
@@ -241,5 +257,20 @@ describe('Firebase Admin Firestore publisher & live client readers', () => {
     const offlineSolved = await offlineProvider.markSolved('user_abc', 'puz_offline_03');
     expect(offlineSolved.has('puz_offline_03')).toBe(true);
     expect((await offlineProvider.getSolvedIds('user_abc')).has('puz_offline_03')).toBe(true);
+  });
+
+  it('keeps FirestoreContentRepository read-only against /content and caches client items locally', async () => {
+    const store = new SafeKeyValueStore('firestore_readonly_content_test', false);
+    const localCache = new LocalContentRepository(store);
+    const [feedA] = createTestContentRecords();
+
+    // Passing a dummy Firestore handle proves saveMany & clearCache never invoke Firestore write APIs
+    const repo = new FirestoreContentRepository({} as Firestore, localCache);
+
+    await repo.saveMany([feedA]);
+    expect((await localCache.getById(feedA.id))?.title).toBe(feedA.title);
+
+    await repo.clearCache();
+    expect(await localCache.getById(feedA.id)).toBeNull();
   });
 });

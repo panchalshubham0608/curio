@@ -292,20 +292,71 @@ export function selectBatchCategories(existingItems, batchSize) {
   return picked;
 }
 
+export const CONTENT_REGIONS = ['global', 'IN', 'US', 'UK', 'EU', 'JP', 'AU', 'CA'];
+
+export const REGION_PROMPT_GUIDANCE = {
+  global: 'Global Edition (world-spanning discoveries relevant to curious readers anywhere)',
+  IN: 'India Edition (Indian & South Asian history, science, ISRO/tech innovation, regional food/travel heritage, culture, and current affairs in natural English)',
+  US: 'United States Edition (North American science, history, innovation, food/travel culture, and current affairs)',
+  UK: 'United Kingdom Edition (British history, science, architecture, wit/language, travel, and current affairs)',
+  EU: 'Europe Edition (European science, architecture, art, culinary heritage, history, and innovation)',
+  JP: 'Japan Edition (Japanese design, architecture, food science, tech craftsmanship, history, and culture)',
+  AU: 'Australia & Oceania Edition (Australian & Asia-Pacific nature, astronomy, science, history, and culture)',
+  CA: 'Canada Edition (Canadian nature, science, history, architecture, culture, and innovation)',
+};
+
+export function normalizeRegionCode(rawRegion, fallback = 'global') {
+  if (typeof rawRegion !== 'string') return fallback;
+  const trimmed = rawRegion.trim();
+  if (trimmed.toLowerCase() === 'global') return 'global';
+  const upper = trimmed.toUpperCase();
+  return CONTENT_REGIONS.includes(upper) ? upper : fallback;
+}
+
+export function parseRegionList(rawList) {
+  const tokens = Array.isArray(rawList)
+    ? rawList
+    : typeof rawList === 'string'
+      ? rawList.split(/[,;\s]+/)
+      : [];
+  const unique = [];
+  for (const token of tokens) {
+    const code = normalizeRegionCode(token, '');
+    if (code && code !== 'global' && !unique.includes(code)) {
+      unique.push(code);
+    }
+  }
+  return unique;
+}
+
 /**
- * Builds the structured prompt instructing Gemini to generate pure textual Curio feed items.
+ * Builds the structured prompt instructing Gemini to generate pure textual Curio feed items,
+ * tailored to either the Global Edition or a specific regional edition.
  */
-export function buildTextualFeedPrompt({ categories, batchSize, recentTitles = [] }) {
+export function buildTextualFeedPrompt({
+  categories,
+  batchSize,
+  recentTitles = [],
+  region = 'global',
+}) {
+  const safeRegion = normalizeRegionCode(region, 'global');
+  const regionDescription = REGION_PROMPT_GUIDANCE[safeRegion] ?? REGION_PROMPT_GUIDANCE.global;
   const safeTitles = recentTitles
     .slice(0, 24)
     .map((t) => sanitizeText(t, 120))
     .filter(Boolean);
+
+  const regionalDirective =
+    safeRegion === 'global'
+      ? '- Target Edition: Global — pick universal stories with broad international appeal.'
+      : `- Target Edition: ${regionDescription}. Ground EVERY item authentically in this region (local landmarks, history, cuisine, inventors, culture, or current developments) written in crisp, clear English without clichés or stereotypes.`;
 
   return [
     'You are Curio, a warm, factual, magazine-grade curiosity editor.',
     `Generate exactly ${batchSize} brand-new, self-contained TEXTUAL-ONLY discovery feed items.`,
     `Assign categories in order using this exact list: ${JSON.stringify(categories)}.`,
     'Rules:',
+    regionalDirective,
     '- Textual content ONLY: do NOT include image URLs, HTML tags, JSX, Markdown formatting, or code fences.',
     '- Write genuinely fascinating, accurate, verifiable real-world stories, facts, mental models, clever history, science, tech, food/travel culture, or witty insights.',
     '- Each item must include 2 to 4 rich textual blocks using allowed block types:',
@@ -352,7 +403,12 @@ export function normalizeTitleKey(title) {
 /**
  * Validates and sanitizes raw Gemini batch JSON into Curio ContentRecord objects.
  */
-export function validateAndNormalizeGeneratedBatch(rawPayload, nowIso = new Date().toISOString()) {
+export function validateAndNormalizeGeneratedBatch(
+  rawPayload,
+  nowIso = new Date().toISOString(),
+  { region = 'global' } = {}
+) {
+  const targetRegion = normalizeRegionCode(region, 'global');
   const rawItems = Array.isArray(rawPayload?.items)
     ? rawPayload.items
     : Array.isArray(rawPayload)
@@ -412,8 +468,9 @@ export function validateAndNormalizeGeneratedBatch(rawPayload, nowIso = new Date
     }
 
     const data = parsedItem.data;
+    const itemRegion = normalizeRegionCode(rawItem.region ?? targetRegion, targetRegion);
     const digest = createHash('sha256')
-      .update(`${data.category}:${normalizeTitleKey(data.title)}`)
+      .update(`${itemRegion}:${data.category}:${normalizeTitleKey(data.title)}`)
       .digest('hex')
       .slice(0, 12);
 
@@ -430,6 +487,7 @@ export function validateAndNormalizeGeneratedBatch(rawPayload, nowIso = new Date
       title: data.title,
       subtitle: data.subtitle,
       category: data.category,
+      region: itemRegion,
       topics: data.topics,
       estimatedDurationSeconds: data.estimatedDurationSeconds,
       source: {
@@ -452,7 +510,10 @@ export function validateAndNormalizeGeneratedBatch(rawPayload, nowIso = new Date
       },
       followUps: data.followUps,
       isAiEnriched: true,
-      enrichmentNotice: 'Textual edition generated via Curio scheduled Gemini feed pipeline.',
+      enrichmentNotice:
+        itemRegion === 'global'
+          ? 'Textual edition generated via Curio scheduled Gemini feed pipeline.'
+          : `${itemRegion} regional edition generated via Curio scheduled Gemini feed pipeline.`,
       qualityStatus: 'approved',
       createdAt: nowIso,
       enrichedAt: nowIso,
@@ -575,6 +636,57 @@ export function evaluateGenerationNeed({
     deficit,
     reason: forceGenerate ? 'forced' : 'below_threshold',
   };
+}
+
+/**
+ * Plans demand-driven regional generation batches: always evaluates `global` plus up to
+ * `maxRegionsPerRun` active user regions, skipping any edition whose unseen threshold is met.
+ */
+export function planRegionalGenerationBatches({
+  existingItems = [],
+  seenIds = new Set(),
+  activeRegions = [],
+  fallbackTimestamp,
+  globalMinThreshold = 12,
+  regionalMinThreshold = 6,
+  globalBatchSize = 4,
+  regionalBatchSize = 2,
+  freshWindowHours = 24,
+  nowMs = Date.now(),
+  forceGenerate = false,
+  maxRegionsPerRun = 4,
+} = {}) {
+  const uniqueActive = parseRegionList(activeRegions).slice(0, Math.max(0, maxRegionsPerRun));
+  const candidateRegions = ['global', ...uniqueActive];
+  const plans = [];
+
+  for (const region of candidateRegions) {
+    const regionItems = existingItems.filter(
+      (item) => normalizeRegionCode(item?.region, 'global') === region
+    );
+    const minThreshold = region === 'global' ? globalMinThreshold : regionalMinThreshold;
+    const batchSize = region === 'global' ? globalBatchSize : regionalBatchSize;
+
+    const decision = evaluateGenerationNeed({
+      existingItems: regionItems,
+      seenIds,
+      fallbackTimestamp,
+      minThreshold,
+      batchSize,
+      freshWindowHours,
+      nowMs,
+      forceGenerate,
+    });
+
+    plans.push({
+      region,
+      minThreshold,
+      existingRegionItems: regionItems,
+      decision,
+    });
+  }
+
+  return plans;
 }
 
 /**

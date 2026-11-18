@@ -7,7 +7,10 @@ import {
   buildInteractionProfile,
   scoreCandidate,
 } from '../personalization/RankingEngine';
-import { createDefaultUserPreferences } from '../user/UserPreferences';
+import {
+  createDefaultUserPreferences,
+  detectSuggestedRegion,
+} from '../user/UserPreferences';
 import { createTestContentRecords } from '../../test/fixtures';
 import type {
   ContentCategory,
@@ -79,6 +82,19 @@ describe('FeedRules lifecycle transitions', () => {
   });
 });
 
+describe('Privacy-safe edition region suggestion', () => {
+  it('maps coarse timezone and locale hints to supported Curio editions without GPS', () => {
+    expect(detectSuggestedRegion('Asia/Kolkata', 'en-IN')).toBe('IN');
+    expect(detectSuggestedRegion('Europe/London', 'en-GB')).toBe('UK');
+    expect(detectSuggestedRegion('America/New_York', 'en-US')).toBe('US');
+    expect(detectSuggestedRegion('Asia/Tokyo', 'ja-JP')).toBe('JP');
+    expect(detectSuggestedRegion('Australia/Sydney', 'en-AU')).toBe('AU');
+    expect(detectSuggestedRegion('America/Toronto', 'en-CA')).toBe('CA');
+    expect(detectSuggestedRegion('Europe/Berlin', 'de-DE')).toBe('EU');
+    expect(detectSuggestedRegion('Etc/UTC', 'en')).toBe('global');
+  });
+});
+
 describe('RankingEngine hybrid scoring & interaction rules', () => {
   const seedRecords = createTestContentRecords();
   const catalog = new Map(seedRecords.map((r) => [r.id, r]));
@@ -115,6 +131,60 @@ describe('RankingEngine hybrid scoring & interaction rules', () => {
     expect(voyagerScore.breakdown.totalScore).toBeGreaterThan(humourScore.breakdown.totalScore);
     expect(voyagerScore.breakdown.isExplorationCandidate).toBe(false);
     expect(humourScore.breakdown.isExplorationCandidate).toBe(true);
+  });
+
+  it('boosts matching regional stories, keeps global neutral, and demotes unrelated editions', () => {
+    const baseRecord = catalog.get('curio_sci_001')!;
+    const globalStory: ContentRecord = { ...baseRecord, id: 'story_global', region: 'global' };
+    const indiaStory: ContentRecord = { ...baseRecord, id: 'story_in', region: 'IN' };
+    const ukStory: ContentRecord = { ...baseRecord, id: 'story_uk', region: 'UK' };
+
+    const emptyProfile = buildInteractionProfile([], catalog, nowMs);
+    const emptyCats = new Map<ContentCategory, number>();
+    const emptyFormats = new Map<ContentFormat, number>();
+
+    const indiaPrefs = { ...prefs, region: 'IN' as const };
+    const globalPrefs = { ...prefs, region: 'global' as const };
+
+    const indiaForIndiaReader = scoreCandidate(
+      indiaStory,
+      { preferences: indiaPrefs, interactions: [], recentContentCatalog: catalog, nowMs },
+      emptyProfile,
+      emptyCats,
+      emptyFormats
+    );
+    const globalForIndiaReader = scoreCandidate(
+      globalStory,
+      { preferences: indiaPrefs, interactions: [], recentContentCatalog: catalog, nowMs },
+      emptyProfile,
+      emptyCats,
+      emptyFormats
+    );
+    const ukForIndiaReader = scoreCandidate(
+      ukStory,
+      { preferences: indiaPrefs, interactions: [], recentContentCatalog: catalog, nowMs },
+      emptyProfile,
+      emptyCats,
+      emptyFormats
+    );
+    const indiaForGlobalReader = scoreCandidate(
+      indiaStory,
+      { preferences: globalPrefs, interactions: [], recentContentCatalog: catalog, nowMs },
+      emptyProfile,
+      emptyCats,
+      emptyFormats
+    );
+
+    expect(indiaForIndiaReader.breakdown.regionAdjustment).toBeGreaterThan(0);
+    expect(globalForIndiaReader.breakdown.regionAdjustment).toBe(0);
+    expect(ukForIndiaReader.breakdown.regionAdjustment).toBeLessThan(0);
+    expect(indiaForIndiaReader.breakdown.totalScore).toBeGreaterThan(
+      globalForIndiaReader.breakdown.totalScore
+    );
+    expect(globalForIndiaReader.breakdown.totalScore).toBeGreaterThan(
+      ukForIndiaReader.breakdown.totalScore
+    );
+    expect(indiaForGlobalReader.breakdown.regionAdjustment).toBeLessThan(0);
   });
 
   it('treats skip as weak negative feedback and not_interested as strong negative feedback', () => {

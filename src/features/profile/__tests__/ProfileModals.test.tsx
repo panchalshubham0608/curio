@@ -192,4 +192,41 @@ describe('ProfilePage independent personalization modals', () => {
     const solvedAfterClear = await services.puzzleProvider.getSolvedIds('personal_local_reader');
     expect(solvedAfterClear.size).toBe(0);
   });
+
+  it('updates Edition & region via standalone modal and persists the chosen regional edition', async () => {
+    window.scrollTo = vi.fn();
+    const store = new SafeKeyValueStore('profile_region_modal_test', false);
+    const services = buildCurioServices({ forceLocalStore: store });
+    const user = userEvent.setup();
+
+    render(
+      <AppProvider overrideServices={services}>
+        <MemoryRouter initialEntries={['/profile']}>
+          <AppRoutes />
+        </MemoryRouter>
+      </AppProvider>
+    );
+
+    expect(
+      await screen.findByRole('heading', { level: 1, name: /^Profile$/i })
+    ).toBeInTheDocument();
+
+    await user.click(screen.getByRole('button', { name: /Edition & region/i }));
+    const editionDialog = await screen.findByRole('dialog');
+    expect(
+      within(editionDialog).getByRole('heading', { name: /Choose your edition & region/i })
+    ).toBeInTheDocument();
+
+    await user.click(within(editionDialog).getByRole('button', { name: /^India/i }));
+    await user.click(within(editionDialog).getByRole('button', { name: /Save edition/i }));
+
+    expect(await screen.findByText(/Edition updated to India\./i)).toBeInTheDocument();
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /Edition & region.*India/i })
+    ).toBeInTheDocument();
+
+    const persisted = await services.getPreferences.execute('personal_local_reader');
+    expect(persisted.region).toBe('IN');
+  });
 });

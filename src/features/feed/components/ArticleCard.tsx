@@ -3,6 +3,7 @@ import { Newspaper } from 'lucide-react';
 import { formatEditorialDate } from '../../../shared/utils/time';
 import {
   CATEGORY_METADATA,
+  REGION_METADATA,
   type ContentRecord,
 } from '../../../shared/validation/contentSchemas';
 import {
@@ -25,6 +26,10 @@ interface ArticleCardProps {
  */
 export function ArticleCard({ record, handlers, footer }: ArticleCardProps) {
   const categoryMeta = CATEGORY_METADATA[record.category];
+  const regionBadge =
+    record.region && record.region !== 'global'
+      ? REGION_METADATA[record.region].shortLabel
+      : null;
 
   return (
     <article className="curio-card curio-card--discovery fade-in-card">
@@ -41,6 +46,7 @@ export function ArticleCard({ record, handlers, footer }: ArticleCardProps) {
             <Newspaper size={15} style={{ color: categoryMeta.accentHex }} aria-hidden="true" />
             <span className="curio-eyebrow" style={{ color: categoryMeta.accentHex }}>
               {categoryMeta.shortLabel} · {record.source.publisher}
+              {regionBadge ? ` · ${regionBadge}` : ''}
             </span>
           </div>
           <span className="mono-meta">{formatEditorialDate(record.source.publishedAt)}</span>

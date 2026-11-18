@@ -6,6 +6,7 @@ import {
   ChevronRight,
   Cloud,
   Compass,
+  Globe,
   LogOut,
   Moon,
   Puzzle,
@@ -24,8 +25,10 @@ import { maskDisplayIdentifier } from '../../shared/utils/sanitize';
 import {
   CATEGORY_METADATA,
   CONTENT_CATEGORIES,
+  REGION_METADATA,
   type ContentCategory,
   type ContentMix,
+  type ContentRegion,
 } from '../../shared/validation/contentSchemas';
 import { GoogleSignInButton } from '../auth/GoogleSignInButton';
 import { ModalDialog } from '../feed/components/ModalDialog';
@@ -35,6 +38,7 @@ import {
 } from '../preferences/discoveryVibeOptions';
 import {
   DiscoveryVibeModal,
+  EditionRegionModal,
   VisualInterestsModal,
 } from './components/PreferencesFlowModal';
 import '../preferences/components/DiscoveryVibePicker.css';
@@ -70,6 +74,7 @@ export function ProfilePage() {
   const [preferredMix, setPreferredMix] = useState<ContentMix>(
     preferences?.preferredMix ?? 'balanced'
   );
+  const [region, setRegion] = useState<ContentRegion>(preferences?.region ?? 'global');
 
   const [completedSessions, setCompletedSessions] = useState(0);
   const [savedItemsCount, setSavedItemsCount] = useState(0);
@@ -81,6 +86,7 @@ export function ProfilePage() {
 
   const [interestsModalOpen, setInterestsModalOpen] = useState(false);
   const [vibeModalOpen, setVibeModalOpen] = useState(false);
+  const [regionModalOpen, setRegionModalOpen] = useState(false);
   const [detailsModalOpen, setDetailsModalOpen] = useState(false);
   const [resetModalOpen, setResetModalOpen] = useState(false);
   const [clearGuestModalOpen, setClearGuestModalOpen] = useState(false);
@@ -92,6 +98,7 @@ export function ProfilePage() {
     setKeywordsText(preferences.topicKeywords.join(', '));
     setExcludedText(preferences.excludedTopics.join(', '));
     setPreferredMix(preferences.preferredMix);
+    setRegion(preferences.region ?? 'global');
   }, [preferences]);
 
   useEffect(() => {
@@ -161,6 +168,27 @@ export function ProfilePage() {
     }
   };
 
+  const handleSaveRegion = async (nextRegion: ContentRegion) => {
+    setSaving(true);
+    setStatusBanner(null);
+    setErrorBanner(null);
+    try {
+      const updated = await services.updatePreferences.execute(userId, {
+        region: nextRegion,
+        onboardingCompleted: true,
+      });
+      setPreferencesState(updated);
+      setRegion(updated.region);
+      setRegionModalOpen(false);
+      setStatusBanner(`Edition updated to ${REGION_METADATA[updated.region].label}.`);
+    } catch (error: unknown) {
+      setRegionModalOpen(false);
+      setErrorBanner(getFriendlyErrorMessage(error, 'firestore'));
+    } finally {
+      setSaving(false);
+    }
+  };
+
   const handleSaveReaderDetails = async (event: FormEvent) => {
     event.preventDefault();
     setSaving(true);
@@ -206,6 +234,7 @@ export function ProfilePage() {
       setKeywordsText('');
       setExcludedText('');
       setPreferredMix(freshPrefs.preferredMix);
+      setRegion(freshPrefs.region ?? 'global');
       setCompletedSessions(0);
       setSavedItemsCount(0);
       setSolvedPuzzlesCount(0);
@@ -330,7 +359,8 @@ export function ProfilePage() {
 
         <div className="profile-hero-footer">
           <span className="profile-hero-vibe">
-            Current vibe: <strong>{getDiscoveryVibeTitle(preferredMix)}</strong>
+            Current vibe: <strong>{getDiscoveryVibeTitle(preferredMix)}</strong> · Edition:{' '}
+            <strong>{REGION_METADATA[region].shortLabel}</strong>
           </span>
           {interests.length > 0 ? (
             <div className="palette-tray" aria-hidden="true">
@@ -587,7 +617,32 @@ export function ProfilePage() {
             </div>
           </button>
 
-          {/* Row 3: Reader Name & Topic Filters -> opens compact details modal */}
+          {/* Row 3: Edition & Region -> opens standalone edition modal */}
+          <button
+            type="button"
+            className="profile-setting-row"
+            onClick={() => setRegionModalOpen(true)}
+          >
+            <div className="profile-setting-row-main">
+              <span className="profile-setting-row-title">Edition &amp; region</span>
+              <span className="profile-setting-row-sub">
+                {REGION_METADATA[region].label}
+                {region === 'global'
+                  ? ' · World-spanning stories'
+                  : ' · Blends local & global discoveries'}
+              </span>
+            </div>
+
+            <div className="profile-setting-row-right">
+              <span className="profile-edition-pill" aria-hidden="true">
+                <Globe size={13} />
+                <span>{REGION_METADATA[region].shortLabel}</span>
+              </span>
+              <ChevronRight size={18} aria-hidden="true" />
+            </div>
+          </button>
+
+          {/* Row 4: Reader Name & Topic Filters -> opens compact details modal */}
           <button
             type="button"
             className="profile-setting-row"
@@ -753,6 +808,15 @@ export function ProfilePage() {
         saving={saving}
         onClose={() => setVibeModalOpen(false)}
         onSave={handleSaveVibe}
+      />
+
+      {/* Independent Edition & Region Modal */}
+      <EditionRegionModal
+        open={regionModalOpen}
+        initialRegion={region}
+        saving={saving}
+        onClose={() => setRegionModalOpen(false)}
+        onSave={handleSaveRegion}
       />
 
       {/* Focused Reader Name & Topic Filters Modal */}

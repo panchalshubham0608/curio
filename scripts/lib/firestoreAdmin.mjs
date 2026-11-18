@@ -265,3 +265,27 @@ export async function readSeenContentIds(db, { limit = 500 } = {}) {
     return new Set();
   }
 }
+
+const VALID_USER_REGIONS = new Set(['IN', 'US', 'UK', 'EU', 'JP', 'AU', 'CA']);
+
+/**
+ * Reads distinct non-global Edition/Region codes actively selected across `/users/*`
+ * so the scheduled generator only creates localized batches for regions with real readers.
+ */
+export async function readActiveUserRegions(db, { limit = 500 } = {}) {
+  const boundedLimit = Math.min(1000, Math.max(1, Number(limit) || 500));
+  try {
+    const snap = await db.collection('users').limit(boundedLimit).get();
+    const regions = new Set();
+    for (const docSnap of snap.docs) {
+      const data = docSnap.data();
+      const raw = typeof data?.region === 'string' ? data.region.trim().toUpperCase() : '';
+      if (VALID_USER_REGIONS.has(raw)) {
+        regions.add(raw);
+      }
+    }
+    return Array.from(regions).sort();
+  } catch {
+    return [];
+  }
+}

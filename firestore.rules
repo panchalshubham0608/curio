@@ -32,6 +32,8 @@ service cloud.firestore {
         && request.resource.data.topicKeywords.size() <= 30
         && request.resource.data.excludedTopics is list
         && request.resource.data.excludedTopics.size() <= 30
+        && (!('region' in request.resource.data)
+            || request.resource.data.region in ['global', 'IN', 'US', 'UK', 'EU', 'JP', 'AU', 'CA'])
         && isValidDuration(request.resource.data.defaultSessionDuration);
       allow delete: if isOwner(userId);
 
@@ -86,20 +88,17 @@ service cloud.firestore {
       }
     }
 
-    // Shared normalized & AI-generated content pool.
-    // Readable by both guests and signed-in readers; scheduled GitHub Actions publish via Firebase Admin SDK.
+    // Shared AI-generated discovery feed pool.
+    // Public read; client writes are disabled so only server-side background jobs
+    // using the Firebase Admin SDK can publish or modify feed content.
     match /content/{contentId} {
       allow read: if true;
-      allow create, update: if isSignedIn()
-        && request.resource.data.schemaVersion == 1
-        && request.resource.data.title is string
-        && request.resource.data.title.size() >= 1
-        && request.resource.data.title.size() <= 240
-        && request.resource.data.qualityStatus in ['unreviewed', 'approved', 'rejected'];
-      allow delete: if false;
+      allow write: if false;
     }
 
-    // Shared AI-generated puzzle catalog — public read, server-side Firebase Admin SDK writes only
+    // Shared AI-generated puzzle catalog.
+    // Public read; client writes are disabled so only server-side background jobs
+    // using the Firebase Admin SDK can publish or modify puzzles.
     match /puzzles/{puzzleId} {
       allow read: if true;
       allow write: if false;

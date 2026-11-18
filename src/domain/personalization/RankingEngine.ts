@@ -23,6 +23,7 @@ export interface ScoreBreakdown {
   freshnessScore: number;
   noveltyScore: number;
   diversityScore: number;
+  regionAdjustment: number;
   interactionAdjustment: number;
   recencyPenalty: number;
   totalScore: number;
@@ -251,9 +252,26 @@ export function computeDiversityScore(
   return clamp(categoryComponent * 0.7 + formatComponent * 0.3, 0, 1);
 }
 
+function computeRegionAdjustment(record: ContentRecord, preferences: UserPreferences): number {
+  const userRegion = preferences.region ?? 'global';
+  const itemRegion = record.region ?? 'global';
+
+  if (userRegion === 'global') {
+    return itemRegion === 'global' ? 0 : -0.08;
+  }
+
+  if (itemRegion === userRegion) {
+    return 0.18;
+  }
+  if (itemRegion === 'global') {
+    return 0;
+  }
+  return -0.25;
+}
+
 /**
  * Computes deterministic hybrid ranking score:
- * Score = 0.35*I + 0.20*F + 0.15*R + 0.15*N + 0.15*D + interactionAdjustment - recencyPenalty
+ * Score = 0.35*I + 0.20*F + 0.15*R + 0.15*N + 0.15*D + regionAdjustment + interactionAdjustment - recencyPenalty
  */
 export function scoreCandidate(
   record: ContentRecord,
@@ -272,6 +290,7 @@ export function scoreCandidate(
     selectedCategoryCounts,
     selectedFormatCounts
   );
+  const regionAdjustment = computeRegionAdjustment(record, context.preferences);
 
   const catAffinity = profile.categoryAffinity.get(record.category) ?? 0;
   const topicAffinities = record.topics.map(
@@ -296,7 +315,9 @@ export function scoreCandidate(
     RANKING_WEIGHTS.novelty * noveltyScore +
     RANKING_WEIGHTS.diversity * diversityScore;
 
-  const totalScore = Number((baseScore + interactionAdjustment - recencyPenalty).toFixed(6));
+  const totalScore = Number(
+    (baseScore + regionAdjustment + interactionAdjustment - recencyPenalty).toFixed(6)
+  );
 
   return {
     record,
@@ -306,6 +327,7 @@ export function scoreCandidate(
       freshnessScore,
       noveltyScore,
       diversityScore,
+      regionAdjustment,
       interactionAdjustment,
       recencyPenalty,
       totalScore,

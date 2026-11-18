@@ -7,6 +7,7 @@ import type {
   AIAnswer,
   ContentCategory,
   ContentRecord,
+  ContentRegion,
   FeedSession,
   SavedCollection,
   SavedItem,
@@ -21,6 +22,7 @@ export interface ContentDiscoveryRequest {
   topicKeywords: string[];
   limit: number;
   topicFocus?: string;
+  region?: ContentRegion;
 }
 
 export interface ContentProvider {
