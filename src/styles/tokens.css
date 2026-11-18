@@ -1,0 +1,86 @@
+:root {
+  /* Archival Paper Editorial Palette */
+  --bg-canvas: #faf8f4;
+  --bg-surface: #ffffff;
+  --bg-subtle: #f2eee6;
+  --bg-elevated: #fffdf9;
+
+  --ink-primary: #171614;
+  --ink-secondary: #4a463f;
+  --ink-muted: #736d63;
+
+  --border-hairline: #e6dfd3;
+  --border-strong: #cfc6b6;
+
+  --accent-primary: #c84b31;
+  --accent-primary-hover: #ad3d25;
+  --accent-primary-soft: #fbf0ed;
+
+  --accent-sage: #2d6a4f;
+  --accent-sage-soft: #ebf5f0;
+
+  --accent-indigo: #3b4f75;
+  --accent-indigo-soft: #eef2f8;
+
+  --accent-ochre: #9f6d13;
+  --accent-ochre-soft: #fbf5e6;
+
+  --accent-danger: #b42318;
+  --accent-danger-soft: #fef3f2;
+
+  /* Typography */
+  --font-serif: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+  --font-sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Radii & Shadows */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 1px 2px rgba(23, 22, 20, 0.04), 0 8px 24px rgba(23, 22, 20, 0.04);
+  --shadow-elevated: 0 4px 12px rgba(23, 22, 20, 0.07), 0 16px 36px rgba(23, 22, 20, 0.08);
+
+  /* Motion */
+  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 160ms;
+  --duration-med: 260ms;
+
+  /* Spacing & Layout */
+  --nav-height: 60px;
+  --bottom-nav-height: 64px;
+}
+
+[data-theme='dark'] {
+  --bg-canvas: #151412;
+  --bg-surface: #1e1c19;
+  --bg-subtle: #282520;
+  --bg-elevated: #23201c;
+
+  --ink-primary: #f4f0e7;
+  --ink-secondary: #cac2b5;
+  --ink-muted: #989083;
+
+  --border-hairline: #322e28;
+  --border-strong: #474138;
+
+  --accent-primary: #e0654a;
+  --accent-primary-hover: #eb785f;
+  --accent-primary-soft: rgba(224, 101, 74, 0.14);
+
+  --accent-sage: #52a47d;
+  --accent-sage-soft: rgba(82, 164, 125, 0.14);
+
+  --accent-indigo: #7b96c9;
+  --accent-indigo-soft: rgba(123, 150, 201, 0.15);
+
+  --accent-ochre: #dfa643;
+  --accent-ochre-soft: rgba(223, 166, 67, 0.15);
+
+  --accent-danger: #f06d64;
+  --accent-danger-soft: rgba(240, 109, 100, 0.14);
+
+  --shadow-card: 0 2px 10px rgba(0, 0, 0, 0.28);
+  --shadow-elevated: 0 10px 32px rgba(0, 0, 0, 0.42);
+}

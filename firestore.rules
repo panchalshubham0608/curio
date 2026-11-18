@@ -1,0 +1,107 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidDuration(duration) {
+      return duration in [5, 10, 15];
+    }
+
+    function isValidSessionStatus(status) {
+      return status in ['pending', 'processing', 'ready', 'failed'];
+    }
+
+    function isValidInteractionAction(action) {
+      return action in ['opened', 'completed', 'saved', 'liked', 'skipped', 'not_interested'];
+    }
+
+    // Per-user profile and private subcollections — strict owner-only access
+    match /users/{userId} {
+      allow read: if isOwner(userId);
+      allow create, update: if isOwner(userId)
+        && request.resource.data.interests is list
+        && request.resource.data.interests.size() <= 16
+        && request.resource.data.topicKeywords is list
+        && request.resource.data.topicKeywords.size() <= 30
+        && request.resource.data.excludedTopics is list
+        && request.resource.data.excludedTopics.size() <= 30
+        && isValidDuration(request.resource.data.defaultSessionDuration);
+      allow delete: if isOwner(userId);
+
+      // Append-oriented interaction history
+      match /interactions/{interactionId} {
+        allow read: if isOwner(userId);
+        allow create: if isOwner(userId)
+          && request.resource.data.userId == userId
+          && request.resource.data.contentId is string
+          && isValidInteractionAction(request.resource.data.action);
+        allow update: if false;
+        allow delete: if isOwner(userId);
+      }
+
+      // Finite discovery sessions
+      match /sessions/{sessionId} {
+        allow read: if isOwner(userId);
+        allow create, update: if isOwner(userId)
+          && isValidSessionStatus(request.resource.data.status)
+          && isValidDuration(request.resource.data.durationMinutes)
+          && request.resource.data.itemRefs is list
+          && request.resource.data.itemRefs.size() <= 20;
+        allow delete: if isOwner(userId);
+      }
+
+      // Saved collections
+      match /savedCollections/{collectionId} {
+        allow read: if isOwner(userId);
+        allow create, update: if isOwner(userId)
+          && request.resource.data.name is string
+          && request.resource.data.name.size() >= 1
+          && request.resource.data.name.size() <= 80;
+        allow delete: if isOwner(userId);
+      }
+
+      // Saved items
+      match /savedItems/{savedItemId} {
+        allow read: if isOwner(userId);
+        allow create, update: if isOwner(userId)
+          && request.resource.data.contentId is string
+          && request.resource.data.collectionId is string;
+        allow delete: if isOwner(userId);
+      }
+    }
+
+    // Shared normalized & cached content pool
+    // TODO(security): In Phase 2, restrict writes on /content and /visualAssets to server-side workers only.
+    match /content/{contentId} {
+      allow read: if isSignedIn();
+      allow create, update: if isSignedIn()
+        && request.resource.data.schemaVersion == 1
+        && request.resource.data.title is string
+        && request.resource.data.title.size() >= 1
+        && request.resource.data.title.size() <= 240
+        && request.resource.data.qualityStatus in ['unreviewed', 'approved', 'rejected'];
+      allow delete: if false;
+    }
+
+    // Shared visual asset attribution cache
+    match /visualAssets/{assetId} {
+      allow read: if isSignedIn();
+      allow create, update: if isSignedIn()
+        && request.resource.data.provider is string
+        && request.resource.data.license is string;
+      allow delete: if false;
+    }
+
+    // Default deny all unmatched paths
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <rect width="128" height="128" rx="28" fill="#171614"/>
+  <!-- Bold geometric C arc -->
+  <path
+    d="M89.2 38.8A35 35 0 1 0 89.2 89.2L77.9 77.9A19 19 0 1 1 77.9 50.1L89.2 38.8Z"
+    fill="#FAF8F4"
+  />
+  <!-- Terracotta four-point discovery spark -->
+  <path
+    d="M90 46L93.8 60.2L108 64L93.8 67.8L90 82L86.2 67.8L72 64L86.2 60.2L90 46Z"
+    fill="#D45338"
+  />
+</svg>
