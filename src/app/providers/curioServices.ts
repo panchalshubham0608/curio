@@ -29,6 +29,7 @@ import { LocalFallbackAIProvider } from '../../infrastructure/ai/LocalFallbackAI
 import { VisualAssetService } from '../../infrastructure/assets/VisualAssetService';
 import { CompositeContentProvider } from '../../infrastructure/content/CompositeContentProvider';
 import { EvergreenSeedProvider } from '../../infrastructure/content/EvergreenSeedProvider';
+import { GeneratedFeedProvider } from '../../infrastructure/content/GeneratedFeedProvider';
 import { NasaContentProvider } from '../../infrastructure/content/NasaContentProvider';
 import { RssContentProvider } from '../../infrastructure/content/RssContentProvider';
 import { OnDemandFeedExecutor } from '../../infrastructure/execution/OnDemandFeedExecutor';
@@ -117,6 +118,7 @@ export function buildCurioServices(options?: {
 
   const liveDiscoveryEnabled = import.meta.env.VITE_ENABLE_LIVE_DISCOVERY === 'true';
   const contentProvider = new CompositeContentProvider([
+    new GeneratedFeedProvider(),
     new EvergreenSeedProvider(),
     new NasaContentProvider(liveDiscoveryEnabled),
     new RssContentProvider(undefined, liveDiscoveryEnabled),

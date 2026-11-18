@@ -1,0 +1,67 @@
+name: Generate Curio Textual Feed
+
+on:
+  schedule:
+    # Run every 30 minutes to refresh Curio's textual discovery feed
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+    inputs:
+      batch_size:
+        description: 'Number of textual feed items to generate (1-8)'
+        required: false
+        default: '4'
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: generate-curio-feed
+  cancel-in-progress: false
+
+jobs:
+  generate-feed:
+    name: Generate Textual Feed via Gemini
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate textual feed items with Gemini API
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash' }}
+          FEED_BATCH_SIZE: ${{ inputs.batch_size || '4' }}
+          FEED_MAX_ITEMS: '60'
+        run: |
+          if [ -z "$GEMINI_API_KEY" ]; then
+            echo "::error::Missing repository secret GEMINI_API_KEY. Add it under Settings -> Secrets and variables -> Actions."
+            exit 1
+          fi
+          npm run generate:feed
+
+      - name: Commit updated feed if changed
+        run: |
+          if git diff --quiet -- public/generated/feed.json; then
+            echo "No new textual feed items to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/generated/feed.json
+          git commit -m "chore(feed): update scheduled textual feed [skip ci]"
+          git push
