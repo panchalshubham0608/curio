@@ -1,10 +1,30 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-18T22:40:07.075Z",
+  "generatedAt": "2026-11-19T03:55:48.071Z",
   "generator": "gemini-textual-puzzles",
   "model": "gemini-flash-latest",
-  "itemCount": 11,
+  "itemCount": 12,
   "items": [
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_ed4324d77f08",
+      "kind": "odd_one_out",
+      "title": "Metallic Misalignment",
+      "category": "science",
+      "difficulty": "Clever",
+      "prompt": "Which of these metals does NOT belong with the other three based on its state of matter at standard room temperature (20°C / 68°F)?",
+      "hint": "Consider which element is famously a liquid under ambient conditions.",
+      "options": [
+        "Gallium",
+        "Mercury",
+        "Cesium",
+        "Francium"
+      ],
+      "correctIndex": 1,
+      "explanation": "Mercury is the only metal among these that is naturally liquid at standard room temperature (melting point -38.8°C). Gallium, cesium, and francium have near-room melting points but remain solid at 20°C.",
+      "origin": "ai",
+      "createdAt": "2026-11-19T03:55:48.071Z"
+    },
     {
       "schemaVersion": 1,
       "id": "puz_ai_f9b370871220",

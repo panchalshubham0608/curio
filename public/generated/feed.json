@@ -1,10 +1,276 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-18T22:39:32.414Z",
+  "generatedAt": "2026-11-19T03:55:20.949Z",
   "generator": "gemini-textual-feed",
   "model": "gemini-flash-latest",
-  "itemCount": 8,
+  "itemCount": 12,
   "items": [
+    {
+      "id": "curio_gen_769018583649",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Deep Ocean's Glass Architects",
+      "subtitle": "How glass sponges weave fiber optics and skyscraper physics in the abyss",
+      "category": "facts",
+      "region": "global",
+      "topics": [
+        "marine biology",
+        "biomimicry",
+        "materials science"
+      ],
+      "estimatedDurationSeconds": 150,
+      "source": {
+        "publisher": "Nature Materials",
+        "title": "Structural and Optical Properties of Sponge Spicules",
+        "url": "https://www.nature.com/articles/nmat968",
+        "publishedAt": "2026-11-19T03:55:20.949Z",
+        "retrievedAt": "2026-11-19T03:55:20.949Z"
+      },
+      "summary": "Centuries before human engineers manufactured fiber-optic cables, Venus flower basket sponges were weaving glass skeletons that rival modern structural engineering.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In the perpetual darkness of the deep Pacific, Euplectella aspergillum, commonly known as the Venus flower basket, builds a home entirely out of glass. By pulling dissolved silicic acid from cold seawater, this sponge creates delicate glass spicules arranged in a reinforced cylindrical lattice that withstands immense ocean pressures."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "Nature's Fiber Optics",
+          "text": "The glassy basalia anchoring the sponge to the seafloor trap and channel light almost identically to commercial fiber-optic cables, but with natural organic coatings that prevent micro-cracks from shattering the brittle strands."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Engineering Lessons from the Abyss",
+          "points": [
+            "Their alternating square and diagonal grid pattern distributes mechanical stress so efficiently that civil engineers study them to reinforce skyscrapers.",
+            "Unlike industrial glass fabrication that requires temperatures exceeding 1,000 degrees Celsius, glass sponges synthesize structural silica at near-freezing temperatures using enzymatic catalysts."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Deep Ocean's Glass Architects editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#B45309"
+      },
+      "followUps": [
+        "How do symbiotic shrimp live their entire lives inside these glass cages?",
+        "Can synthetic materials copy the cold-temperature glass production process?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-19T03:55:20.949Z",
+      "enrichedAt": "2026-11-19T03:55:20.949Z"
+    },
+    {
+      "id": "curio_gen_39564fb50ed8",
+      "schemaVersion": 1,
+      "contentType": "quick_bite",
+      "cardVariant": "interactive_feature",
+      "title": "The Ultradian Pause",
+      "subtitle": "Working in 90-minute waves to beat cognitive exhaustion",
+      "category": "growth",
+      "region": "global",
+      "topics": [
+        "neuroscience",
+        "productivity",
+        "circadian biology"
+      ],
+      "estimatedDurationSeconds": 120,
+      "source": {
+        "publisher": "Harvard Business Review",
+        "title": "Manage Your Energy, Not Your Time",
+        "url": "https://hbr.org/2007/10/manage-your-energy-not-your-time",
+        "publishedAt": "2026-11-19T03:55:20.949Z",
+        "retrievedAt": "2026-11-19T03:55:20.949Z"
+      },
+      "summary": "Our brains cycle through natural 90-minute rhythms of alertness and fatigue throughout the day, known as the Basic Rest-Activity Cycle.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Most professionals are familiar with circadian rhythms that regulate our 24-hour sleep-wake cycle, but far fewer plan their days around ultradian rhythms. Pioneering sleep researcher Nathaniel Kleitman discovered that our brains operate on a 90-to-120-minute oscillation between peak cognitive arousal and physical replenishment."
+        },
+        {
+          "type": "comparison",
+          "heading": "Brute Force vs. Rhythmic Work",
+          "leftTitle": "Continuous Overdrive",
+          "rightTitle": "Ultradian Syncing",
+          "leftPoints": [
+            "Ignores yawn and fidget cues",
+            "Relies on caffeine spikes to mask adenosine buildup",
+            "Yields diminishing cognitive returns after two continuous hours"
+          ],
+          "rightPoints": [
+            "Caps intense focus sprints at 90 minutes",
+            "Incorporates 15-minute low-stimulation breaks",
+            "Restores neurotransmitter supplies before mental friction sets in"
+          ]
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "The Practical Protocol",
+          "points": [
+            "Notice subtle exhaustion signals like eye blinking, physical fidgeting, or spontaneous daydreaming.",
+            "Take deliberate disconnections without digital input to allow the brain's default mode network to consolidate thoughts."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Ultradian Pause editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#2D6A4F"
+      },
+      "followUps": [
+        "How does the Default Mode Network benefit from non-sleep deep rest?",
+        "Why do ultradian rhythms continue even while we are dreaming in REM sleep?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-19T03:55:20.949Z",
+      "enrichedAt": "2026-11-19T03:55:20.949Z"
+    },
+    {
+      "id": "curio_gen_b247661762ff",
+      "schemaVersion": 1,
+      "contentType": "short_story",
+      "cardVariant": "article",
+      "title": "The Ice King of Boston",
+      "subtitle": "How Frederic Tudor built a global commodity empire by shipping frozen New England ponds across the equator",
+      "category": "history",
+      "region": "global",
+      "topics": [
+        "economic history",
+        "maritime innovation",
+        "trade routes"
+      ],
+      "estimatedDurationSeconds": 160,
+      "source": {
+        "publisher": "Smithsonian Magazine",
+        "title": "The Ice King: How Boston Chilled the World",
+        "url": "https://www.smithsonianmag.com/history/the-ice-king-boston-chilled-the-world-180974898/",
+        "publishedAt": "2026-11-19T03:55:20.949Z",
+        "retrievedAt": "2026-11-19T03:55:20.949Z"
+      },
+      "summary": "In the early nineteenth century, a determined Bostonian figured out that sawdust, good hull insulation, and stubborn patience could turn winter pond ice into a global luxury.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In 1806, onlookers on Boston's docks openly mocked Frederic Tudor as he loaded 130 tons of solid Massachusetts pond ice aboard a ship bound for the sweltering Caribbean island of Martinique. Observers assumed the ice would vanish long before landfall, and early shipments indeed melted into tepid water puddles. Yet Tudor refused to surrender his bizarre ambition."
+        },
+        {
+          "type": "timeline",
+          "heading": "The Chilled Commercial Revolution",
+          "events": [
+            {
+              "year": "1806",
+              "title": "First Venture",
+              "detail": "Tudor ships lake ice to Martinique; customers have no insulated depots and the cargo melts into a heavy financial loss."
+            },
+            {
+              "year": "1825",
+              "title": "Sawdust Insulation",
+              "detail": "Inventor Nathaniel Wyeth designs horse-drawn ice cutters, and Tudor adopts dry wood sawdust to insulate cargo holds cheaply."
+            },
+            {
+              "year": "1833",
+              "title": "Arrival in Calcutta",
+              "detail": "The ship Tuscany delivers 100 tons of crystal-clear Boston ice to India after a four-month voyage across the equator, turning Tudor into an international industrial magnate."
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "question": "What common byproduct proved to be the magic insulating ingredient that saved the global ice trade?",
+          "options": [
+            "Coarse sheep wool blankets",
+            "Dry pine sawdust from timber mills",
+            "Shredded tobacco leaves"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "Sawdust trapped pockets of stagnant air while absorbing moisture, creating an inexpensive insulating jacket that allowed blocks of ice to survive four-month voyages through tropical seas."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Ice King of Boston editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#7C2D12"
+      },
+      "followUps": [
+        "How did the invention of commercial refrigeration abruptly collapse the natural ice trade?",
+        "What architectural tricks kept early tropical icehouses cold without electricity?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-19T03:55:20.949Z",
+      "enrichedAt": "2026-11-19T03:55:20.949Z"
+    },
+    {
+      "id": "curio_gen_0dca9beef56c",
+      "schemaVersion": 1,
+      "contentType": "quick_bite",
+      "cardVariant": "interactive_feature",
+      "title": "The Bureaucratic War of the Moustache",
+      "subtitle": "When French waiters fought for the right to grow facial hair",
+      "category": "humour",
+      "region": "global",
+      "topics": [
+        "social satire",
+        "labor history",
+        "french culture"
+      ],
+      "estimatedDurationSeconds": 130,
+      "source": {
+        "publisher": "BBC History",
+        "title": "The Waiters Strike for the Right to a Moustache",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Bureaucratic%20War%20of%20the%20Moustache",
+        "publishedAt": "2026-11-19T03:55:20.949Z",
+        "retrievedAt": "2026-11-19T03:55:20.949Z"
+      },
+      "summary": "In the spring of 1907, Parisian restaurant waiters walked off the job to demand an essential dignity: the legal freedom to grow a dashing moustache.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "During France's Belle Époque, facial hair was not merely an aesthetic choice; it was a rigid social badge. Aristocrats, military officers, and wealthy patrons wore glorious, upturned moustaches, while domestic servants and cafe waiters were legally forced to remain clean-shaven to mark their subordinate status."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Brasserie Strike of 1907",
+          "text": "Fed up with class subordination, hundreds of Parisian waiters organized coordinated strikes demanding shorter hours, an end to mandatory unpaid trials, and the explicit legal right to grow any facial hair they pleased."
+        },
+        {
+          "type": "paragraph",
+          "text": "Patrons were horrified when chic boulevards ground to a halt because nobody was pouring their aperitifs. Cafe owners quickly folded, granting the culinary strikers both wage concessions and total follicular freedom. Within weeks, the terraces of Paris were teeming with aggressively waxed, rebellious upper lips."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Bureaucratic War of the Moustache editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#9333EA"
+      },
+      "followUps": [
+        "Why were 19th-century British soldiers legally punished if they shaved their moustaches?",
+        "How did clean-shaven styles return to fashion during World War I due to chemical gas masks?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-19T03:55:20.949Z",
+      "enrichedAt": "2026-11-19T03:55:20.949Z"
+    },
     {
       "id": "curio_gen_627e5eb0205b",
       "schemaVersion": 1,
