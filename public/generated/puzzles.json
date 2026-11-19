@@ -1,10 +1,309 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-19T03:55:48.071Z",
+  "generatedAt": "2026-11-19T09:05:19.735Z",
   "generator": "gemini-textual-puzzles",
   "model": "gemini-flash-latest",
-  "itemCount": 12,
+  "itemCount": 20,
   "items": [
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_42bac4d77e89",
+      "kind": "order_sequence",
+      "title": "Aviation Milestones",
+      "category": "history",
+      "difficulty": "Clever",
+      "prompt": "Arrange these historic aviation milestones in chronological order, from earliest to most recent.",
+      "orderItems": [
+        "First supersonic flight by Chuck Yeager",
+        "Wright Brothers' first powered flight at Kitty Hawk",
+        "Maiden commercial flight of the Boeing 747",
+        "Charles Lindbergh's solo transatlantic crossing"
+      ],
+      "correctOrder": [
+        1,
+        3,
+        0,
+        2
+      ],
+      "hint": "Consider the transition from piston-driven flight to jet-powered travel.",
+      "explanation": "The Wright brothers flew in 1903, Lindbergh crossed the Atlantic solo in 1927, Chuck Yeager broke the sound barrier in 1947, and the Boeing 747 entered commercial service in 1970.",
+      "origin": "ai",
+      "createdAt": "2026-11-19T09:05:19.735Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_593815251af9",
+      "kind": "pattern_sequence",
+      "title": "Alphanumeric Progression",
+      "category": "technology",
+      "difficulty": "Clever",
+      "prompt": "Find the missing term that completes this alphanumeric pattern.",
+      "sequenceItems": [
+        "B3",
+        "C6",
+        "E12",
+        "H24",
+        "?"
+      ],
+      "hint": "Track the letter advancing forward and the number doubling.",
+      "options": [
+        "J48",
+        "K48",
+        "K36",
+        "L48"
+      ],
+      "correctIndex": 1,
+      "explanation": "Letters advance by consecutive increments (+1, +2, +3, +4) while numbers double each step (3, 6, 12, 24, 48). Moving 4 steps past G gives K, paired with 48.",
+      "origin": "ai",
+      "createdAt": "2026-11-19T09:05:19.735Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_4957bc927fa8",
+      "kind": "true_or_myth",
+      "title": "Glass Fluidity Fallacy",
+      "category": "science",
+      "difficulty": "Warm-up",
+      "prompt": "Fact Check: Medieval stained glass windows are thicker at the bottom because glass is a slow-flowing liquid at room temperature.",
+      "hint": "Think about how medieval artisans manufactured crown and cylinder glass.",
+      "options": [
+        "True — Real Fact",
+        "Myth — False"
+      ],
+      "correctIndex": 1,
+      "explanation": "Glass is an amorphous solid that does not flow noticeably at ambient temperatures. Medieval panes are uneven due to ancient manufacturing techniques, and builders simply placed the thicker edge at the base for structural stability.",
+      "origin": "ai",
+      "createdAt": "2026-11-19T09:05:19.735Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_02ea67ba05f1",
+      "kind": "visual_diagram",
+      "title": "Angle of the Golden Ratio",
+      "category": "science",
+      "difficulty": "Tricky",
+      "prompt": "Examine the segmented circle diagram. What is the value of angle theta in degrees?",
+      "svgDiagram": {
+        "caption": "Segmented circle showing known angles and unknown angle theta",
+        "background": "#FAF8F4",
+        "shapes": [
+          {
+            "shape": "circle",
+            "cx": 160,
+            "cy": 100,
+            "r": 70,
+            "fill": "#E5E7EB",
+            "stroke": "#3B4F75",
+            "strokeWidth": 3
+          },
+          {
+            "shape": "line",
+            "x1": 160,
+            "y1": 100,
+            "x2": 230,
+            "y2": 100,
+            "stroke": "#3B4F75",
+            "strokeWidth": 2
+          },
+          {
+            "shape": "line",
+            "x1": 160,
+            "y1": 100,
+            "x2": 99,
+            "y2": 135,
+            "stroke": "#3B4F75",
+            "strokeWidth": 2
+          },
+          {
+            "shape": "line",
+            "x1": 160,
+            "y1": 100,
+            "x2": 119,
+            "y2": 43,
+            "stroke": "#3B4F75",
+            "strokeWidth": 2
+          },
+          {
+            "shape": "text",
+            "x": 160,
+            "y": 140,
+            "text": "150°",
+            "fontSize": 14,
+            "fill": "#1F2937",
+            "anchor": "middle"
+          },
+          {
+            "shape": "text",
+            "x": 120,
+            "y": 95,
+            "text": "125°",
+            "fontSize": 14,
+            "fill": "#1F2937",
+            "anchor": "middle"
+          },
+          {
+            "shape": "text",
+            "x": 185,
+            "y": 70,
+            "text": "θ = ?",
+            "fontSize": 15,
+            "fill": "#C84B31",
+            "anchor": "middle"
+          }
+        ]
+      },
+      "hint": "The circle is divided into three sections; sum the known angles and subtract from 360 degrees.",
+      "options": [
+        "75°",
+        "80°",
+        "85°",
+        "95°"
+      ],
+      "correctIndex": 2,
+      "explanation": "A complete circle measures 360 degrees. Subtracting 150 degrees and 125 degrees leaves exactly 85 degrees for theta.",
+      "origin": "ai",
+      "createdAt": "2026-11-19T09:05:19.735Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_53b390c67f2a",
+      "kind": "interactive_grid",
+      "title": "Quantum Reactor Cells",
+      "category": "technology",
+      "difficulty": "Clever",
+      "prompt": "Select exactly 3 power cells that combine to reach a total output of 50 megawatts.",
+      "gridPuzzle": {
+        "mode": "target_sum",
+        "rows": 3,
+        "cols": 3,
+        "instruction": "Select exactly 3 cells that sum to 50",
+        "cells": [
+          {
+            "label": "23",
+            "value": 23,
+            "initialOn": false
+          },
+          {
+            "label": "14",
+            "value": 14,
+            "initialOn": false
+          },
+          {
+            "label": "17",
+            "value": 17,
+            "initialOn": false
+          },
+          {
+            "label": "11",
+            "value": 11,
+            "initialOn": false
+          },
+          {
+            "label": "19",
+            "value": 19,
+            "initialOn": false
+          },
+          {
+            "label": "25",
+            "value": 25,
+            "initialOn": false
+          },
+          {
+            "label": "16",
+            "value": 16,
+            "initialOn": false
+          },
+          {
+            "label": "12",
+            "value": 12,
+            "initialOn": false
+          },
+          {
+            "label": "8",
+            "value": 8,
+            "initialOn": false
+          }
+        ],
+        "targetSum": 50,
+        "exactCount": 3,
+        "goalState": "all_on",
+        "solutionIndices": [
+          0,
+          4,
+          8
+        ]
+      },
+      "hint": "Look for two large double-digit numbers that leave an easy remainder.",
+      "explanation": "Selecting 23, 19, and 8 gives 23 + 19 + 8 = 50 megawatts.",
+      "origin": "ai",
+      "createdAt": "2026-11-19T09:05:19.735Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_70f456268189",
+      "kind": "lateral_riddle",
+      "title": "The Weightless Pocket",
+      "category": "humour",
+      "difficulty": "Warm-up",
+      "prompt": "I can fill an entire room without occupying any physical space, and the more of me you take away, the darker things become. What am I?",
+      "hint": "Switch me on when evening falls.",
+      "options": [
+        "Sound",
+        "Light",
+        "Smoke",
+        "Warmth"
+      ],
+      "correctIndex": 1,
+      "explanation": "Light fills a room completely without displacing any physical mass or volume.",
+      "origin": "ai",
+      "createdAt": "2026-11-19T09:05:19.735Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_19c7db6bb9dc",
+      "kind": "logic_reasoning",
+      "title": "The Diplomatic Summit",
+      "category": "facts",
+      "difficulty": "Tricky",
+      "prompt": "Four ambassadors (A, B, C, D) sit in a row facing north. Deduce who sits in the third position from the left.",
+      "clues": [
+        "1. Ambassador D sits on one of the extreme ends.",
+        "2. Ambassador B sits exactly one seat to the right of Ambassador C.",
+        "3. Ambassador A is not sitting next to Ambassador C.",
+        "4. Ambassador D sits to the right of Ambassador A."
+      ],
+      "hint": "Place D at the extreme end first, then position B and C.",
+      "options": [
+        "Ambassador A",
+        "Ambassador B",
+        "Ambassador C",
+        "Ambassador D"
+      ],
+      "correctIndex": 0,
+      "explanation": "D must sit on an extreme end; placing D at seat 4 allows B at seat 2 and C immediately to B's left at seat 1, leaving seat 3 for A.",
+      "origin": "ai",
+      "createdAt": "2026-11-19T09:05:19.735Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_899857a449d4",
+      "kind": "odd_one_out",
+      "title": "Tectonic Outlier",
+      "category": "science",
+      "difficulty": "Warm-up",
+      "prompt": "Identify the geographical feature that does NOT belong with the others based on tectonic origin.",
+      "hint": "Three are formed along divergent or convergent plate boundaries, while one sits over an intraplate hotspot.",
+      "options": [
+        "Hawaiian Archipelago",
+        "Mariana Trench",
+        "Himalayan Mountain Range",
+        "Mid-Atlantic Ridge"
+      ],
+      "correctIndex": 0,
+      "explanation": "The Hawaiian Islands were formed by an intraplate mantle plume hotspot, whereas the Marianas Trench, Himalayas, and Mid-Atlantic Ridge lie along active tectonic plate boundaries.",
+      "origin": "ai",
+      "createdAt": "2026-11-19T09:05:19.735Z"
+    },
     {
       "schemaVersion": 1,
       "id": "puz_ai_ed4324d77f08",

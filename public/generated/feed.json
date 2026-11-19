@@ -1,10 +1,100 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-19T03:55:20.949Z",
+  "generatedAt": "2026-11-19T09:04:52.155Z",
   "generator": "gemini-textual-feed",
   "model": "gemini-flash-latest",
-  "itemCount": 12,
+  "itemCount": 13,
   "items": [
+    {
+      "id": "curio_gen_f8e2b39ab530",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The High Seas Treaty Crosses the Threshold",
+      "subtitle": "Inside the historic international pact securing protections for two-thirds of the planet's oceans.",
+      "category": "news",
+      "region": "global",
+      "topics": [
+        "oceans",
+        "international law",
+        "conservation",
+        "global governance"
+      ],
+      "estimatedDurationSeconds": 180,
+      "source": {
+        "publisher": "United Nations News",
+        "title": "Intergovernmental Conference on Marine Biodiversity of Areas Beyond National Jurisdiction",
+        "url": "https://www.un.org/bbnj",
+        "publishedAt": "2026-11-19T09:04:52.155Z",
+        "retrievedAt": "2026-11-19T09:04:52.155Z"
+      },
+      "summary": "After nearly two decades of diplomatic gridlock, the United Nations finalized the High Seas Treaty, creating the first comprehensive legal framework to establish marine protected areas in international waters.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Beyond the 200-nautical-mile economic boundary lines drawn by sovereign coastal nations lies the high seas: an aquatic expanse covering nearly half the Earth's surface and roughly two-thirds of the global ocean. For centuries, this watery commons was governed by an open-access philosophy known as the 'freedom of the seas,' leaving vast habitats of hydrothermal vents, migratory pelagic highways, and abyssal plains almost entirely unprotected from overexploitation."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Conservation Gap",
+          "text": "Before the formal adoption of the High Seas Treaty, barely one percent of international waters enjoyed comprehensive environmental protections, despite harboring over ninety percent of the planet's habitable volume."
+        },
+        {
+          "type": "timeline",
+          "heading": "The Road to Ratification",
+          "events": [
+            {
+              "year": "2004",
+              "title": "Working Group Formed",
+              "detail": "The UN General Assembly establishes an informal working group to explore marine biodiversity conservation beyond national jurisdiction."
+            },
+            {
+              "year": "2018",
+              "title": "Intergovernmental Talks Begin",
+              "detail": "Formal negotiations launch at the UN headquarters in New York to draft a legally binding treaty."
+            },
+            {
+              "year": "2023",
+              "title": "Consensus Reached",
+              "detail": "Delegates finalize the text of the BBNJ Agreement after marathon around-the-clock sessions."
+            },
+            {
+              "year": "2025",
+              "title": "Ratification Milestone",
+              "detail": "Dozens of nations formally ratify the pact, moving the treaty toward international enforcement."
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "question": "What does the treaty's mandate regarding Marine Genetic Resources (MGRs) require?",
+          "options": [
+            "Private companies retain exclusive patents without disclosure",
+            "Benefits derived from high-seas biological material must be equitably shared internationally",
+            "All offshore sampling of genetic material is permanently banned"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "The treaty includes landmark provisions ensuring that the commercial and scientific benefits of genetic discoveries made in international waters are shared equitably with developing nations."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The High Seas Treaty Crosses the Threshold editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#C84B31"
+      },
+      "followUps": [
+        "How will marine protected areas in international waters be monitored and enforced?",
+        "What role do deep-sea mineral rights play in modern maritime treaties?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-19T09:04:52.155Z",
+      "enrichedAt": "2026-11-19T09:04:52.155Z"
+    },
     {
       "id": "curio_gen_769018583649",
       "schemaVersion": 1,
