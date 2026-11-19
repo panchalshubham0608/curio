@@ -1,10 +1,202 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-19T12:22:45.615Z",
+  "generatedAt": "2026-11-19T20:53:29.685Z",
   "generator": "gemini-textual-puzzles",
   "model": "gemini-flash-latest",
-  "itemCount": 23,
+  "itemCount": 26,
   "items": [
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_9ec271dc8ed4",
+      "kind": "visual_diagram",
+      "title": "Gear Teeth Match",
+      "category": "science",
+      "difficulty": "Clever",
+      "prompt": "If Gear A rotates clockwise, in which direction will Gear D rotate, and how many gears turn counter-clockwise in total?",
+      "svgDiagram": {
+        "caption": "A train of four interlocked gears in sequence",
+        "background": "#FAF8F4",
+        "shapes": [
+          {
+            "shape": "circle",
+            "cx": 55,
+            "cy": 100,
+            "r": 32,
+            "fill": "#3B4F75",
+            "stroke": "#1E2A38",
+            "strokeWidth": 3
+          },
+          {
+            "shape": "text",
+            "x": 55,
+            "y": 105,
+            "text": "A",
+            "fontSize": 18,
+            "fill": "#FFFFFF",
+            "anchor": "middle"
+          },
+          {
+            "shape": "circle",
+            "cx": 115,
+            "cy": 100,
+            "r": 28,
+            "fill": "#2D6A4F",
+            "stroke": "#1B4332",
+            "strokeWidth": 3
+          },
+          {
+            "shape": "text",
+            "x": 115,
+            "y": 105,
+            "text": "B",
+            "fontSize": 18,
+            "fill": "#FFFFFF",
+            "anchor": "middle"
+          },
+          {
+            "shape": "circle",
+            "cx": 180,
+            "cy": 100,
+            "r": 37,
+            "fill": "#D97706",
+            "stroke": "#92400E",
+            "strokeWidth": 3
+          },
+          {
+            "shape": "text",
+            "x": 180,
+            "y": 105,
+            "text": "C",
+            "fontSize": 18,
+            "fill": "#FFFFFF",
+            "anchor": "middle"
+          },
+          {
+            "shape": "circle",
+            "cx": 255,
+            "cy": 100,
+            "r": 38,
+            "fill": "#C84B31",
+            "stroke": "#7C2D12",
+            "strokeWidth": 3
+          },
+          {
+            "shape": "text",
+            "x": 255,
+            "y": 105,
+            "text": "D",
+            "fontSize": 18,
+            "fill": "#FFFFFF",
+            "anchor": "middle"
+          }
+        ]
+      },
+      "hint": "Adjacent meshed gears always rotate in opposite directions.",
+      "options": [
+        "Clockwise; 1 gear",
+        "Counter-clockwise; 2 gears",
+        "Clockwise; 2 gears",
+        "Counter-clockwise; 3 gears"
+      ],
+      "correctIndex": 1,
+      "explanation": "Meshed gears alternate rotation directions: A is clockwise, B counter-clockwise, C clockwise, and D counter-clockwise. Thus, Gear D rotates counter-clockwise and exactly two gears turn counter-clockwise.",
+      "origin": "ai",
+      "createdAt": "2026-11-19T20:53:29.685Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_faca12e3a157",
+      "kind": "interactive_grid",
+      "title": "Grid Voltage Calibration",
+      "category": "technology",
+      "difficulty": "Clever",
+      "prompt": "Select exactly 3 cells whose values sum to 50 to stabilize the circuit voltage.",
+      "gridPuzzle": {
+        "mode": "target_sum",
+        "rows": 3,
+        "cols": 3,
+        "instruction": "Select exactly 3 cells that sum to 50.",
+        "cells": [
+          {
+            "label": "11",
+            "value": 11,
+            "initialOn": false
+          },
+          {
+            "label": "8",
+            "value": 8,
+            "initialOn": false
+          },
+          {
+            "label": "27",
+            "value": 27,
+            "initialOn": false
+          },
+          {
+            "label": "15",
+            "value": 15,
+            "initialOn": false
+          },
+          {
+            "label": "19",
+            "value": 19,
+            "initialOn": false
+          },
+          {
+            "label": "14",
+            "value": 14,
+            "initialOn": false
+          },
+          {
+            "label": "22",
+            "value": 22,
+            "initialOn": false
+          },
+          {
+            "label": "24",
+            "value": 24,
+            "initialOn": false
+          },
+          {
+            "label": "9",
+            "value": 9,
+            "initialOn": false
+          }
+        ],
+        "targetSum": 50,
+        "exactCount": 3,
+        "goalState": "all_on",
+        "solutionIndices": [
+          0,
+          3,
+          7
+        ]
+      },
+      "hint": "Look for a combination of two values in the teens and twenties that bridge to 50.",
+      "explanation": "Selecting 11, 15, and 24 yields a sum of exactly 50 (11 + 15 + 24 = 50).",
+      "origin": "ai",
+      "createdAt": "2026-11-19T20:53:29.685Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_b126c9da9c1a",
+      "kind": "lateral_riddle",
+      "title": "The Vanishing Footprint",
+      "category": "humour",
+      "difficulty": "Warm-up",
+      "prompt": "The more you take from me, the more you leave behind. What am I?",
+      "hint": "Think about walking along a sandy beach.",
+      "options": [
+        "Footsteps",
+        "Breaths",
+        "Memories",
+        "Photographs"
+      ],
+      "correctIndex": 0,
+      "explanation": "Every step you take leaves a footprint behind in your path.",
+      "origin": "ai",
+      "createdAt": "2026-11-19T20:53:29.685Z"
+    },
     {
       "schemaVersion": 1,
       "id": "puz_ai_7268e0e4af80",

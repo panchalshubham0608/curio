@@ -1,10 +1,272 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-19T09:04:52.155Z",
+  "generatedAt": "2026-11-19T20:52:57.288Z",
   "generator": "gemini-textual-feed",
   "model": "gemini-flash-latest",
-  "itemCount": 13,
+  "itemCount": 17,
   "items": [
+    {
+      "id": "curio_gen_1d9075a1c4b2",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Quantum Compass of the European Robin",
+      "subtitle": "How radical pair chemistry guides a tiny songbird across continents",
+      "category": "science",
+      "region": "global",
+      "topics": [
+        "biophysics",
+        "ornithology",
+        "quantum mechanics"
+      ],
+      "estimatedDurationSeconds": 140,
+      "source": {
+        "publisher": "Nature",
+        "title": "Magnetic sensitivity of cryptochrome 4 from a migratory songbird",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Quantum%20Compass%20of%20the%20European%20Robin",
+        "publishedAt": "2026-11-19T20:52:57.288Z",
+        "retrievedAt": "2026-11-19T20:52:57.288Z"
+      },
+      "summary": "European robins navigate across continents not merely through sight or smell, but by using entangled quantum particles embedded inside specialized proteins in their retinas.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Every autumn, migratory European robins undertake perilous journeys covering thousands of kilometers. For decades, biologists puzzled over how a creature weighing barely twenty grams could pinpoint magnetic north without an iron compass. The answer lies in cryptochromes, light-sensitive proteins nestled directly within the photoreceptor cells of the bird's eye."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Quantum Flash",
+          "text": "When blue daylight strikes cryptochrome-4, it triggers an ultrafast electron transfer that generates a transient pair of entangled radicals. The spin states of these paired electrons oscillate between singlet and triplet states, behaving with extraordinary sensitivity to Earth's faint geomagnetic field."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Biological Quantum Mechanics",
+          "points": [
+            "Avian magnetic sensing is inclination-based: robins detect the tilt of field lines relative to Earth's surface rather than magnetic polarity alone.",
+            "Anthropogenic radiofrequency noise, such as AM radio broadcasts, can disrupt this radical pair mechanism, disorienting migrating birds in cities."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Quantum Compass of the European Robin editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#3B4F75"
+      },
+      "followUps": [
+        "Can humans artificially engineer magnetoreception?",
+        "Do migratory sea turtles use cryptochromes or magnetite crystals?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-19T20:52:57.288Z",
+      "enrichedAt": "2026-11-19T20:52:57.288Z"
+    },
+    {
+      "id": "curio_gen_d9e672cdd706",
+      "schemaVersion": 1,
+      "contentType": "interactive_fact",
+      "cardVariant": "interactive_feature",
+      "title": "The Accidental Logic of the QWERTY Jam",
+      "subtitle": "Why mechanical pin collisions shaped the keyboards of the digital age",
+      "category": "technology",
+      "region": "global",
+      "topics": [
+        "history of technology",
+        "ergonomics",
+        "typing"
+      ],
+      "estimatedDurationSeconds": 110,
+      "source": {
+        "publisher": "Smithsonian Magazine",
+        "title": "The Fact and Fiction of the QWERTY Keyboard",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Accidental%20Logic%20of%20the%20QWERTY%20Jam",
+        "publishedAt": "2026-11-19T20:52:57.288Z",
+        "retrievedAt": "2026-11-19T20:52:57.288Z"
+      },
+      "summary": "The ubiquitous layout beneath our fingertips was not engineered for maximum typing speed, but rather to space out frequent letter pairings so mechanical strike bars would stop tangling.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Christopher Latham Sholes received a patent in 1878 for a keyboard configuration designed to solve a purely mechanical annoyance. Early mechanical typewriters used swinging typebars arranged in a circular basket. When a clerk typed common English digraphs too quickly, adjacent bars collided and jammed the entire mechanism."
+        },
+        {
+          "type": "quiz",
+          "question": "Which commonly paired English letter combination was deliberately separated to the opposite side of the keyboard in early QWERTY designs?",
+          "options": [
+            "S and T",
+            "T and H",
+            "Q and U"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "Because 'th' appeared with such vast frequency in English telegraph transcriptions, placing T and H on separate sides of the basket reduced clashing bars."
+        },
+        {
+          "type": "paragraph",
+          "text": "Despite ergonomic alternatives like the Dvorak Simplified Keyboard demonstrating measurable efficiency gains in trials, path dependency locked the QWERTY standard into worldwide typing culture, eventually migrating to touchscreens and virtual reality interfaces intact."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Accidental Logic of the QWERTY Jam editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#2563EB"
+      },
+      "followUps": [
+        "Why did the French AZERTY layout deviate from standard QWERTY?",
+        "Did early Morse code telegraphers influence key layouts?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-19T20:52:57.288Z",
+      "enrichedAt": "2026-11-19T20:52:57.288Z"
+    },
+    {
+      "id": "curio_gen_cbe1f1239e31",
+      "schemaVersion": 1,
+      "contentType": "short_story",
+      "cardVariant": "article",
+      "title": "The Underground Subways of Oaxacan Mole",
+      "subtitle": "How pre-Columbian chillies married colonial spices in New Spain convent kitchens",
+      "category": "travel_food",
+      "region": "global",
+      "topics": [
+        "gastronomy",
+        "mexican history",
+        "culinary chemistry"
+      ],
+      "estimatedDurationSeconds": 130,
+      "source": {
+        "publisher": "BBC Travel",
+        "title": "Mexico's Complex Sauce That Defines a Nation",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Underground%20Subways%20of%20Oaxacan%20Mole",
+        "publishedAt": "2026-11-19T20:52:57.288Z",
+        "retrievedAt": "2026-11-19T20:52:57.288Z"
+      },
+      "summary": "Modern mole negro is neither simple chocolate sauce nor rustic stew, but a hyper-complex reduction of smoke, bitter seeds, and burnt tortillas forged across centuries of intercultural blending.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In the valley markets of Oaxaca, smoke rises each morning from massive comals where chilhuacle and pasilla oaxaqueño chiles are intentionally charred until pitch-black. Rather than discarding burnt components as culinary errors, Oaxacan cooks harness carefully managed carbonization to impart deep, velvety bitterness without acrid ashiness."
+        },
+        {
+          "type": "timeline",
+          "heading": "Evolution of the Mole Complex",
+          "events": [
+            {
+              "year": "1500s",
+              "title": "Mōlli Traditions",
+              "detail": "Indigenous Nahua cooks grind squash seeds, tomatoes, and chiles on stone metates to create silky sauces named mōlli."
+            },
+            {
+              "year": "1680s",
+              "title": "The Convent Synthesis",
+              "detail": "Puebla and Oaxaca convents introduce Old World spices: cinnamon, clove, coriander, and anise, enriching native pastes with dried plantains and cacao."
+            },
+            {
+              "year": "Modern Era",
+              "title": "The Seven Moles Canon",
+              "detail": "Oaxaca formalizes regional variations, ranging from bright herb-infused verde to deeply fermented negro."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Balancing more than thirty disparate ingredients requires strict grinding orders. Seeds release naturally stabilizing emulsifiers, allowing high proportions of lard, toasted aromatics, and rich broth to stay suspended in a glossy emulsion without breaking."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Underground Subways of Oaxacan Mole editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#0F766E"
+      },
+      "followUps": [
+        "What gives chilhuacle chiles their unique raisin profile?",
+        "How did stone metates shape early food textures across Mesoamerica?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-19T20:52:57.288Z",
+      "enrichedAt": "2026-11-19T20:52:57.288Z"
+    },
+    {
+      "id": "curio_gen_7a596ca81ee7",
+      "schemaVersion": 1,
+      "contentType": "quick_bite",
+      "cardVariant": "interactive_feature",
+      "title": "The Strange Physics of Negative Absolute Temperature",
+      "subtitle": "Why reaching beyond absolute zero creates a system that is paradoxically hotter than infinity",
+      "category": "facts",
+      "region": "global",
+      "topics": [
+        "thermodynamics",
+        "statistical mechanics",
+        "physics"
+      ],
+      "estimatedDurationSeconds": 120,
+      "source": {
+        "publisher": "Science",
+        "title": "Negative Absolute Temperature for Motional Degrees of Freedom",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Strange%20Physics%20of%20Negative%20Absolute%20Temperature",
+        "publishedAt": "2026-11-19T20:52:57.288Z",
+        "retrievedAt": "2026-11-19T20:52:57.288Z"
+      },
+      "summary": "In quantum systems with bounded energy levels, stepping into negative Kelvin temperatures does not mean plunging below absolute freeze—it creates an inverted state hotter than any positive temperature.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Absolute zero, or zero Kelvin, represents the total cessation of extractable classical thermal motion. For two centuries, popular science treated it as an impenetrable floor. Yet in statistical thermodynamics, temperature is formally defined not by raw particle speed, but by how entropy shifts when energy is added to a system."
+        },
+        {
+          "type": "comparison",
+          "heading": "Positive vs. Negative Absolute Temperatures",
+          "leftTitle": "Positive Temperature (+T)",
+          "rightTitle": "Negative Temperature (-T)",
+          "leftPoints": [
+            "Low energy states are more populated than high energy states.",
+            "Adding energy increases overall microscopic disorder (entropy).",
+            "Absorbs heat when brought into contact with hotter bodies."
+          ],
+          "rightPoints": [
+            "Higher energy states hold more particles than lower ones (population inversion).",
+            "Adding energy forces particles into upper limits, actually decreasing entropy.",
+            "Spontaneously dumps heat into any positive-temperature reservoir."
+          ]
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Thermodynamic Paradox",
+          "text": "Because heat always flows spontaneously from negative Kelvin states into positive Kelvin states, a quantum gas at minus two Kelvin is mathematically hotter than the center of the Sun."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Strange Physics of Negative Absolute Temperature editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#B45309"
+      },
+      "followUps": [
+        "How do physicists trap ultracold potassium atoms to demonstrate negative temperatures?",
+        "What is the mathematical connection between negative temperature and optical lasers?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-19T20:52:57.288Z",
+      "enrichedAt": "2026-11-19T20:52:57.288Z"
+    },
     {
       "id": "curio_gen_f8e2b39ab530",
       "schemaVersion": 1,
