@@ -1,10 +1,80 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-19T20:53:29.685Z",
+  "generatedAt": "2026-11-20T09:44:05.428Z",
   "generator": "gemini-textual-puzzles",
   "model": "gemini-flash-latest",
-  "itemCount": 26,
+  "itemCount": 29,
   "items": [
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_bed0758af50b",
+      "kind": "logic_reasoning",
+      "title": "The Cipher Key Assignment",
+      "category": "technology",
+      "difficulty": "Clever",
+      "prompt": "Four cryptographers—Anya, Ben, Clara, and David—each safeguard exactly one unique security key: Amber, Cobalt, Jade, or Ruby. Determine who holds the Cobalt key based on these findings.",
+      "clues": [
+        "1. Neither Anya nor David holds the Jade key.",
+        "2. Clara holds the Ruby key.",
+        "3. Ben does not hold the Amber key or the Cobalt key."
+      ],
+      "hint": "Start by identifying who must hold the Jade key.",
+      "options": [
+        "Anya",
+        "Ben",
+        "Clara",
+        "David"
+      ],
+      "correctIndex": 0,
+      "explanation": "Since Clara holds Ruby, Ben cannot hold Amber or Cobalt, leaving Ben with Jade. Anya cannot hold Jade, so Anya and David hold Amber and Cobalt; with David excluded from Jade and Ben holding Jade, Anya holds Cobalt and David holds Amber.",
+      "origin": "ai",
+      "createdAt": "2026-11-20T09:44:05.428Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_2c34741caf36",
+      "kind": "odd_one_out",
+      "title": "Glandular Oddity",
+      "category": "science",
+      "difficulty": "Warm-up",
+      "prompt": "Which of these biological glands differs fundamentally from the other three in how it releases its secretions?",
+      "hint": "Consider whether secretions enter ducts or travel directly into the bloodstream.",
+      "options": [
+        "Thyroid gland",
+        "Pituitary gland",
+        "Adrenal gland",
+        "Salivary gland"
+      ],
+      "correctIndex": 3,
+      "explanation": "The salivary gland is an exocrine gland that secretes through specialized ducts, whereas the thyroid, pituitary, and adrenal are endocrine glands secreting hormones directly into the bloodstream.",
+      "origin": "ai",
+      "createdAt": "2026-11-20T09:44:05.428Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_59d695181624",
+      "kind": "order_sequence",
+      "title": "Printed Epochs",
+      "category": "history",
+      "difficulty": "Clever",
+      "prompt": "Arrange these communication technologies in chronological order of their historical invention or introduction, from earliest to most recent.",
+      "orderItems": [
+        "Movable type printing press (Gutenberg)",
+        "Commercial electric telegraph",
+        "Woodblock printing",
+        "Rotary printing press"
+      ],
+      "correctOrder": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "hint": "Woodblock printing originated centuries before European movable metal type.",
+      "explanation": "Woodblock printing emerged first (circa 7th-8th century), followed by Gutenberg's movable type press (c. 1440), the rotary printing press (1843), and Samuel Morse's commercial telegraph rollout (1844).",
+      "origin": "ai",
+      "createdAt": "2026-11-20T09:44:05.428Z"
+    },
     {
       "schemaVersion": 1,
       "id": "puz_ai_9ec271dc8ed4",

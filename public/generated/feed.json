@@ -1,10 +1,283 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-20T01:58:41.650Z",
+  "generatedAt": "2026-11-20T09:43:35.979Z",
   "generator": "gemini-textual-feed",
   "model": "gemini-flash-latest",
-  "itemCount": 21,
+  "itemCount": 25,
   "items": [
+    {
+      "id": "curio_gen_5a78a967c928",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Bioluminescent Clocks of the Midnight Zone",
+      "subtitle": "How siphonophores synchronize light shows a mile beneath the surface",
+      "category": "science",
+      "region": "global",
+      "topics": [
+        "marine biology",
+        "deep ocean",
+        "bioluminescence",
+        "chronobiology"
+      ],
+      "estimatedDurationSeconds": 150,
+      "source": {
+        "publisher": "Smithsonian Magazine",
+        "title": "The Secret Language of Deep-Sea Light",
+        "url": "https://www.smithsonianmag.com/science-nature/bioluminescence-deep-ocean-creatures-180975412/",
+        "publishedAt": "2026-11-20T09:43:35.979Z",
+        "retrievedAt": "2026-11-20T09:43:35.979Z"
+      },
+      "summary": "A mile beneath the sunlit ocean, siphonophores coordinate flashing light patterns across colonial bodies that can stretch longer than a blue whale, functioning without a central brain.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In the bathypelagic zone, where sunlight never penetrates, organisms do not experience dawn or dusk. Yet researchers using deep-diving submersibles have found that massive siphonophores—composite organisms made of thousands of specialized zooids—display synchronized rhythmic bioluminescent waves along their hundred-foot bodies. These pulses occur at precise temporal intervals, serving as both predatory lures and coordinated defensive displays against deep-diving squids."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "Brainless synchronization",
+          "text": "Siphonophores possess no centralized brain; instead, they coordinate thousands of independent organisms via a diffuse, giant-axon nerve net that propagates electrical impulses faster than most vertebrate peripheral nerves."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Mechanisms of Deep-Sea Light",
+          "points": [
+            "Luciferin-luciferase reactions generate cold blue-green light that travels furthest through dense seawater.",
+            "Rhythmic flashing creates an optical illusion of rapid retreat, confusing potential predators.",
+            "Colonial zooids specialize completely: some only produce propulsion, others digest food, and specific bracts handle luminescence."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Bioluminescent Clocks of the Midnight Zone editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#3B4F75"
+      },
+      "followUps": [
+        "How do colonial organisms evolve division of labor without a central nervous system?",
+        "What other deep-sea animals produce red rather than blue bioluminescence?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-20T09:43:35.979Z",
+      "enrichedAt": "2026-11-20T09:43:35.979Z"
+    },
+    {
+      "id": "curio_gen_cf495d754c53",
+      "schemaVersion": 1,
+      "contentType": "short_story",
+      "cardVariant": "article",
+      "title": "The Ferrofluid Revolution in Mechanical Seals",
+      "subtitle": "How NASA rocket fuel research accidentally solved semiconductor contamination",
+      "category": "technology",
+      "region": "global",
+      "topics": [
+        "materials science",
+        "space history",
+        "manufacturing",
+        "nanotechnology"
+      ],
+      "estimatedDurationSeconds": 130,
+      "source": {
+        "publisher": "NASA Technical Reports Server",
+        "title": "Low-Gravity Liquid Fuel Handling and the Genesis of Ferrofluids",
+        "url": "https://ntrs.nasa.gov/",
+        "publishedAt": "2026-11-20T09:43:35.979Z",
+        "retrievedAt": "2026-11-20T09:43:35.979Z"
+      },
+      "summary": "Engineers in the 1960s tried to control liquid rocket fuel in zero gravity using magnets, leading to the invention of ferrofluids that now quietly protect the fabrication of every microchip on Earth.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In the early days of the Apollo program, NASA engineer Steve Papell faced an unprecedented problem: without gravity, liquid propellant floated aimlessly in spacecraft tanks, refusing to flow toward the fuel pump. Papell's solution was to suspend microscopic magnetic iron oxide particles in kerosene, allowing external electromagnets to draw the fluid directly into the engine intake."
+        },
+        {
+          "type": "comparison",
+          "heading": "Propellant Seal Evolution",
+          "leftTitle": "Traditional Mechanical Seals",
+          "rightTitle": "Ferrofluidic Magnetic Seals",
+          "leftPoints": [
+            "Wear down through friction",
+            "Generate microscopic particulate debris",
+            "Suffer catastrophic vacuum leaks over time"
+          ],
+          "rightPoints": [
+            "Zero friction between moving surfaces",
+            "Hermetically traps particles with magnetic force",
+            "Maintains ultra-high vacuum indefinitely"
+          ]
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The unexpected microchip savior",
+          "text": "Today, ferrofluidic seals are used in nearly all vacuum chambers for semiconductor fabrication, because a single mechanical flake of dust would ruin a silicon wafer."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Ferrofluid Revolution in Mechanical Seals editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#2563EB"
+      },
+      "followUps": [
+        "Why did NASA eventually abandon ferrofluids as practical rocket fuel?",
+        "What medical applications are emerging for magnetic nanoparticle fluids?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-20T09:43:35.979Z",
+      "enrichedAt": "2026-11-20T09:43:35.979Z"
+    },
+    {
+      "id": "curio_gen_ca061eb35eae",
+      "schemaVersion": 1,
+      "contentType": "quick_bite",
+      "cardVariant": "interactive_feature",
+      "title": "The Volcanic Wine Cellars of Santorini",
+      "subtitle": "How ancient Aegean viticulture trains vines into ground-hugging wreaths",
+      "category": "travel_food",
+      "region": "global",
+      "topics": [
+        "viticulture",
+        "santorini",
+        "volcanic agriculture",
+        "ancient history"
+      ],
+      "estimatedDurationSeconds": 110,
+      "source": {
+        "publisher": "Britannica",
+        "title": "Santorini: Geography, History, and Viticulture",
+        "url": "https://www.britannica.com/place/Santorini",
+        "publishedAt": "2026-11-20T09:43:35.979Z",
+        "retrievedAt": "2026-11-20T09:43:35.979Z"
+      },
+      "summary": "On an island blasted by Aegean gales and parched by summer droughts, winemakers weave Assyrtiko vines into low-lying circular baskets called kouloura to catch sea mist.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Santorini's landscape is famously shaped by the Minoan eruption 3,600 years ago, leaving behind porous pumice and volcanic ash devoid of organic matter. With almost no rainfall between May and October and ferocious Meltemi winds capable of stripping bark, traditional trellised vineyards cannot survive. The islanders solved this with an ingenious horticultural technique that has remained unchanged for millennia."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Kouloura basket",
+          "text": "Growers prune the vine canes into a tightly coiled circular basket on the ground. The grapes grow inside the basket, protected from howling winds and sun-scorch, while porous volcanic ash absorbs moisture from evening sea fogs like a sponge."
+        },
+        {
+          "type": "quiz",
+          "question": "Why did Santorini's vineyards survive the 19th-century phylloxera blight that wiped out most European vineyards?",
+          "options": [
+            "The island's isolation prevented ships from landing infected soil",
+            "The volcanic sand contains no clay, preventing the microscopic aphids from tunneling to the roots",
+            "The high salinity of the sea breeze killed the pests on the vine leaves"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "Phylloxera insects cannot burrow through loose volcanic ash and sand because the grains collapse immediately into their tunnels, making Santorini home to some of the world's oldest original rootstocks."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Volcanic Wine Cellars of Santorini editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#0F766E"
+      },
+      "followUps": [
+        "How old can individual rootstocks in Santorini become?",
+        "Which other volcanic regions use unique vine training systems?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-20T09:43:35.979Z",
+      "enrichedAt": "2026-11-20T09:43:35.979Z"
+    },
+    {
+      "id": "curio_gen_328f1f775b28",
+      "schemaVersion": 1,
+      "contentType": "interactive_fact",
+      "cardVariant": "interactive_feature",
+      "title": "The Clockmaker Who Redefined the Metre",
+      "subtitle": "Why standard weights and measures were once tied to swinging pendulums",
+      "category": "facts",
+      "region": "global",
+      "topics": [
+        "metrology",
+        "history of science",
+        "physics",
+        "standardization"
+      ],
+      "estimatedDurationSeconds": 120,
+      "source": {
+        "publisher": "Nature",
+        "title": "A Brief History of the Metre: From Earth Surveys to Optical Clocks",
+        "url": "https://www.nature.com/",
+        "publishedAt": "2026-11-20T09:43:35.979Z",
+        "retrievedAt": "2026-11-20T09:43:35.979Z"
+      },
+      "summary": "Long before the platinum metre bar was forged in Paris, scientists nearly defined the universal unit of length by the natural tick of an ordinary seconds pendulum.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In 1668, polymath Tito Livio Burattini suggested that human measurement should be anchored in the cosmos rather than the foot of an arbitrary king. He proposed the 'metro cattolico'—or universal metre—defined as the exact length of a pendulum whose full swing from one side to the other took precisely one second. It seemed elegant, repeatable, and universally accessible."
+        },
+        {
+          "type": "timeline",
+          "heading": "The Quest for an Unchanging Unit",
+          "events": [
+            {
+              "year": "1668",
+              "title": "Burattini's Pendulum",
+              "detail": "Tito Livio Burattini publishes the proposal for a seconds pendulum as the universal metre."
+            },
+            {
+              "year": "1672",
+              "title": "The Cayenne Discrepancy",
+              "detail": "Jean Richer discovers that a clock calibrated in Paris loses two and a half minutes per day in French Guiana, proving gravity varies by latitude."
+            },
+            {
+              "year": "1791",
+              "title": "The Meridian Choice",
+              "detail": "The French Academy abandons the pendulum due to gravitational variance and defines the metre as one ten-millionth of the distance from the North Pole to the Equator."
+            }
+          ]
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Why the Pendulum Failed",
+          "points": [
+            "Earth is an oblate spheroid, bulging at the equator, meaning surface gravity is weaker near the tropics.",
+            "Centrifugal force from planetary rotation also slightly offsets gravity toward the equator.",
+            "A seconds pendulum at the equator is roughly 99.1 cm long, while at the poles it measures 99.6 cm."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Clockmaker Who Redefined the Metre editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#B45309"
+      },
+      "followUps": [
+        "How is the metre officially defined today using the speed of light?",
+        "What role did the French expedition to Lapland play in proving Newton right?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-20T09:43:35.979Z",
+      "enrichedAt": "2026-11-20T09:43:35.979Z"
+    },
     {
       "id": "curio_gen_7c25b7977ca3",
       "schemaVersion": 1,
