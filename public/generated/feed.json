@@ -1,10 +1,277 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-19T20:52:57.288Z",
+  "generatedAt": "2026-11-20T01:58:41.650Z",
   "generator": "gemini-textual-feed",
   "model": "gemini-flash-latest",
-  "itemCount": 17,
+  "itemCount": 21,
   "items": [
+    {
+      "id": "curio_gen_7c25b7977ca3",
+      "schemaVersion": 1,
+      "contentType": "quick_bite",
+      "cardVariant": "interactive_feature",
+      "title": "The Architecture of the 20-Minute Focus Sprint",
+      "subtitle": "Why shorter cycles outcompete grueling marathon work sessions",
+      "category": "growth",
+      "region": "global",
+      "topics": [
+        "neuroscience",
+        "productivity",
+        "habit design"
+      ],
+      "estimatedDurationSeconds": 90,
+      "source": {
+        "publisher": "Association for Psychological Science",
+        "title": "Sustained Attention and Cognitive Fatigue in Task Switching",
+        "url": "https://www.psychologicalscience.org/",
+        "publishedAt": "2026-11-20T01:58:41.650Z",
+        "retrievedAt": "2026-11-20T01:58:41.650Z"
+      },
+      "summary": "Cognitive psychology reveals that working in short, non-negotiable intervals avoids attentional drift and exploits the brain's natural goal-completion reward loops.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "For decades, conventional wisdom celebrated uninterrupted multi-hour grinds. Modern cognitive neuroscience tells a starkly different story: sustained executive function degrades precipitously after approximately 20 to 25 minutes of continuous high-intensity focus. When the prefrontal cortex senses an undefined horizon, it preemptively rations energy, lowering vigilance and inviting microscopic distractions."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Dopamine Trigger",
+          "text": "Breaking tasks into micro-deadlines triggers small bursts of dopamine upon each completion, resetting mental fatigue faster than passive rest periods."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Principles of Sprint Design",
+          "points": [
+            "Define an absurdly specific deliverable before starting the timer.",
+            "Enforce a mandatory sensory break where visual stimulation is minimized.",
+            "Never negotiate the stopping point mid-sprint; respect the boundary to preserve mental reserves."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Architecture of the 20-Minute Focus Sprint editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#2D6A4F"
+      },
+      "followUps": [
+        "How do ultradian rhythms regulate alertness during daylight hours?",
+        "What constitutes a true cognitive reset during scheduled work pauses?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-20T01:58:41.650Z",
+      "enrichedAt": "2026-11-20T01:58:41.650Z"
+    },
+    {
+      "id": "curio_gen_47e136abf7fe",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Venetian Semaphore of the Lagoons",
+      "subtitle": "How waterborne couriers built Europe's earliest intelligence network",
+      "category": "history",
+      "region": "global",
+      "topics": [
+        "venice",
+        "maritime history",
+        "communication"
+      ],
+      "estimatedDurationSeconds": 130,
+      "source": {
+        "publisher": "Britannica",
+        "title": "Republic of Venice: Maritime and Commercial Empire",
+        "url": "https://www.britannica.com/place/Venice/The-commune",
+        "publishedAt": "2026-11-20T01:58:41.650Z",
+        "retrievedAt": "2026-11-20T01:58:41.650Z"
+      },
+      "summary": "Long before electronic telegraphs, the Venetian Republic created an intricate system of optical flags, shallow draft boats, and bell towers that transmitted news across the Mediterranean.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "During the fourteenth century, the Republic of Venice relied on information velocity to protect its trade dominance. Merchants and naval commanders stationed along the Dalmatian coast and Greek outposts converted island bell towers into an early warning optical network, capable of signaling cargo arrivals or pirate raids hundreds of nautical miles back to the Doge within hours."
+        },
+        {
+          "type": "timeline",
+          "heading": "Milestones of Lagoon Telegraphy",
+          "events": [
+            {
+              "year": "1268",
+              "title": "Establishment of the Cursus",
+              "detail": "Venice formalizes a fleet of light rowing craft dedicated exclusively to carrying official state dispatches."
+            },
+            {
+              "year": "1380",
+              "title": "The Chioggia Signals",
+              "detail": "Torch beacons along the coastal lidi successfully coordinate a surprise encirclement against Genoese invaders."
+            },
+            {
+              "year": "1571",
+              "title": "The Post-Lepanto Relay",
+              "detail": "Coordinated visual relays allow Venice to receive the outcome of the Battle of Lepanto days before Rome or Madrid."
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "question": "What primary method did Venetian beacon towers use to transmit signals during heavy sea fog?",
+          "options": [
+            "Acoustic mortars and coordinated bell cadences",
+            "Carrier pigeons trained for low-altitude flight",
+            "Underwater copper gong resonance"
+          ],
+          "correctOptionIndex": 0,
+          "explanation": "When sea fogs blanketed the lagoons, watchmen switched from torches and flags to precisely timed gunpowder reports and bell cadences to echo messages over the water."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Venetian Semaphore of the Lagoons editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#7C2D12"
+      },
+      "followUps": [
+        "How did Venetian intelligence compare with the postal runners of the Roman Empire?",
+        "What cryptographic methods did Venetian diplomats use to disguise trade manifests?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-20T01:58:41.650Z",
+      "enrichedAt": "2026-11-20T01:58:41.650Z"
+    },
+    {
+      "id": "curio_gen_fd1af4200dfe",
+      "schemaVersion": 1,
+      "contentType": "short_story",
+      "cardVariant": "article",
+      "title": "The Great Herring War of the Scottish Commons",
+      "subtitle": "When a municipal dispute over salted fish paralyzed an entire city council",
+      "category": "humour",
+      "region": "global",
+      "topics": [
+        "scotland",
+        "culinary history",
+        "bureaucracy"
+      ],
+      "estimatedDurationSeconds": 105,
+      "source": {
+        "publisher": "National Library of Scotland",
+        "title": "Nineteenth-Century Scottish Municipal Disputes and Broadsides",
+        "url": "https://www.nls.uk/",
+        "publishedAt": "2026-11-20T01:58:41.650Z",
+        "retrievedAt": "2026-11-20T01:58:41.650Z"
+      },
+      "summary": "In nineteenth-century Aberdeen, an administrative oversight concerning the legal smell of pickled fish led to dueling municipal proclamations and the arrest of a wooden barrel.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In the spring of 1842, the burgh council of Aberdeen faced an unprecedented constitutional crisis: a single barrel of brine-cured herring had been deposited outside the town hall by a merchant protesting dockside tariffs. Unable to agree on whether the object was commercial cargo or an offensive weapon due to its pungent aroma, the council convened three emergency sessions across five days."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Bailiff's Verdict",
+          "text": "A municipal bailiff formally took the wooden barrel into custody, locking it in the local jail cell to prevent either faction from tampering with the disputed evidence."
+        },
+        {
+          "type": "paragraph",
+          "text": "By the end of the week, local newspapers were publishing daily bulletins on the condition of the incarcerated fish. The saga concluded only when a stray cat slipped between the iron bars, devouring the state's central exhibit and rendering the litigation moot."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Great Herring War of the Scottish Commons editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#9333EA"
+      },
+      "followUps": [
+        "Why was salted herring such a critical component of Northern European trade laws?",
+        "What other unusual objects have been placed under official civil arrest throughout history?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-20T01:58:41.650Z",
+      "enrichedAt": "2026-11-20T01:58:41.650Z"
+    },
+    {
+      "id": "curio_gen_c599799f9273",
+      "schemaVersion": 1,
+      "contentType": "interactive_fact",
+      "cardVariant": "interactive_feature",
+      "title": "The Gravitational Wave Cartography of 2025",
+      "subtitle": "Global observatories deploy quantum squeezing to listen deeper into the cosmos",
+      "category": "news",
+      "region": "global",
+      "topics": [
+        "astrophysics",
+        "space",
+        "quantum technology"
+      ],
+      "estimatedDurationSeconds": 120,
+      "source": {
+        "publisher": "Smithsonian Magazine",
+        "title": "How Gravitational Wave Detectors Are Upgrading to Probe the Deep Universe",
+        "url": "https://www.smithsonianmag.com/science-nature",
+        "publishedAt": "2026-11-20T01:58:41.650Z",
+        "retrievedAt": "2026-11-20T01:58:41.650Z"
+      },
+      "summary": "International gravitational wave collaborations have achieved unprecedented sensitivity, detecting faint black hole mergers from the early universe using squeezed light techniques.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Astronomers operating the LIGO, Virgo, and KAGRA observatories have entered an expanded observation cycle, routinely recording spacetime ripples created by colliding neutron stars and distant black holes. The newly integrated frequency-dependent quantum squeezing technology has cut background quantum noise by half, effectively doubling the observable volume of the universe."
+        },
+        {
+          "type": "comparison",
+          "heading": "Observational Reach: First Run vs. Current Configuration",
+          "leftTitle": "Initial Runs (2015-2017)",
+          "rightTitle": "Current Multi-Observatory Network",
+          "leftPoints": [
+            "Detected events primarily within the local cosmological neighborhood",
+            "Single event detection occurred over intervals of weeks or months",
+            "Broad sky localization regions covering hundreds of square degrees"
+          ],
+          "rightPoints": [
+            "Detects ancient intermediate-mass mergers across billions of light years",
+            "Multiple candidate signals flagged per week via automated alerts",
+            "Pinpoint triangulation enabling instant follow-up by optical telescopes"
+          ]
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Why This Reshapes Astronomy",
+          "points": [
+            "Multi-messenger astronomy lets scientists both hear space ripples and see optical light from the same collision.",
+            "Testing general relativity under extreme conditions provides insights into dark energy and cosmic expansion."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Gravitational Wave Cartography of 2025 editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#C84B31"
+      },
+      "followUps": [
+        "How does quantum squeezing reduce optical shot noise in interferometer arms?",
+        "What will the planned space-based gravitational wave antenna LISA add to current ground detectors?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-20T01:58:41.650Z",
+      "enrichedAt": "2026-11-20T01:58:41.650Z"
+    },
     {
       "id": "curio_gen_1d9075a1c4b2",
       "schemaVersion": 1,
