@@ -1,10 +1,165 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-21T15:51:32.930Z",
+  "generatedAt": "2026-11-21T21:24:04.078Z",
   "generator": "gemini-textual-puzzles",
   "model": "gemini-flash-latest",
-  "itemCount": 40,
+  "itemCount": 43,
   "items": [
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_66121d378667",
+      "kind": "visual_diagram",
+      "title": "Concentric Sector Split",
+      "category": "science",
+      "difficulty": "Clever",
+      "prompt": "Each ring is divided into equal angular sectors. What total fraction of the outer ring is shaded in dark blue?",
+      "svgDiagram": {
+        "caption": "Segmented Rings",
+        "background": "#FAF8F4",
+        "shapes": [
+          {
+            "shape": "circle",
+            "cx": 160,
+            "cy": 100,
+            "r": 72,
+            "fill": "#EAE5D9",
+            "stroke": "#3B4F75",
+            "strokeWidth": 2
+          },
+          {
+            "shape": "polygon",
+            "points": [
+              [
+                160,
+                100
+              ],
+              [
+                232,
+                100
+              ],
+              [
+                196,
+                162
+              ]
+            ],
+            "fill": "#3B4F75",
+            "stroke": "#3B4F75"
+          },
+          {
+            "shape": "polygon",
+            "points": [
+              [
+                160,
+                100
+              ],
+              [
+                88,
+                100
+              ],
+              [
+                124,
+                38
+              ]
+            ],
+            "fill": "#3B4F75",
+            "stroke": "#3B4F75"
+          },
+          {
+            "shape": "circle",
+            "cx": 160,
+            "cy": 100,
+            "r": 42,
+            "fill": "#FAF8F4",
+            "stroke": "#3B4F75",
+            "strokeWidth": 2
+          },
+          {
+            "shape": "line",
+            "x1": 88,
+            "y1": 100,
+            "x2": 232,
+            "y2": 100,
+            "stroke": "#3B4F75",
+            "strokeWidth": 2
+          },
+          {
+            "shape": "line",
+            "x1": 124,
+            "y1": 38,
+            "x2": 196,
+            "y2": 162,
+            "stroke": "#3B4F75",
+            "strokeWidth": 2
+          },
+          {
+            "shape": "line",
+            "x1": 124,
+            "y1": 162,
+            "x2": 196,
+            "y2": 38,
+            "stroke": "#3B4F75",
+            "strokeWidth": 2
+          }
+        ]
+      },
+      "hint": "Count the total number of divisions in the outermost perimeter.",
+      "options": [
+        "1/4",
+        "1/3",
+        "3/8",
+        "1/2"
+      ],
+      "correctIndex": 1,
+      "explanation": "The outer ring is divided into 6 equal angular sectors, exactly 2 of which are filled with dark blue. Simplifying 2/6 yields 1/3.",
+      "origin": "ai",
+      "createdAt": "2026-11-21T21:24:04.078Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_59bd076008fe",
+      "kind": "lateral_riddle",
+      "title": "The Borrowed Breath",
+      "category": "humour",
+      "difficulty": "Warm-up",
+      "prompt": "I can be cracked, made, told, and played, yet I possess neither voice nor physical form. What am I?",
+      "hint": "You might hear one at a comedy club.",
+      "options": [
+        "A promise",
+        "A joke",
+        "A record",
+        "A secret"
+      ],
+      "correctIndex": 1,
+      "explanation": "A joke can be cracked, made, told, or played on someone, despite having no physical body or independent voice.",
+      "origin": "ai",
+      "createdAt": "2026-11-21T21:24:04.078Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_ca167979cfdc",
+      "kind": "logic_reasoning",
+      "title": "Orbital Pod Allocation",
+      "category": "technology",
+      "difficulty": "Tricky",
+      "prompt": "Four astronauts (Aria, Blake, Chen, and Devi) occupy consecutive docking bays numbered 1 through 4. Determine who is assigned to Bay 3 using the clues below.",
+      "clues": [
+        "1. Devi's bay has a higher number than all the others.",
+        "2. Aria's bay is directly adjacent to Blake's bay.",
+        "3. Blake is not assigned to Bay 1 or Bay 4.",
+        "4. Chen does not occupy Bay 1."
+      ],
+      "hint": "Start with Blake's position relative to the end bays.",
+      "options": [
+        "Aria",
+        "Blake",
+        "Chen",
+        "Devi"
+      ],
+      "correctIndex": 2,
+      "explanation": "Devi is in Bay 4 because she has the highest number. Aria and Blake are adjacent, and Blake is not at an end, placing Blake in Bay 2 and Aria in Bay 1, leaving Chen in Bay 3.",
+      "origin": "ai",
+      "createdAt": "2026-11-21T21:24:04.078Z"
+    },
     {
       "schemaVersion": 1,
       "id": "puz_ai_2fa3268c27c8",
