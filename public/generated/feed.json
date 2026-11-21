@@ -1,10 +1,280 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-21T00:05:29.258Z",
+  "generatedAt": "2026-11-21T07:31:14.916Z",
   "generator": "gemini-textual-feed",
   "model": "gemini-flash-latest",
-  "itemCount": 29,
+  "itemCount": 33,
   "items": [
+    {
+      "id": "curio_gen_171c8d32b1f9",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Immortal Sponge of the Abyssal Plains",
+      "subtitle": "How Monorhaphis chuni builds three-metre glass needles to withstand millennia of ocean pressure",
+      "category": "science",
+      "region": "global",
+      "topics": [
+        "marine biology",
+        "materials science",
+        "deep sea",
+        "biomineralization"
+      ],
+      "estimatedDurationSeconds": 150,
+      "source": {
+        "publisher": "National Academy of Sciences",
+        "title": "Structural and chemical analysis of the giant basal spicule of the deep-sea glass sponge Monorhaphis chuni",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Immortal%20Sponge%20of%20the%20Abyssal%20Plains",
+        "publishedAt": "2026-11-21T07:31:14.916Z",
+        "retrievedAt": "2026-11-21T07:31:14.916Z"
+      },
+      "summary": "Deep within the Pacific and Indian oceans, a single-celled architect constructs a silica rod thicker than a finger and longer than a human, surviving for up to eleven thousand years without aging like complex organisms.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Anchored thousands of metres below the surface in pitch-black abyssal mud, the glass sponge Monorhaphis chuni anchors itself using a single colossal spicule. Made of concentric cylinders of hydrated amorphous silica alternating with ultrathin protein adhesives, this structure behaves like natural optical fibre while resisting fracture under immense tectonic and hydrothermal forces."
+        },
+        {
+          "type": "comparison",
+          "heading": "Biological Glass vs Industrial Fibre",
+          "leftTitle": "Hexactinellid Spicule",
+          "rightTitle": "Synthetic Optical Fibre",
+          "leftPoints": [
+            "Synthesized at ambient ocean temperatures near freezing",
+            "Lamellar protein cushions stop microcracks from spreading",
+            "Functional structural lifespan exceeding 10,000 years"
+          ],
+          "rightPoints": [
+            "Manufactured using high-heat chemical vapour deposition",
+            "Prone to brittle failure upon exterior surface abrasion",
+            "Requires polymer jacket cladding to endure mechanical stress"
+          ]
+        },
+        {
+          "type": "fact_reveal",
+          "label": "Deep-Time Paleothermometer",
+          "text": "Because the sponge layers silica continuously across thousands of years, scientists cross-section the central needle to read ocean temperature, magnesium-to-calcium ratios, and carbon cycles spanning back to the last deglaciation."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Immortal Sponge of the Abyssal Plains editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#3B4F75"
+      },
+      "followUps": [
+        "How do sponge structural proteins guide biosilica crystallization?",
+        "What other marine organisms produce natural glass skeletons?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-21T07:31:14.916Z",
+      "enrichedAt": "2026-11-21T07:31:14.916Z"
+    },
+    {
+      "id": "curio_gen_379c559f6b94",
+      "schemaVersion": 1,
+      "contentType": "short_story",
+      "cardVariant": "article",
+      "title": "The Ghost Networks of the Shortwave Radio",
+      "subtitle": "Why automated numbers stations continue broadcasting monotone ciphers into the ionosphere",
+      "category": "technology",
+      "region": "global",
+      "topics": [
+        "cryptography",
+        "telecommunications",
+        "cold war",
+        "radio spectrum"
+      ],
+      "estimatedDurationSeconds": 130,
+      "source": {
+        "publisher": "BBC News",
+        "title": "The eerie world of numbers stations",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Ghost%20Networks%20of%20the%20Shortwave%20Radio",
+        "publishedAt": "2026-11-21T07:31:14.916Z",
+        "retrievedAt": "2026-11-21T07:31:14.916Z"
+      },
+      "summary": "Despite decades of satellite surveillance and quantum encryption development, intelligence agencies still rely on high-frequency shortwave broadcasts using one-time pads to send mathematically unbreakable instructions.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Tune an ordinary shortwave radio receiver across the high-frequency spectrum at three in the morning and you might stumble across a synthetic female voice reading five-digit numeric blocks in German, Russian, or Spanish. Known colloquially as numbers stations, these automated transmissions have persisted continuously since the First World War."
+        },
+        {
+          "type": "quiz",
+          "question": "Why are shortwave one-time pad transmissions still virtually impossible for signal intelligence agencies to trace to an end recipient?",
+          "options": [
+            "The radio signals reflect exclusively off oceanic surfaces without hitting land masts",
+            "Anyone with a passive consumer receiver can listen without transmitting a detectable return signature",
+            "They use military-grade quantum keys hidden within the background white noise"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "Because a standard radio receiver is entirely passive, intelligence agencies can broadcast instructions over half a continent without knowing who or where the listener is, leaving zero metadata or network footprint."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "The Mathematical Shield",
+          "points": [
+            "When paired with a truly random, single-use key sheet, a one-time pad is mathematically unbreakable regardless of computing power.",
+            "Shortwave signals bounce repeatedly off the ionosphere, allowing a modest transmitter to blanket entire continents reliably without internet infrastructure."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Ghost Networks of the Shortwave Radio editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#2563EB"
+      },
+      "followUps": [
+        "What was the Lincoln County Chopper station?",
+        "How did the Enigma machine compare to paper one-time pads?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-21T07:31:14.916Z",
+      "enrichedAt": "2026-11-21T07:31:14.916Z"
+    },
+    {
+      "id": "curio_gen_d8c6227f2e4a",
+      "schemaVersion": 1,
+      "contentType": "short_story",
+      "cardVariant": "article",
+      "title": "The Salt-Cured Wells of the Danakil Depression",
+      "subtitle": "How the Afar miners carve currency straight out of the Earth's hottest tectonic basin",
+      "category": "travel_food",
+      "region": "global",
+      "topics": [
+        "geology",
+        "food culture",
+        "ethiopia",
+        "trade history"
+      ],
+      "estimatedDurationSeconds": 140,
+      "source": {
+        "publisher": "Smithsonian Magazine",
+        "title": "The Salt Caravans of the Danakil",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Salt-Cured%20Wells%20of%20the%20Danakil%20Depression",
+        "publishedAt": "2026-11-21T07:31:14.916Z",
+        "retrievedAt": "2026-11-21T07:31:14.916Z"
+      },
+      "summary": "In the furnace of northern Ethiopia, workers hand-chisel uniform slabs of mineral crust known as amolés, sustaining an ancient evaporite commodity trade that predated minted coinage.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Over one hundred metres below sea level in Ethiopia's Danakil Depression, the temperature regularly pushes past forty-five degrees Celsius above drying brines fed by the Red Sea and subterranean volcanic vents. Here, Afar and Tigrayan laborers hand-quarry blinding white salt sheets using wooden axes and pry bars, shaping them into standard rectangular tablets called amolés."
+        },
+        {
+          "type": "timeline",
+          "heading": "The Life of the White Currency",
+          "events": [
+            {
+              "year": "6th Century",
+              "title": "Byzantine Records",
+              "detail": "Cosmas Indicopleustes describes salt bars functioning as legal tender across the Kingdom of Aksum."
+            },
+            {
+              "year": "19th Century",
+              "title": "Standardized Value",
+              "detail": "Travellers note that amolé tablets carry universally fixed exchange rates against Austrian Maria Theresa thalers."
+            },
+            {
+              "year": "Present Day",
+              "title": "Caravan Survival",
+              "detail": "Thousands of camels still traverse the highland escarpment daily, hauling crude salt destined for regional preservation and cattle feed."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Every tablet is shaved to uniform dimensions by master trimmers using short steel blades, ensuring the weight remains predictable for mountain trade without requiring scales along remote desert trails."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Salt-Cured Wells of the Danakil Depression editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#0F766E"
+      },
+      "followUps": [
+        "What hydrothermal microbes thrive in the nearby Dallol crater?",
+        "How did salt taxes shape medieval European road networks?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-21T07:31:14.916Z",
+      "enrichedAt": "2026-11-21T07:31:14.916Z"
+    },
+    {
+      "id": "curio_gen_4515db0ae803",
+      "schemaVersion": 1,
+      "contentType": "interactive_fact",
+      "cardVariant": "interactive_feature",
+      "title": "The Mechanical Miracle of the Antikythera Differential",
+      "subtitle": "How ancient artisans modeled lunar anomalies centuries before modern celestial mechanics",
+      "category": "facts",
+      "region": "global",
+      "topics": [
+        "archaeology",
+        "astronomy",
+        "ancient history",
+        "mechanisms"
+      ],
+      "estimatedDurationSeconds": 120,
+      "source": {
+        "publisher": "Nature",
+        "title": "A Model of the Cosmos in the ancient Greek Antikythera Mechanism",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Mechanical%20Miracle%20of%20the%20Antikythera%20Differential",
+        "publishedAt": "2026-11-21T07:31:14.916Z",
+        "retrievedAt": "2026-11-21T07:31:14.916Z"
+      },
+      "summary": "Recovered from a Roman shipwreck in 1901, the Antikythera Mechanism contained an ingenious pin-and-slot planetary gear train designed to mimic the Moon's variable speed caused by its elliptical orbit.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "When Greek sponge divers pulled a corroded lump of bronze off the island of Antikythera in 1901, they assumed it was a statuette fragment. Decades of micro-computed tomography revealed a clockwork calculation engine from the second century BCE featuring over thirty interlocking bronze gears."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Variable Lunar Gear",
+          "text": "To account for Kepler's second law eighteen centuries before Kepler was born, the creator mounted one gear slightly off-center using a driving pin seated in an elongated slot, forcing the lunar indicator to naturally speed up at perigee and slow down at apogee."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Engineering Insights",
+          "points": [
+            "Tracked the 19-year Metonic cycle, the 76-year Callippic cycle, and the 223-month Saros eclipse prediction cycle on spiral bronze dials.",
+            "Required bronze teeth cut at triangular pitch angles of exactly sixty degrees, tolerances not seen again until Renaissance cathedral clocks."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Mechanical Miracle of the Antikythera Differential editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#B45309"
+      },
+      "followUps": [
+        "Who was the most likely designer: Archimedes or Posidonius?",
+        "How did 3D surface scanning decode the hidden Greek text inside the casing?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-21T07:31:14.916Z",
+      "enrichedAt": "2026-11-21T07:31:14.916Z"
+    },
     {
       "id": "curio_gen_4aa3e5770175",
       "schemaVersion": 1,
