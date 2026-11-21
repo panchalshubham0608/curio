@@ -1,10 +1,129 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-20T18:12:13.615Z",
+  "generatedAt": "2026-11-21T00:06:02.135Z",
   "generator": "gemini-textual-puzzles",
   "model": "gemini-flash-latest",
-  "itemCount": 32,
+  "itemCount": 35,
   "items": [
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_d06d01e1c838",
+      "kind": "interactive_grid",
+      "title": "Solar Array Calibration",
+      "category": "technology",
+      "difficulty": "Clever",
+      "prompt": "Select exactly 3 solar cells whose power ratings sum to exactly 50 kW.",
+      "gridPuzzle": {
+        "mode": "target_sum",
+        "rows": 3,
+        "cols": 3,
+        "instruction": "Select 3 cells that sum to 50",
+        "cells": [
+          {
+            "label": "27",
+            "value": 27,
+            "initialOn": false
+          },
+          {
+            "label": "12",
+            "value": 12,
+            "initialOn": false
+          },
+          {
+            "label": "19",
+            "value": 19,
+            "initialOn": false
+          },
+          {
+            "label": "14",
+            "value": 14,
+            "initialOn": false
+          },
+          {
+            "label": "15",
+            "value": 15,
+            "initialOn": false
+          },
+          {
+            "label": "21",
+            "value": 21,
+            "initialOn": false
+          },
+          {
+            "label": "8",
+            "value": 8,
+            "initialOn": false
+          },
+          {
+            "label": "16",
+            "value": 16,
+            "initialOn": false
+          },
+          {
+            "label": "23",
+            "value": 23,
+            "initialOn": false
+          }
+        ],
+        "targetSum": 50,
+        "exactCount": 3,
+        "goalState": "all_on",
+        "solutionIndices": [
+          0,
+          4,
+          6
+        ]
+      },
+      "hint": "Try pairing the highest value with two smaller values.",
+      "explanation": "Selecting cells with ratings 27, 15, and 8 gives 27 + 15 + 8 = 50 kW.",
+      "origin": "ai",
+      "createdAt": "2026-11-21T00:06:02.135Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_d0eabb937e1d",
+      "kind": "lateral_riddle",
+      "title": "The Silent Traveler",
+      "category": "humour",
+      "difficulty": "Warm-up",
+      "prompt": "I can travel around the entire world while staying confined in my single corner. What am I?",
+      "hint": "You attach me to letters before sending them away.",
+      "options": [
+        "A postage stamp",
+        "A compass needle",
+        "A lighthouse beam",
+        "A satellite antenna"
+      ],
+      "correctIndex": 0,
+      "explanation": "A postage stamp is affixed to the corner of an envelope and journeys worldwide without ever moving from that spot.",
+      "origin": "ai",
+      "createdAt": "2026-11-21T00:06:02.135Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_21c624066d2f",
+      "kind": "logic_reasoning",
+      "title": "Archival Storage Protocol",
+      "category": "science",
+      "difficulty": "Clever",
+      "prompt": "Four mineral samples (Beryl, Quartz, Topaz, Zircon) are placed into lockers 1, 2, 3, and 4 in a row. Determine which mineral sits in Locker 3.",
+      "clues": [
+        "Beryl occupies Locker 1.",
+        "Quartz is placed immediately adjacent to Beryl.",
+        "Topaz occupies a higher-numbered locker than Quartz, but is not directly next to Quartz."
+      ],
+      "hint": "Place Beryl and Quartz first using clues 1 and 2.",
+      "options": [
+        "Beryl",
+        "Quartz",
+        "Topaz",
+        "Zircon"
+      ],
+      "correctIndex": 3,
+      "explanation": "Beryl is in locker 1, Quartz in locker 2 (next to Beryl), Topaz in locker 4 (higher than Quartz and not adjacent to it), leaving Zircon in locker 3.",
+      "origin": "ai",
+      "createdAt": "2026-11-21T00:06:02.135Z"
+    },
     {
       "schemaVersion": 1,
       "id": "puz_ai_1f3511db02e4",

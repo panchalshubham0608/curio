@@ -1,10 +1,283 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-20T09:43:35.979Z",
+  "generatedAt": "2026-11-21T00:05:29.258Z",
   "generator": "gemini-textual-feed",
   "model": "gemini-flash-latest",
-  "itemCount": 25,
+  "itemCount": 29,
   "items": [
+    {
+      "id": "curio_gen_4aa3e5770175",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Dual-Process Theory of Cognitive Energy",
+      "subtitle": "Why deliberate practice demands an entirely different fuel from routine skill",
+      "category": "growth",
+      "region": "global",
+      "topics": [
+        "psychology",
+        "neuroscience",
+        "productivity"
+      ],
+      "estimatedDurationSeconds": 130,
+      "source": {
+        "publisher": "Annual Review of Psychology",
+        "title": "Dual-Processing Accounts of Reasoning and Cognition",
+        "url": "https://www.annualreviews.org/journal/psych",
+        "publishedAt": "2026-11-21T00:05:29.258Z",
+        "retrievedAt": "2026-11-21T00:05:29.258Z"
+      },
+      "summary": "Cognitive psychologists distinguish between System 1 fast heuristics and System 2 deliberate calculation, showing that true intellectual growth happens only when the brain is systematically forced to downshift into high-cost processing.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The human brain consumes roughly 20 percent of resting metabolic calories despite accounting for barely two percent of body mass. Most of that energy expenditure is fiercely guarded by evolutionary thrift. When faced with routine tasks, our neurology relies on System 1: rapid, associative, low-energy mental pathways that let us navigate familiar traffic, chop onions, or sign our names on autopilot. Intellectual plateaus occur when learners mistake fluent execution for genuine adaptation."
+        },
+        {
+          "type": "comparison",
+          "heading": "Automaticity vs. Deliberate Struggle",
+          "leftTitle": "System 1 (Fluent Autopilot)",
+          "rightTitle": "System 2 (Deliberate Adaptation)",
+          "leftPoints": [
+            "Operates effortlessly using stored schemas",
+            "Protects metabolic energy reserves",
+            "Creates an illusion of mastery without growth"
+          ],
+          "rightPoints": [
+            "Requires active prefrontal cortex oversight",
+            "Triggers physical neural remodeling and myelin formation",
+            "Feels frustrating, error-prone, and slow"
+          ]
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Designing the Struggle Window",
+          "points": [
+            "Cap high-intensity System 2 learning sessions at 60 to 90 minutes before mental fatigue degrades quality.",
+            "Seek out instant negative feedback loops to immediately snap the brain out of comfortable automated routines.",
+            "Regard subjective mental strain as a biological indicator that physical structural adaptation is underway."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Dual-Process Theory of Cognitive Energy editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#2D6A4F"
+      },
+      "followUps": [
+        "How does myelin synthesis reinforce motor skills during deep sleep?",
+        "What role does heart-rate variability play in sustained analytical focus?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-21T00:05:29.258Z",
+      "enrichedAt": "2026-11-21T00:05:29.258Z"
+    },
+    {
+      "id": "curio_gen_7a3e107fdad8",
+      "schemaVersion": 1,
+      "contentType": "short_story",
+      "cardVariant": "article",
+      "title": "The Scurvy Puzzle of the Arctic Voyages",
+      "subtitle": "How the invention of the steamship accidentally erased the cure for vitamin C deficiency",
+      "category": "history",
+      "region": "global",
+      "topics": [
+        "history of medicine",
+        "maritime expeditions",
+        "nutrition"
+      ],
+      "estimatedDurationSeconds": 150,
+      "source": {
+        "publisher": "Smithsonian Magazine",
+        "title": "The Strange History of How Scurvy Was Won and Lost",
+        "url": "https://www.smithsonianmag.com/",
+        "publishedAt": "2026-11-21T00:05:29.258Z",
+        "retrievedAt": "2026-11-21T00:05:29.258Z"
+      },
+      "summary": "In the nineteenth century, British naval authorities believed they had conquered scurvy with citrus juices, only to lose the cure when industrial processing and steam transport obscured the biological truth.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In 1747, Scottish surgeon James Lind famously established that fresh lemons and oranges cured the maritime scourge of scurvy. By the dawn of the nineteenth century, the British Admiralty mandated daily lime rations across the Royal Navy, cementing Britain's maritime supremacy and earning sailors the moniker limeys. Yet fifty years later, British expeditions heading to the Arctic suddenly began dying of scurvy all over again, baffling contemporary physicians."
+        },
+        {
+          "type": "timeline",
+          "heading": "The Rise, Fall, and Rediscovery of the Cure",
+          "events": [
+            {
+              "year": "1795",
+              "title": "Universal Lemon Rations",
+              "detail": "The Royal Navy adopts Mediterranean lemon juice, virtually eradicating scurvy among frontline crews."
+            },
+            {
+              "year": "1860",
+              "title": "The West Indian Switch",
+              "detail": "Cost-cutting replaces sweet Mediterranean lemons with acidic West Indian limes, which naturally contain half the ascorbic acid."
+            },
+            {
+              "year": "1875",
+              "title": "The Arctic Relapse",
+              "detail": "Copper pipe pasteurization and long wooden cask storage destroy the fragile vitamin C, leaving expeditions defenseless."
+            },
+            {
+              "year": "1928",
+              "title": "Isolation of Ascorbic Acid",
+              "detail": "Albert Szent-Gyorgyi isolates the vitamin molecule, proving why processed lime juice had failed nineteenth-century explorers."
+            }
+          ]
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Steamship Illusion",
+          "text": "Faster steam vessels shortened ocean crossings so drastically that sailors reached port before stored vitamin C supplies fully depleted, leading doctors to wrongly assume meat preservation hygiene, not fresh juice, prevented the disease."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Scurvy Puzzle of the Arctic Voyages editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#7C2D12"
+      },
+      "followUps": [
+        "Why did indigenous Arctic communities thrive without consuming citrus crops?",
+        "How did Albert Szent-Gyorgyi use paprika to isolate industrial quantities of vitamin C?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-21T00:05:29.258Z",
+      "enrichedAt": "2026-11-21T00:05:29.258Z"
+    },
+    {
+      "id": "curio_gen_7a55f1bad9b1",
+      "schemaVersion": 1,
+      "contentType": "interactive_fact",
+      "cardVariant": "interactive_feature",
+      "title": "The Great Butter Meltdown of Dublin",
+      "subtitle": "When municipal firemen battled an uncontainable river of dairy fat",
+      "category": "humour",
+      "region": "global",
+      "topics": [
+        "urban lore",
+        "odd disasters",
+        "food history"
+      ],
+      "estimatedDurationSeconds": 105,
+      "source": {
+        "publisher": "The Irish Times",
+        "title": "The Curious Night Dublin Streets Ran Golden with Melted Butter",
+        "url": "https://www.irishtimes.com/",
+        "publishedAt": "2026-11-21T00:05:29.258Z",
+        "retrievedAt": "2026-11-21T00:05:29.258Z"
+      },
+      "summary": "During an 1875 warehouse blaze in Dublin, thousands of casks of commercial butter melted into a scorching, greasy tidal wave that outwitted the capital's bravest first responders.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "On an otherwise brisk autumn evening in 1875, a commercial storage depot in the Liberties neighborhood of Dublin caught fire. While burning timber is regular business for fire brigades, this specific warehouse housed five thousand wooden casks filled to the brim with salt-cured export butter. Within thirty minutes, radiant heat dissolved the wooden staves, transforming the dairy supply into a three-foot-deep, boiling yellow flash-flood that descended on the city streets."
+        },
+        {
+          "type": "quiz",
+          "question": "What made fighting the Dublin butter fire of 1875 extraordinarily difficult for firemen?",
+          "options": [
+            "Water jets merely floated the burning grease and carried flames further downhill",
+            "The escaping steam smelled overwhelmingly like hot waffles and drew cheering crowds",
+            "City horses refused to step into the lukewarm dairy slurry"
+          ],
+          "correctOptionIndex": 0,
+          "explanation": "Pouring pressurized cold water onto boiling butter acts like throwing water into a grease pan: the liquid sank, vaporized instantly into steam, and launched airborne plumes of flaming fat down the avenue."
+        },
+        {
+          "type": "paragraph",
+          "text": "The Dublin Fire Brigade finally halted the runaway dairy torrent by commandeering cartloads of dry stable manure and river gravel, throwing together emergency dams across street corners until the molten fat cooled into an enormous, foul-smelling crust that city laborers spent three full weeks scraping off the cobblestones."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Great Butter Meltdown of Dublin editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#9333EA"
+      },
+      "followUps": [
+        "How did the 1875 Dublin Whiskey Fire compare in terms of fluid mechanics?",
+        "What are modern fire codes for commercial edible oil storage facilities?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-21T00:05:29.258Z",
+      "enrichedAt": "2026-11-21T00:05:29.258Z"
+    },
+    {
+      "id": "curio_gen_139857f6bc3f",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Helium-3 Race on the Lunar South Pole",
+      "subtitle": "Mining teams target cold traps for the ultimate clean fusion isotope",
+      "category": "news",
+      "region": "global",
+      "topics": [
+        "space exploration",
+        "nuclear energy",
+        "astrophysics"
+      ],
+      "estimatedDurationSeconds": 140,
+      "source": {
+        "publisher": "Nature Astronomy",
+        "title": "Lunar Volatiles and the Prospects for Future In-Situ Resource Utilization",
+        "url": "https://www.nature.com/natastron",
+        "publishedAt": "2026-11-21T00:05:29.258Z",
+        "retrievedAt": "2026-11-21T00:05:29.258Z"
+      },
+      "summary": "As multi-national lunar landers touch down near the Moon's Shackleton crater, researchers are mapping vast surface reserves of Helium-3, an isotope capable of powering clean fusion reactors without producing radioactive neutron bombardment.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Earth is shielded by a thick magnetosphere that deflects solar wind ions into space, leaving our planet almost entirely devoid of Helium-3. The Moon, however, has endured four billion years of unshielded cosmic bombardment. The lunar regolith acts as an enormous sponge, capturing solar wind helium inside crushed silicate grains. With recent polar landings confirming water ice inside permanently shadowed craters, aerospace consortia are now focusing on extraction technologies for this rare isotope."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Power Density Equation",
+          "text": "Just forty metric tons of Helium-3 combined with deuterium in an aneutronic fusion reactor could generate enough electricity to satisfy the United States' total power demands for an entire calendar year."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Why Lunar Regolith Matters",
+          "points": [
+            "Helium-3 fusion produces charged protons rather than destructive high-energy neutrons, eliminating reactor embrittlement and long-lived nuclear waste.",
+            "Regolith must be heated to approximately 600 degrees Celsius to outgas the trapped volatile isotopes, requiring large-scale solar concentrators.",
+            "The international Artemis Accords and outer-space resource treaties are racing to clarify mineral claims before the first robotic processing refineries launch."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Helium-3 Race on the Lunar South Pole editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#C84B31"
+      },
+      "followUps": [
+        "How do magnetic field coils capture electricity directly from aneutronic fusion reactions?",
+        "What legal framework governs private extraction rights on celestial bodies?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-21T00:05:29.258Z",
+      "enrichedAt": "2026-11-21T00:05:29.258Z"
+    },
     {
       "id": "curio_gen_5a78a967c928",
       "schemaVersion": 1,
