@@ -1,10 +1,292 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-21T07:31:14.916Z",
+  "generatedAt": "2026-11-21T15:50:57.757Z",
   "generator": "gemini-textual-feed",
   "model": "gemini-flash-latest",
-  "itemCount": 33,
+  "itemCount": 37,
   "items": [
+    {
+      "id": "curio_gen_68521ff3a693",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Zeigarnik Effect and Unfinished Mental Loops",
+      "subtitle": "Why your brain obsesses over incomplete tasks and how to silence it",
+      "category": "growth",
+      "region": "global",
+      "topics": [
+        "psychology",
+        "productivity",
+        "neuroscience",
+        "mental models"
+      ],
+      "estimatedDurationSeconds": 140,
+      "source": {
+        "publisher": "Association for Psychological Science",
+        "title": "Consider It Done! Plan Making Can Eliminate the Cognitive Effects of Unfulfilled Goals",
+        "url": "https://www.psychologicalscience.org/",
+        "publishedAt": "2026-11-21T15:50:57.757Z",
+        "retrievedAt": "2026-11-21T15:50:57.757Z"
+      },
+      "summary": "In the 1920s, Soviet psychologist Bluma Zeigarnik noticed Berlin waiters remembered complex orders perfectly until paid, after which the details evaporated. Harnessing this quirk of memory can cure chronic procrastination.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "While dining in a bustling Berlin cafe, psychologist Bluma Zeigarnik noticed something peculiar about the waitstaff. They held massive, convoluted food orders in their working memory without writing down a single word. Yet the second the bill was settled, their recollection vanished completely. Investigating this phenomenon in her laboratory, Zeigarnik discovered that incomplete tasks generate persistent cognitive tension, compelling the brain to rehearse the details until closure is achieved."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Closure Hack",
+          "text": "Later research by psychologists E.J. Masicampo and Roy Baumeister showed that you do not actually need to finish a project to quiet the brain. Simply writing down a specific, actionable plan to tackle it later relieves the intrusive thoughts."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Harnessing the Mental Loop",
+          "points": [
+            "Start the hardest task for just five minutes; the psychological discomfort of leaving it mid-stride will pull you back in.",
+            "End your workday by drafting tomorrow morning's opening step, releasing working memory from overnight rumination."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Zeigarnik Effect and Unfinished Mental Loops editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#2D6A4F"
+      },
+      "followUps": [
+        "How does the Zeigarnik effect influence cliffhangers in serialized television?",
+        "What is the difference between working memory and short-term memory retrieval?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-21T15:50:57.757Z",
+      "enrichedAt": "2026-11-21T15:50:57.757Z"
+    },
+    {
+      "id": "curio_gen_5aacfb212702",
+      "schemaVersion": 1,
+      "contentType": "short_story",
+      "cardVariant": "article",
+      "title": "The Pigeon Post of the Paris Siege",
+      "subtitle": "How microphotography and homing birds breached a military blockade",
+      "category": "history",
+      "region": "global",
+      "topics": [
+        "military history",
+        "inventions",
+        "optics",
+        "birds"
+      ],
+      "estimatedDurationSeconds": 150,
+      "source": {
+        "publisher": "Smithsonian Magazine",
+        "title": "How Carrier Pigeons and Microphotography Saved Paris",
+        "url": "https://www.smithsonianmag.com/",
+        "publishedAt": "2026-11-21T15:50:57.757Z",
+        "retrievedAt": "2026-11-21T15:50:57.757Z"
+      },
+      "summary": "During the Franco-Prussian War, surrounded Parisians used microphotographic film capsules strapped to homing pigeons to transmit hundreds of thousands of vital civilian and military telegrams.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In the winter of 1870, Prussian forces placed Paris under complete siege, cutting underground telegraph cables and severing all postal roads. Cut off from the outside world, the city turned to an ingenious blend of biology and optics. Homing pigeons were smuggled out of Paris inside manned hot-air balloons and taken to temporary French government headquarters in Tours."
+        },
+        {
+          "type": "timeline",
+          "heading": "The 1870 Parisian Airmail Network",
+          "events": [
+            {
+              "year": "September 1870",
+              "title": "Balloons Evacuate Paris",
+              "detail": "Aeronauts float past Prussian lines carrying official dispatches and crates of homing pigeons."
+            },
+            {
+              "year": "November 1870",
+              "title": "Microphotographic Dispatch",
+              "detail": "Photographer Rene Dagron shrinks thousands of pages into featherweight collodion films measuring mere square inches."
+            },
+            {
+              "year": "January 1871",
+              "title": "Magic Lantern Projection",
+              "detail": "Returned birds land in Paris; technicians project the microscopic texts onto screens so clerks can transcribe them."
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "question": "How many miniature telegraph messages could a single homing pigeon carry on these film strips?",
+          "options": [
+            "Around 50",
+            "Up to 40,000",
+            "Exactly 500"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "Because Dagron shrunk messages onto ultralight microfilm rolls weighing under a gram, a single bird could transport up to 40,000 distinct messages rolled inside a quill attached to its tail feathers."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Pigeon Post of the Paris Siege editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#7C2D12"
+      },
+      "followUps": [
+        "How did the Prussian army attempt to intercept carrier pigeons during the siege?",
+        "What other techniques did Rene Dagron pioneer in early microfilming?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-21T15:50:57.757Z",
+      "enrichedAt": "2026-11-21T15:50:57.757Z"
+    },
+    {
+      "id": "curio_gen_6584d86f0b99",
+      "schemaVersion": 1,
+      "contentType": "interactive_fact",
+      "cardVariant": "interactive_feature",
+      "title": "The London Beer Flood of 1814",
+      "subtitle": "When a ruptured 22-foot vat drowned an English parish in porter",
+      "category": "humour",
+      "region": "global",
+      "topics": [
+        "bizarre history",
+        "fermentation",
+        "london",
+        "curiosities"
+      ],
+      "estimatedDurationSeconds": 130,
+      "source": {
+        "publisher": "BBC News",
+        "title": "The London Beer Flood: The strange disaster that killed eight",
+        "url": "https://www.bbc.com/",
+        "publishedAt": "2026-11-21T15:50:57.757Z",
+        "retrievedAt": "2026-11-21T15:50:57.757Z"
+      },
+      "summary": "A broken iron hoop on an enormous fermentation vat at Meux and Company Brewery unleashed a 15-foot tidal wave of porter through the slums of St. Giles.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "On the afternoon of October 17, 1814, storehouse clerk George Crick noticed that a 700-pound iron hoop had slipped off an enormous wooden fermentation vat at the Horse Shoe Brewery in London. His superiors advised him that no harm would come of it until repairs arrived. An hour later, the 22-foot-tall wooden monster burst with explosive force, triggering a domino collapse of neighboring vats and releasing over 320,000 gallons of fermented dark porter into the streets."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Urban Legend vs Reality",
+          "text": "Contrary to later tabloid claims that crowds rushed into the streets with mugs and buckets to gorge on free beer, contemporary records indicate the local community behaved with solemnity, aiding neighbors whose fragile basement homes had been flooded."
+        },
+        {
+          "type": "comparison",
+          "heading": "Brewery Tanks: Then vs Now",
+          "leftTitle": "1814 London Porter Vat",
+          "rightTitle": "Modern Industrial Fermenter",
+          "leftPoints": [
+            "Constructed of English oak staves held by iron tension hoops",
+            "Relied on visual inspections and auditory taps to detect wood rot",
+            "Catastrophic brittle failure mode under sudden hydraulic pressure"
+          ],
+          "rightPoints": [
+            "Forged from continuous welded surgical-grade stainless steel",
+            "Fitted with automated pressure relief valves and burst discs",
+            "Gradual deformation rather than sudden explosive wall ruptures"
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The London Beer Flood of 1814 editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#9333EA"
+      },
+      "followUps": [
+        "What legal ruling followed the inquest into the London Beer Flood?",
+        "How did the disaster reshape Victorian industrial safety regulations?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-21T15:50:57.757Z",
+      "enrichedAt": "2026-11-21T15:50:57.757Z"
+    },
+    {
+      "id": "curio_gen_0ff7690b2a94",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Global Sodium Battery Breakthrough",
+      "subtitle": "Mining the seas to replace cobalt and lithium in grid energy storage",
+      "category": "news",
+      "region": "global",
+      "topics": [
+        "clean technology",
+        "energy",
+        "materials science",
+        "chemistry"
+      ],
+      "estimatedDurationSeconds": 160,
+      "source": {
+        "publisher": "Nature Energy",
+        "title": "The Status and Promises of Sodium-Ion Battery Technology",
+        "url": "https://www.nature.com/",
+        "publishedAt": "2026-11-21T15:50:57.757Z",
+        "retrievedAt": "2026-11-21T15:50:57.757Z"
+      },
+      "summary": "As major battery makers roll out commercial sodium-ion cells, the world edges toward abundant, cold-resistant grid storage that frees clean energy from scarce lithium reserves.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "For over three decades, lithium has reigned supreme over rechargeable energy storage due to its low molecular weight and high electrochemical potential. But geopolitical choke points, environmental costs of brine extraction, and limited global supplies have spurred a commercial scramble toward its chemical sibling on the periodic table: sodium. Industrial manufacturers have begun integrating commercial-scale sodium-ion cells into utility power grids and entry-level electric commuter vehicles."
+        },
+        {
+          "type": "comparison",
+          "heading": "Chemical Showdown: Sodium-Ion vs Lithium-Ion",
+          "leftTitle": "Sodium-Ion (Na+)",
+          "rightTitle": "Lithium-Ion (Li+)",
+          "leftPoints": [
+            "Raw materials are practically inexhaustible, extracted from rock salts and sea brines",
+            "Zero degradation and stable discharge rates in sub-zero winter temperatures",
+            "Slightly lower volumetric energy density; ideal for stationary power grids"
+          ],
+          "rightPoints": [
+            "Requires mining concentrated lithium, often dependent on scarce cobalt cathodes",
+            "Significant charging speed reductions and capacity loss in freezing climates",
+            "Higher energy density per kilogram; best suited for long-range aerospace and cars"
+          ]
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Why This Matters for the Renewable Transition",
+          "points": [
+            "Sodium batteries can safely be discharged to absolute zero volts for shipping, eliminating transit fire risks.",
+            "Utility-scale solar and wind installations gain low-cost overnight energy buffers without competing with premium electric cars for lithium supplies."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Global Sodium Battery Breakthrough editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#C84B31"
+      },
+      "followUps": [
+        "How do hard carbon anodes enable sodium intercalation inside modern batteries?",
+        "Can sodium-ion chemistries ever match the range of flagship lithium-based electric cars?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-21T15:50:57.757Z",
+      "enrichedAt": "2026-11-21T15:50:57.757Z"
+    },
     {
       "id": "curio_gen_171c8d32b1f9",
       "schemaVersion": 1,

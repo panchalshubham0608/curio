@@ -1,10 +1,102 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-21T07:31:43.508Z",
+  "generatedAt": "2026-11-21T15:51:32.930Z",
   "generator": "gemini-textual-puzzles",
   "model": "gemini-flash-latest",
-  "itemCount": 38,
+  "itemCount": 40,
   "items": [
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_2fa3268c27c8",
+      "kind": "true_or_myth",
+      "title": "Sunken Buoyancy",
+      "category": "science",
+      "difficulty": "Warm-up",
+      "prompt": "Because water pressure increases dramatically with ocean depth, a solid steel ball dropped over the Mariana Trench will eventually stop sinking and float suspended in the water.",
+      "hint": "Consider the relative compressibility of liquid water compared to the density of solid steel.",
+      "options": [
+        "True — Real Fact",
+        "Myth — False"
+      ],
+      "correctIndex": 1,
+      "explanation": "Water is nearly incompressible, so its density increases by only a few percent at the bottom of the trench, remaining far below the density of steel (~7.8 g/cm³ versus ~1.08 g/cm³). Thus, the steel ball sinks all the way to the ocean floor.",
+      "origin": "ai",
+      "createdAt": "2026-11-21T15:51:32.930Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_74d68d2f00e5",
+      "kind": "interactive_grid",
+      "title": "Substation Power Surge",
+      "category": "technology",
+      "difficulty": "Clever",
+      "prompt": "Select exactly 3 transformer cells that together deliver a total output of 50 megawatts.",
+      "gridPuzzle": {
+        "mode": "target_sum",
+        "rows": 3,
+        "cols": 3,
+        "instruction": "Select 3 cells that sum to 50",
+        "cells": [
+          {
+            "label": "14",
+            "value": 14,
+            "initialOn": false
+          },
+          {
+            "label": "12",
+            "value": 12,
+            "initialOn": false
+          },
+          {
+            "label": "21",
+            "value": 21,
+            "initialOn": false
+          },
+          {
+            "label": "17",
+            "value": 17,
+            "initialOn": false
+          },
+          {
+            "label": "15",
+            "value": 15,
+            "initialOn": false
+          },
+          {
+            "label": "19",
+            "value": 19,
+            "initialOn": false
+          },
+          {
+            "label": "19",
+            "value": 19,
+            "initialOn": false
+          },
+          {
+            "label": "24",
+            "value": 24,
+            "initialOn": false
+          },
+          {
+            "label": "11",
+            "value": 11,
+            "initialOn": false
+          }
+        ],
+        "targetSum": 50,
+        "exactCount": 3,
+        "goalState": "all_on",
+        "solutionIndices": [
+          1,
+          5,
+          6
+        ]
+      },
+      "hint": "Identify three numbers that end with digits summing to a multiple of 10.",
+      "explanation": "Selecting 12, 19, and 19 sums to 50 (12 + 19 + 19 = 50).",
+      "origin": "ai",
+      "createdAt": "2026-11-21T15:51:32.930Z"
+    },
     {
       "schemaVersion": 1,
       "id": "puz_ai_d5d2f13c0188",
