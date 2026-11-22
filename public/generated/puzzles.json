@@ -1,10 +1,75 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-22T08:35:02.581Z",
+  "generatedAt": "2026-11-22T16:49:44.630Z",
   "generator": "gemini-textual-puzzles",
   "model": "gemini-flash-latest",
   "itemCount": 48,
   "items": [
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_c93500afce2d",
+      "kind": "lateral_riddle",
+      "title": "The Weightless Vessel",
+      "category": "humour",
+      "difficulty": "Warm-up",
+      "prompt": "I can fill an entire room without taking up any space, and the more of me you add, the lighter the room feels. What am I?",
+      "hint": "Flip a switch to invite me in.",
+      "options": [
+        "Light",
+        "Smoke",
+        "Air",
+        "A whisper"
+      ],
+      "correctIndex": 0,
+      "explanation": "Light permeates a room completely without displacing any physical matter or adding weight, brightening the space instantly.",
+      "origin": "ai",
+      "createdAt": "2026-11-22T16:49:44.630Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_a64926acb214",
+      "kind": "logic_reasoning",
+      "title": "Observatory Shift Roster",
+      "category": "science",
+      "difficulty": "Clever",
+      "prompt": "Four astronomers (Aria, Blake, Chen, and Dev) each monitored a different telescope: Optical, Radio, Infrared, or X-ray. Who operated the Infrared telescope?",
+      "clues": [
+        "1. Aria and Dev operated non-optical telescopes that detect longer wavelengths than visible light.",
+        "2. Chen operated the X-ray telescope.",
+        "3. Aria did not operate the Radio telescope."
+      ],
+      "hint": "Infrared and Radio are both longer in wavelength than visible light.",
+      "options": [
+        "Aria",
+        "Blake",
+        "Chen",
+        "Dev"
+      ],
+      "correctIndex": 0,
+      "explanation": "Because Aria and Dev operated longer-wavelength instruments (Radio and Infrared) and Aria did not use the Radio telescope, Aria must have operated the Infrared telescope.",
+      "origin": "ai",
+      "createdAt": "2026-11-22T16:49:44.630Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_29fa7b02b99e",
+      "kind": "odd_one_out",
+      "title": "Monarchic Terminations",
+      "category": "history",
+      "difficulty": "Clever",
+      "prompt": "Which of these European monarchs is the odd one out regarding how their reign ended?",
+      "hint": "Consider whether each monarch lost their life or voluntarily gave up power.",
+      "options": [
+        "Edward VIII of the United Kingdom",
+        "Charles I of England",
+        "Louis XVI of France",
+        "Nicholas II of Russia"
+      ],
+      "correctIndex": 0,
+      "explanation": "Edward VIII voluntarily abdicated his throne in 1936, whereas Charles I, Louis XVI, and Nicholas II were all executed during revolutions.",
+      "origin": "ai",
+      "createdAt": "2026-11-22T16:49:44.630Z"
+    },
     {
       "schemaVersion": 1,
       "id": "puz_ai_1d2c4ef8fcae",
@@ -2005,124 +2070,6 @@
       "explanation": "With Elena at Antiquities, Marcus and David must split Coins and Fossils; because Marcus cannot guard Fossils, David must guard Fossils.",
       "origin": "ai",
       "createdAt": "2026-11-18T16:02:10.578Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_c9d6ce6dcb09",
-      "kind": "odd_one_out",
-      "title": "Elemental Oddity",
-      "category": "science",
-      "difficulty": "Warm-up",
-      "prompt": "Which of these chemical elements does not share a key physical trait with the other three at standard room temperature and pressure?",
-      "hint": "Consider standard classification into metals and nonmetals.",
-      "options": [
-        "Bromine",
-        "Mercury",
-        "Gallium",
-        "Cesium"
-      ],
-      "correctIndex": 0,
-      "explanation": "Bromine is a nonmetal (halogen), whereas Mercury, Gallium, and Cesium are all metals.",
-      "origin": "ai",
-      "createdAt": "2026-11-18T16:02:10.578Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_3c7cf8435c8d",
-      "kind": "order_sequence",
-      "title": "Planetary Distance Ladder",
-      "category": "science",
-      "difficulty": "Tricky",
-      "prompt": "Arrange these four Solar System bodies in increasing order of their average distance from the Sun (closest to farthest).",
-      "orderItems": [
-        "Ceres",
-        "Mars",
-        "Venus",
-        "Jupiter"
-      ],
-      "correctOrder": [
-        2,
-        1,
-        0,
-        3
-      ],
-      "hint": "Remember the asteroid belt lies between the inner rocky planets and the gas giants.",
-      "explanation": "Venus orbits at ~0.72 AU, Mars at ~1.52 AU, the dwarf planet Ceres in the asteroid belt at ~2.77 AU, and Jupiter at ~5.20 AU.",
-      "origin": "ai",
-      "createdAt": "2026-11-18T16:02:10.578Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_9f68151e644c",
-      "kind": "interactive_grid",
-      "title": "Orbital Energy Sum",
-      "category": "science",
-      "difficulty": "Clever",
-      "prompt": "Select exactly 3 energy nodes on the grid so their combined values total exactly 50 gigajoules.",
-      "gridPuzzle": {
-        "mode": "target_sum",
-        "rows": 3,
-        "cols": 3,
-        "instruction": "Select exactly 3 cells that add up to 50.",
-        "cells": [
-          {
-            "label": "12",
-            "value": 12,
-            "initialOn": false
-          },
-          {
-            "label": "14",
-            "value": 14,
-            "initialOn": false
-          },
-          {
-            "label": "25",
-            "value": 25,
-            "initialOn": false
-          },
-          {
-            "label": "9",
-            "value": 9,
-            "initialOn": false
-          },
-          {
-            "label": "18",
-            "value": 18,
-            "initialOn": false
-          },
-          {
-            "label": "31",
-            "value": 31,
-            "initialOn": false
-          },
-          {
-            "label": "7",
-            "value": 7,
-            "initialOn": false
-          },
-          {
-            "label": "18",
-            "value": 18,
-            "initialOn": false
-          },
-          {
-            "label": "22",
-            "value": 22,
-            "initialOn": false
-          }
-        ],
-        "targetSum": 50,
-        "exactCount": 3,
-        "goalState": "all_on",
-        "solutionIndices": [
-          1,
-          4,
-          7
-        ]
-      },
-      "explanation": "Selecting nodes 14 (index 1), 18 (index 4), and 18 (index 7) yields 14 + 18 + 18 = 50. No other 3-cell combination sums to 50.",
-      "origin": "ai",
-      "createdAt": "2026-11-18T15:58:39.217Z"
     }
   ]
 }

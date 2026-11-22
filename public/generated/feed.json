@@ -1,10 +1,283 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-22T08:34:18.896Z",
+  "generatedAt": "2026-11-22T16:49:12.843Z",
   "generator": "gemini-textual-feed",
   "model": "gemini-flash-latest",
-  "itemCount": 45,
+  "itemCount": 49,
   "items": [
+    {
+      "id": "curio_gen_a5973f4ca7d1",
+      "schemaVersion": 1,
+      "contentType": "short_story",
+      "cardVariant": "article",
+      "title": "The Glass Sponge Reefs Thought Dead for 40 Million Years",
+      "subtitle": "How living prehistoric bio-architects were rediscovered in the deep Pacific",
+      "category": "science",
+      "region": "global",
+      "topics": [
+        "marine biology",
+        "paleontology",
+        "oceanography",
+        "ecology"
+      ],
+      "estimatedDurationSeconds": 135,
+      "source": {
+        "publisher": "Smithsonian Magazine",
+        "title": "The Prehistoric Sponge Reefs Alive off the Pacific Coast",
+        "url": "https://www.smithsonianmag.com/",
+        "publishedAt": "2026-11-22T16:49:12.843Z",
+        "retrievedAt": "2026-11-22T16:49:12.843Z"
+      },
+      "summary": "Paleontologists long believed massive glass sponge reefs vanished during the Jurassic period, until marine surveys off the coast of British Columbia found living leviathans constructed entirely of silica.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "For over a century, geologists classified gigantic hexactinellid sponge reefs alongside dinosaur bones. The fossil record showed that around two hundred million years ago, enormous towers woven from pure bio-glass stretched across vast swaths of the prehistoric Tethys Ocean, only to disappear from rock strata forty million years ago during the Eocene epoch."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "Accidental Discovery",
+          "text": "In 1987, seafloor acoustic mappers in the Hecate Strait off British Columbia detected colossal underwater formations up to eight stories high. Deep-sea submersible cameras revealed they were not rocky mounds, but vibrant colonies of living glass sponges thriving in pitch darkness."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Living Glass Engineering",
+          "points": [
+            "Hexactinellid sponges extract dissolved silicic acid from seawater to weave intricate skeletons made of microscopic silica spicules.",
+            "Instead of separate cells, their tissues consist of a single multinucleated syncytium that transmits electrical impulses without a nervous system.",
+            "The reefs filter massive quantities of seawater, processing organic matter while serving as crucial nurseries for rockfish and spot prawns."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Glass Sponge Reefs Thought Dead for 40 Million Years editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#3B4F75"
+      },
+      "followUps": [
+        "How do sponge glass fibers conduct light compared to commercial fiber-optic cables?",
+        "What protective marine measures now safeguard the Hecate Strait reefs from commercial trawling?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-22T16:49:12.843Z",
+      "enrichedAt": "2026-11-22T16:49:12.843Z"
+    },
+    {
+      "id": "curio_gen_75e5bbe01cbe",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Mechanical Core of the Curta Calculator",
+      "subtitle": "How a portable engineering marvel was designed inside a wartime camp",
+      "category": "technology",
+      "region": "global",
+      "topics": [
+        "mechanical engineering",
+        "computing history",
+        "industrial design"
+      ],
+      "estimatedDurationSeconds": 150,
+      "source": {
+        "publisher": "Computer History Museum",
+        "title": "Oral History of Curt Herzstark",
+        "url": "https://computerhistory.org/",
+        "publishedAt": "2026-11-22T16:49:12.843Z",
+        "retrievedAt": "2026-11-22T16:49:12.843Z"
+      },
+      "summary": "Invented by Austrian engineer Curt Herzstark, the handheld Curta calculator compressed room-sized calculating power into a pocket-sized cylinder using a stepped-drum mechanism.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Before electronic microchips transformed calculation, engineers and field scientists relied on clunky tabletop adding machines or imprecise slide rules. Austrian inventor Curt Herzstark envisioned a device so compact it could fit inside a coat pocket and be operated with one hand, completing complex multiplication and division through a twist of a miniature crank."
+        },
+        {
+          "type": "timeline",
+          "heading": "The Evolution of Handheld Calculation",
+          "events": [
+            {
+              "year": "1938",
+              "title": "Initial Concept",
+              "detail": "Herzstark drafts preliminary designs replacing individual gears with a single central stepped cylinder."
+            },
+            {
+              "year": "1943",
+              "title": "Survival Blueprinting",
+              "detail": "While imprisoned in Buchenwald, Herzstark is ordered to produce complete engineering schematics for high officials, keeping him alive."
+            },
+            {
+              "year": "1948",
+              "title": "The Curta Launches",
+              "detail": "Manufactured in Liechtenstein, the precision cylinder becomes the gold standard for navigators and rally drivers worldwide."
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "question": "How did the mechanical Curta calculator perform subtraction without reversing its primary gear train?",
+          "options": [
+            "By shifting to an internal reverse gearbox",
+            "By adding nines' complements on an inverted drum tier",
+            "By releasing a coiled mechanical spring"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "To keep the crank turning smoothly in a single clockwise direction, the Curta used a dual-tier stepped drum that mathematically added nines' complements to calculate subtraction."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Mechanical Core of the Curta Calculator editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#2563EB"
+      },
+      "followUps": [
+        "Why were rally drivers the longest-lasting professional adopters of Curta calculators?",
+        "How did the arrival of the HP-35 scientific calculator end the era of mechanical computation?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-22T16:49:12.843Z",
+      "enrichedAt": "2026-11-22T16:49:12.843Z"
+    },
+    {
+      "id": "curio_gen_068838192a17",
+      "schemaVersion": 1,
+      "contentType": "quick_bite",
+      "cardVariant": "interactive_feature",
+      "title": "The Ancient Terraced Orchards of Amalfi's Sfusato",
+      "subtitle": "The steep volcanic cliff farming that created the world's most aromatic lemon",
+      "category": "travel_food",
+      "region": "global",
+      "topics": [
+        "agriculture",
+        "culinary history",
+        "italy",
+        "horticulture"
+      ],
+      "estimatedDurationSeconds": 110,
+      "source": {
+        "publisher": "National Geographic",
+        "title": "The Vertical Lemon Groves of the Amalfi Coast",
+        "url": "https://www.nationalgeographic.com/",
+        "publishedAt": "2026-11-22T16:49:12.843Z",
+        "retrievedAt": "2026-11-22T16:49:12.843Z"
+      },
+      "summary": "Along Italy's vertiginous Amalfi Coast, generations of farmers built stone-walled vertical gardens to cultivate the Sfusato Amalfitano, a fragrant, sweet-pith lemon that cannot be harvested by machine.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Clinging to the limestone cliffs rising sharply from the Tyrrhenian Sea, the lemon groves of Amalfi resemble green staircases carved into the mountain. These terraced gardens, known as 'macere', were established during the Middle Ages when the Maritime Republic of Amalfi required citrus supplies on every merchant vessel to prevent scurvy on extended Mediterranean voyages."
+        },
+        {
+          "type": "comparison",
+          "heading": "Sfusato Amalfitano vs. Commercial Lemons",
+          "leftTitle": "Sfusato Amalfitano",
+          "rightTitle": "Standard Supermarket Lemon",
+          "leftPoints": [
+            "Elongated, tapered shape twice the size of standard lemons",
+            "Sweet, edible albedo with almost no bitterness",
+            "Heavy essential oil concentration in rough, unblemished peel",
+            "Harvested by hand using woven chestnut scaffolding"
+          ],
+          "rightPoints": [
+            "Uniform oval shape bred for automated sorting",
+            "Thin, bitter white pith surrounding acidic vesicles",
+            "Waxed rind with moderate aromatic oil yield",
+            "Grown on flat terrain suitable for mechanical gathering"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Because machinery cannot navigate the dizzying stairs, harvesters still carry heavy wooden crates weighing up to fifty kilograms on their shoulders down narrow stone stairways, preserving a landscape recognized as a UNESCO World Heritage cultural asset."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Ancient Terraced Orchards of Amalfi's Sfusato editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#0F766E"
+      },
+      "followUps": [
+        "What role did chestnut wood lattice coverings play in protecting crops from sea breezes?",
+        "How is the thick pith of Sfusato lemons used directly in regional Neapolitan salads?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-22T16:49:12.843Z",
+      "enrichedAt": "2026-11-22T16:49:12.843Z"
+    },
+    {
+      "id": "curio_gen_6365655e4533",
+      "schemaVersion": 1,
+      "contentType": "interactive_fact",
+      "cardVariant": "interactive_feature",
+      "title": "Why the North Star Won't Always Be in the North",
+      "subtitle": "The 26,000-year celestial wobble that continually swaps our pole stars",
+      "category": "facts",
+      "region": "global",
+      "topics": [
+        "astronomy",
+        "celestial mechanics",
+        "earth science",
+        "navigation"
+      ],
+      "estimatedDurationSeconds": 95,
+      "source": {
+        "publisher": "NASA",
+        "title": "Precession of Earth's Axis and the Pole Stars",
+        "url": "https://science.nasa.gov/",
+        "publishedAt": "2026-11-22T16:49:12.843Z",
+        "retrievedAt": "2026-11-22T16:49:12.843Z"
+      },
+      "summary": "Earth spins like an off-balance gyroscope due to gravitational tugs from the sun and moon, meaning Polaris is merely a temporary celestial marker destined to yield its title.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "To human navigators across the northern hemisphere, Polaris feels like a permanent anchor of the night sky, sitting almost directly above Earth's geographic rotational axis. Yet this alignment is merely a temporary coincidence in human history, governed by a slow cyclic motion called axial precession."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Pyramids' True Target",
+          "text": "When Egyptian builders aligned the passage shafts of the Great Pyramid of Giza around 2500 BCE, Polaris was off-center. Earth's true northern pole star at that time was Thuban, a star in the constellation Draco."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "The Precession Cycle",
+          "points": [
+            "Precession of the equinoxes takes approximately 25,772 years to complete one full revolution.",
+            "Polaris will reach its closest alignment with celestial north around the year 2100 before steadily drifting away.",
+            "Around the year 13,700, the brilliant bluish star Vega in the constellation Lyra will assume the role of the North Star."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "Why the North Star Won't Always Be in the North editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#B45309"
+      },
+      "followUps": [
+        "Does the Southern Hemisphere currently have an equivalent bright South Star?",
+        "How did ancient astronomer Hipparchus deduce axial precession without a telescope?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-22T16:49:12.843Z",
+      "enrichedAt": "2026-11-22T16:49:12.843Z"
+    },
     {
       "id": "curio_gen_8218ee4a37bb",
       "schemaVersion": 1,
