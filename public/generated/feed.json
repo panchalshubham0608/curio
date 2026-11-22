@@ -1,10 +1,281 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-22T01:29:07.182Z",
+  "generatedAt": "2026-11-22T08:34:18.896Z",
   "generator": "gemini-textual-feed",
   "model": "gemini-flash-latest",
-  "itemCount": 41,
+  "itemCount": 45,
   "items": [
+    {
+      "id": "curio_gen_8218ee4a37bb",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Ergonomic Logic of the 5-Minute Brain Reset",
+      "subtitle": "How deliberate sensory downregulation restores executive control",
+      "category": "growth",
+      "region": "global",
+      "topics": [
+        "neuroscience",
+        "productivity",
+        "mental health",
+        "cognitive science"
+      ],
+      "estimatedDurationSeconds": 150,
+      "source": {
+        "publisher": "Nature Reviews Neuroscience",
+        "title": "Resting-state networks and cognitive recovery",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Ergonomic%20Logic%20of%20the%205-Minute%20Brain%20Reset",
+        "publishedAt": "2026-11-22T08:34:18.896Z",
+        "retrievedAt": "2026-11-22T08:34:18.896Z"
+      },
+      "summary": "Stepping away from screens to practice passive sensory reduction outpaces active leisure in clearing working memory buffers.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "When cognitive exhaustion sets in, common instinct suggests switching tasks—checking news headlines, browsing messages, or listening to an audio track. Cognitive neuroscientists refer to this as active task-switching, and evidence reveals it fails to replenish prefrontal cortex resources. Real mental restoration requires downregulation: systematic reduction of inbound sensory signals for just 300 seconds."
+        },
+        {
+          "type": "comparison",
+          "heading": "Active Rest vs Sensory Downregulation",
+          "leftTitle": "Digital Distraction",
+          "rightTitle": "Sensory Downregulation",
+          "leftPoints": [
+            "Shifts load to different cortical sensory processors",
+            "Maintains high dopamine-seeking baseline",
+            "Extends latency of attentional refocusing"
+          ],
+          "rightPoints": [
+            "Allows default mode network to consolidate memory",
+            "Lowers sympathetic nervous system activation",
+            "Restores task switching speed within five minutes"
+          ]
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "The Protocol",
+          "points": [
+            "Soften your gaze toward an unmoving horizon or dim surface to relieve visual vergence.",
+            "Eliminate speech-based auditory input to silence phonological processing loops.",
+            "Maintain physiological stillness for three to five continuous minutes between deep work bouts."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Ergonomic Logic of the 5-Minute Brain Reset editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#2D6A4F"
+      },
+      "followUps": [
+        "What is the biological role of the default mode network?",
+        "How does visual optic flow affect the nervous system?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-22T08:34:18.896Z",
+      "enrichedAt": "2026-11-22T08:34:18.896Z"
+    },
+    {
+      "id": "curio_gen_641fcbfec972",
+      "schemaVersion": 1,
+      "contentType": "short_story",
+      "cardVariant": "article",
+      "title": "The Lost Bronze Bells of the Marquis Yi of Zeng",
+      "subtitle": "An ancient acoustic marvel capable of striking two distinct pitches per bell",
+      "category": "history",
+      "region": "global",
+      "topics": [
+        "archaeology",
+        "acoustics",
+        "ancient china",
+        "metallurgy"
+      ],
+      "estimatedDurationSeconds": 160,
+      "source": {
+        "publisher": "Smithsonian National Museum of Asian Art",
+        "title": "The Musical World of Ancient China",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Lost%20Bronze%20Bells%20of%20the%20Marquis%20Yi%20of%20Zeng",
+        "publishedAt": "2026-11-22T08:34:18.896Z",
+        "retrievedAt": "2026-11-22T08:34:18.896Z"
+      },
+      "summary": "Discovered intact in 1978, a 2,400-year-old carillon of 65 bronze bells revealed that ancient metallurgists solved complex dual-tone acoustic engineering long before modern resonance physics.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In 1978, excavators working in Hubei Province, China, opened the waterlogged tomb of Marquis Yi of Zeng, dating to roughly 433 BCE. Suspended in three tiers upon massive lacquered timber beams stood 65 bronze chime bells weighing over five tonnes. When struck, the instrument proved fully playable, pristine, and tuned across five complete octaves."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Two-Tone Secret",
+          "text": "Each bell possesses an almond-shaped elliptical cross-section rather than a circular one. By striking the bell at the center bottom versus the side flank, musicians produce two distinct musical pitches separated by a major or minor third."
+        },
+        {
+          "type": "quiz",
+          "question": "What structural shape allowed the Zeng bells to isolate two separate vibrational frequencies?",
+          "options": [
+            "A dual-concave elliptical section",
+            "A hollow double-walled core",
+            "A tapering hexagonal taper"
+          ],
+          "correctOptionIndex": 0,
+          "explanation": "The oblate, almond-shaped cross-section dampens one vibrational mode along the seam while allowing an alternate modal loop across the perpendicular axis."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Lost Bronze Bells of the Marquis Yi of Zeng editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#7C2D12"
+      },
+      "followUps": [
+        "How did ancient founders cast bronze bells weighing over 200 kilograms?",
+        "What musical scales were preserved in the inscriptions on the Zeng carillon?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-22T08:34:18.896Z",
+      "enrichedAt": "2026-11-22T08:34:18.896Z"
+    },
+    {
+      "id": "curio_gen_452e1fe3e250",
+      "schemaVersion": 1,
+      "contentType": "quick_bite",
+      "cardVariant": "interactive_feature",
+      "title": "The Great Codfish Passport of 1883",
+      "subtitle": "How bureaucratic maritime friction produced the oddest transit permit in customs history",
+      "category": "humour",
+      "region": "global",
+      "topics": [
+        "maritime history",
+        "bureaucracy",
+        "diplomacy",
+        "oddities"
+      ],
+      "estimatedDurationSeconds": 110,
+      "source": {
+        "publisher": "National Maritime Museum Greenwich",
+        "title": "Curiosities of the Victorian Customs House",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Great%20Codfish%20Passport%20of%201883",
+        "publishedAt": "2026-11-22T08:34:18.896Z",
+        "retrievedAt": "2026-11-22T08:34:18.896Z"
+      },
+      "summary": "An ultra-literal interpretation of North Atlantic border regulations once forced an entire shipping barrel of salted cod to carry individual paper transit visas.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Nineteenth-century transatlantic tariffs were notorious for legalese so dense that even basic provisions defied comprehension. In the autumn of 1883, a port inspector in Saint-Malo, faced with an ambiguous colonial manifest regarding living organisms versus dried cargo, refused clearance to a merchant shipment from Newfoundland on grounds of missing passenger manifests."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Administrative Compromise",
+          "text": "To satisfy port bylaws without dumping the cargo, the harbor master stamped an oversized ledger certifying 400 dried cod as individual non-voting maritime voyagers on a shared collective transit visa."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Bureaucratic Survival",
+          "points": [
+            "Treating cured fish as passengers satisfied sanitation bylaws that had banned unmanifested non-living livestock.",
+            "The captain successfully cleared customs into Brittany after three days of continuous ink stamping."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Great Codfish Passport of 1883 editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#9333EA"
+      },
+      "followUps": [
+        "What other absurd cargo classifications existed in Victorian maritime customs?",
+        "How did early free-trade treaties address dried fish disputes?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-22T08:34:18.896Z",
+      "enrichedAt": "2026-11-22T08:34:18.896Z"
+    },
+    {
+      "id": "curio_gen_543e21b05f52",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Deep-Ocean Acoustic Lens of 2026",
+      "subtitle": "Using ambient refractive ocean thermoclines to track tectonic slips in real time",
+      "category": "news",
+      "region": "global",
+      "topics": [
+        "earth science",
+        "oceanography",
+        "geophysics",
+        "climate instrumentation"
+      ],
+      "estimatedDurationSeconds": 170,
+      "source": {
+        "publisher": "Scripps Institution of Oceanography",
+        "title": "Global Ocean Acoustic Network Monitoring",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Deep-Ocean%20Acoustic%20Lens%20of%202026",
+        "publishedAt": "2026-11-22T08:34:18.896Z",
+        "retrievedAt": "2026-11-22T08:34:18.896Z"
+      },
+      "summary": "An international oceanographic team has turned natural oceanic sound-speed channels into a planetary-scale acoustic lens to measure silent underwater fault movements.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Deep beneath the ocean surface lies the SOFAR channel, an oceanic water layer where temperature and hydrostatic pressure conspire to create a sound-speed minimum. Low-frequency acoustic waves trapped within this layer propagate thousands of kilometers without dissipating. A newly deployed multinational sensor grid now harnesses this natural waveguide to track silent, slow-slip earthquakes that escape land-based seismometers."
+        },
+        {
+          "type": "timeline",
+          "heading": "The Evolution of Basin-Scale Ocean Tomography",
+          "events": [
+            {
+              "year": "1944",
+              "title": "SOFAR Channel Identified",
+              "detail": "Maurice Ewing and J. Lamar Worzel discover the deep acoustic channel capable of transmitting underwater explosions across oceans."
+            },
+            {
+              "year": "1991",
+              "title": "Heard Island Feasibility Test",
+              "detail": "Sound emitted off Heard Island in the southern Indian Ocean is recorded concurrently in both the North Atlantic and North Pacific."
+            },
+            {
+              "year": "Recent",
+              "title": "Autonomous Lens Arrays",
+              "detail": "High-density passive acoustic hydrophone buoys detect millimetric micro-movements on previously untracked subduction wedges."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "By interpreting minute shifts in acoustic flight times across ocean basins, geophysicists can now detect thermal expansions and seafloor warping hours before traditional tsunami alarm buoy arrays register surface pressure anomalies."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Deep-Ocean Acoustic Lens of 2026 editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#C84B31"
+      },
+      "followUps": [
+        "How do changes in ocean temperature alter acoustic speed in the SOFAR layer?",
+        "Can slow-slip seismic events accurately predict catastrophic megathrust ruptures?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-22T08:34:18.896Z",
+      "enrichedAt": "2026-11-22T08:34:18.896Z"
+    },
     {
       "id": "curio_gen_e38c8b25af57",
       "schemaVersion": 1,
