@@ -1,10 +1,284 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-21T15:50:57.757Z",
+  "generatedAt": "2026-11-22T01:29:07.182Z",
   "generator": "gemini-textual-feed",
   "model": "gemini-flash-latest",
-  "itemCount": 37,
+  "itemCount": 41,
   "items": [
+    {
+      "id": "curio_gen_e38c8b25af57",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Quantum Odor Theory",
+      "subtitle": "How molecular vibrations might explain the sense of smell",
+      "category": "science",
+      "region": "global",
+      "topics": [
+        "biophysics",
+        "neuroscience",
+        "olfaction",
+        "quantum biology"
+      ],
+      "estimatedDurationSeconds": 160,
+      "source": {
+        "publisher": "Nature",
+        "title": "A spectroscopic mechanism for primary olfactory reception",
+        "url": "https://www.nature.com/",
+        "publishedAt": "2026-11-22T01:29:07.182Z",
+        "retrievedAt": "2026-11-22T01:29:07.182Z"
+      },
+      "summary": "For decades, biology taught that our noses detect scents like keys fitting into locks. But a provocative rival theory suggests our olfactory receptors actually listen to the quantum vibrations of chemical bonds.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The traditional lock-and-key model of olfaction posits that odorant molecules bind to receptors whose physical contours match their shape. Yet chemists have long been puzzled by molecules with almost identical 3D geometries that smell entirely distinct, while radically different molecular structures can produce indistinguishable scents, such as bitter almond."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Heavy Hydrogen Experiment",
+          "text": "Fruit flies can distinguish normal acetophenone from a version where hydrogen atoms are replaced with heavier deuterium. Chemically and structurally identical in shape, the molecules differ only in the frequency at which their atomic bonds vibrate."
+        },
+        {
+          "type": "paragraph",
+          "text": "Known as inelastic electron tunneling spectroscopy, the quantum theory argues that when an odorant enters a receptor, an electron hops across the molecule only if the bond vibrations match a specific energy quantum, triggering the neural impulse that our brain interprets as a smell."
+        },
+        {
+          "type": "quiz",
+          "question": "What atomic substitute is typically used in tests to change a molecule's vibration without altering its geometric shape?",
+          "options": [
+            "Deuterium",
+            "Carbon-14",
+            "Tritium"
+          ],
+          "correctOptionIndex": 0,
+          "explanation": "Deuterium doubles the mass of regular hydrogen without altering the electron shell configuration, shifting bond vibration frequencies while preserving structural shape."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Quantum Odor Theory editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#3B4F75"
+      },
+      "followUps": [
+        "How do avian magnetic compasses rely on quantum entanglement?",
+        "What are the major remaining criticisms of vibrational olfaction?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-22T01:29:07.182Z",
+      "enrichedAt": "2026-11-22T01:29:07.182Z"
+    },
+    {
+      "id": "curio_gen_398eca83c36f",
+      "schemaVersion": 1,
+      "contentType": "short_story",
+      "cardVariant": "article",
+      "title": "The Magnetic Core Memory of Apollo",
+      "subtitle": "The hand-woven rope that guided humans to the Moon",
+      "category": "technology",
+      "region": "global",
+      "topics": [
+        "computing history",
+        "space exploration",
+        "hardware architecture"
+      ],
+      "estimatedDurationSeconds": 140,
+      "source": {
+        "publisher": "Smithsonian National Air and Space Museum",
+        "title": "Apollo Guidance Computer and Core Rope Memory",
+        "url": "https://airandspace.si.edu/",
+        "publishedAt": "2026-11-22T01:29:07.182Z",
+        "retrievedAt": "2026-11-22T01:29:07.182Z"
+      },
+      "summary": "Before silicon microchips dominated computing, the Apollo Guidance Computer stored its entire flight operating system inside physical copper wires manually threaded through tiny magnetic doughnuts.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In the mid-1960s, NASA needed flight software that was completely immune to power drops, radiation, and vibration. Engineers turned to core rope memory, a form of read-only storage where programs were literally woven by hand into physical space."
+        },
+        {
+          "type": "timeline",
+          "heading": "The Evolution of Core Memory",
+          "events": [
+            {
+              "year": "1951",
+              "title": "Magnetic Core Invented",
+              "detail": "An Wang and Jay Forrester pioneer magnetic-core RAM using tiny ferrite rings threaded on wire grids."
+            },
+            {
+              "year": "1966",
+              "title": "Rope Memory Weaving",
+              "detail": "Textile workers at Raytheon, nicknamed LOLs for Little Old Ladies, hand-thread wires through ferrite cores to code Apollo software."
+            },
+            {
+              "year": "1969",
+              "title": "Apollo 11 Touchdown",
+              "detail": "The guidance computer survives high-priority radar overloads during descent because its core rope operating system cannot be erased."
+            }
+          ]
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Physical Code",
+          "points": [
+            "A wire threaded through a ring represented a binary 1, while a wire bypassing the ring represented a binary 0.",
+            "Because the data was hardwired into copper and ceramic rings, it was entirely non-volatile and impossible to corrupt through software crashes."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Magnetic Core Memory of Apollo editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#2563EB"
+      },
+      "followUps": [
+        "How did Margaret Hamilton test the Apollo guidance code?",
+        "Why did magnetic core memory eventually lose out to DRAM?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-22T01:29:07.182Z",
+      "enrichedAt": "2026-11-22T01:29:07.182Z"
+    },
+    {
+      "id": "curio_gen_34c04ea28534",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Floating Gardens of Inle Lake",
+      "subtitle": "How the Intha people build productive farmland on deep water",
+      "category": "travel_food",
+      "region": "global",
+      "topics": [
+        "indigenous agriculture",
+        "geography",
+        "food culture",
+        "myanmar"
+      ],
+      "estimatedDurationSeconds": 150,
+      "source": {
+        "publisher": "National Geographic",
+        "title": "The Floating Agriculture of Inle Lake",
+        "url": "https://www.nationalgeographic.com/",
+        "publishedAt": "2026-11-22T01:29:07.182Z",
+        "retrievedAt": "2026-11-22T01:29:07.182Z"
+      },
+      "summary": "High in the Shan Hills of Myanmar, an entire agricultural community grows commercial crops on buoyant islands woven from weeds, mud, and bamboo stakes.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Inle Lake sits at roughly 900 meters above sea level, surrounded by steep mountains that leave little flat land for farming. To survive, the indigenous Intha people devised a hydroponic agricultural system known as 'ye-chan'—floating garden beds that rise and fall with annual monsoon tides."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Weed Raft Secret",
+          "text": "The foundation of every garden is a thick layer of naturally tangled water hyacinth roots cut from marshy fringes. Dried, matted, and topped with nutrient-dense silt dredged from the lake bottom, these rafts can bear the full weight of an adult harvester."
+        },
+        {
+          "type": "paragraph",
+          "text": "Farmers anchor these buoyant strips to the lakebed using towering poles of green bamboo. Because the roots absorb moisture and dissolved nutrients continuously from below, crops like heirloom tomatoes, eggplants, and chilies thrive without supplemental irrigation systems."
+        },
+        {
+          "type": "comparison",
+          "heading": "Lake Farming vs. Conventional Terracing",
+          "leftTitle": "Floating Gardens (Ye-chan)",
+          "rightTitle": "Shan Hill Terraces",
+          "leftPoints": [
+            "Immune to seasonal drought and topsoil erosion",
+            "Continuous natural moisture wicking from the lake",
+            "Harvested exclusively from wooden canoes"
+          ],
+          "rightPoints": [
+            "Highly dependent on seasonal rainfall cycles",
+            "Vulnerable to hillside runoff and soil leaching",
+            "Labor-intensive slope maintenance"
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Floating Gardens of Inle Lake editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#0F766E"
+      },
+      "followUps": [
+        "How do Intha fishermen row with their legs instead of their hands?",
+        "What ecological threats do water hyacinth blooms pose to Inle Lake?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-22T01:29:07.182Z",
+      "enrichedAt": "2026-11-22T01:29:07.182Z"
+    },
+    {
+      "id": "curio_gen_40a864b5d103",
+      "schemaVersion": 1,
+      "contentType": "quick_bite",
+      "cardVariant": "interactive_feature",
+      "title": "The Global Standard of the Musical Pitch A440",
+      "subtitle": "The fierce acoustic politics behind concert pitch",
+      "category": "facts",
+      "region": "global",
+      "topics": [
+        "music history",
+        "acoustics",
+        "physics",
+        "international standards"
+      ],
+      "estimatedDurationSeconds": 110,
+      "source": {
+        "publisher": "Encyclopaedia Britannica",
+        "title": "Concert Pitch and Standard Frequencies",
+        "url": "https://www.britannica.com/",
+        "publishedAt": "2026-11-22T01:29:07.182Z",
+        "retrievedAt": "2026-11-22T01:29:07.182Z"
+      },
+      "summary": "Every symphony orchestra tunes to the exact same concert pitch: A above middle C at 440 Hz. But this harmony is a modern invention created to resolve centuries of chaotic instrument inflation.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Prior to the 20th century, there was no worldwide consensus for what note was which. In the Baroque era, a note designated as 'A' could fluctuate anywhere between 400 and 460 Hz depending on the town church organ or whether brass instruments were warmed up by stage lights."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "Pitch Inflation",
+          "text": "Throughout the 19th century, instrument makers deliberately tuned their pianos and strings sharper and sharper because brighter, higher frequencies sounded more brilliant and dramatic in newly built grand concert halls, straining singers' vocal cords in the process."
+        },
+        {
+          "type": "paragraph",
+          "text": "The international standardization to 440 Hz was formally recommended at an international conference in London in 1939 and codified by the International Organization for Standardization (ISO) in 1955, finally allowing touring musicians to play anywhere in the world without drastic retuning."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Global Standard of the Musical Pitch A440 editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#B45309"
+      },
+      "followUps": [
+        "Why do some modern European orchestras still tune higher to 442 or 443 Hz?",
+        "What was Verdi's scientific pitch of 432 Hz?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-22T01:29:07.182Z",
+      "enrichedAt": "2026-11-22T01:29:07.182Z"
+    },
     {
       "id": "curio_gen_68521ff3a693",
       "schemaVersion": 1,

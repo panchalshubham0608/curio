@@ -1,10 +1,83 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-21T21:24:04.078Z",
+  "generatedAt": "2026-11-22T01:29:37.569Z",
   "generator": "gemini-textual-puzzles",
   "model": "gemini-flash-latest",
-  "itemCount": 43,
+  "itemCount": 46,
   "items": [
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_cea23341b612",
+      "kind": "odd_one_out",
+      "title": "Noble Gas Disrupter",
+      "category": "science",
+      "difficulty": "Warm-up",
+      "prompt": "Which of these chemical elements does not belong with the others?",
+      "hint": "Consider their periodic table group classification.",
+      "options": [
+        "Argon",
+        "Neon",
+        "Nitrogen",
+        "Krypton"
+      ],
+      "correctIndex": 2,
+      "explanation": "Argon, Neon, and Krypton are inert noble gases found in Group 18 of the periodic table, whereas Nitrogen is a diatomic nonmetal in Group 15.",
+      "origin": "ai",
+      "createdAt": "2026-11-22T01:29:37.569Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_0824b058f8e9",
+      "kind": "order_sequence",
+      "title": "Chronology of Communication",
+      "category": "technology",
+      "difficulty": "Clever",
+      "prompt": "Arrange these groundbreaking communication technologies in chronological order of their invention/introduction, from earliest to latest.",
+      "orderItems": [
+        "Radio communication",
+        "Electric telegraph",
+        "Telephone",
+        "ARPANET"
+      ],
+      "correctOrder": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "hint": "Electric telegraph came before the acoustic telephone.",
+      "explanation": "The electric telegraph emerged in the 1830s-1840s, Alexander Graham Bell patented the telephone in 1876, Marconi demonstrated practical radio in 1895, and ARPANET debuted in 1969.",
+      "origin": "ai",
+      "createdAt": "2026-11-22T01:29:37.569Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_6bc7da9b5533",
+      "kind": "pattern_sequence",
+      "title": "Cubic Prime Shift",
+      "category": "science",
+      "difficulty": "Tricky",
+      "prompt": "Identify the logical pattern governing the sequence and determine the missing final number.",
+      "sequenceItems": [
+        "2",
+        "10",
+        "30",
+        "68",
+        "130",
+        "?"
+      ],
+      "hint": "Consider the relationship between consecutive cubes (n^3) and small integer adjustments.",
+      "options": [
+        "196",
+        "216",
+        "222",
+        "240"
+      ],
+      "correctIndex": 2,
+      "explanation": "The terms follow the formula n³ + n for n = 1, 2, 3, 4, 5, 6: 1+1=2, 8+2=10, 27+3=30, 64+4=68, 125+5=130, and 216+6=222.",
+      "origin": "ai",
+      "createdAt": "2026-11-22T01:29:37.569Z"
+    },
     {
       "schemaVersion": 1,
       "id": "puz_ai_66121d378667",
