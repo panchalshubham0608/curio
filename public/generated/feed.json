@@ -1,10 +1,281 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-23T11:40:26.900Z",
+  "generatedAt": "2026-11-23T23:09:18.632Z",
   "generator": "gemini-textual-feed",
   "model": "gemini-flash-latest",
-  "itemCount": 57,
+  "itemCount": 61,
   "items": [
+    {
+      "id": "curio_gen_96b9932c71a0",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Ultradian Rhythm and the 90-Minute Focus Boundary",
+      "subtitle": "Why your brain naturally downshifts into daydreaming every hour and a half",
+      "category": "growth",
+      "region": "global",
+      "topics": [
+        "neuroscience",
+        "productivity",
+        "sleep science",
+        "cognitive energy"
+      ],
+      "estimatedDurationSeconds": 135,
+      "source": {
+        "publisher": "Scientific American",
+        "title": "The Secret Rhythms of Daytime Focus",
+        "url": "https://www.scientificamerican.com/",
+        "publishedAt": "2026-11-23T23:09:18.632Z",
+        "retrievedAt": "2026-11-23T23:09:18.632Z"
+      },
+      "summary": "Our alertness operates on cyclical biological rhythms known as Basic Rest-Activity Cycles, meaning focus peaks and dips roughly every 90 minutes throughout the day.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In the 1950s, sleep pioneer Nathaniel Kleitman noticed something peculiar: the 90-minute Rapid Eye Movement sleep cycle did not vanish when subjects opened their eyes. Instead, our daytime physiology follows the exact same ultradian rhythm. Every 80 to 120 minutes, your brain shifts from peak cognitive alertness to an inevitable valley characterized by restless limb movements, mild hunger, and roving attention."
+        },
+        {
+          "type": "comparison",
+          "heading": "Peak Phase vs. Recovery Valley",
+          "leftTitle": "High Alertness Phase",
+          "rightTitle": "Ultradian Healing Phase",
+          "leftPoints": [
+            "Beta brain waves dominate active reasoning",
+            "Optimal prefrontal cortex inhibition and willpower",
+            "Elevated heart rate and metabolic throughput"
+          ],
+          "rightPoints": [
+            "Alpha and theta brain waves rise, inducing daydreaming",
+            "Cellular repair, neurotransmitter replenishment, and memory consolidation",
+            "Physical signals: eye rubbing, sighing, and sudden snack cravings"
+          ]
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Harnessing the Natural Tide",
+          "points": [
+            "Pushing through the slump spikes stress hormones like cortisol, causing brain fog later.",
+            "A genuine 15-minute disengagement resets alertness far more effectively than an extra shot of caffeine."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Ultradian Rhythm and the 90-Minute Focus Boundary editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#2D6A4F"
+      },
+      "followUps": [
+        "How do circadian rhythms differ from ultradian cycles?",
+        "Does eye-movement velocity reflect cognitive fatigue?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-23T23:09:18.632Z",
+      "enrichedAt": "2026-11-23T23:09:18.632Z"
+    },
+    {
+      "id": "curio_gen_4acfeefa9c8e",
+      "schemaVersion": 1,
+      "contentType": "short_story",
+      "cardVariant": "article",
+      "title": "The Lost Roman Concrete Recipe of Caesarea Maritima",
+      "subtitle": "How volcanic ash and seawater forged harbor piers that grew stronger over millennia",
+      "category": "history",
+      "region": "global",
+      "topics": [
+        "archaeology",
+        "ancient rome",
+        "materials science",
+        "engineering"
+      ],
+      "estimatedDurationSeconds": 150,
+      "source": {
+        "publisher": "Smithsonian Magazine",
+        "title": "The Secret to Roman Concrete's Longevity",
+        "url": "https://www.smithsonianmag.com/",
+        "publishedAt": "2026-11-23T23:09:18.632Z",
+        "retrievedAt": "2026-11-23T23:09:18.632Z"
+      },
+      "summary": "King Herod built the colossal open-sea port of Caesarea Maritima using pozzolanic concrete that chemically crystallized when submerged in marine waters.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Constructed along a straight, inhospitable strip of Mediterranean coastline around 10 BCE, the artificial port of Sebastos at Caesarea Maritima was deemed an engineering impossibility. Herod the Great solved the problem by importing tens of thousands of tons of volcanic ash from the slopes of Mount Vesuvius in Italy, packing it into gigantic wooden caissons sunk directly into the churning sea."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "Self-Healing Stone",
+          "text": "Unlike modern Portland cement, which degrades in saltwater, Roman marine concrete reacted with ocean minerals to grow rare crystals of aluminium tobermorite, interlocking the aggregate tighter over centuries."
+        },
+        {
+          "type": "quiz",
+          "question": "What primary Italian volcanic material gave Roman underwater concrete its legendary durability?",
+          "options": [
+            "Pozzolana ash",
+            "Pumice stone",
+            "Obsidian glass"
+          ],
+          "correctOptionIndex": 0,
+          "explanation": "Pozzolana ash from Pozzuoli contained reactive silica and alumina that chemically bound with slaked lime and seawater to form rock-hard mortar."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Lost Roman Concrete Recipe of Caesarea Maritima editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#7C2D12"
+      },
+      "followUps": [
+        "Can modern sea walls adopt ancient Roman pozzolanic recipes?",
+        "How were the immense wooden caissons positioned underwater?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-23T23:09:18.632Z",
+      "enrichedAt": "2026-11-23T23:09:18.632Z"
+    },
+    {
+      "id": "curio_gen_5ba71ea2e69f",
+      "schemaVersion": 1,
+      "contentType": "quick_bite",
+      "cardVariant": "interactive_feature",
+      "title": "The Great Butter Rebellion of 1766",
+      "subtitle": "The student uprising over rancid breakfast spreads that nearly shut down Harvard",
+      "category": "humour",
+      "region": "global",
+      "topics": [
+        "odd history",
+        "culinary disasters",
+        "american history",
+        "student pranks"
+      ],
+      "estimatedDurationSeconds": 105,
+      "source": {
+        "publisher": "Harvard Magazine",
+        "title": "Our Butter Stinketh",
+        "url": "https://www.harvardmagazine.com/",
+        "publishedAt": "2026-11-23T23:09:18.632Z",
+        "retrievedAt": "2026-11-23T23:09:18.632Z"
+      },
+      "summary": "In 1766, Harvard University witnessed the first recorded collegiate protest in North America, sparked entirely by bad butter.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Before the Boston Tea Party, colonial Massachusetts witnessed a revolt over a different breakfast staple: rancid butter. In September 1766, Harvard undergraduate Asa Dunbar, grandfather of writer Henry David Thoreau, stood up atop a dining bench in Harvard Hall and declared to the assembled administration: 'Behold, our butter stinketh! Give us, therefore, butter that stinketh not.'"
+        },
+        {
+          "type": "timeline",
+          "heading": "The Churned Escalation",
+          "events": [
+            {
+              "year": "September 1766",
+              "title": "The Dining Hall Walkout",
+              "detail": "Dunbar leads half the student body into the yard after tutors refuse to replace foul casks."
+            },
+            {
+              "year": "October 1766",
+              "title": "Colonial Board Intervention",
+              "detail": "The Board of Overseers suspends the protestors, demanding written confessions of insubordination."
+            },
+            {
+              "year": "November 1766",
+              "title": "The Tallow Truce",
+              "detail": "Parents back the rebellious scholars, forcing the college treasurer to inspect local dairy suppliers."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "The rebellion concluded only after the administration capitulated and instituted formal inspections for all incoming dining goods, immortalizing Asa Dunbar in Harvard lore."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Great Butter Rebellion of 1766 editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#9333EA"
+      },
+      "followUps": [
+        "Did Asa Dunbar's protest inspire other colonial protests?",
+        "How were perishables preserved in 18th-century universities?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-23T23:09:18.632Z",
+      "enrichedAt": "2026-11-23T23:09:18.632Z"
+    },
+    {
+      "id": "curio_gen_7f559efb934f",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Synthetic Diamond Seismic Sensors of 2026",
+      "subtitle": "Sub-atomic crystal defects turn everyday lab gems into ultra-sensitive earthquake detectors",
+      "category": "news",
+      "region": "global",
+      "topics": [
+        "quantum technology",
+        "geophysics",
+        "materials science",
+        "seismology"
+      ],
+      "estimatedDurationSeconds": 140,
+      "source": {
+        "publisher": "Nature Materials",
+        "title": "Quantum Sensing of Earth's Crustal Strain",
+        "url": "https://www.nature.com/",
+        "publishedAt": "2026-11-23T23:09:18.632Z",
+        "retrievedAt": "2026-11-23T23:09:18.632Z"
+      },
+      "summary": "Researchers have deployed nitrogen-vacancy center diamond magnetometers along oceanic subduction zones to monitor tectonic strain with unprecedented precision.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Predicting the exact moment deep tectonic faults unlock has eluded seismologists for generations. Traditional strainmeters drift over time and struggle against extreme crustal pressures. A new class of sensors built from lab-grown diamonds, however, utilizes quantum-level vacancies to detect the faint magnetic shifts caused by rocks grinding under stress miles beneath the seabed."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "Atomic Scale Sensitivity",
+          "text": "By replacing two carbon atoms in the diamond crystal lattice with a single nitrogen atom and a void, the mineral fluoresces under green laser light, shifting color when subjected to minute mechanical strains."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Why Diamonds Change Geophysics",
+          "points": [
+            "Impervious to caustic deep-sea borehole fluids and extreme pressure.",
+            "Can measure micro-tesla magnetic disturbances generated by piezomagnetic rock friction.",
+            "Eliminates sensor drift, allowing decades-long continuous plate boundary monitoring."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Synthetic Diamond Seismic Sensors of 2026 editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#C84B31"
+      },
+      "followUps": [
+        "What is the piezomagnetic effect in fault zones?",
+        "Can quantum diamond sensors be miniaturized for handheld use?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-23T23:09:18.632Z",
+      "enrichedAt": "2026-11-23T23:09:18.632Z"
+    },
     {
       "id": "curio_gen_a8f46217c99d",
       "schemaVersion": 1,

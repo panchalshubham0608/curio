@@ -1,10 +1,129 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-23T11:41:02.559Z",
+  "generatedAt": "2026-11-23T23:09:52.284Z",
   "generator": "gemini-textual-puzzles",
   "model": "gemini-flash-latest",
   "itemCount": 48,
   "items": [
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_0817a88bbaae",
+      "kind": "interactive_grid",
+      "title": "Quantum Relay Alignment",
+      "category": "technology",
+      "difficulty": "Clever",
+      "prompt": "Select exactly 3 nodes whose values sum up to precisely 42 to balance the quantum relay.",
+      "gridPuzzle": {
+        "mode": "target_sum",
+        "rows": 3,
+        "cols": 3,
+        "instruction": "Select exactly 3 cells that add up to 42.",
+        "cells": [
+          {
+            "label": "23",
+            "value": 23,
+            "initialOn": false
+          },
+          {
+            "label": "15",
+            "value": 15,
+            "initialOn": false
+          },
+          {
+            "label": "4",
+            "value": 4,
+            "initialOn": false
+          },
+          {
+            "label": "11",
+            "value": 11,
+            "initialOn": false
+          },
+          {
+            "label": "19",
+            "value": 19,
+            "initialOn": false
+          },
+          {
+            "label": "14",
+            "value": 14,
+            "initialOn": false
+          },
+          {
+            "label": "7",
+            "value": 7,
+            "initialOn": false
+          },
+          {
+            "label": "8",
+            "value": 8,
+            "initialOn": false
+          },
+          {
+            "label": "12",
+            "value": 12,
+            "initialOn": false
+          }
+        ],
+        "targetSum": 42,
+        "exactCount": 3,
+        "goalState": "all_on",
+        "solutionIndices": [
+          0,
+          3,
+          7
+        ]
+      },
+      "hint": "Start by pairing the largest value with smaller complements.",
+      "explanation": "Selecting 23, 11, and 8 gives exactly 42 (23 + 11 + 8 = 42). No other combination of 3 cells equals 42.",
+      "origin": "ai",
+      "createdAt": "2026-11-23T23:09:52.284Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_700170272b69",
+      "kind": "logic_reasoning",
+      "title": "Deep Sea Submersible Roster",
+      "category": "science",
+      "difficulty": "Clever",
+      "prompt": "Four marine scientists—Aria, Ben, Cora, and Dan—are assigned to distinct depth zones: Bathyal, Abyssal, Hadal, and Epipelagic. Who explored the Hadal trench?",
+      "clues": [
+        "1. Aria dived deeper than Cora, but Ben stayed in the shallowest sunlit zone (Epipelagic).",
+        "2. Dan's depth was directly above Cora's Abyssal zone.",
+        "3. The Hadal trench is the deepest of all four zones."
+      ],
+      "hint": "Cora did not dive the deepest or the shallowest.",
+      "options": [
+        "Ben",
+        "Dan",
+        "Cora",
+        "Aria"
+      ],
+      "correctIndex": 3,
+      "explanation": "Dan took Bathyal, Cora took Abyssal, Aria took the deepest zone (Hadal), and Ben was assigned Epipelagic.",
+      "origin": "ai",
+      "createdAt": "2026-11-23T23:09:52.284Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_06bae8ae3b36",
+      "kind": "odd_one_out",
+      "title": "Culinary Spice Anomaly",
+      "category": "travel_food",
+      "difficulty": "Warm-up",
+      "prompt": "Identify the spice that does not belong with the others based on its botanical origin.",
+      "hint": "Think about which part of the plant each spice is harvested from.",
+      "options": [
+        "Clove",
+        "Cinnamon",
+        "Saffron",
+        "Caper"
+      ],
+      "correctIndex": 1,
+      "explanation": "Cinnamon is harvested from the inner bark of a tree, whereas cloves, capers, and saffron are all derived from flower buds or floral stigmas.",
+      "origin": "ai",
+      "createdAt": "2026-11-23T23:09:52.284Z"
+    },
     {
       "schemaVersion": 1,
       "id": "puz_ai_6024c346ef17",
@@ -1981,126 +2100,6 @@
       ],
       "correctIndex": 2,
       "explanation": "A complete circle measures 360 degrees. Subtracting 150 degrees and 125 degrees leaves exactly 85 degrees for theta.",
-      "origin": "ai",
-      "createdAt": "2026-11-19T09:05:19.735Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_53b390c67f2a",
-      "kind": "interactive_grid",
-      "title": "Quantum Reactor Cells",
-      "category": "technology",
-      "difficulty": "Clever",
-      "prompt": "Select exactly 3 power cells that combine to reach a total output of 50 megawatts.",
-      "gridPuzzle": {
-        "mode": "target_sum",
-        "rows": 3,
-        "cols": 3,
-        "instruction": "Select exactly 3 cells that sum to 50",
-        "cells": [
-          {
-            "label": "23",
-            "value": 23,
-            "initialOn": false
-          },
-          {
-            "label": "14",
-            "value": 14,
-            "initialOn": false
-          },
-          {
-            "label": "17",
-            "value": 17,
-            "initialOn": false
-          },
-          {
-            "label": "11",
-            "value": 11,
-            "initialOn": false
-          },
-          {
-            "label": "19",
-            "value": 19,
-            "initialOn": false
-          },
-          {
-            "label": "25",
-            "value": 25,
-            "initialOn": false
-          },
-          {
-            "label": "16",
-            "value": 16,
-            "initialOn": false
-          },
-          {
-            "label": "12",
-            "value": 12,
-            "initialOn": false
-          },
-          {
-            "label": "8",
-            "value": 8,
-            "initialOn": false
-          }
-        ],
-        "targetSum": 50,
-        "exactCount": 3,
-        "goalState": "all_on",
-        "solutionIndices": [
-          0,
-          4,
-          8
-        ]
-      },
-      "hint": "Look for two large double-digit numbers that leave an easy remainder.",
-      "explanation": "Selecting 23, 19, and 8 gives 23 + 19 + 8 = 50 megawatts.",
-      "origin": "ai",
-      "createdAt": "2026-11-19T09:05:19.735Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_70f456268189",
-      "kind": "lateral_riddle",
-      "title": "The Weightless Pocket",
-      "category": "humour",
-      "difficulty": "Warm-up",
-      "prompt": "I can fill an entire room without occupying any physical space, and the more of me you take away, the darker things become. What am I?",
-      "hint": "Switch me on when evening falls.",
-      "options": [
-        "Sound",
-        "Light",
-        "Smoke",
-        "Warmth"
-      ],
-      "correctIndex": 1,
-      "explanation": "Light fills a room completely without displacing any physical mass or volume.",
-      "origin": "ai",
-      "createdAt": "2026-11-19T09:05:19.735Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_19c7db6bb9dc",
-      "kind": "logic_reasoning",
-      "title": "The Diplomatic Summit",
-      "category": "facts",
-      "difficulty": "Tricky",
-      "prompt": "Four ambassadors (A, B, C, D) sit in a row facing north. Deduce who sits in the third position from the left.",
-      "clues": [
-        "1. Ambassador D sits on one of the extreme ends.",
-        "2. Ambassador B sits exactly one seat to the right of Ambassador C.",
-        "3. Ambassador A is not sitting next to Ambassador C.",
-        "4. Ambassador D sits to the right of Ambassador A."
-      ],
-      "hint": "Place D at the extreme end first, then position B and C.",
-      "options": [
-        "Ambassador A",
-        "Ambassador B",
-        "Ambassador C",
-        "Ambassador D"
-      ],
-      "correctIndex": 0,
-      "explanation": "D must sit on an extreme end; placing D at seat 4 allows B at seat 2 and C immediately to B's left at seat 1, leaving seat 3 for A.",
       "origin": "ai",
       "createdAt": "2026-11-19T09:05:19.735Z"
     }
