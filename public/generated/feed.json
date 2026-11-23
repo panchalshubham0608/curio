@@ -1,10 +1,289 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-23T02:56:48.547Z",
+  "generatedAt": "2026-11-23T11:40:26.900Z",
   "generator": "gemini-textual-feed",
   "model": "gemini-flash-latest",
-  "itemCount": 53,
+  "itemCount": 57,
   "items": [
+    {
+      "id": "curio_gen_a8f46217c99d",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Deep Secrets of Oklo's Natural Nuclear Reactor",
+      "subtitle": "Two billion years ago, Earth built its own subterranean atomic furnaces without human hands.",
+      "category": "science",
+      "region": "global",
+      "topics": [
+        "nuclear physics",
+        "geology",
+        "prehistory",
+        "isotopes"
+      ],
+      "estimatedDurationSeconds": 150,
+      "source": {
+        "publisher": "Scientific American",
+        "title": "The Workings of an Ancient Nuclear Reactor",
+        "url": "https://www.scientificamerican.com/",
+        "publishedAt": "2026-11-23T11:40:26.900Z",
+        "retrievedAt": "2026-11-23T11:40:26.900Z"
+      },
+      "summary": "In Gabon, French physicists discovered prehistoric uranium deposits that once sustained self-moderated nuclear fission reactions over hundreds of thousands of years.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In 1972, analysts at the Pierrelatte uranium enrichment facility in France noticed a discrepancy in a routine ore sample originating from the Oklo mine in Gabon. Standard natural uranium across Earth, the Moon, and meteorites invariably contains exactly 0.720 percent of the fissionable isotope uranium-235. The Oklo sample measured only 0.717 percent. That tiny shortfall triggered fears of clandestine fuel extraction, but isotopic detective work soon proved something far stranger: the deposit had already undergone nuclear fission roughly two billion years in the past."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Geological Thermostat",
+          "text": "The ancient reactors did not melt down because natural groundwater served as both a moderator and a self-regulating coolant. As fission heated the water into steam, the lack of liquid slowed the neutrons down, turning the reactor off until the rock cooled, reabsorbed groundwater, and fired up again on a continuous three-hour cycle."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Why Oklo Mattered to Modern Science",
+          "points": [
+            "Natural conditions two billion years ago featured an ambient uranium-235 concentration of roughly 3 percent, mirroring modern low-enriched commercial reactor fuel.",
+            "Insoluble fission products like plutonium, ruthenium, and neodymium migrated less than a single centimeter over two billion years, providing crucial evidence for deep geological nuclear waste disposal.",
+            "Measurements of samarium isotopes at Oklo have placed the world's tightest historical limits on the constancy of the fine-structure constant over cosmological time."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Deep Secrets of Oklo's Natural Nuclear Reactor editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#3B4F75"
+      },
+      "followUps": [
+        "Could another natural reactor form anywhere on Earth today?",
+        "How do physicists measure the fine-structure constant using ancient rocks?",
+        "What other unusual geological phenomena mimic modern engineering?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-23T11:40:26.900Z",
+      "enrichedAt": "2026-11-23T11:40:26.900Z"
+    },
+    {
+      "id": "curio_gen_75a8d4c30aff",
+      "schemaVersion": 1,
+      "contentType": "short_story",
+      "cardVariant": "article",
+      "title": "The Strange Acoustic Survival of Delay-Line Memory",
+      "subtitle": "Before silicon chips, early supercomputers stored volatile thoughts as physical soundwaves rippling through pools of warm mercury.",
+      "category": "technology",
+      "region": "global",
+      "topics": [
+        "computing history",
+        "acoustics",
+        "materials science",
+        "computer architecture"
+      ],
+      "estimatedDurationSeconds": 140,
+      "source": {
+        "publisher": "IEEE Spectrum",
+        "title": "Mercury Delay-Line Memory: The Sonic Core of Early Computers",
+        "url": "https://spectrum.ieee.org/",
+        "publishedAt": "2026-11-23T11:40:26.900Z",
+        "retrievedAt": "2026-11-23T11:40:26.900Z"
+      },
+      "summary": "Pioneering computers like UNIVAC I stored live binary code by converting electrical pulses into physical ultrasonic vibrations pulsing through long tubes of liquid metal.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Before the invention of magnetic core memory or silicon microchips, early computer engineers faced a brutal bottleneck: how could a machine hold ephemeral calculations in memory between processing cycles? In the late 1940s, British engineer J. Presper Eckert adapted radar delay technology into a computing solution. Engineers built five-foot steel tanks filled with liquid mercury, tipped with quartz crystals at either end, transforming volatile binary bits into physical acoustic waves."
+        },
+        {
+          "type": "comparison",
+          "heading": "Data Storage Paradigm: 1951 vs Modern Day",
+          "leftTitle": "UNIVAC I Mercury Delay Tank (1951)",
+          "rightTitle": "Modern L3 CPU Cache (2025)",
+          "leftPoints": [
+            "Stored bits as acoustic sound pulses travel-time delayed in liquid mercury",
+            "Latency of roughly 200 to 400 microseconds per cycle",
+            "Required strict temperature control to prevent shifts in the speed of sound"
+          ],
+          "rightPoints": [
+            "Stores bits through nanoscale flip-flop transistor circuits",
+            "Latency of approximately 10 to 15 nanoseconds",
+            "Functions reliably across broad thermal operating ranges"
+          ]
+        },
+        {
+          "type": "quiz",
+          "question": "Why did engineers choose liquid mercury specifically over water or oil for acoustic delay lines?",
+          "options": [
+            "Mercury has an acoustic impedance nearly identical to quartz crystals, minimizing signal echo",
+            "Mercury is completely non-conductive to high-voltage electric sparks",
+            "Mercury allowed sound to travel faster than the speed of light in glass"
+          ],
+          "correctOptionIndex": 0,
+          "explanation": "Mercury's mechanical impedance closely matched that of the quartz piezoelectric transducers, which prevented sound waves from bouncing backward and creating destructive acoustic ghosting."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Strange Acoustic Survival of Delay-Line Memory editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#2563EB"
+      },
+      "followUps": [
+        "How did magnetostrictive wire delay lines replace mercury systems?",
+        "What were the health hazards faced by early computer operators maintaining mercury tanks?",
+        "How did the invention of magnetic core memory transform computing form-factors?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-23T11:40:26.900Z",
+      "enrichedAt": "2026-11-23T11:40:26.900Z"
+    },
+    {
+      "id": "curio_gen_6a1b200a01cb",
+      "schemaVersion": 1,
+      "contentType": "short_story",
+      "cardVariant": "article",
+      "title": "The Subterranean Kwevri of Kakheti",
+      "subtitle": "Eight thousand years of continuous Georgian viticulture buried beneath earthen cellar floors.",
+      "category": "travel_food",
+      "region": "global",
+      "topics": [
+        "wine culture",
+        "georgia",
+        "archaeology",
+        "culinary history"
+      ],
+      "estimatedDurationSeconds": 130,
+      "source": {
+        "publisher": "National Geographic",
+        "title": "Roots of the Grapevine: Georgia's 8,000-Year-Old Clay Vessels",
+        "url": "https://www.nationalgeographic.com/",
+        "publishedAt": "2026-11-23T11:40:26.900Z",
+        "retrievedAt": "2026-11-23T11:40:26.900Z"
+      },
+      "summary": "In the Caucasus foothills, winemakers ferment intact crushed grapes inside beeswax-sealed clay amphorae buried deep underground, producing amber wines unchanged since the Neolithic era.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Across the rolling valleys of Kakheti in eastern Georgia, winemaking does not center around oak barrels or stainless steel vats. Instead, the process takes place in the earth itself inside gigantic, egg-shaped clay vessels called kwevri. Hand-coiled from alluvial clay, lined with pure beeswax, and buried up to their necks beneath stone cellar floors, these subterranean vessels have preserved an unbroken winemaking lineage stretching back over 8,000 years."
+        },
+        {
+          "type": "timeline",
+          "heading": "Evolution of the World's Oldest Winemaking Vessel",
+          "events": [
+            {
+              "year": "6000 BCE",
+              "title": "Neolithic Residue at Gadachrili Gora",
+              "detail": "Clay shards unearthed south of Tbilisi yield tartaric acid residue, marking the world's earliest proven grape fermentation."
+            },
+            {
+              "year": "4th Century CE",
+              "title": "Saint Nino and the Grapevine Cross",
+              "detail": "Christianity arrives in Georgia bound with braids of hair to grapevine stems, enshrining viticulture at the core of national identity."
+            },
+            {
+              "year": "2013",
+              "title": "UNESCO Intangible Cultural Heritage",
+              "detail": "The traditional Georgian method of making wine in kwevri is officially inscribed on UNESCO's representative list."
+            }
+          ]
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Cone of Natural Clarification",
+          "text": "The conical tip at the base of the kwevri naturally collects seeds, skins, and spent yeast. Because only a minuscule surface area of the sediment remains in contact with the clarifying liquid, the wine develops rich amber hues and structural tannins without turning harsh or bitter."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Subterranean Kwevri of Kakheti editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#0F766E"
+      },
+      "followUps": [
+        "Why is orange wine technically classified as skin-contact white wine?",
+        "How do master artisans build a two-ton clay kwevri by hand without a wheel?",
+        "What role did beeswax play in preventing bacterial spoilage in ancient food storage?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-23T11:40:26.900Z",
+      "enrichedAt": "2026-11-23T11:40:26.900Z"
+    },
+    {
+      "id": "curio_gen_fb3198e97265",
+      "schemaVersion": 1,
+      "contentType": "interactive_fact",
+      "cardVariant": "interactive_feature",
+      "title": "The Acoustic Geometry of the 2004 Paris Accordion Law",
+      "subtitle": "How French civil engineers solved subway tunnel micro-earthquakes with medieval ceiling physics.",
+      "category": "facts",
+      "region": "global",
+      "topics": [
+        "urban planning",
+        "civil engineering",
+        "physics",
+        "acoustics"
+      ],
+      "estimatedDurationSeconds": 120,
+      "source": {
+        "publisher": "Smithsonian Magazine",
+        "title": "How Subway Tunnel Designers Tamed the Air Blast",
+        "url": "https://www.smithsonianmag.com/",
+        "publishedAt": "2026-11-23T11:40:26.900Z",
+        "retrievedAt": "2026-11-23T11:40:26.900Z"
+      },
+      "summary": "Subterranean trains entering Paris stations caused ear-popping pressure waves until transit designers borrowed acoustic dampening tricks from 14th-century cathedral archways.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "When underground transit lines modernised to accommodate high-velocity trains, commuters began experiencing painful ear popping and concussive drafts on station platforms. The cause was piston-effect compressibility: a speeding train acts like a mechanical plunger, driving high-pressure air through narrow tunnels until it explosively vents into open stations. In response, subterranean architectural guidelines mandated structural baffles modeled directly on Gothic acoustic dispersal vaults."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Hidden Chamber Trick",
+          "text": "Rather than widening entire tunnels, engineers carve cavernous false ceilings lined with perforated acoustic chambers directly ahead of platforms. These Helmholtz resonators absorb up to 85 percent of the oncoming air compression spike, converting concussive kinetic energy into imperceptible, dispersed warmth."
+        },
+        {
+          "type": "quiz",
+          "question": "What is the engineering term for the sudden air blast forced out of a tunnel portal by an arriving train?",
+          "options": [
+            "The Piston Effect",
+            "The Venturi Surge",
+            "The Bernoulli Backdraft"
+          ],
+          "correctOptionIndex": 0,
+          "explanation": "The piston effect occurs when a moving body displaces air inside a confined cylinder, forcing fluid pressure waves down the tube ahead of it."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Acoustic Geometry of the 2004 Paris Accordion Law editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#B45309"
+      },
+      "followUps": [
+        "How do Japanese bullet trains use kingfisher beak aerodynamics to prevent tunnel booms?",
+        "What are Helmholtz resonators and how do sports cars use them for engine noise?",
+        "How do deep underground metro systems manage air quality without above-ground smog intake?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-23T11:40:26.900Z",
+      "enrichedAt": "2026-11-23T11:40:26.900Z"
+    },
     {
       "id": "curio_gen_f8a65c00a35e",
       "schemaVersion": 1,

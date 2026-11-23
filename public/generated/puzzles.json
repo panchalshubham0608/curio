@@ -1,10 +1,77 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-23T02:57:27.820Z",
+  "generatedAt": "2026-11-23T11:41:02.559Z",
   "generator": "gemini-textual-puzzles",
   "model": "gemini-flash-latest",
   "itemCount": 48,
   "items": [
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_6024c346ef17",
+      "kind": "pattern_sequence",
+      "title": "Vowel Leap Progression",
+      "category": "science",
+      "difficulty": "Clever",
+      "prompt": "Determine the rule governing this sequence of letter pairs and identify the next term.",
+      "sequenceItems": [
+        "AZ",
+        "CY",
+        "FX",
+        "JW",
+        "?"
+      ],
+      "hint": "Track the alphabetical positions of both the first and second letter independently.",
+      "options": [
+        "OV",
+        "NW",
+        "PU",
+        "OV"
+      ],
+      "correctIndex": 0,
+      "explanation": "The first letter advances by increasing increments (+2, +3, +4, +5), moving from J (10) to O (15), while the second letter steps backward by 1 alphabetically (Z, Y, X, W, V).",
+      "origin": "ai",
+      "createdAt": "2026-11-23T11:41:02.559Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_2694ecfcf735",
+      "kind": "lateral_riddle",
+      "title": "The Weightless Burden",
+      "category": "humour",
+      "difficulty": "Warm-up",
+      "prompt": "The more you take away from me, the larger I become. What am I?",
+      "hint": "Think about what remains in the ground when you dig.",
+      "options": [
+        "A hole",
+        "A shadow",
+        "A secret",
+        "A debt"
+      ],
+      "correctIndex": 0,
+      "explanation": "A hole expands in physical size precisely as material is removed from it.",
+      "origin": "ai",
+      "createdAt": "2026-11-23T11:41:02.559Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_e4c4603d4085",
+      "kind": "odd_one_out",
+      "title": "Peninsular Outlier",
+      "category": "travel_food",
+      "difficulty": "Tricky",
+      "prompt": "Which of these world capitals does not share the distinct geographical classification of the other three?",
+      "hint": "Consider which nations are completely surrounded by water versus attached to a continent.",
+      "options": [
+        "Reykjavik",
+        "Tokyo",
+        "Wellington",
+        "Lisbon"
+      ],
+      "correctIndex": 3,
+      "explanation": "Lisbon is the capital of Portugal on mainland Europe, whereas Reykjavik, Tokyo, and Wellington are capitals of island nations.",
+      "origin": "ai",
+      "createdAt": "2026-11-23T11:41:02.559Z"
+    },
     {
       "schemaVersion": 1,
       "id": "puz_ai_caf3031c18b5",
@@ -2036,120 +2103,6 @@
       "explanation": "D must sit on an extreme end; placing D at seat 4 allows B at seat 2 and C immediately to B's left at seat 1, leaving seat 3 for A.",
       "origin": "ai",
       "createdAt": "2026-11-19T09:05:19.735Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_899857a449d4",
-      "kind": "odd_one_out",
-      "title": "Tectonic Outlier",
-      "category": "science",
-      "difficulty": "Warm-up",
-      "prompt": "Identify the geographical feature that does NOT belong with the others based on tectonic origin.",
-      "hint": "Three are formed along divergent or convergent plate boundaries, while one sits over an intraplate hotspot.",
-      "options": [
-        "Hawaiian Archipelago",
-        "Mariana Trench",
-        "Himalayan Mountain Range",
-        "Mid-Atlantic Ridge"
-      ],
-      "correctIndex": 0,
-      "explanation": "The Hawaiian Islands were formed by an intraplate mantle plume hotspot, whereas the Marianas Trench, Himalayas, and Mid-Atlantic Ridge lie along active tectonic plate boundaries.",
-      "origin": "ai",
-      "createdAt": "2026-11-19T09:05:19.735Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_ed4324d77f08",
-      "kind": "odd_one_out",
-      "title": "Metallic Misalignment",
-      "category": "science",
-      "difficulty": "Clever",
-      "prompt": "Which of these metals does NOT belong with the other three based on its state of matter at standard room temperature (20°C / 68°F)?",
-      "hint": "Consider which element is famously a liquid under ambient conditions.",
-      "options": [
-        "Gallium",
-        "Mercury",
-        "Cesium",
-        "Francium"
-      ],
-      "correctIndex": 1,
-      "explanation": "Mercury is the only metal among these that is naturally liquid at standard room temperature (melting point -38.8°C). Gallium, cesium, and francium have near-room melting points but remain solid at 20°C.",
-      "origin": "ai",
-      "createdAt": "2026-11-19T03:55:48.071Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_f9b370871220",
-      "kind": "interactive_grid",
-      "title": "Subatomic Charge Balance",
-      "category": "science",
-      "difficulty": "Clever",
-      "prompt": "Select exactly 3 particle sensors whose recorded values sum to an electric charge of +15.",
-      "gridPuzzle": {
-        "mode": "target_sum",
-        "rows": 3,
-        "cols": 3,
-        "instruction": "Select 3 cells that add up to 15",
-        "cells": [
-          {
-            "label": "+11",
-            "value": 11,
-            "initialOn": false
-          },
-          {
-            "label": "+4",
-            "value": 4,
-            "initialOn": false
-          },
-          {
-            "label": "-2",
-            "value": -2,
-            "initialOn": false
-          },
-          {
-            "label": "+8",
-            "value": 8,
-            "initialOn": false
-          },
-          {
-            "label": "-7",
-            "value": -7,
-            "initialOn": false
-          },
-          {
-            "label": "+6",
-            "value": 6,
-            "initialOn": false
-          },
-          {
-            "label": "-4",
-            "value": -4,
-            "initialOn": false
-          },
-          {
-            "label": "+3",
-            "value": 3,
-            "initialOn": false
-          },
-          {
-            "label": "+1",
-            "value": 1,
-            "initialOn": false
-          }
-        ],
-        "targetSum": 15,
-        "exactCount": 3,
-        "goalState": "all_on",
-        "solutionIndices": [
-          0,
-          3,
-          6
-        ]
-      },
-      "hint": "Try combining two large positive readings with one small negative reading.",
-      "explanation": "Selecting +11, +8, and -4 yields a total sum of +15 (11 + 8 - 4 = 15).",
-      "origin": "ai",
-      "createdAt": "2026-11-18T22:40:07.075Z"
     }
   ]
 }
