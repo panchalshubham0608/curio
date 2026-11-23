@@ -1,10 +1,187 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-22T22:16:36.661Z",
+  "generatedAt": "2026-11-23T02:57:27.820Z",
   "generator": "gemini-textual-puzzles",
   "model": "gemini-flash-latest",
   "itemCount": 48,
   "items": [
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_caf3031c18b5",
+      "kind": "true_or_myth",
+      "title": "Cloud Weight Reality",
+      "category": "science",
+      "difficulty": "Warm-up",
+      "prompt": "Fact or Myth: A typical cumulus cloud weighs as much as hundreds of thousands of kilograms (over 1 million pounds).",
+      "hint": "Consider the vast volume of tiny suspended water droplets.",
+      "options": [
+        "True — Real Fact",
+        "Myth — False"
+      ],
+      "correctIndex": 0,
+      "explanation": "An average cumulus cloud spans roughly one cubic kilometer with a droplet density that totals approximately 500,000 kilograms (1.1 million pounds). It stays aloft because its massive weight is dispersed across a huge volume less dense than surrounding dry air.",
+      "origin": "ai",
+      "createdAt": "2026-11-23T02:57:27.820Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_74786485e858",
+      "kind": "visual_diagram",
+      "title": "Missing Corner Dot",
+      "category": "technology",
+      "difficulty": "Clever",
+      "prompt": "Each block contains a colored circle and an internal numeric counter. What number completes the bottom-right block according to the established visual rule?",
+      "svgDiagram": {
+        "caption": "Grid of sized nodes with value counters",
+        "background": "#FAF8F4",
+        "shapes": [
+          {
+            "shape": "rect",
+            "x": 30,
+            "y": 20,
+            "width": 120,
+            "height": 75,
+            "rx": 8,
+            "fill": "#FFFFFF",
+            "stroke": "#D1D5DB",
+            "strokeWidth": 2
+          },
+          {
+            "shape": "rect",
+            "x": 170,
+            "y": 20,
+            "width": 120,
+            "height": 75,
+            "rx": 8,
+            "fill": "#FFFFFF",
+            "stroke": "#D1D5DB",
+            "strokeWidth": 2
+          },
+          {
+            "shape": "rect",
+            "x": 30,
+            "y": 105,
+            "width": 120,
+            "height": 75,
+            "rx": 8,
+            "fill": "#FFFFFF",
+            "stroke": "#D1D5DB",
+            "strokeWidth": 2
+          },
+          {
+            "shape": "rect",
+            "x": 170,
+            "y": 105,
+            "width": 120,
+            "height": 75,
+            "rx": 8,
+            "fill": "#FFFFFF",
+            "stroke": "#D1D5DB",
+            "strokeWidth": 2
+          },
+          {
+            "shape": "circle",
+            "cx": 65,
+            "cy": 57,
+            "r": 10,
+            "fill": "#3B4F75"
+          },
+          {
+            "shape": "text",
+            "x": 115,
+            "y": 63,
+            "text": "10",
+            "fontSize": 18,
+            "fill": "#1F2937",
+            "anchor": "middle"
+          },
+          {
+            "shape": "circle",
+            "cx": 205,
+            "cy": 57,
+            "r": 10,
+            "fill": "#3B4F75"
+          },
+          {
+            "shape": "text",
+            "x": 255,
+            "y": 63,
+            "text": "20",
+            "fontSize": 18,
+            "fill": "#1F2937",
+            "anchor": "middle"
+          },
+          {
+            "shape": "circle",
+            "cx": 65,
+            "cy": 142,
+            "r": 16,
+            "fill": "#C84B31"
+          },
+          {
+            "shape": "text",
+            "x": 115,
+            "y": 148,
+            "text": "16",
+            "fontSize": 18,
+            "fill": "#1F2937",
+            "anchor": "middle"
+          },
+          {
+            "shape": "circle",
+            "cx": 205,
+            "cy": 142,
+            "r": 16,
+            "fill": "#C84B31"
+          },
+          {
+            "shape": "text",
+            "x": 255,
+            "y": 148,
+            "text": "?",
+            "fontSize": 20,
+            "fill": "#C84B31",
+            "anchor": "middle"
+          }
+        ]
+      },
+      "hint": "Examine how circle radius and position relate to the value in each block.",
+      "options": [
+        "24",
+        "28",
+        "32",
+        "36"
+      ],
+      "correctIndex": 2,
+      "explanation": "Each block's number equals the circle radius multiplied by its column index (left column = 1, right column = 2). The bottom-right circle has radius 16, so 16 × 2 = 32.",
+      "origin": "ai",
+      "createdAt": "2026-11-23T02:57:27.820Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_8e81b34366c8",
+      "kind": "logic_reasoning",
+      "title": "Server Bay Assignment",
+      "category": "technology",
+      "difficulty": "Tricky",
+      "prompt": "Four distinct servers (Alpha, Beta, Gamma, Delta) are installed in consecutive rack bays numbered 1 to 4 from top to bottom. Identify which server occupies Bay 2.",
+      "clues": [
+        "1. Beta is placed directly below Alpha.",
+        "2. Gamma is not in Bay 1 and not in Bay 4.",
+        "3. Delta is placed in a higher bay number than Gamma."
+      ],
+      "hint": "Start with Gamma's restricted position and work outward.",
+      "options": [
+        "Alpha",
+        "Beta",
+        "Gamma",
+        "Delta"
+      ],
+      "correctIndex": 1,
+      "explanation": "Gamma cannot be in Bay 1 or 4, so Gamma is in Bay 2 or 3. Because Delta is below Gamma, and Alpha-Beta must occupy adjacent slots, Alpha and Beta take Bays 1 and 2, Gamma takes Bay 3, and Delta takes Bay 4.",
+      "origin": "ai",
+      "createdAt": "2026-11-23T02:57:27.820Z"
+    },
     {
       "schemaVersion": 1,
       "id": "puz_ai_a9009a83b066",
@@ -1973,78 +2150,6 @@
       "explanation": "Selecting +11, +8, and -4 yields a total sum of +15 (11 + 8 - 4 = 15).",
       "origin": "ai",
       "createdAt": "2026-11-18T22:40:07.075Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_5df42e50c9c2",
-      "kind": "lateral_riddle",
-      "title": "The Resilient Traveler",
-      "category": "travel_food",
-      "difficulty": "Warm-up",
-      "prompt": "I can travel around the entire world while permanently staying stuck in a single corner. What am I?",
-      "hint": "You affix me to send something through traditional mail.",
-      "options": [
-        "A compass needle",
-        "A postage stamp",
-        "A satellite antenna",
-        "A ship anchor"
-      ],
-      "correctIndex": 1,
-      "explanation": "A postage stamp stays fixed to the upper corner of an envelope as it journeys anywhere across the globe.",
-      "origin": "ai",
-      "createdAt": "2026-11-18T22:40:07.075Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_fc59791100ae",
-      "kind": "logic_reasoning",
-      "title": "Server Rack Sleuth",
-      "category": "technology",
-      "difficulty": "Tricky",
-      "prompt": "Four distinct servers—Alpha, Beta, Gamma, and Delta—are mounted in racks 1 to 4 from top to bottom. Determine which server is in Rack 3.",
-      "clues": [
-        "1. Gamma occupies Rack 1 at the very top.",
-        "2. Beta is installed immediately below Delta.",
-        "3. Alpha is situated higher up than Beta."
-      ],
-      "hint": "Place Gamma on top first, then find Beta's position relative to Delta.",
-      "options": [
-        "Alpha",
-        "Beta",
-        "Gamma",
-        "Delta"
-      ],
-      "correctIndex": 3,
-      "explanation": "Gamma is in Rack 1; Delta must be in Rack 3 and Beta in Rack 4 so Beta sits directly below Delta, leaving Alpha in Rack 2.",
-      "origin": "ai",
-      "createdAt": "2026-11-18T22:40:07.075Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_844d0a5176d4",
-      "kind": "pattern_sequence",
-      "title": "Fractional Decay",
-      "category": "science",
-      "difficulty": "Clever",
-      "prompt": "Identify the number that logically replaces the question mark in this mathematical sequence.",
-      "sequenceItems": [
-        "120",
-        "60",
-        "20",
-        "5",
-        "?"
-      ],
-      "hint": "Examine the divisor applied at each step.",
-      "options": [
-        "1",
-        "1.25",
-        "0.5",
-        "2.5"
-      ],
-      "correctIndex": 0,
-      "explanation": "Each term is divided by an incrementing integer: 120 / 2 = 60, 60 / 3 = 20, 20 / 4 = 5, and 5 / 5 = 1.",
-      "origin": "ai",
-      "createdAt": "2026-11-18T16:03:08.364Z"
     }
   ]
 }

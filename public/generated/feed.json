@@ -1,10 +1,283 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-22T16:49:12.843Z",
+  "generatedAt": "2026-11-23T02:56:48.547Z",
   "generator": "gemini-textual-feed",
   "model": "gemini-flash-latest",
-  "itemCount": 49,
+  "itemCount": 53,
   "items": [
+    {
+      "id": "curio_gen_f8a65c00a35e",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Focusing Illusion and the Geometry of Happiness",
+      "subtitle": "Why nothing in life is quite as important as you think it is while you are thinking about it",
+      "category": "growth",
+      "region": "global",
+      "topics": [
+        "cognitive psychology",
+        "decision making",
+        "behavioral economics",
+        "mental models"
+      ],
+      "estimatedDurationSeconds": 150,
+      "source": {
+        "publisher": "Princeton University",
+        "title": "Would You Be Happier in California? A Focusing Illusion in Judgments of Well-Being",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Focusing%20Illusion%20and%20the%20Geometry%20of%20Happiness",
+        "publishedAt": "2026-11-23T02:56:48.547Z",
+        "retrievedAt": "2026-11-23T02:56:48.547Z"
+      },
+      "summary": "Coined by Nobel laureate Daniel Kahneman, the focusing illusion explains how our brains artificially inflate the significance of any single factor we actively evaluate, distorting long-term life decisions.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "When people living in freezing winter climates are asked whether Californians are happier, the answer is almost universally yes. Yet when psychological researchers survey actual life satisfaction in both regions, residents report virtually identical median happiness levels. The discrepancy stems from a systematic cognitive error known as the focusing illusion: when prompted to compare two distinct lives, the mind instantly fixates on the most obvious point of contrast—weather—while ignoring the shared baseline of daily commutes, chores, work stress, and personal relationships that actually determine life satisfaction."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Lottery Paradox",
+          "text": "In a foundational 1978 study by Brickman, Coates, and Janoff-Bulman, catastrophic accident victims and major lottery winners both drifted back surprisingly close to baseline happiness within a year, as daily micro-events superseded the dramatic one-time change."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Navigating the Illusion",
+          "points": [
+            "Before making major life transitions, list the routine 90% of your day that will remain functionally identical regardless of the move or purchase.",
+            "Ask how much attention you will actually pay to the exciting feature six months into the future.",
+            "Evaluate decisions based on time-use allocation rather than isolated symbolic features."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Focusing Illusion and the Geometry of Happiness editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#2D6A4F"
+      },
+      "followUps": [
+        "How does hedonic adaptation interact with the focusing illusion?",
+        "What strategies help overcome choice overload in modern careers?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-23T02:56:48.547Z",
+      "enrichedAt": "2026-11-23T02:56:48.547Z"
+    },
+    {
+      "id": "curio_gen_0b4c3475f347",
+      "schemaVersion": 1,
+      "contentType": "short_story",
+      "cardVariant": "article",
+      "title": "The Whispering Galleries of St. Paul's Cathedral",
+      "subtitle": "How seventeenth-century geometry inadvertently turned stone into a directional acoustic telephone",
+      "category": "history",
+      "region": "global",
+      "topics": [
+        "architecture",
+        "acoustics",
+        "christopher wren",
+        "physics"
+      ],
+      "estimatedDurationSeconds": 160,
+      "source": {
+        "publisher": "Royal Society",
+        "title": "The Theory of Sound by Lord Rayleigh",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Whispering%20Galleries%20of%20St.%20Paul's%20Cathedral",
+        "publishedAt": "2026-11-23T02:56:48.547Z",
+        "retrievedAt": "2026-11-23T02:56:48.547Z"
+      },
+      "summary": "Sir Christopher Wren designed the magnificent dome of St. Paul's Cathedral for visual grandeur, but inadvertently birthed one of the most famous acoustic phenomena in architectural history.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "High inside the great dome of St. Paul's Cathedral in London sits an internal circular walkway thirty meters above the cathedral floor. If a visitor leans directly against the painted masonry wall and whispers barely above breath level, another visitor pressing their ear against the opposite side of the dome—more than thirty-three meters away—hears the words with startling, crisp intimacy. While popular legend claimed Wren engineered this so clergy could eavesdrop on conspiracies, modern physicists realized the phenomenon was a pure accident of mathematical curvature."
+        },
+        {
+          "type": "timeline",
+          "heading": "Unlocking the Acoustic Secret",
+          "events": [
+            {
+              "year": "1708",
+              "title": "Dome Completed",
+              "detail": "Sir Christopher Wren finishes the dome structure, unaware of its continuous surface wave mechanics."
+            },
+            {
+              "year": "1878",
+              "title": "Rayleigh's Analysis",
+              "detail": "Lord Rayleigh mathematically demonstrates that sound waves form a narrow acoustic ray creeping along the smooth concave perimeter rather than diffusing spherically across the hall."
+            },
+            {
+              "year": "2000s",
+              "title": "Photonics Applications",
+              "detail": "Physicists adapt the whispering gallery mode to micro-cavity optical resonators, using the identical principle to trap light in quantum sensors."
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "question": "What primary mechanism allows sound to travel around the entire perimeter of a whispering gallery?",
+          "options": [
+            "Resonance through hollow chambers hidden inside the stonework",
+            "Continuous grazing reflections clinging along the concave surface",
+            "Thermal air currents rising from the cathedral floor"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "Because sound strikes the concave wall at very shallow angles, it does not bounce across the room; instead, it hugs the interior perimeter through repetitive micro-reflections with minimal energy loss."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Whispering Galleries of St. Paul's Cathedral editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#7C2D12"
+      },
+      "followUps": [
+        "Where else in the world do natural whispering galleries occur?",
+        "How do modern optical sensors utilize whispering gallery modes?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-23T02:56:48.547Z",
+      "enrichedAt": "2026-11-23T02:56:48.547Z"
+    },
+    {
+      "id": "curio_gen_ea1d2f0c42dd",
+      "schemaVersion": 1,
+      "contentType": "interactive_fact",
+      "cardVariant": "interactive_feature",
+      "title": "The Great Moustache Tax of 1698",
+      "subtitle": "When facial hair became a state-regulated revenue stream in Imperial Russia",
+      "category": "humour",
+      "region": "global",
+      "topics": [
+        "bizarre history",
+        "taxation",
+        "russian history",
+        "cultural satire"
+      ],
+      "estimatedDurationSeconds": 140,
+      "source": {
+        "publisher": "Smithsonian Magazine",
+        "title": "Why Peter the Great Established a Beard Tax",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Great%20Moustache%20Tax%20of%201698",
+        "publishedAt": "2026-11-23T02:56:48.547Z",
+        "retrievedAt": "2026-11-23T02:56:48.547Z"
+      },
+      "summary": "Determined to westernize his empire overnight, Tsar Peter the Great instituted a literal tax on beards, issuing bronze tokens declaring facial hair a paid luxury.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Upon returning from his Grand Embassy tour across Western Europe in 1698, Peter the Great gathered his leading boyars and commanders for a grand reception. Before anyone could deliver a toast, the Tsar whipped out a massive barber's straight razor and personally began hacking off the long, ancestral beards of his horrified noblemen. In traditional Russian society, an untrimmed beard was a badge of Orthodox piety and masculine dignity; to Peter, it was an archaic obstacle to modern European statecraft."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Price of Facial Pride",
+          "text": "Realizing sheer force caused rebellion, Peter monetized it: nobles paid up to 100 rubles yearly to keep their beards, and were forced to wear a bronze token stamped with a nose, mouth, and beard inscribed 'Money Taken'."
+        },
+        {
+          "type": "comparison",
+          "heading": "The Tiered Beard Tariff",
+          "leftTitle": "Imperial Court & Wealthy Merchants",
+          "rightTitle": "Peasants & Serfs",
+          "leftPoints": [
+            "Up to 100 rubles annually (equivalent to a palace servant's multi-year wages)",
+            "Required to carry silver or bronze tokens at all times",
+            "Subject to public shaving if found without official receipts"
+          ],
+          "rightPoints": [
+            "Exempt while staying within their rural villages",
+            "Paid two half-kopecks every time they entered or exited a city gate",
+            "Could evade the fee only by entering city limits cleanly shaven"
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Great Moustache Tax of 1698 editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#9333EA"
+      },
+      "followUps": [
+        "Did King Henry VIII of England also tax beards before Peter the Great?",
+        "When was the Russian beard tax officially repealed?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-23T02:56:48.547Z",
+      "enrichedAt": "2026-11-23T02:56:48.547Z"
+    },
+    {
+      "id": "curio_gen_bd6ed9f88973",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Global Race for High-Entropy Alloys",
+      "subtitle": "Metallurgists are breaking thousand-year rules by blending five metals in equal measure",
+      "category": "news",
+      "region": "global",
+      "topics": [
+        "materials science",
+        "engineering",
+        "metallurgy",
+        "space exploration"
+      ],
+      "estimatedDurationSeconds": 180,
+      "source": {
+        "publisher": "Nature Materials",
+        "title": "High-Entropy Alloys: A Critical Review of Mechanical Properties",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Global%20Race%20for%20High-Entropy%20Alloys",
+        "publishedAt": "2026-11-23T02:56:48.547Z",
+        "retrievedAt": "2026-11-23T02:56:48.547Z"
+      },
+      "summary": "For millennia, metal alloys relied on one dominant base metal seasoned with trace elements. A newly matured paradigm of equal-part mixtures is yielding materials that defy conventional physics.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "From the Bronze Age to the aerospace revolution, metallurgy operated under a single golden rule: choose one principal element—such as iron, titanium, or aluminum—and blend in small percentages of secondary elements to tweak hardness or ductility. Adding too many metals in equal amounts historically produced brittle, unusable intermetallic compounds. Over the past twenty-four months, however, international materials consortia have scaled High-Entropy Alloys (HEAs), which combine five or more elements in near-equimolar proportions, unlocking atomic disorder that counterintuitively produces unprecedented strength."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Cryogenic Anomaly",
+          "text": "Most metals grow dangerously brittle at near-absolute zero, but certain chromium-cobalt-nickel HEAs actually become tougher and more fracture-resistant as temperatures plunge."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Why High-Entropy Alloys Matter Now",
+          "points": [
+            "Cryogenic Storage: Essential for hydrogen fuel tanks and deep-space propulsion where extreme cold shatters ordinary steels.",
+            "Radiation Tolerance: The chaotic atomic lattice traps defect cascades, making HEAs ideal for next-generation nuclear fusion reactors.",
+            "Corrosion Shielding: Multi-element passivation layers resist deep-sea and chemical plant degradation far longer than commercial superalloys."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Global Race for High-Entropy Alloys editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#C84B31"
+      },
+      "followUps": [
+        "How are machine learning models accelerating high-entropy alloy discovery?",
+        "What manufacturing hurdles prevent mass-production of HEA components?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-23T02:56:48.547Z",
+      "enrichedAt": "2026-11-23T02:56:48.547Z"
+    },
     {
       "id": "curio_gen_a5973f4ca7d1",
       "schemaVersion": 1,
