@@ -1,10 +1,217 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-24T07:00:58.646Z",
+  "generatedAt": "2026-11-24T19:00:35.491Z",
   "generator": "gemini-textual-feed",
   "model": "gemini-flash-latest",
-  "itemCount": 65,
+  "itemCount": 68,
   "items": [
+    {
+      "id": "curio_gen_630029b319d0",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Zeigarnik Effect and the Physics of Unfinished Tasks",
+      "subtitle": "How intrusive thoughts about incomplete projects reveal our brain's internal task manager",
+      "category": "growth",
+      "region": "global",
+      "topics": [
+        "cognitive psychology",
+        "productivity",
+        "neuroscience",
+        "mental models"
+      ],
+      "estimatedDurationSeconds": 135,
+      "source": {
+        "publisher": "Association for Psychological Science",
+        "title": "Remembering and Forgetting: The Legacy of Bluma Zeigarnik",
+        "url": "https://www.psychologicalscience.org/",
+        "publishedAt": "2026-11-24T19:00:35.491Z",
+        "retrievedAt": "2026-11-24T19:00:35.491Z"
+      },
+      "summary": "In the 1920s, a Soviet psychologist noticed waiters remembered complex unpaid orders perfectly, only to erase them from memory the moment the bill was settled. This revelation transformed modern understanding of task initiation and cognitive tension.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "While dining in a bustling Berlin café in the 1920s, psychologist Bluma Zeigarnik made a curious observation about the service staff. Waiters could balance a dozen complex, unwritten food orders across multiple tables with photographic precision. Yet the second a table settled its bill, the waiters had no recollection of what those same guests had ordered or drank just minutes before."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Cognitive Tension Loop",
+          "text": "Subsequent laboratory experiments proved that our working memory holds incomplete tasks in an active, resource-draining loop. The mere act of leaving something undone generates continuous cognitive tension that keeps the information readily accessible until closure is signaled."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Harnessing Unfinished Business",
+          "points": [
+            "Procrastination can be dismantled by committing to just two minutes of a task, which automatically triggers the internal drive to finish it.",
+            "Writers like Ernest Hemingway intentionally stopped writing mid-sentence to make resuming work the next morning effortless.",
+            "Clearing mental RAM before sleep requires jotting down unfinished items into a trusted capture system, signaling psychological closure."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Zeigarnik Effect and the Physics of Unfinished Tasks editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#2D6A4F"
+      },
+      "followUps": [
+        "How do screenwriters exploit the Zeigarnik effect in season cliffhangers?",
+        "Can writing a to-do list truly trick the brain into resting?",
+        "What is the connection between cognitive tension and burnout?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-24T19:00:35.491Z",
+      "enrichedAt": "2026-11-24T19:00:35.491Z"
+    },
+    {
+      "id": "curio_gen_afb7faf00575",
+      "schemaVersion": 1,
+      "contentType": "short_story",
+      "cardVariant": "article",
+      "title": "The Ingenious Chimu Fog Catchers of the Atacama",
+      "subtitle": "How ancient coastal builders farmed one of the driest deserts on Earth using woven reed moisture traps",
+      "category": "history",
+      "region": "global",
+      "topics": [
+        "archaeology",
+        "ancient engineering",
+        "water conservation",
+        "south america"
+      ],
+      "estimatedDurationSeconds": 140,
+      "source": {
+        "publisher": "Smithsonian Magazine",
+        "title": "Harvesting Water from Desert Fog",
+        "url": "https://www.smithsonianmag.com/",
+        "publishedAt": "2026-11-24T19:00:35.491Z",
+        "retrievedAt": "2026-11-24T19:00:35.491Z"
+      },
+      "summary": "Centuries before modern synthetic mesh was invented to trap morning mist, pre-Inca desert societies constructed vast stone alignments and vegetative barriers to harvest the dense marine fog known as the camanchaca.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The coastal strip of the Atacama and northern Peru receives virtually zero measurable rainfall, yet it borders one of the richest marine ecosystems on the planet. To survive in this bone-dry corridor, the Chimu and their predecessors learned to cultivate the sky itself, intercepting the dense oceanic fog banks that roll inland every morning."
+        },
+        {
+          "type": "timeline",
+          "heading": "Milestones in Desert Water Harvesting",
+          "events": [
+            {
+              "year": "900 CE",
+              "title": "Rise of Chan Chan",
+              "detail": "Engineers construct subterranean sunken gardens called huachaques, tapping shallow water tables replenished by coastal condensing systems."
+            },
+            {
+              "year": "1200 CE",
+              "title": "Reed and Stone Traps",
+              "detail": "Woven totora reed lattices and angled stone cairns are raised across ridgelines to funnel morning camanchaca dew directly into terracotta cisterns."
+            },
+            {
+              "year": "1960s",
+              "title": "Modern Mesh Revival",
+              "detail": "Modern hydrologists analyze archaeological alignments in Chile to design nylon-mesh fog collectors that now supply fresh water to mountain villages."
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "question": "What is the localized name of the dense, cooling marine stratocumulus cloud deck that blankets the Pacific coastline of Chile and Peru?",
+          "options": [
+            "Sirocco",
+            "Camanchaca",
+            "Haboo"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "Camanchaca is the regional South American Spanish word derived from Aymara, referring to the heavy marine mist that sustains specialized desert flora and historical fog harvesting."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Ingenious Chimu Fog Catchers of the Atacama editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#7C2D12"
+      },
+      "followUps": [
+        "How much fresh water can a single modern fog catcher harvest per day?",
+        "What other ancient civilizations relied on dew condensation?",
+        "How did Chan Chan protect its clay architecture from rare El Nino rains?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-24T19:00:35.491Z",
+      "enrichedAt": "2026-11-24T19:00:35.491Z"
+    },
+    {
+      "id": "curio_gen_3864f3405280",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Global Deployment of Ambient Seismic Telemetry",
+      "subtitle": "How everyday ocean waves and human foot traffic are mapping hidden subterranean geology in real time",
+      "category": "news",
+      "region": "global",
+      "topics": [
+        "geophysics",
+        "earth science",
+        "infrastructure",
+        "technology"
+      ],
+      "estimatedDurationSeconds": 150,
+      "source": {
+        "publisher": "Nature Geoscience",
+        "title": "Passive Seismic Imaging with Ambient Noise",
+        "url": "https://www.nature.com/ngeo",
+        "publishedAt": "2026-11-24T19:00:35.491Z",
+        "retrievedAt": "2026-11-24T19:00:35.491Z"
+      },
+      "summary": "Geoscientists around the world are abandoning expensive explosive surveys in favor of ambient noise interferometry, using the rhythmic thrum of breaking surf and urban vibrations to monitor underground aquifers and faults.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "For over a century, mapping subterranean fault lines, magma chambers, and mineral deposits required seismic exploration teams to detonate dynamite or pound heavy hydraulic vibrator trucks into bedrock. Today, an international network of geophysicists is turning to an unexpected, free signal source: the continuous, low-frequency hum generated by ocean breakers crashing against distant shorelines."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "Turning Static into Sensors",
+          "text": "By calculating cross-correlations between continuous background noise at hundreds of sensor stations, researchers can reconstruct clear seismic waveforms without an earthquake ever occurring, measuring millimeter shifts in depleted urban aquifers."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Why Ambient Imaging Changes Earth Science",
+          "points": [
+            "Continuous passive recording detects subtle changes in stress before a fault ruptures, rather than only analyzing damage after the fact.",
+            "Repurposed telecommunication fiber-optic cables can double as thousands of distributed seismic sensors underneath crowded cities.",
+            "Urban background rumble from subway cars and highways provides the high-frequency waves needed to locate sinking water tables."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Global Deployment of Ambient Seismic Telemetry editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#C84B31"
+      },
+      "followUps": [
+        "How do standard subsea fiber optic cables detect microseisms?",
+        "Can ambient noise interferometry predict volcanic eruptions earlier?",
+        "What did the global lockdown quiet periods reveal to seismologists?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-24T19:00:35.491Z",
+      "enrichedAt": "2026-11-24T19:00:35.491Z"
+    },
     {
       "id": "curio_gen_1ff311dd2528",
       "schemaVersion": 1,
