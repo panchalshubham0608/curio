@@ -1,10 +1,291 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-23T23:09:18.632Z",
+  "generatedAt": "2026-11-24T07:00:58.646Z",
   "generator": "gemini-textual-feed",
   "model": "gemini-flash-latest",
-  "itemCount": 61,
+  "itemCount": 65,
   "items": [
+    {
+      "id": "curio_gen_1ff311dd2528",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Synchronized Light of the Great Smoky Fireflies",
+      "subtitle": "Why thousands of beetles flash in complete lockstep every June",
+      "category": "science",
+      "region": "global",
+      "topics": [
+        "entomology",
+        "synchronicity",
+        "bioluminescence",
+        "behavioral biology"
+      ],
+      "estimatedDurationSeconds": 150,
+      "source": {
+        "publisher": "Smithsonian Magazine",
+        "title": "The Science Behind Synchronous Fireflies",
+        "url": "https://www.smithsonianmag.com/science-nature/14-fun-facts-about-fireflies-180970042/",
+        "publishedAt": "2026-11-24T07:00:58.646Z",
+        "retrievedAt": "2026-11-24T07:00:58.646Z"
+      },
+      "summary": "In the Appalachian forests, Photinus carolinus fireflies display a rare biological marvel: thousands of individuals flashing in absolute unison across the canopy.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Deep inside Great Smoky Mountains National Park, an ordinary summer dusk transforms into one of nature's rarest collective phenomena. Unlike solitary fireflies that flash randomly to attract mates, the species Photinus carolinus gathers by the tens of thousands and flashes together in eerie, metronomic unison. For several seconds, darkness completely consumes the mountain valley, followed immediately by thousands of concurrent bursts of yellow-green light."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "Visual Overload Defense",
+          "text": "Biologists found that females cannot process chaotic, overlapping flashes from multiple males. Synchronizing collective flashes allows female fireflies to clearly evaluate individual flash rhythms during the brief shared dark phase."
+        },
+        {
+          "type": "quiz",
+          "question": "What mathematical concept famously models the collective emergence of synchrony in fireflies and heart pacemaker cells?",
+          "options": [
+            "Kuramoto model",
+            "Nash equilibrium",
+            "Lorenz attractor"
+          ],
+          "correctOptionIndex": 0,
+          "explanation": "The Kuramoto model describes how coupled oscillators with slightly different natural frequencies spontaneously synchronize when their interaction strength crosses a critical threshold."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Core Insights",
+          "points": [
+            "Synchronous flashing is an adaptation to preserve visual signal clarity in dense swarms.",
+            "The behavior is not controlled by a single leader; it emerges through neighbor-to-neighbor visual cues.",
+            "Only a handful of beetle species worldwide, primarily in Southeast Asia and North America, exhibit true synchrony."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Synchronized Light of the Great Smoky Fireflies editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#3B4F75"
+      },
+      "followUps": [
+        "How do Southeast Asian mangrove fireflies synchronize along riverbanks?",
+        "What neural mechanisms control the timing of bioluminescent flashes?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-24T07:00:58.646Z",
+      "enrichedAt": "2026-11-24T07:00:58.646Z"
+    },
+    {
+      "id": "curio_gen_13e956b96fa6",
+      "schemaVersion": 1,
+      "contentType": "short_story",
+      "cardVariant": "article",
+      "title": "The Liquid Metal Thermostats of the Cold War",
+      "subtitle": "How mercury tilt switches maintained silence in early submarine systems",
+      "category": "technology",
+      "region": "global",
+      "topics": [
+        "engineering history",
+        "naval architecture",
+        "materials science",
+        "electronics"
+      ],
+      "estimatedDurationSeconds": 120,
+      "source": {
+        "publisher": "IEEE Spectrum",
+        "title": "The Enduring Legacy of the Mercury Switch",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Liquid%20Metal%20Thermostats%20of%20the%20Cold%20War",
+        "publishedAt": "2026-11-24T07:00:58.646Z",
+        "retrievedAt": "2026-11-24T07:00:58.646Z"
+      },
+      "summary": "Before modern solid-state electronics, sealed glass envelopes filled with elemental mercury governed the vital operations of deep-sea submarines without a single mechanical spark.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "During the height of Cold War submarine operations, acoustic detection was the ultimate threat. Conventional mechanical switches produced micro-arcs and clicking sounds that sensitive passive sonar could detect through hull vibrations. Naval engineers turned to a remarkably elegant nineteenth-century innovation: the mercury tilt switch. Encased in sealed glass ampoules, a rolling droplet of liquid metal completed electrical circuits silently as trim tanks shifted and angles altered."
+        },
+        {
+          "type": "comparison",
+          "heading": "Mercury Tilt Switch vs Modern Solid-State Sensor",
+          "leftTitle": "Mercury Tilt Switch",
+          "rightTitle": "MEMS Accelerometer",
+          "leftPoints": [
+            "Zero electrical contact arcing",
+            "Hermetically sealed against extreme deep-sea pressure",
+            "Immune to electromagnetic pulses"
+          ],
+          "rightPoints": [
+            "No hazardous toxic heavy metals",
+            "Digital output with sub-millimeter precision",
+            "Vastly smaller footprint on printed circuit boards"
+          ]
+        },
+        {
+          "type": "fact_reveal",
+          "label": "Explosion-Proof Heritage",
+          "text": "Mercury switches were initially perfected for explosive coal mining environments because the sealed glass completely prevented sparks from igniting surrounding methane gas."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Liquid Metal Thermostats of the Cold War editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#2563EB"
+      },
+      "followUps": [
+        "Why did early commercial aircraft use mercury horizon indicators?",
+        "What environmental challenges arose during the decommissioning of mid-century naval instrumentation?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-24T07:00:58.646Z",
+      "enrichedAt": "2026-11-24T07:00:58.646Z"
+    },
+    {
+      "id": "curio_gen_983bd698a43f",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Floating Reed Islands of Lake Titicaca",
+      "subtitle": "Engineering living architecture atop the high Andean plateau",
+      "category": "travel_food",
+      "region": "global",
+      "topics": [
+        "indigenous engineering",
+        "andean culture",
+        "sustainable architecture",
+        "geography"
+      ],
+      "estimatedDurationSeconds": 180,
+      "source": {
+        "publisher": "National Geographic",
+        "title": "Peru's Floating Islands of Lake Titicaca",
+        "url": "https://www.nationalgeographic.com/travel/article/uros-floating-islands-peru",
+        "publishedAt": "2026-11-24T07:00:58.646Z",
+        "retrievedAt": "2026-11-24T07:00:58.646Z"
+      },
+      "summary": "Centuries ago, the Uros people constructed buoyant, self-renewing islands entirely from native totora reeds to create a defensible and mobile civilization on Lake Titicaca.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Perched 3,812 meters above sea level between Peru and Bolivia, Lake Titicaca hosts one of the world's most resilient living architectural traditions. The Uros people construct artificial floating islands entirely from totora reeds, an endemic aquatic plant that grows thickly in the lake's shallows. Originally devised as a mobile defensive strategy to evade aggressive expansion by the Inca and Colla civilizations, these floating homes remain continuously inhabited."
+        },
+        {
+          "type": "timeline",
+          "heading": "Life Cycle of a Totora Island",
+          "events": [
+            {
+              "year": "Phase 1",
+              "title": "Root Harvesting",
+              "detail": "Dense root blocks called khili, which float naturally due to trapped gases, are harvested during the rainy season and bound together."
+            },
+            {
+              "year": "Phase 2",
+              "title": "Layering",
+              "detail": "Crisscrossed bundles of dried green reeds are piled atop the root base to a thickness of up to two meters."
+            },
+            {
+              "year": "Phase 3",
+              "title": "Continuous Maintenance",
+              "detail": "Because underwater reeds rot quickly, fresh layers must be added to the surface every few weeks, raising the island continuously."
+            }
+          ]
+        },
+        {
+          "type": "fact_reveal",
+          "label": "Culinary Architecture",
+          "text": "Totora is not just construction material; the crisp white base of the stalk, known locally as chullo, is a primary vegetable rich in iodine that protects residents against highland goiters."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Floating Reed Islands of Lake Titicaca editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#0F766E"
+      },
+      "followUps": [
+        "How do Uros islanders manage waste and fire safety on flammable reed beds?",
+        "What impact is modern solar power having on floating island communities?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-24T07:00:58.646Z",
+      "enrichedAt": "2026-11-24T07:00:58.646Z"
+    },
+    {
+      "id": "curio_gen_0d138e8d08b7",
+      "schemaVersion": 1,
+      "contentType": "quick_bite",
+      "cardVariant": "interactive_feature",
+      "title": "The Secret Imperial Ink of Oak Apples",
+      "subtitle": "How parasitic wasps inadvertently wrote world history for a millennium",
+      "category": "facts",
+      "region": "global",
+      "topics": [
+        "historical chemistry",
+        "paleography",
+        "botanical oddities",
+        "manuscripts"
+      ],
+      "estimatedDurationSeconds": 100,
+      "source": {
+        "publisher": "Library of Congress",
+        "title": "The Chemistry of Iron Gall Ink",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Secret%20Imperial%20Ink%20of%20Oak%20Apples",
+        "publishedAt": "2026-11-24T07:00:58.646Z",
+        "retrievedAt": "2026-11-24T07:00:58.646Z"
+      },
+      "summary": "From Magna Carta to Beethoven's symphonies, the primary black ink of western civilization was made from crushed insect-induced plant tumors.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "For more than a thousand years, the official record of human civilization was etched using an ink made not from soot or squid, but from plant deformities caused by parasitic wasps. When a tiny gall wasp lays eggs in oak tree buds, the oak defends itself by growing a tannin-rich, spherical growth called an oak apple or gall nut. When crushed and combined with iron sulfate and water, it produces iron gall ink, a purplish-black compound that permanently bonds into paper fibers."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Price of Permanence",
+          "text": "Iron gall ink is inherently acidic. Over centuries, the sulfuric acid byproduct gradually eats through cellulose fibers, causing historic manuscripts to literally corrode themselves from within."
+        },
+        {
+          "type": "quiz",
+          "question": "Which foundational historic document was penned using iron gall ink?",
+          "options": [
+            "The United States Declaration of Independence",
+            "The Rosetta Stone",
+            "The Epic of Gilgamesh clay tablets"
+          ],
+          "correctOptionIndex": 0,
+          "explanation": "Thomas Jefferson's original parchment draft of the Declaration of Independence was drafted using standard eighteenth-century iron gall ink."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Secret Imperial Ink of Oak Apples editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#B45309"
+      },
+      "followUps": [
+        "How do museum conservators halt the acid degradation of iron gall manuscripts?",
+        "What was the earliest synthetic alternative to gall ink?",
+        "Why did monasteries prefer Aleppo gall nuts over local European ones?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-24T07:00:58.646Z",
+      "enrichedAt": "2026-11-24T07:00:58.646Z"
+    },
     {
       "id": "curio_gen_96b9932c71a0",
       "schemaVersion": 1,
