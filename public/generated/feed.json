@@ -1,10 +1,290 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-24T19:00:35.491Z",
+  "generatedAt": "2026-11-25T02:59:16.300Z",
   "generator": "gemini-textual-feed",
   "model": "gemini-flash-latest",
-  "itemCount": 68,
+  "itemCount": 72,
   "items": [
+    {
+      "id": "curio_gen_63c0d4356a2d",
+      "schemaVersion": 1,
+      "contentType": "short_story",
+      "cardVariant": "article",
+      "title": "The War of the Stray Dog",
+      "subtitle": "How a runaway canine nearly sparked a full-scale Balkan conflict in 1925",
+      "category": "humour",
+      "region": "global",
+      "topics": [
+        "history",
+        "diplomacy",
+        "absurdity",
+        "balkans"
+      ],
+      "estimatedDurationSeconds": 130,
+      "source": {
+        "publisher": "Encyclopaedia Britannica",
+        "title": "Incident at Petrich",
+        "url": "https://www.britannica.com/",
+        "publishedAt": "2026-11-25T02:59:16.300Z",
+        "retrievedAt": "2026-11-25T02:59:16.300Z"
+      },
+      "summary": "In October 1925, heightened border tensions between Greece and Bulgaria boiled over into artillery fire and troop deployments, entirely triggered by a Greek soldier chasing his escaped dog.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Frontier tensions between Greece and Bulgaria were running dangerously high in the autumn of 1925, following years of localized skirmishes and post-World War I boundary disputes. Sentries on both sides patrolled the rugged demarcation lines near the town of Petrich with fingers firmly planted on their triggers, waiting for the slightest provocation. Nobody anticipated that the spark would arrive on four legs, chasing a wayward scent across the line of control."
+        },
+        {
+          "type": "timeline",
+          "heading": "The Escalation at Petrich",
+          "events": [
+            {
+              "year": "October 19, 1925",
+              "title": "The Trespass",
+              "detail": "A Greek border sentry chases his unleashed dog across the frontier post at Demir Kapia and is shot by Bulgarian guards who mistake his sprint for an assault."
+            },
+            {
+              "year": "October 22, 1925",
+              "title": "The Ultimatum",
+              "detail": "Greek military leadership demands reparations and an apology, subsequently ordering troops into Bulgarian territory and bombarding Petrich."
+            },
+            {
+              "year": "October 29, 1925",
+              "title": "The League Intervenes",
+              "detail": "The League of Nations issues an emergency ceasefire order, sending international observers to enforce immediate troop withdrawals."
+            }
+          ]
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Costly Bill",
+          "text": "The League of Nations ruled that Greece was the aggressor, ordering them to pay Bulgaria 45,000 pounds sterling in damages for a military campaign ignited entirely by a pet."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The War of the Stray Dog editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#9333EA"
+      },
+      "followUps": [
+        "What other international skirmishes started over bizarre domestic incidents?",
+        "How effective was the League of Nations at stopping minor border conflicts in the 1920s?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-25T02:59:16.300Z",
+      "enrichedAt": "2026-11-25T02:59:16.300Z"
+    },
+    {
+      "id": "curio_gen_41b58fb7bdcc",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Physics of the Wimshurst Machine",
+      "subtitle": "Generating thousands of volts from dry air and Victorian counter-rotating brass",
+      "category": "science",
+      "region": "global",
+      "topics": [
+        "physics",
+        "electrostatics",
+        "victorian science",
+        "electricity"
+      ],
+      "estimatedDurationSeconds": 150,
+      "source": {
+        "publisher": "Smithsonian National Museum of American History",
+        "title": "Wimshurst Electrostatic Machine Collection",
+        "url": "https://americanhistory.si.edu/",
+        "publishedAt": "2026-11-25T02:59:16.300Z",
+        "retrievedAt": "2026-11-25T02:59:16.300Z"
+      },
+      "summary": "Invented by James Wimshurst in the 1880s, this twin-disk electrostatic generator created enormous electrical potentials without friction, relying entirely on electrostatic influence.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Before the advent of modern solid-state power supplies, laboratories requiring tens of thousands of volts for early X-ray tubes and cathode experiments turned to two gleaming, counter-rotating glass disks. Developed by British engineer James Wimshurst in 1883, the Wimshurst machine looked more like a kinetic sculpture than a precision instrument. Yet by turning a hand crank, operators could draw crackling sparks through sheer electrostatic induction rather than friction."
+        },
+        {
+          "type": "comparison",
+          "heading": "Friction vs Influence Generators",
+          "leftTitle": "Triboelectric Generators",
+          "rightTitle": "Wimshurst Influence Machine",
+          "leftPoints": [
+            "Relies on direct mechanical rubbing of glass or sulfur",
+            "Highly vulnerable to humidity and ambient surface moisture",
+            "Suffers from rapid abrasive wear and erratic charge output"
+          ],
+          "rightPoints": [
+            "Relies on electrostatic induction across non-contacting disks",
+            "Operates reliably even in moderately humid air",
+            "Self-starting using tiny background ambient residual charges"
+          ]
+        },
+        {
+          "type": "quiz",
+          "question": "What common early electrical component was routinely wired into a Wimshurst machine to accumulate massive charges before discharge?",
+          "options": [
+            "Leyden jar",
+            "Voltaic pile",
+            "Galvanometer"
+          ],
+          "correctOptionIndex": 0,
+          "explanation": "Leyden jars acted as early capacitors, collecting opposite electrostatic charges on their inner and outer metal foils until the breakdown voltage caused an explosive spark across the discharge balls."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Physics of the Wimshurst Machine editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#3B4F75"
+      },
+      "followUps": [
+        "How did early medical researchers harness Wimshurst machines for electrotherapy?",
+        "What replaced electrostatic induction generators in twentieth-century particle research?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-25T02:59:16.300Z",
+      "enrichedAt": "2026-11-25T02:59:16.300Z"
+    },
+    {
+      "id": "curio_gen_0e4ad1c4e24b",
+      "schemaVersion": 1,
+      "contentType": "interactive_fact",
+      "cardVariant": "interactive_feature",
+      "title": "The Lost Magnetic Core Weavers of Apollo",
+      "subtitle": "How textile workers hand-stitched software into spacecraft memory arrays",
+      "category": "technology",
+      "region": "global",
+      "topics": [
+        "computing",
+        "space flight",
+        "apollo program",
+        "hardware"
+      ],
+      "estimatedDurationSeconds": 140,
+      "source": {
+        "publisher": "NASA History Division",
+        "title": "Computers in Spaceflight: The NASA Experience",
+        "url": "https://history.nasa.gov/",
+        "publishedAt": "2026-11-25T02:59:16.300Z",
+        "retrievedAt": "2026-11-25T02:59:16.300Z"
+      },
+      "summary": "Before silicon microchips dominated computing, the software that guided human beings to the Moon was physically threaded through tiny ferrite donuts by textile workers.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The computer code that executed the Apollo 11 lunar landing did not live on flash memory or a magnetic hard drive. Instead, it was hardwired into rope core memory, a dense lattice of copper wire and ceramic ferrite rings. Because an accidental memory wipe in deep space would spell doom for the crew, NASA relied on an ultra-reliable read-only system where a copper wire passing through a ring represented a binary one, and a wire bypassing the ring represented a zero."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Nickname Behind the Hardware",
+          "text": "Because the memory was painstakingly hand-stitched by skilled textile workers from local Waltham watch factories, MIT engineers affectionately nicknamed the system LOL memory, short for Little Old Lady memory."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Why Core Rope Won the Space Race",
+          "points": [
+            "Immunity to cosmic radiation that would corrupt fragile modern semiconductor RAM",
+            "Instantaneous read speeds with zero boot delay during power cycling or electrical anomalies",
+            "Unmatched physical resilience against the violent vibrations and acoustics of the Saturn V launch"
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Lost Magnetic Core Weavers of Apollo editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#2563EB"
+      },
+      "followUps": [
+        "What programming language was used to generate Apollo flight software?",
+        "How did Margaret Hamilton's team catch computer overload errors during the Apollo 11 descent?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-25T02:59:16.300Z",
+      "enrichedAt": "2026-11-25T02:59:16.300Z"
+    },
+    {
+      "id": "curio_gen_b23f25dd2c07",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Thousand-Year Salt Cellars of Guérande",
+      "subtitle": "Breton marsh masters who harvest Fleur de Sel using lunar tides and clay canals",
+      "category": "travel_food",
+      "region": "global",
+      "topics": [
+        "gastronomy",
+        "bretange",
+        "salt",
+        "artisanal traditions"
+      ],
+      "estimatedDurationSeconds": 160,
+      "source": {
+        "publisher": "UNESCO Intangible Cultural Heritage",
+        "title": "Traditional Salt Harvesting in the Guérande Marshes",
+        "url": "https://ich.unesco.org/",
+        "publishedAt": "2026-11-25T02:59:16.300Z",
+        "retrievedAt": "2026-11-25T02:59:16.300Z"
+      },
+      "summary": "On the windward coast of southern Brittany, paludiers harvest grey sea salt and fragile salt flowers using passive gravitational pools unchanged since the Carolingian dynasty.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Along the jagged coastline of southern Brittany lies the Guérande peninsula, an intricate labyrinth of clay-bottomed lagoons called salines. For more than eleven centuries, salt masters known as paludiers have harvested sea minerals without engines, pumps, or chemicals. The entire system is an acoustic and hydrodynamic masterpiece that relies on the Atlantic's highest tides, passive gravitational drop, and the drying power of coastal breezes."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Origin of the Grey Tone",
+          "text": "Unlike stark white industrial salt, coarse Sel de Guérande is naturally light grey because it gently rubs against the untreated marine silt and blue clay lining the final evaporation beds."
+        },
+        {
+          "type": "comparison",
+          "heading": "Gros Sel vs Fleur de Sel",
+          "leftTitle": "Gros Sel (Coarse Salt)",
+          "rightTitle": "Fleur de Sel (Flower of Salt)",
+          "leftPoints": [
+            "Forms at the bottom of the brine pool in direct contact with clay",
+            "Harvested with long-handled wooden rakes called the simoure",
+            "Used for boiling broths, roasting whole fish, and salt crusts"
+          ],
+          "rightPoints": [
+            "Forms delicate floating crystals on the water surface on hot, still afternoons",
+            "Skimmed gently off the top using a perforated wooden sieve called a lousse",
+            "Prized as a finishing salt due to high trace mineral complexity and gentle crunch"
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Thousand-Year Salt Cellars of Guérande editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#0F766E"
+      },
+      "followUps": [
+        "How do seasonal tide charts determine the opening of Guérande canal locks?",
+        "What role does Dunaliella salina algae play in the aroma of fresh Fleur de Sel?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-25T02:59:16.300Z",
+      "enrichedAt": "2026-11-25T02:59:16.300Z"
+    },
     {
       "id": "curio_gen_630029b319d0",
       "schemaVersion": 1,
