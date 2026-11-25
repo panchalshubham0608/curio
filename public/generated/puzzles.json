@@ -1,10 +1,207 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-25T12:14:40.440Z",
+  "generatedAt": "2026-11-25T21:53:54.575Z",
   "generator": "gemini-textual-puzzles",
   "model": "gemini-flash-latest",
   "itemCount": 48,
   "items": [
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_9d560f212353",
+      "kind": "order_sequence",
+      "title": "Planetary Atmosphere Thickness",
+      "category": "science",
+      "difficulty": "Clever",
+      "prompt": "Arrange these Solar System bodies in ascending order of surface atmospheric pressure (from lowest to highest).",
+      "orderItems": [
+        "Venus",
+        "The Moon",
+        "Earth",
+        "Mars"
+      ],
+      "correctOrder": [
+        1,
+        3,
+        2,
+        0
+      ],
+      "hint": "Think about which world is an airless moon versus which has a crushing runaway greenhouse blanket.",
+      "explanation": "The Moon has virtually no atmosphere (~3e-15 bar), Mars has ~0.006 bar, Earth sits at 1 bar, and Venus reaches an intense 92 bar.",
+      "origin": "ai",
+      "createdAt": "2026-11-25T21:53:54.575Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_fb73720ef260",
+      "kind": "visual_diagram",
+      "title": "Radial Sector Balance",
+      "category": "growth",
+      "difficulty": "Warm-up",
+      "prompt": "Each colored quadrant contains a number. The numbers follow a consistent rule moving clockwise starting from the top-left quadrant. Which number replaces the question mark?",
+      "svgDiagram": {
+        "caption": "Clockwise quadrant sequence",
+        "background": "#FAF8F4",
+        "shapes": [
+          {
+            "shape": "rect",
+            "x": 60,
+            "y": 20,
+            "width": 90,
+            "height": 75,
+            "rx": 8,
+            "fill": "#3B4F75"
+          },
+          {
+            "shape": "rect",
+            "x": 170,
+            "y": 20,
+            "width": 90,
+            "height": 75,
+            "rx": 8,
+            "fill": "#2D6A4F"
+          },
+          {
+            "shape": "rect",
+            "x": 170,
+            "y": 105,
+            "width": 90,
+            "height": 75,
+            "rx": 8,
+            "fill": "#C84B31"
+          },
+          {
+            "shape": "rect",
+            "x": 60,
+            "y": 105,
+            "width": 90,
+            "height": 75,
+            "rx": 8,
+            "fill": "#D99B26"
+          },
+          {
+            "shape": "text",
+            "x": 105,
+            "y": 64,
+            "text": "4",
+            "fontSize": 24,
+            "fill": "#FAF8F4",
+            "anchor": "middle"
+          },
+          {
+            "shape": "text",
+            "x": 215,
+            "y": 64,
+            "text": "8",
+            "fontSize": 24,
+            "fill": "#FAF8F4",
+            "anchor": "middle"
+          },
+          {
+            "shape": "text",
+            "x": 215,
+            "y": 149,
+            "text": "16",
+            "fontSize": 24,
+            "fill": "#FAF8F4",
+            "anchor": "middle"
+          },
+          {
+            "shape": "text",
+            "x": 105,
+            "y": 149,
+            "text": "?",
+            "fontSize": 24,
+            "fill": "#FAF8F4",
+            "anchor": "middle"
+          }
+        ]
+      },
+      "hint": "Check the mathematical change from 4 to 8, then from 8 to 16.",
+      "options": [
+        "24",
+        "32",
+        "28",
+        "40"
+      ],
+      "correctIndex": 1,
+      "explanation": "Each sector doubles the value of the previous sector clockwise (4, 8, 16, 32). Thus, the missing number in the bottom-left quadrant is 32.",
+      "origin": "ai",
+      "createdAt": "2026-11-25T21:53:54.575Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_bb19741a1714",
+      "kind": "interactive_grid",
+      "title": "Tectonic Core Calibration",
+      "category": "technology",
+      "difficulty": "Clever",
+      "prompt": "Select exactly 3 power cells whose output values sum to precisely 50.",
+      "gridPuzzle": {
+        "mode": "target_sum",
+        "rows": 3,
+        "cols": 3,
+        "instruction": "Select exactly 3 cells that sum to 50",
+        "cells": [
+          {
+            "label": "27",
+            "value": 27,
+            "initialOn": false
+          },
+          {
+            "label": "12",
+            "value": 12,
+            "initialOn": false
+          },
+          {
+            "label": "19",
+            "value": 19,
+            "initialOn": false
+          },
+          {
+            "label": "15",
+            "value": 15,
+            "initialOn": false
+          },
+          {
+            "label": "6",
+            "value": 6,
+            "initialOn": false
+          },
+          {
+            "label": "21",
+            "value": 21,
+            "initialOn": false
+          },
+          {
+            "label": "8",
+            "value": 8,
+            "initialOn": false
+          },
+          {
+            "label": "14",
+            "value": 14,
+            "initialOn": false
+          },
+          {
+            "label": "25",
+            "value": 25,
+            "initialOn": false
+          }
+        ],
+        "targetSum": 50,
+        "exactCount": 3,
+        "goalState": "all_on",
+        "solutionIndices": [
+          0,
+          3,
+          6
+        ]
+      },
+      "hint": "Try pairing the highest value, 27, with two smaller values.",
+      "explanation": "Selecting 27, 15, and 8 gives 27 + 15 + 8 = 50, which is the unique 3-cell combination reaching the target.",
+      "origin": "ai",
+      "createdAt": "2026-11-25T21:53:54.575Z"
+    },
     {
       "schemaVersion": 1,
       "id": "puz_ai_560719a38c3f",
@@ -1929,204 +2126,6 @@
       "explanation": "Chameleons alter their skin color mainly for thermoregulation and social communication, such as signaling aggression or territory, rather than active background camouflage.",
       "origin": "ai",
       "createdAt": "2026-11-20T18:12:13.615Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_e77fa8adf87e",
-      "kind": "visual_diagram",
-      "title": "Equilateral Wedge Balance",
-      "category": "science",
-      "difficulty": "Tricky",
-      "prompt": "A regular hexagon is subdivided into six equal equilateral triangles. If three alternating triangles are colored dark teal and the remaining three are divided in half, what percentage of the hexagon's total area is dark teal?",
-      "svgDiagram": {
-        "caption": "Regular hexagon divided into alternating shaded sections",
-        "background": "#FAF8F4",
-        "shapes": [
-          {
-            "shape": "polygon",
-            "points": [
-              [
-                160,
-                30
-              ],
-              [
-                220,
-                65
-              ],
-              [
-                160,
-                100
-              ]
-            ],
-            "fill": "#2D6A4F",
-            "stroke": "#1B4332",
-            "strokeWidth": 2
-          },
-          {
-            "shape": "polygon",
-            "points": [
-              [
-                220,
-                65
-              ],
-              [
-                220,
-                135
-              ],
-              [
-                160,
-                100
-              ]
-            ],
-            "fill": "#D8F3DC",
-            "stroke": "#1B4332",
-            "strokeWidth": 2
-          },
-          {
-            "shape": "polygon",
-            "points": [
-              [
-                220,
-                135
-              ],
-              [
-                160,
-                170
-              ],
-              [
-                160,
-                100
-              ]
-            ],
-            "fill": "#2D6A4F",
-            "stroke": "#1B4332",
-            "strokeWidth": 2
-          },
-          {
-            "shape": "polygon",
-            "points": [
-              [
-                160,
-                170
-              ],
-              [
-                100,
-                135
-              ],
-              [
-                160,
-                100
-              ]
-            ],
-            "fill": "#D8F3DC",
-            "stroke": "#1B4332",
-            "strokeWidth": 2
-          },
-          {
-            "shape": "polygon",
-            "points": [
-              [
-                100,
-                135
-              ],
-              [
-                100,
-                65
-              ],
-              [
-                160,
-                100
-              ]
-            ],
-            "fill": "#2D6A4F",
-            "stroke": "#1B4332",
-            "strokeWidth": 2
-          },
-          {
-            "shape": "polygon",
-            "points": [
-              [
-                100,
-                65
-              ],
-              [
-                160,
-                30
-              ],
-              [
-                160,
-                100
-              ]
-            ],
-            "fill": "#D8F3DC",
-            "stroke": "#1B4332",
-            "strokeWidth": 2
-          },
-          {
-            "shape": "circle",
-            "cx": 160,
-            "cy": 100,
-            "r": 4,
-            "fill": "#1B4332"
-          }
-        ]
-      },
-      "hint": "Count the fraction of full equilateral triangles filled with teal.",
-      "options": [
-        "33.3%",
-        "50%",
-        "60%",
-        "66.7%"
-      ],
-      "correctIndex": 1,
-      "explanation": "Exactly three out of the six identical equilateral triangles forming the hexagon are shaded dark teal, which equals 3/6 or 50% of the total area.",
-      "origin": "ai",
-      "createdAt": "2026-11-20T18:12:13.615Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_bed0758af50b",
-      "kind": "logic_reasoning",
-      "title": "The Cipher Key Assignment",
-      "category": "technology",
-      "difficulty": "Clever",
-      "prompt": "Four cryptographers—Anya, Ben, Clara, and David—each safeguard exactly one unique security key: Amber, Cobalt, Jade, or Ruby. Determine who holds the Cobalt key based on these findings.",
-      "clues": [
-        "1. Neither Anya nor David holds the Jade key.",
-        "2. Clara holds the Ruby key.",
-        "3. Ben does not hold the Amber key or the Cobalt key."
-      ],
-      "hint": "Start by identifying who must hold the Jade key.",
-      "options": [
-        "Anya",
-        "Ben",
-        "Clara",
-        "David"
-      ],
-      "correctIndex": 0,
-      "explanation": "Since Clara holds Ruby, Ben cannot hold Amber or Cobalt, leaving Ben with Jade. Anya cannot hold Jade, so Anya and David hold Amber and Cobalt; with David excluded from Jade and Ben holding Jade, Anya holds Cobalt and David holds Amber.",
-      "origin": "ai",
-      "createdAt": "2026-11-20T09:44:05.428Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_2c34741caf36",
-      "kind": "odd_one_out",
-      "title": "Glandular Oddity",
-      "category": "science",
-      "difficulty": "Warm-up",
-      "prompt": "Which of these biological glands differs fundamentally from the other three in how it releases its secretions?",
-      "hint": "Consider whether secretions enter ducts or travel directly into the bloodstream.",
-      "options": [
-        "Thyroid gland",
-        "Pituitary gland",
-        "Adrenal gland",
-        "Salivary gland"
-      ],
-      "correctIndex": 3,
-      "explanation": "The salivary gland is an exocrine gland that secretes through specialized ducts, whereas the thyroid, pituitary, and adrenal are endocrine glands secreting hormones directly into the bloodstream.",
-      "origin": "ai",
-      "createdAt": "2026-11-20T09:44:05.428Z"
     }
   ]
 }

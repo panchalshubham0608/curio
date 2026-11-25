@@ -1,10 +1,204 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-25T12:14:13.979Z",
+  "generatedAt": "2026-11-25T21:53:21.704Z",
   "generator": "gemini-textual-feed",
   "model": "gemini-flash-latest",
-  "itemCount": 76,
+  "itemCount": 79,
   "items": [
+    {
+      "id": "curio_gen_8219a0a23b1c",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Global Census of Ocean Soundscapes",
+      "subtitle": "How marine researchers are decoding the auditory heartbeat of international waters",
+      "category": "news",
+      "region": "global",
+      "topics": [
+        "marine biology",
+        "oceanography",
+        "acoustic ecology",
+        "conservation"
+      ],
+      "estimatedDurationSeconds": 150,
+      "source": {
+        "publisher": "Nature",
+        "title": "The Soundscape of the Anthropocene Ocean",
+        "url": "https://www.nature.com/",
+        "publishedAt": "2026-11-25T21:53:21.704Z",
+        "retrievedAt": "2026-11-25T21:53:21.704Z"
+      },
+      "summary": "An international consortium of oceanographers has completed a monumental survey mapping the soundscapes of the world's oceans, revealing the profound role acoustic health plays in marine biodiversity.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "For centuries, humanity regarded the open ocean as an expanse of perpetual quiet, a misconception famously popularized by Jacques Cousteau's 1953 book title, The Silent World. In reality, healthy marine ecosystems are cacophonous environments filled with the snaps of pistol shrimp, the vocalizations of migrating cetaceans, and the reverberations of tectonic shifts. Recently, marine scientists across dozens of nations united under the International Quiet Ocean Experiment to compile the first comprehensive baseline of global underwater noise."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Loudest Crustacean",
+          "text": "The snap of a tiny pistol shrimp can reach up to 218 decibels underwater, generating a localized acoustic shockwave that briefly reaches the temperature of the surface of the sun."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Why Ocean Sound Matters",
+          "points": [
+            "Larval coral and infant fish rely on the acoustic signatures of thriving reefs to navigate back toward shelter.",
+            "Anthropogenic noise from shipping traffic and seismic surveying can blind marine animals that depend on echolocation and acoustic cues.",
+            "Standardizing hydrophone data across borders allows regulators to design quiet ocean corridors that protect critical migratory pathways."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Global Census of Ocean Soundscapes editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#C84B31"
+      },
+      "followUps": [
+        "How do hydrophones survive the crushing pressures of deep oceanic trenches?",
+        "Can underwater sound barriers protect marine sanctuaries from commercial shipping hum?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-25T21:53:21.704Z",
+      "enrichedAt": "2026-11-25T21:53:21.704Z"
+    },
+    {
+      "id": "curio_gen_eb579b30b36c",
+      "schemaVersion": 1,
+      "contentType": "short_story",
+      "cardVariant": "article",
+      "title": "The Biological Clock of the Bristlecone Pine",
+      "subtitle": "What five millennia of tree rings teach us about cellular immortality",
+      "category": "science",
+      "region": "global",
+      "topics": [
+        "dendrochronology",
+        "botany",
+        "aging",
+        "ecology"
+      ],
+      "estimatedDurationSeconds": 140,
+      "source": {
+        "publisher": "Smithsonian Magazine",
+        "title": "The Ancient Secret of the Bristlecone Pine",
+        "url": "https://www.smithsonianmag.com/",
+        "publishedAt": "2026-11-25T21:53:21.704Z",
+        "retrievedAt": "2026-11-25T21:53:21.704Z"
+      },
+      "summary": "High in the White Mountains of California, the Great Basin bristlecone pine thrives in nutrient-poor dolomite soil, displaying virtually no biological senescence after nearly five thousand years.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Perched on exposed ridges where winds exceed hurricane force and winters freeze soil solid, the Great Basin bristlecone pine should logically struggle to survive. Yet individual trees like Methuselah have lived for over 4,800 years. Instead of dying from old age, their cells show no physiological signs of senescence; their vascular cambium continues to divide with the exact same cellular vigor at millennium five as it did in its sapling centuries."
+        },
+        {
+          "type": "quiz",
+          "question": "What structural adaptation helps ancient bristlecone pines survive when parts of the trunk die off?",
+          "options": [
+            "Strip-bark growth, connecting specific roots to isolated alive branches",
+            "Underground root grafting that steals water from surrounding alpine shrubs",
+            "Complete shedding of bark every century to eliminate parasites"
+          ],
+          "correctOptionIndex": 0,
+          "explanation": "Bristlecone pines utilize strip-barking, where a narrow strip of living tissue nourishes only the functional sections of the canopy, letting damaged sections die without endangering the entire tree."
+        },
+        {
+          "type": "paragraph",
+          "text": "Their wood is so dense and packed with protective resins that fungi and boring insects cannot penetrate it. When exposed to wind and frost, the wood does not rot; it slowly polishes smooth like stone, allowing the tree to stand intact for thousands of years after death."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Biological Clock of the Bristlecone Pine editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#3B4F75"
+      },
+      "followUps": [
+        "How do scientists date ancient trees without harming their cambium layer?",
+        "What other organisms exhibit negligible senescence?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-25T21:53:21.704Z",
+      "enrichedAt": "2026-11-25T21:53:21.704Z"
+    },
+    {
+      "id": "curio_gen_d77f2004a4dc",
+      "schemaVersion": 1,
+      "contentType": "interactive_fact",
+      "cardVariant": "interactive_feature",
+      "title": "The Volcanic Sourdoughs of the Aegean",
+      "subtitle": "How Santorini's volcanic tephra and nocturnal sea fogs create one of the world's rarest breads",
+      "category": "travel_food",
+      "region": "global",
+      "topics": [
+        "gastronomy",
+        "fermentation",
+        "volcanology",
+        "mediterranean culture"
+      ],
+      "estimatedDurationSeconds": 130,
+      "source": {
+        "publisher": "National Geographic",
+        "title": "The Enduring Bread Traditions of the Greek Cyclades",
+        "url": "https://www.nationalgeographic.com/",
+        "publishedAt": "2026-11-25T21:53:21.704Z",
+        "retrievedAt": "2026-11-25T21:53:21.704Z"
+      },
+      "summary": "On the dry cliffs of Santorini, traditional bakers rely on ancient subterranean stone ovens, wild volcanic starters, and water captured from marine mists to bake Paximadia rusks.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Santorini's caldera is famous for brilliant sunsets and whitewashed chapels, but beneath its surface lies a culinary tradition born entirely of geological catastrophe. The island lacks fresh rivers or deep natural springs, forcing historic communities to capture moisture through condensation and turn barley and wild capers into drought-resistant rations."
+        },
+        {
+          "type": "comparison",
+          "heading": "Standard Artisan Bread vs. Santorini Paximadia",
+          "leftTitle": "Standard Sourdough",
+          "rightTitle": "Aegean Paximadia",
+          "leftPoints": [
+            "Baked once at high heat for a soft, airy crumb",
+            "Best consumed within 24 to 48 hours of baking",
+            "Hydrated with standard freshwater"
+          ],
+          "rightPoints": [
+            "Twice-baked in wood-fired volcanic stone ovens until completely dehydrated",
+            "Edible and structurally preserved for up to two years",
+            "Hydrated with mineral-heavy catchment water and seasoned with sea-salt mist"
+          ]
+        },
+        {
+          "type": "fact_reveal",
+          "label": "Wild Microflora",
+          "text": "Microbiologists found that Santorini's traditional sourdough starters contain endemic yeast strains adapted to thrive on volcanic ash minerals and airborne sea salts."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Volcanic Sourdoughs of the Aegean editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#0F766E"
+      },
+      "followUps": [
+        "How did ancient mariners soften stone-hard rusks while at sea?",
+        "What other breads around the Mediterranean rely on volcanic soil nutrients?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-25T21:53:21.704Z",
+      "enrichedAt": "2026-11-25T21:53:21.704Z"
+    },
     {
       "id": "curio_gen_dda701073f01",
       "schemaVersion": 1,
