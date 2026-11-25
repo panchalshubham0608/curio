@@ -1,10 +1,83 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-25T02:59:48.920Z",
+  "generatedAt": "2026-11-25T12:14:40.440Z",
   "generator": "gemini-textual-puzzles",
   "model": "gemini-flash-latest",
   "itemCount": 48,
   "items": [
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_560719a38c3f",
+      "kind": "order_sequence",
+      "title": "Cosmic Speed Ladder",
+      "category": "science",
+      "difficulty": "Clever",
+      "prompt": "Arrange these natural and human velocities in order from slowest to fastest.",
+      "orderItems": [
+        "Orbital speed of Earth around the Sun",
+        "Speed of light in a vacuum",
+        "Speed of sound in dry air at 20°C",
+        "Speed of our Solar System around the galactic center"
+      ],
+      "correctOrder": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "hint": "Consider the difference between mechanical sound, orbital mechanics, and galactic motions.",
+      "explanation": "Sound in dry air travels at roughly 343 m/s, Earth orbits the Sun at ~30 km/s, the Solar System orbits the Milky Way at ~230 km/s, and light travels at ~300,000 km/s.",
+      "origin": "ai",
+      "createdAt": "2026-11-25T12:14:40.440Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_77468502fcd8",
+      "kind": "pattern_sequence",
+      "title": "Alternating Base Shifts",
+      "category": "technology",
+      "difficulty": "Tricky",
+      "prompt": "Identify the underlying mathematical pattern to determine the missing number.",
+      "sequenceItems": [
+        "5",
+        "10",
+        "7",
+        "14",
+        "11",
+        "?"
+      ],
+      "hint": "Look at the operations applied consecutively: multiply by 2, subtract 3, multiply by 2, subtract 3...",
+      "options": [
+        "19",
+        "22",
+        "8",
+        "25"
+      ],
+      "correctIndex": 1,
+      "explanation": "The sequence follows the alternating operations of multiplying by 2 then subtracting 3: 5 * 2 = 10, 10 - 3 = 7, 7 * 2 = 14, 14 - 3 = 11, and 11 * 2 = 22.",
+      "origin": "ai",
+      "createdAt": "2026-11-25T12:14:40.440Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_cb8c1b3085a1",
+      "kind": "lateral_riddle",
+      "title": "The Borrowed Reflection",
+      "category": "humour",
+      "difficulty": "Warm-up",
+      "prompt": "I can run, but I never walk. I have a bed, but I never sleep. I have a mouth, but I never speak. What am I?",
+      "hint": "Look toward natural geography and flowing waters.",
+      "options": [
+        "A river",
+        "A clock",
+        "A waterfall",
+        "A train"
+      ],
+      "correctIndex": 0,
+      "explanation": "A river runs downhill, flows along a riverbed, and empties into another body of water at its mouth.",
+      "origin": "ai",
+      "createdAt": "2026-11-25T12:14:40.440Z"
+    },
     {
       "schemaVersion": 1,
       "id": "puz_ai_8954db8d4bd1",
@@ -2054,203 +2127,6 @@
       "explanation": "The salivary gland is an exocrine gland that secretes through specialized ducts, whereas the thyroid, pituitary, and adrenal are endocrine glands secreting hormones directly into the bloodstream.",
       "origin": "ai",
       "createdAt": "2026-11-20T09:44:05.428Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_59d695181624",
-      "kind": "order_sequence",
-      "title": "Printed Epochs",
-      "category": "history",
-      "difficulty": "Clever",
-      "prompt": "Arrange these communication technologies in chronological order of their historical invention or introduction, from earliest to most recent.",
-      "orderItems": [
-        "Movable type printing press (Gutenberg)",
-        "Commercial electric telegraph",
-        "Woodblock printing",
-        "Rotary printing press"
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Woodblock printing originated centuries before European movable metal type.",
-      "explanation": "Woodblock printing emerged first (circa 7th-8th century), followed by Gutenberg's movable type press (c. 1440), the rotary printing press (1843), and Samuel Morse's commercial telegraph rollout (1844).",
-      "origin": "ai",
-      "createdAt": "2026-11-20T09:44:05.428Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_9ec271dc8ed4",
-      "kind": "visual_diagram",
-      "title": "Gear Teeth Match",
-      "category": "science",
-      "difficulty": "Clever",
-      "prompt": "If Gear A rotates clockwise, in which direction will Gear D rotate, and how many gears turn counter-clockwise in total?",
-      "svgDiagram": {
-        "caption": "A train of four interlocked gears in sequence",
-        "background": "#FAF8F4",
-        "shapes": [
-          {
-            "shape": "circle",
-            "cx": 55,
-            "cy": 100,
-            "r": 32,
-            "fill": "#3B4F75",
-            "stroke": "#1E2A38",
-            "strokeWidth": 3
-          },
-          {
-            "shape": "text",
-            "x": 55,
-            "y": 105,
-            "text": "A",
-            "fontSize": 18,
-            "fill": "#FFFFFF",
-            "anchor": "middle"
-          },
-          {
-            "shape": "circle",
-            "cx": 115,
-            "cy": 100,
-            "r": 28,
-            "fill": "#2D6A4F",
-            "stroke": "#1B4332",
-            "strokeWidth": 3
-          },
-          {
-            "shape": "text",
-            "x": 115,
-            "y": 105,
-            "text": "B",
-            "fontSize": 18,
-            "fill": "#FFFFFF",
-            "anchor": "middle"
-          },
-          {
-            "shape": "circle",
-            "cx": 180,
-            "cy": 100,
-            "r": 37,
-            "fill": "#D97706",
-            "stroke": "#92400E",
-            "strokeWidth": 3
-          },
-          {
-            "shape": "text",
-            "x": 180,
-            "y": 105,
-            "text": "C",
-            "fontSize": 18,
-            "fill": "#FFFFFF",
-            "anchor": "middle"
-          },
-          {
-            "shape": "circle",
-            "cx": 255,
-            "cy": 100,
-            "r": 38,
-            "fill": "#C84B31",
-            "stroke": "#7C2D12",
-            "strokeWidth": 3
-          },
-          {
-            "shape": "text",
-            "x": 255,
-            "y": 105,
-            "text": "D",
-            "fontSize": 18,
-            "fill": "#FFFFFF",
-            "anchor": "middle"
-          }
-        ]
-      },
-      "hint": "Adjacent meshed gears always rotate in opposite directions.",
-      "options": [
-        "Clockwise; 1 gear",
-        "Counter-clockwise; 2 gears",
-        "Clockwise; 2 gears",
-        "Counter-clockwise; 3 gears"
-      ],
-      "correctIndex": 1,
-      "explanation": "Meshed gears alternate rotation directions: A is clockwise, B counter-clockwise, C clockwise, and D counter-clockwise. Thus, Gear D rotates counter-clockwise and exactly two gears turn counter-clockwise.",
-      "origin": "ai",
-      "createdAt": "2026-11-19T20:53:29.685Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_faca12e3a157",
-      "kind": "interactive_grid",
-      "title": "Grid Voltage Calibration",
-      "category": "technology",
-      "difficulty": "Clever",
-      "prompt": "Select exactly 3 cells whose values sum to 50 to stabilize the circuit voltage.",
-      "gridPuzzle": {
-        "mode": "target_sum",
-        "rows": 3,
-        "cols": 3,
-        "instruction": "Select exactly 3 cells that sum to 50.",
-        "cells": [
-          {
-            "label": "11",
-            "value": 11,
-            "initialOn": false
-          },
-          {
-            "label": "8",
-            "value": 8,
-            "initialOn": false
-          },
-          {
-            "label": "27",
-            "value": 27,
-            "initialOn": false
-          },
-          {
-            "label": "15",
-            "value": 15,
-            "initialOn": false
-          },
-          {
-            "label": "19",
-            "value": 19,
-            "initialOn": false
-          },
-          {
-            "label": "14",
-            "value": 14,
-            "initialOn": false
-          },
-          {
-            "label": "22",
-            "value": 22,
-            "initialOn": false
-          },
-          {
-            "label": "24",
-            "value": 24,
-            "initialOn": false
-          },
-          {
-            "label": "9",
-            "value": 9,
-            "initialOn": false
-          }
-        ],
-        "targetSum": 50,
-        "exactCount": 3,
-        "goalState": "all_on",
-        "solutionIndices": [
-          0,
-          3,
-          7
-        ]
-      },
-      "hint": "Look for a combination of two values in the teens and twenties that bridge to 50.",
-      "explanation": "Selecting 11, 15, and 24 yields a sum of exactly 50 (11 + 15 + 24 = 50).",
-      "origin": "ai",
-      "createdAt": "2026-11-19T20:53:29.685Z"
     }
   ]
 }

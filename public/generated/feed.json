@@ -1,10 +1,273 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-25T02:59:16.300Z",
+  "generatedAt": "2026-11-25T12:14:13.979Z",
   "generator": "gemini-textual-feed",
   "model": "gemini-flash-latest",
-  "itemCount": 72,
+  "itemCount": 76,
   "items": [
+    {
+      "id": "curio_gen_dda701073f01",
+      "schemaVersion": 1,
+      "contentType": "interactive_fact",
+      "cardVariant": "interactive_feature",
+      "title": "The Self-Healing Glass of the Glass Sponge",
+      "subtitle": "How deep-sea hexactinellids build unbreakable glass towers",
+      "category": "facts",
+      "region": "global",
+      "topics": [
+        "biomimicry",
+        "marine biology",
+        "materials science"
+      ],
+      "estimatedDurationSeconds": 120,
+      "source": {
+        "publisher": "Nature",
+        "title": "Structural design principles of complex biomorphs",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Self-Healing%20Glass%20of%20the%20Glass%20Sponge",
+        "publishedAt": "2026-11-25T12:14:13.979Z",
+        "retrievedAt": "2026-11-25T12:14:13.979Z"
+      },
+      "summary": "Euplectella aspergillum, known as Venus' flower basket, constructs intricate skeletal lattices out of amorphous silica that distribute stress far better than human-engineered trusses.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Miles beneath the ocean surface, the hexactinellid sponge constructs a cylindrical cage woven almost entirely of pure silica glass. Despite being composed of naturally brittle materials, the structure withstands crushing abyssal currents without shattering."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "Structural secret",
+          "text": "The sponge arranges microscopic silica filaments in concentric laminated cylinders glued together by organic proteins, arresting micro-fractures before they can spread across the lattice."
+        },
+        {
+          "type": "quiz",
+          "question": "What human technology has directly adapted the lattice geometry of the Venus flower basket?",
+          "options": [
+            "High-rise skyscraper framing",
+            "Submarine hulls",
+            "Space shuttle heat tiles"
+          ],
+          "correctOptionIndex": 0,
+          "explanation": "Architectural engineers have mirrored the diagonal checkerboard lattice to design taller, lighter structures that resist lateral wind loads."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Self-Healing Glass of the Glass Sponge editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#B45309"
+      },
+      "followUps": [
+        "How do organic proteins cement brittle minerals in nature?",
+        "Could deep-sea biomineralization replace carbon-intensive cement manufacturing?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-25T12:14:13.979Z",
+      "enrichedAt": "2026-11-25T12:14:13.979Z"
+    },
+    {
+      "id": "curio_gen_9d33ba8316a1",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Strategy of deliberate under-scheduling",
+      "subtitle": "Why slack time is an engine of peak output",
+      "category": "growth",
+      "region": "global",
+      "topics": [
+        "productivity",
+        "psychology",
+        "decision making"
+      ],
+      "estimatedDurationSeconds": 130,
+      "source": {
+        "publisher": "Harvard Business Review",
+        "title": "The Discipline of Slack in Modern Knowledge Work",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Strategy%20of%20deliberate%20under-scheduling",
+        "publishedAt": "2026-11-25T12:14:13.979Z",
+        "retrievedAt": "2026-11-25T12:14:13.979Z"
+      },
+      "summary": "Treating human capacity like industrial equipment leads to systemic failure. Deliberately leaving twenty percent of your calendar empty restores creative variance and resilience.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In queuing theory, any system operating at ninety-five percent utilization experiences exponential wait times when even minor anomalies occur. Human workflows mirror this mathematical law: a packed schedule guarantees that a single unexpected email creates a cascading failure across entire weeks."
+        },
+        {
+          "type": "comparison",
+          "heading": "Saturated vs Buffered Scheduling",
+          "leftTitle": "100% Calendar Load",
+          "rightTitle": "80% Calendar Load",
+          "leftPoints": [
+            "Zero margin for emergent high-value tasks",
+            "Chronic reactive stress and context switching",
+            "Diminishing quality of judgment under fatigue"
+          ],
+          "rightPoints": [
+            "Instant capacity to absorb crises",
+            "Dedicated room for serendipitous connections",
+            "Sustained cognitive energy for deep problem-solving"
+          ]
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Takeaway",
+          "points": [
+            "Efficiency measures speed, but effectiveness requires slack to navigate pivots.",
+            "Schedule open focus blocks before filling appointments, treating them as non-negotiable commitments."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Strategy of deliberate under-scheduling editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#2D6A4F"
+      },
+      "followUps": [
+        "How do high-reliability organizations prevent operator burnout?",
+        "What is the psychological origin of calendar filling compulsions?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-25T12:14:13.979Z",
+      "enrichedAt": "2026-11-25T12:14:13.979Z"
+    },
+    {
+      "id": "curio_gen_fca7119b7d5c",
+      "schemaVersion": 1,
+      "contentType": "short_story",
+      "cardVariant": "article",
+      "title": "The Great Smuggling of Silkworm Eggs",
+      "subtitle": "How two Byzantine monks ended China's silk monopoly",
+      "category": "history",
+      "region": "global",
+      "topics": [
+        "byzantine empire",
+        "trade routes",
+        "espionage"
+      ],
+      "estimatedDurationSeconds": 140,
+      "source": {
+        "publisher": "Britannica",
+        "title": "Justinian I and the Byzantine Silk Monopoly",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Great%20Smuggling%20of%20Silkworm%20Eggs",
+        "publishedAt": "2026-11-25T12:14:13.979Z",
+        "retrievedAt": "2026-11-25T12:14:13.979Z"
+      },
+      "summary": "In 552 AD, Emperor Justinian broke the Silk Road monopoly using two Nestorian monks who smuggled living silkworms across Asia hidden inside hollow bamboo walking sticks.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "For centuries, China guarded the secrets of sericulture under penalty of death, leaving Mediterranean empires dependent on astronomical import taxes. Emperor Justinian I broke the commercial stalemate not with legions, but with one of antiquity's most audacious acts of industrial espionage."
+        },
+        {
+          "type": "timeline",
+          "heading": "The Sericulture Espionage",
+          "events": [
+            {
+              "year": "c. 550 AD",
+              "title": "The Monastic Mission",
+              "detail": "Nestorian monks observe sericulture firsthand in Central Asia and recognize that silk originates from caterpillars, not tree leaves."
+            },
+            {
+              "year": "551 AD",
+              "title": "The Imperial Commission",
+              "detail": "Justinian promises substantial rewards if the monks can acquire live specimens and deliver them to Constantinople."
+            },
+            {
+              "year": "552 AD",
+              "title": "The Bamboo Journey",
+              "detail": "The monks return to Constantinople bearing hundreds of viable silkworm eggs kept warm in dung inside hollow bamboo canes."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "The successfully hatched larvae founded an imperial silk industry that enriched Byzantine treasuries for over six centuries, entirely rewiring Eurasian commerce."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Great Smuggling of Silkworm Eggs editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#7C2D12"
+      },
+      "followUps": [
+        "How did silk manufacturing techniques spread through Islamic Spain?",
+        "What other agricultural technologies were transferred by pilgrims?",
+        "sourceUrl"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-25T12:14:13.979Z",
+      "enrichedAt": "2026-11-25T12:14:13.979Z"
+    },
+    {
+      "id": "curio_gen_a9d824e823b5",
+      "schemaVersion": 1,
+      "contentType": "quick_bite",
+      "cardVariant": "interactive_feature",
+      "title": "The Great Australian Galah Telephone Crisis",
+      "subtitle": "When cheeky cockatoos disconnected Outback towns",
+      "category": "humour",
+      "region": "global",
+      "topics": [
+        "birds",
+        "telecommunications",
+        "australia"
+      ],
+      "estimatedDurationSeconds": 90,
+      "source": {
+        "publisher": "Australian Geographic",
+        "title": "Galahs and the Great Wire Chew",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Great%20Australian%20Galah%20Telephone%20Crisis",
+        "publishedAt": "2026-11-25T12:14:13.979Z",
+        "retrievedAt": "2026-11-25T12:14:13.979Z"
+      },
+      "summary": "In the 1980s, Outback telecommunications were brought down by flocks of rose-breasted cockatoos using overhead phone lines as gymnastics bars and chew toys.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In the mid-1980s, Australian telephone technicians were baffled by recurring, widespread blackouts across remote rural exchanges. Line signals vanished without storm damage, vehicle collisions, or equipment meltdowns."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Culprit",
+          "text": "Flocks of playful galahs had discovered that the newly installed UV-stabilized plastic telephone cables possessed the exact chewiness of tree bark, gnawing through trunk lines for flock amusement."
+        },
+        {
+          "type": "paragraph",
+          "text": "Engineers eventually had to re-sheath thousands of kilometers of Outback wiring in hard armored stainless steel braiding because rubber, fiberglass, and even standard wire coatings proved no match for a bored cockatoo's bill."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Great Australian Galah Telephone Crisis editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#9333EA"
+      },
+      "followUps": [
+        "Why are parrots so uniquely destructive to infrastructure?",
+        "What other native animals have disrupted electrical grids?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-25T12:14:13.979Z",
+      "enrichedAt": "2026-11-25T12:14:13.979Z"
+    },
     {
       "id": "curio_gen_63c0d4356a2d",
       "schemaVersion": 1,
