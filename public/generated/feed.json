@@ -1,10 +1,277 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-25T21:53:21.704Z",
+  "generatedAt": "2026-11-26T03:52:37.470Z",
   "generator": "gemini-textual-feed",
   "model": "gemini-flash-latest",
-  "itemCount": 79,
+  "itemCount": 80,
   "items": [
+    {
+      "id": "curio_gen_28049818bdfb",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Silent Language of Subsea Fiber Vibrations",
+      "subtitle": "How transoceanic internet cables are doubling as planetary seismic detectors",
+      "category": "technology",
+      "region": "global",
+      "topics": [
+        "telecommunications",
+        "geophysics",
+        "optics",
+        "oceanography"
+      ],
+      "estimatedDurationSeconds": 150,
+      "source": {
+        "publisher": "Science Magazine",
+        "title": "Distributed acoustic sensing turns subsea telecom cables into seismographs",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Silent%20Language%20of%20Subsea%20Fiber%20Vibrations",
+        "publishedAt": "2026-11-26T03:52:37.470Z",
+        "retrievedAt": "2026-11-26T03:52:37.470Z"
+      },
+      "summary": "Hundreds of thousands of kilometers of commercial subsea fiber-optic cables quietly pulse with global data, but researchers have discovered that minute phase shifts in these light pulses can turn the entire seafloor network into a real-time earthquake and tsunami warning array.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Deep beneath the ocean surface lies over 1.4 million kilometers of fiber-optic cables carrying the pulse of the global internet. Recently, geophysicists realized these glass corridors are extraordinarily sensitive environmental monitors. By measuring microscopic optical backscatter—tiny reflections of laser light known as Distributed Acoustic Sensing—scientists can detect pressure changes, oceanic earthquakes, and deep currents without altering the data passing through them."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "Laser sensitivity",
+          "text": "The optical sensors can register movements smaller than a nanometer across thousands of kilometers of deep seabed, effectively turning ordinary telecommunications links into continental-scale seismometers."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Dual-Use Infrastructure",
+          "points": [
+            "Fills a massive blind spot: traditional land-based seismographs cover oceans poorly, missing early signs of maritime quakes.",
+            "Tsunami tracking: optical phase shifts can track ocean surface wave movements from below within seconds of onset.",
+            "Zero disruption: the monitoring piggybacks on unused dark fibers or unallocated wavelengths without slowing internet speeds."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Silent Language of Subsea Fiber Vibrations editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#2563EB"
+      },
+      "followUps": [
+        "How do subsea cable repeaters survive deep ocean pressures?",
+        "Can acoustic sensing be used to track endangered whale migrations?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-26T03:52:37.470Z",
+      "enrichedAt": "2026-11-26T03:52:37.470Z"
+    },
+    {
+      "id": "curio_gen_f9b7e8c82714",
+      "schemaVersion": 1,
+      "contentType": "interactive_fact",
+      "cardVariant": "interactive_feature",
+      "title": "The Immortal Crystallization of Antarctic Blood",
+      "subtitle": "How the icefish surrendered red blood cells to master freezing depths",
+      "category": "facts",
+      "region": "global",
+      "topics": [
+        "biology",
+        "antarctica",
+        "evolution",
+        "marine science"
+      ],
+      "estimatedDurationSeconds": 120,
+      "source": {
+        "publisher": "Nature Ecology & Evolution",
+        "title": "The Antarctic blackfin icefish genome illuminates cold adaptation",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Immortal%20Crystallization%20of%20Antarctic%20Blood",
+        "publishedAt": "2026-11-26T03:52:37.470Z",
+        "retrievedAt": "2026-11-26T03:52:37.470Z"
+      },
+      "summary": "In the sub-zero Southern Ocean, the crocodile icefish thrives without hemoglobin or red blood cells, relying instead on translucent blood, expanded vascular plumbing, and natural antifreeze proteins.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In 1928, marine biologist Ditlef Rustad hauled up a pale, ghostly fish from Antarctic waters and cut it open to find blood as clear as saltwater. The crocodile icefish remains the only known adult vertebrate completely devoid of hemoglobin. In waters hovering around minus 1.8 degrees Celsius, thick blood rich in cells would turn sluggish and crystallize; the icefish adapted by ditching red blood cells entirely."
+        },
+        {
+          "type": "quiz",
+          "question": "How does the crocodile icefish transport oxygen without red blood cells?",
+          "options": [
+            "Oxygen dissolves directly into its watery blood plasma due to frigid water temperatures",
+            "It absorbs pure atmospheric gas through specialised cranial vents",
+            "It relies entirely on anaerobic digestion for its entire lifespan"
+          ],
+          "correctOptionIndex": 0,
+          "explanation": "Cold water holds far more dissolved oxygen than warm water. Because oxygen levels are exceptionally high in the Southern Ocean, the icefish can survive simply by letting oxygen dissolve physically into its blood plasma, propelled by an oversized heart and wide blood vessels."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Physiological Marvels",
+          "points": [
+            "Its heart is up to five times larger relative to body mass than other fish of comparable size.",
+            "Antifreeze glycoproteins circulate through its body to prevent ice crystal formation in its tissues."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Immortal Crystallization of Antarctic Blood editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#B45309"
+      },
+      "followUps": [
+        "What happens to icefish if polar waters warm by even two degrees?",
+        "Are any other marine organisms naturally translucent?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-26T03:52:37.470Z",
+      "enrichedAt": "2026-11-26T03:52:37.470Z"
+    },
+    {
+      "id": "curio_gen_9599a4fcf3f3",
+      "schemaVersion": 1,
+      "contentType": "quick_bite",
+      "cardVariant": "interactive_feature",
+      "title": "The Power of the Pre-Mortem Heuristic",
+      "subtitle": "Assuming total catastrophic failure before your project even launches",
+      "category": "growth",
+      "region": "global",
+      "topics": [
+        "psychology",
+        "decision making",
+        "cognitive bias",
+        "productivity"
+      ],
+      "estimatedDurationSeconds": 90,
+      "source": {
+        "publisher": "Harvard Business Review",
+        "title": "Performing a Project Premortem",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Power%20of%20the%20Pre-Mortem%20Heuristic",
+        "publishedAt": "2026-11-26T03:52:37.470Z",
+        "retrievedAt": "2026-11-26T03:52:37.470Z"
+      },
+      "summary": "Coined by psychologist Gary Klein, the pre-mortem flips traditional risk management on its head by commanding teams to imagine a future where their project has disastrously failed, unlocking candid foresight.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Most teams suffer from excessive optimism before a launch. Social pressure, sunk cost fallacy, and leadership cheerleading make dissent feel disloyal. The pre-mortem changes the incentives completely: instead of asking what might go wrong, the leader announces that the project has comprehensively failed six months in the future, and everyone must write down the precise historical record of how the disaster happened."
+        },
+        {
+          "type": "comparison",
+          "heading": "Post-Mortem vs. Pre-Mortem",
+          "leftTitle": "Post-Mortem (Reactive)",
+          "rightTitle": "Pre-Mortem (Proactive)",
+          "leftPoints": [
+            "Conducted after damage has occurred",
+            "Often turns into finger-pointing and defensive rationalization",
+            "Solves past mistakes but cannot rescue spent resources"
+          ],
+          "rightPoints": [
+            "Conducted when the project is still malleable",
+            "Rewards candid pessimism and creative skepticism as valuable insights",
+            "Prevents predictable blind spots before resources are committed"
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Power of the Pre-Mortem Heuristic editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#2D6A4F"
+      },
+      "followUps": [
+        "How can solo entrepreneurs apply the pre-mortem to personal finances?",
+        "What is the difference between healthy skepticism and paralyzing cynicism?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-26T03:52:37.470Z",
+      "enrichedAt": "2026-11-26T03:52:37.470Z"
+    },
+    {
+      "id": "curio_gen_01e084c466e7",
+      "schemaVersion": 1,
+      "contentType": "short_story",
+      "cardVariant": "article",
+      "title": "The Medieval Ice Roads of the Baltic Sea",
+      "subtitle": "When winter transformed open water into bustling highways and tavern routes",
+      "category": "history",
+      "region": "global",
+      "topics": [
+        "medieval history",
+        "climatology",
+        "baltic",
+        "trade routes"
+      ],
+      "estimatedDurationSeconds": 140,
+      "source": {
+        "publisher": "Encyclopaedia Britannica",
+        "title": "Little Ice Age: European climate anomalies and sea-ice expansions",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Medieval%20Ice%20Roads%20of%20the%20Baltic%20Sea",
+        "publishedAt": "2026-11-26T03:52:37.470Z",
+        "retrievedAt": "2026-11-26T03:52:37.470Z"
+      },
+      "summary": "During severe historical winters, the Baltic Sea froze so solid that travelers drove heavy wagons across open ocean, setting up temporary postal stops and heated inns on the ice sheet between Sweden and Estonia.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Today, crossing the Baltic Sea requires passenger ferries or cargo freighters. But during the coldest pulses of the late medieval and early modern periods, freezing temperatures locked the waters between Sweden, Finland, and the Baltic States into immense sheets of ice. Rather than paralyzing commerce, the winter sea became a superhighway: heavy horse-drawn sledges hauled goods across open ocean, bypassing winding, bandit-strewn land routes."
+        },
+        {
+          "type": "timeline",
+          "heading": "Frozen Crossings Across Centuries",
+          "events": [
+            {
+              "year": "1323",
+              "title": "The Great Freeze",
+              "detail": "Travellers journeyed entirely on foot and horseback across the frozen Baltic from Germany directly to Denmark."
+            },
+            {
+              "year": "1408",
+              "title": "Pop-Up Inns on the Sea",
+              "detail": "Temporary wooden inns and heated staging posts were erected directly onto the ice between Sweden and the Baltic coast to serve long-haul couriers."
+            },
+            {
+              "year": "1658",
+              "title": "The March Across the Belts",
+              "detail": "Swedish King Charles X Gustav marched 9,000 cavalry and thousands of infantry over frozen sea straits to conquer Danish territories."
+            }
+          ]
+        },
+        {
+          "type": "fact_reveal",
+          "label": "Sea-ice navigation",
+          "text": "Couriers navigated with magnetic compasses and followed spruce trees stuck upright into ice fissures to mark safe paths around hidden pressure ridges."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Medieval Ice Roads of the Baltic Sea editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#7C2D12"
+      },
+      "followUps": [
+        "How did the Little Ice Age reshape trade across Northern Europe?",
+        "How do modern icebreakers keep the northern Baltic ports operational today?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-26T03:52:37.470Z",
+      "enrichedAt": "2026-11-26T03:52:37.470Z"
+    },
     {
       "id": "curio_gen_8219a0a23b1c",
       "schemaVersion": 1,
@@ -5186,209 +5453,6 @@
       "followUps": [
         "How do acoustic engineers restore ancient cathedral resonances after modern fires?",
         "What role did water-filled ceramic jars play in ancient Greek amphitheater acoustics?"
-      ],
-      "isAiEnriched": true,
-      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
-      "qualityStatus": "approved",
-      "createdAt": "2026-11-18T16:37:33.296Z",
-      "enrichedAt": "2026-11-18T16:37:33.296Z"
-    },
-    {
-      "id": "curio_gen_d8cada1fec84",
-      "schemaVersion": 1,
-      "contentType": "short_story",
-      "cardVariant": "article",
-      "title": "The Solitary Walk as an Evolutionary Engine",
-      "subtitle": "Why productive breakthroughs arrive when you physically change pace",
-      "category": "growth",
-      "topics": [
-        "neuroscience",
-        "productivity",
-        "habits"
-      ],
-      "estimatedDurationSeconds": 120,
-      "source": {
-        "publisher": "Nature Neuroscience",
-        "title": "Physical Locomotion and Associative Creative Thought",
-        "url": "https://en.wikipedia.org/w/index.php?search=The%20Solitary%20Walk%20as%20an%20Evolutionary%20Engine",
-        "publishedAt": "2026-11-18T16:37:33.296Z",
-        "retrievedAt": "2026-11-18T16:37:33.296Z"
-      },
-      "summary": "Deliberate low-intensity walking shifts the brain out of hyper-focused cognitive tunnels, sparking lateral thinking through transient hypofrontality.",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "When Charles Darwin wrestled with evolutionary anomalies, he did not lock himself at his desk. Instead, he paced his gravel 'Sandwalk' outside Down House twice daily, kicking a flint each circuit to track his loops. Neuroscientists now recognize this movement pattern as an optimal trigger for the default mode network, the circuit that knits together distant memories and disparate concepts."
-        },
-        {
-          "type": "comparison",
-          "heading": "Desk Sprints vs. Wandering Strides",
-          "leftTitle": "Prolonged Desk Focus",
-          "rightTitle": "Low-Intensity Walking",
-          "leftPoints": [
-            "Locks attention into executive narrow-focus mode",
-            "Heightens mental fatigue and cognitive tunnel vision",
-            "Suppresses spontaneous associative memory retrieval"
-          ],
-          "rightPoints": [
-            "Triggers mild transient hypofrontality, easing executive control",
-            "Boosts peripheral blood circulation and neurotrophin release",
-            "Encourages free-floating synthesis of unrelated ideas"
-          ]
-        },
-        {
-          "type": "key_takeaway",
-          "heading": "Practical Stride Routine",
-          "points": [
-            "Set a designated thinking route free from traffic decisions or notifications",
-            "Walk at a conversational pace where your breathing stays unforced",
-            "Carry a small pocket index card rather than pulling out a digital screen"
-          ]
-        }
-      ],
-      "visual": {
-        "type": "editorial_illustration",
-        "alt": "The Solitary Walk as an Evolutionary Engine editorial card",
-        "attribution": "Curio Editorial",
-        "license": "First-party",
-        "provider": "Curio Design System",
-        "accentColor": "#2D6A4F"
-      },
-      "followUps": [
-        "What is the neurological mechanism behind transient hypofrontality?",
-        "How did philosopher Friedrich Nietzsche structure his high-altitude alpine walking days?"
-      ],
-      "isAiEnriched": true,
-      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
-      "qualityStatus": "approved",
-      "createdAt": "2026-11-18T16:37:33.296Z",
-      "enrichedAt": "2026-11-18T16:37:33.296Z"
-    },
-    {
-      "id": "curio_gen_eebbaa06f776",
-      "schemaVersion": 1,
-      "contentType": "deep_dive",
-      "cardVariant": "article",
-      "title": "The Polar Mailbox of the Ross Sea Party",
-      "subtitle": "An abandoned wooden depot that saved stranded explorers across the ice",
-      "category": "history",
-      "topics": [
-        "antarctic exploration",
-        "survival",
-        "history"
-      ],
-      "estimatedDurationSeconds": 150,
-      "source": {
-        "publisher": "Britannica",
-        "title": "Ross Sea Party of the Imperial Trans-Antarctic Expedition",
-        "url": "https://www.britannica.com/",
-        "publishedAt": "2026-11-18T16:37:33.296Z",
-        "retrievedAt": "2026-11-18T16:37:33.296Z"
-      },
-      "summary": "While Ernest Shackleton battled ice floes on the Endurance, his secondary team on the other side of Antarctica endured brutal isolation to lay survival depots.",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "In late 1914, Ernest Shackleton launched his Imperial Trans-Antarctic Expedition with an audacious plan: cross the frozen continent from coast to coast. To succeed, he required a separate contingent, the Ross Sea party, to trek inland from the opposite shore and plant life-saving food caches every sixty miles across the Great Ice Barrier."
-        },
-        {
-          "type": "timeline",
-          "heading": "The Ordeal of Mount Hope",
-          "events": [
-            {
-              "year": "1914",
-              "title": "Landing at Cape Evans",
-              "detail": "Ten men establish their shore base, but their support ship Aurora breaks its moorings in a blizzard, leaving them stranded."
-            },
-            {
-              "year": "1915",
-              "title": "Hauling the Sledges",
-              "detail": "Using improvised clothing made from old tents, the men drag tons of provisions over hundreds of freezing miles on foot."
-            },
-            {
-              "year": "1916",
-              "title": "Depot Completed",
-              "detail": "The final depot at Mount Hope is successfully laid, unaware that Shackleton's ship has already been crushed on the opposite coast."
-            }
-          ]
-        },
-        {
-          "type": "fact_reveal",
-          "label": "The tragic twist",
-          "text": "The Ross Sea party successfully laid every single planned food cache at the cost of three lives, yet Shackleton never crossed the continent to open a single tin."
-        }
-      ],
-      "visual": {
-        "type": "editorial_illustration",
-        "alt": "The Polar Mailbox of the Ross Sea Party editorial card",
-        "attribution": "Curio Editorial",
-        "license": "First-party",
-        "provider": "Curio Design System",
-        "accentColor": "#7C2D12"
-      },
-      "followUps": [
-        "How did the survivors of the Ross Sea party finally get rescued?",
-        "What salvaged supplies allowed the party to fabricate warm clothing from scrap canvas?"
-      ],
-      "isAiEnriched": true,
-      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
-      "qualityStatus": "approved",
-      "createdAt": "2026-11-18T16:37:33.296Z",
-      "enrichedAt": "2026-11-18T16:37:33.296Z"
-    },
-    {
-      "id": "curio_gen_4ccc91776efc",
-      "schemaVersion": 1,
-      "contentType": "quick_bite",
-      "cardVariant": "interactive_feature",
-      "title": "The 1923 Earthquake and the Great Smuggled Mayonnaise",
-      "subtitle": "When an accidental maritime diversion introduced Japan to its favorite condiment",
-      "category": "humour",
-      "topics": [
-        "food history",
-        "oddities",
-        "japan"
-      ],
-      "estimatedDurationSeconds": 85,
-      "source": {
-        "publisher": "The Japan Times",
-        "title": "How Kewpie Mayonnaise Conquered the Japanese Palate",
-        "url": "https://www.japantimes.co.jp/",
-        "publishedAt": "2026-11-18T16:37:33.296Z",
-        "retrievedAt": "2026-11-18T16:37:33.296Z"
-      },
-      "summary": "How a misplaced cargo crate and a resolute food chemist turned an imported Western emulsion into an indispensable Japanese culinary icon.",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "In the early 1920s, Japanese food scientist Toichiro Nakashima visited the United States and had an unexpected epiphany: raw vegetables were surprisingly palatable when coated in rich, creamy mayonnaise. Determined to improve the nutritional profile of the Japanese diet, he returned home with a batch of sample jars and a proprietary idea, only to find the local public initially bewildered by the pale paste."
-        },
-        {
-          "type": "fact_reveal",
-          "label": "The initial confusion",
-          "text": "Because mayonnaise was completely foreign to Tokyo department stores in 1925, confused clerks stocked Nakashima's first Kewpie jars in the hair-care aisle, mistaking the creamy emulsion for imported British pomade."
-        },
-        {
-          "type": "key_takeaway",
-          "heading": "Why Japanese Mayo Tastes Different",
-          "points": [
-            "Uses only whole egg yolks instead of whole eggs, yielding a custard-like richness",
-            "Features mild rice vinegar and apple cider vinegar instead of distilled white spirit vinegar",
-            "Includes a signature pinch of monosodium glutamate for umami balance"
-          ]
-        }
-      ],
-      "visual": {
-        "type": "editorial_illustration",
-        "alt": "The 1923 Earthquake and the Great Smuggled Mayonnaise editorial card",
-        "attribution": "Curio Editorial",
-        "license": "First-party",
-        "provider": "Curio Design System",
-        "accentColor": "#9333EA"
-      },
-      "followUps": [
-        "Why did Kewpie adopt its signature soft squeeze bottle design?",
-        "What other Western condiments were accidentally rebranded as cosmetics in the early 20th century?"
       ],
       "isAiEnriched": true,
       "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",

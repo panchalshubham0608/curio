@@ -1,10 +1,80 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-25T21:53:54.575Z",
+  "generatedAt": "2026-11-26T03:53:10.077Z",
   "generator": "gemini-textual-puzzles",
   "model": "gemini-flash-latest",
   "itemCount": 48,
   "items": [
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_fffc6c15ac61",
+      "kind": "logic_reasoning",
+      "title": "Cryogenic Vault Access",
+      "category": "science",
+      "difficulty": "Clever",
+      "prompt": "Four researchers—Dr. Aris, Dr. Breen, Dr. Chen, and Dr. Davis—are assigned distinct security clearance levels (1 to 4, where 4 is the highest). Who holds Level 3 clearance?",
+      "clues": [
+        "1. Dr. Chen's clearance level is exactly two ranks higher than Dr. Aris's clearance level.",
+        "2. Dr. Davis does not have the lowest clearance level.",
+        "3. Dr. Breen's clearance level is lower than Dr. Davis's clearance level."
+      ],
+      "hint": "Consider which levels can accommodate a two-rank gap between Chen and Aris.",
+      "options": [
+        "Dr. Aris",
+        "Dr. Breen",
+        "Dr. Chen",
+        "Dr. Davis"
+      ],
+      "correctIndex": 3,
+      "explanation": "Because Chen is two levels above Aris, their ranks must be (1, 3) or (2, 4). If Aris is 2 and Chen is 4, Breen and Davis must fill 1 and 3; since Breen is lower than Davis, Breen is 1 and Davis is 3.",
+      "origin": "ai",
+      "createdAt": "2026-11-26T03:53:10.077Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_bab3c1c863b5",
+      "kind": "odd_one_out",
+      "title": "Aromatic Spice Origins",
+      "category": "travel_food",
+      "difficulty": "Warm-up",
+      "prompt": "Identify the spice that comes from a different anatomical part of its parent plant than the other three.",
+      "hint": "Think about whether each spice is harvested from a floral structure or vegetative tissue.",
+      "options": [
+        "Cinnamon",
+        "Cloves",
+        "Capers",
+        "Saffron"
+      ],
+      "correctIndex": 0,
+      "explanation": "Cloves, capers, and saffron are all derived from flowers or unopened flower buds, whereas cinnamon is harvested from inner tree bark.",
+      "origin": "ai",
+      "createdAt": "2026-11-26T03:53:10.077Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_8c2dbdd0eef0",
+      "kind": "order_sequence",
+      "title": "Semiconductor Node Evolution",
+      "category": "technology",
+      "difficulty": "Clever",
+      "prompt": "Arrange these landmark computing innovations in chronological order of their historical introduction, from earliest to latest.",
+      "orderItems": [
+        "Commercial Optical Disc (LaserDisc)",
+        "Integrated Circuit Patent",
+        "First Microprocessor (Intel 4004)",
+        "World Wide Web Proposal"
+      ],
+      "correctOrder": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "hint": "The microchip came long before consumer digital media and web protocols.",
+      "explanation": "The integrated circuit was patented in 1959, the Intel 4004 debuted in 1971, LaserDisc launched commercially in 1978, and Tim Berners-Lee published the Web proposal in 1989.",
+      "origin": "ai",
+      "createdAt": "2026-11-26T03:53:10.077Z"
+    },
     {
       "schemaVersion": 1,
       "id": "puz_ai_9d560f212353",
@@ -2055,77 +2125,6 @@
       "explanation": "A postage stamp is affixed to the corner of an envelope and journeys worldwide without ever moving from that spot.",
       "origin": "ai",
       "createdAt": "2026-11-21T00:06:02.135Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_21c624066d2f",
-      "kind": "logic_reasoning",
-      "title": "Archival Storage Protocol",
-      "category": "science",
-      "difficulty": "Clever",
-      "prompt": "Four mineral samples (Beryl, Quartz, Topaz, Zircon) are placed into lockers 1, 2, 3, and 4 in a row. Determine which mineral sits in Locker 3.",
-      "clues": [
-        "Beryl occupies Locker 1.",
-        "Quartz is placed immediately adjacent to Beryl.",
-        "Topaz occupies a higher-numbered locker than Quartz, but is not directly next to Quartz."
-      ],
-      "hint": "Place Beryl and Quartz first using clues 1 and 2.",
-      "options": [
-        "Beryl",
-        "Quartz",
-        "Topaz",
-        "Zircon"
-      ],
-      "correctIndex": 3,
-      "explanation": "Beryl is in locker 1, Quartz in locker 2 (next to Beryl), Topaz in locker 4 (higher than Quartz and not adjacent to it), leaving Zircon in locker 3.",
-      "origin": "ai",
-      "createdAt": "2026-11-21T00:06:02.135Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_1f3511db02e4",
-      "kind": "pattern_sequence",
-      "title": "Square Factor Cadence",
-      "category": "science",
-      "difficulty": "Clever",
-      "prompt": "Determine the next number in this sequence based on the underlying progression.",
-      "sequenceItems": [
-        "1",
-        "2",
-        "2",
-        "3",
-        "2",
-        "?"
-      ],
-      "hint": "Consider the number of positive divisors for sequential integers.",
-      "options": [
-        "4",
-        "3",
-        "2",
-        "1"
-      ],
-      "correctIndex": 0,
-      "explanation": "The sequence counts the number of positive divisors for consecutive integers starting from 1: d(1)=1, d(2)=2... wait, for 1, 4, 9: d(1)=1, d(4)=3, d(6)=4. Rather, integers 1 through 6 have divisor counts: d(1)=1, d(2)=2, d(3)=2, d(4)=3, d(5)=2, d(6)=4.",
-      "origin": "ai",
-      "createdAt": "2026-11-20T18:12:13.615Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_6f6a48a1aa95",
-      "kind": "true_or_myth",
-      "title": "Chameleon Camouflage Intent",
-      "category": "science",
-      "difficulty": "Warm-up",
-      "prompt": "Fact or Myth: Chameleons primarily change their skin color to blend in with their background surroundings.",
-      "hint": "Think about how reptiles communicate and regulate internal conditions.",
-      "options": [
-        "True — Real Fact",
-        "Myth — False"
-      ],
-      "correctIndex": 1,
-      "explanation": "Chameleons alter their skin color mainly for thermoregulation and social communication, such as signaling aggression or territory, rather than active background camouflage.",
-      "origin": "ai",
-      "createdAt": "2026-11-20T18:12:13.615Z"
     }
   ]
 }
