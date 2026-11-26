@@ -1,10 +1,158 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-26T03:53:10.077Z",
+  "generatedAt": "2026-11-26T13:25:23.279Z",
   "generator": "gemini-textual-puzzles",
   "model": "gemini-flash-latest",
   "itemCount": 48,
   "items": [
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_a11ff2b71997",
+      "kind": "pattern_sequence",
+      "title": "Prime Step Progression",
+      "category": "science",
+      "difficulty": "Clever",
+      "prompt": "Identify the missing value that continues the mathematical series.",
+      "sequenceItems": [
+        "4",
+        "6",
+        "9",
+        "14",
+        "21",
+        "?"
+      ],
+      "hint": "Look at the differences between consecutive numbers.",
+      "options": [
+        "28",
+        "30",
+        "32",
+        "33"
+      ],
+      "correctIndex": 2,
+      "explanation": "The differences between successive terms are consecutive prime numbers: +2, +3, +5, +7, and +11. Adding 11 to 21 yields 32.",
+      "origin": "ai",
+      "createdAt": "2026-11-26T13:25:23.279Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_5af06e1aa3d4",
+      "kind": "true_or_myth",
+      "title": "Octopus Heart Count",
+      "category": "facts",
+      "difficulty": "Warm-up",
+      "prompt": "An octopus possesses three functioning hearts that pump blood through its circulatory system.",
+      "hint": "Two handle the gills, while one handles the rest of the body.",
+      "options": [
+        "True — Real Fact",
+        "Myth — False"
+      ],
+      "correctIndex": 0,
+      "explanation": "An octopus has three hearts: two branchial hearts pump blood to the gills, and one systemic heart circulates oxygenated blood through the body.",
+      "origin": "ai",
+      "createdAt": "2026-11-26T13:25:23.279Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_6be05cf8649a",
+      "kind": "visual_diagram",
+      "title": "Triad Node Balance",
+      "category": "technology",
+      "difficulty": "Tricky",
+      "prompt": "Each colored circle represents a specific constant value. Based on the balanced sums of the top and middle rows, what is the value of the bottom row marked by '?'?",
+      "svgDiagram": {
+        "caption": "Row 1 = 10, Row 2 = 11, Row 3 = ?",
+        "background": "#FAF8F4",
+        "shapes": [
+          {
+            "shape": "circle",
+            "cx": 100,
+            "cy": 50,
+            "r": 20,
+            "fill": "#2D6A4F"
+          },
+          {
+            "shape": "circle",
+            "cx": 160,
+            "cy": 50,
+            "r": 20,
+            "fill": "#2D6A4F"
+          },
+          {
+            "shape": "text",
+            "x": 230,
+            "y": 56,
+            "text": "= 10",
+            "fontSize": 18,
+            "fill": "#1F2937",
+            "anchor": "middle"
+          },
+          {
+            "shape": "circle",
+            "cx": 70,
+            "cy": 105,
+            "r": 20,
+            "fill": "#2D6A4F"
+          },
+          {
+            "shape": "circle",
+            "cx": 130,
+            "cy": 105,
+            "r": 20,
+            "fill": "#D97706"
+          },
+          {
+            "shape": "circle",
+            "cx": 190,
+            "cy": 105,
+            "r": 20,
+            "fill": "#D97706"
+          },
+          {
+            "shape": "text",
+            "x": 250,
+            "y": 111,
+            "text": "= 11",
+            "fontSize": 18,
+            "fill": "#1F2937",
+            "anchor": "middle"
+          },
+          {
+            "shape": "circle",
+            "cx": 100,
+            "cy": 160,
+            "r": 20,
+            "fill": "#D97706"
+          },
+          {
+            "shape": "circle",
+            "cx": 160,
+            "cy": 160,
+            "r": 20,
+            "fill": "#2D6A4F"
+          },
+          {
+            "shape": "text",
+            "x": 230,
+            "y": 166,
+            "text": "= ?",
+            "fontSize": 18,
+            "fill": "#1F2937",
+            "anchor": "middle"
+          }
+        ]
+      },
+      "hint": "Determine the value of each colored circle individually first.",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "correctIndex": 1,
+      "explanation": "Two teal circles equal 10, so teal is 5. One teal (5) plus two orange equals 11, making each orange 3. One orange (3) plus one teal (5) equals 8.",
+      "origin": "ai",
+      "createdAt": "2026-11-26T13:25:23.279Z"
+    },
     {
       "schemaVersion": 1,
       "id": "puz_ai_fffc6c15ac61",
@@ -2003,128 +2151,6 @@
       "explanation": "The Montgolfier balloon flew in 1783, the Wright brothers took off in 1903, the sound barrier was broken in 1947, and Apollo 11 landed in 1969.",
       "origin": "ai",
       "createdAt": "2026-11-21T07:31:43.508Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_8e4f1d455878",
-      "kind": "pattern_sequence",
-      "title": "Prime Gap Multipliers",
-      "category": "science",
-      "difficulty": "Tricky",
-      "prompt": "Find the missing number in the sequence based on the underlying progression rule.",
-      "sequenceItems": [
-        "2",
-        "5",
-        "10",
-        "17",
-        "28",
-        "?"
-      ],
-      "hint": "Look at the differences between consecutive terms: +3, +5, +7, +11...",
-      "options": [
-        "37",
-        "39",
-        "41",
-        "43"
-      ],
-      "correctIndex": 2,
-      "explanation": "The differences added to each step are consecutive prime numbers: +3, +5, +7, +11, and +13. Adding 13 to 28 yields 41.",
-      "origin": "ai",
-      "createdAt": "2026-11-21T07:31:43.508Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_d06d01e1c838",
-      "kind": "interactive_grid",
-      "title": "Solar Array Calibration",
-      "category": "technology",
-      "difficulty": "Clever",
-      "prompt": "Select exactly 3 solar cells whose power ratings sum to exactly 50 kW.",
-      "gridPuzzle": {
-        "mode": "target_sum",
-        "rows": 3,
-        "cols": 3,
-        "instruction": "Select 3 cells that sum to 50",
-        "cells": [
-          {
-            "label": "27",
-            "value": 27,
-            "initialOn": false
-          },
-          {
-            "label": "12",
-            "value": 12,
-            "initialOn": false
-          },
-          {
-            "label": "19",
-            "value": 19,
-            "initialOn": false
-          },
-          {
-            "label": "14",
-            "value": 14,
-            "initialOn": false
-          },
-          {
-            "label": "15",
-            "value": 15,
-            "initialOn": false
-          },
-          {
-            "label": "21",
-            "value": 21,
-            "initialOn": false
-          },
-          {
-            "label": "8",
-            "value": 8,
-            "initialOn": false
-          },
-          {
-            "label": "16",
-            "value": 16,
-            "initialOn": false
-          },
-          {
-            "label": "23",
-            "value": 23,
-            "initialOn": false
-          }
-        ],
-        "targetSum": 50,
-        "exactCount": 3,
-        "goalState": "all_on",
-        "solutionIndices": [
-          0,
-          4,
-          6
-        ]
-      },
-      "hint": "Try pairing the highest value with two smaller values.",
-      "explanation": "Selecting cells with ratings 27, 15, and 8 gives 27 + 15 + 8 = 50 kW.",
-      "origin": "ai",
-      "createdAt": "2026-11-21T00:06:02.135Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_d0eabb937e1d",
-      "kind": "lateral_riddle",
-      "title": "The Silent Traveler",
-      "category": "humour",
-      "difficulty": "Warm-up",
-      "prompt": "I can travel around the entire world while staying confined in my single corner. What am I?",
-      "hint": "You attach me to letters before sending them away.",
-      "options": [
-        "A postage stamp",
-        "A compass needle",
-        "A lighthouse beam",
-        "A satellite antenna"
-      ],
-      "correctIndex": 0,
-      "explanation": "A postage stamp is affixed to the corner of an envelope and journeys worldwide without ever moving from that spot.",
-      "origin": "ai",
-      "createdAt": "2026-11-21T00:06:02.135Z"
     }
   ]
 }

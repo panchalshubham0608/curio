@@ -1,10 +1,280 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-26T03:52:37.470Z",
+  "generatedAt": "2026-11-26T13:24:53.355Z",
   "generator": "gemini-textual-feed",
   "model": "gemini-flash-latest",
   "itemCount": 80,
   "items": [
+    {
+      "id": "curio_gen_b35ae6b51245",
+      "schemaVersion": 1,
+      "contentType": "short_story",
+      "cardVariant": "article",
+      "title": "The Curious Trial of the Butter Dish",
+      "subtitle": "When an eccentric French jurist sued an unruly bovine into bankruptcy",
+      "category": "humour",
+      "region": "global",
+      "topics": [
+        "legal history",
+        "quirky folklore",
+        "medieval europe",
+        "animals"
+      ],
+      "estimatedDurationSeconds": 130,
+      "source": {
+        "publisher": "Smithsonian Magazine",
+        "title": "The Lawsuits Brought Against Medieval Animals",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Curious%20Trial%20of%20the%20Butter%20Dish",
+        "publishedAt": "2026-11-26T13:24:53.355Z",
+        "retrievedAt": "2026-11-26T13:24:53.355Z"
+      },
+      "summary": "During the late Middle Ages, animal trials were formal legal proceedings complete with defense attorneys, bailiffs, and solemn verdicts.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In fourteenth-century continental Europe, if a wandering pig trampled an orchard or a swarm of weevils ruined a barley harvest, the community did not merely chase them away. They served them with an official legal summons. Known as the animal trials, these bizarre proceedings were conducted with absolute procedural sobriety, complete with appointed defense attorneys, formal testimony, and sworn witnesses."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Lawyer for the Rats",
+          "text": "In 1522, French jurist Bartholomew Chassenée successfully defended a pack of rats accused of eating local barley by arguing they could not safely attend court because of the village cats."
+        },
+        {
+          "type": "quiz",
+          "question": "Under medieval canon law, what was the standard ecclesiastical punishment for pest insects that refused to leave a farmer's field?",
+          "options": [
+            "A formal public excommunication",
+            "A compensatory fine paid in honey",
+            "Forced exile beyond the town brook"
+          ],
+          "correctOptionIndex": 0,
+          "explanation": "Church courts frequently issued formal edicts of excommunication and anathema against caterpillars, snails, and beetles after giving them a grace period to vacate."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Curious Trial of the Butter Dish editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#9333EA"
+      },
+      "followUps": [
+        "How long did animal trials persist in European jurisprudence?",
+        "Who paid the legal fees for court-appointed animal defense lawyers?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-26T13:24:53.355Z",
+      "enrichedAt": "2026-11-26T13:24:53.355Z"
+    },
+    {
+      "id": "curio_gen_dcb0b3818cd2",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Strategy of Second-Order Thinking",
+      "subtitle": "Why solving the immediate dilemma often guarantees the next crisis",
+      "category": "growth",
+      "region": "global",
+      "topics": [
+        "decision making",
+        "mental models",
+        "systems thinking",
+        "productivity"
+      ],
+      "estimatedDurationSeconds": 150,
+      "source": {
+        "publisher": "Farnam Street",
+        "title": "Second-Order Thinking: What Smart People Use to Outperform",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Strategy%20of%20Second-Order%20Thinking",
+        "publishedAt": "2026-11-26T13:24:53.355Z",
+        "retrievedAt": "2026-11-26T13:24:53.355Z"
+      },
+      "summary": "First-order thinking focuses on immediate payoffs, while second-order thinking maps out the ripples that cascade after your solution works.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Most bad decisions do not stem from malice or incompetence; they arise from solving exclusively for the immediate next step. First-order thinking asks: What is the fastest way to resolve this friction right now? Second-order thinking asks a much harder question: And then what happens? By tracing the unintended downstream consequences of a seemingly elegant fix, you expose hidden costs before paying them."
+        },
+        {
+          "type": "comparison",
+          "heading": "Evaluating Solutions Across Time",
+          "leftTitle": "First-Order Focus",
+          "rightTitle": "Second-Order Mastery",
+          "leftPoints": [
+            "Celebrates the quick win",
+            "Simplifies the immediate feedback loop",
+            "Solves symptoms in isolation"
+          ],
+          "rightPoints": [
+            "Anticipates reactionary behavior",
+            "Accepts short-term discomfort for long-term stability",
+            "Designs for ecosystem equilibrium"
+          ]
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Core Rules of Second-Order Analysis",
+          "points": [
+            "Always project consequences into three distinct time horizons: 10 minutes, 10 months, and 10 years.",
+            "Ask how other actors will adapt their behavior once your initial policy succeeds.",
+            "Remember that every intervention produces side effects that become the new baseline reality."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Strategy of Second-Order Thinking editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#2D6A4F"
+      },
+      "followUps": [
+        "How can second-order thinking prevent software development tech debt?",
+        "What is the Cobra Effect in economic policy?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-26T13:24:53.355Z",
+      "enrichedAt": "2026-11-26T13:24:53.355Z"
+    },
+    {
+      "id": "curio_gen_d8b87df308de",
+      "schemaVersion": 1,
+      "contentType": "quick_bite",
+      "cardVariant": "interactive_feature",
+      "title": "The Deep Continental Drilling Network",
+      "subtitle": "Earth scientists unveil real-time monitoring across dormant rift systems",
+      "category": "news",
+      "region": "global",
+      "topics": [
+        "geophysics",
+        "geology",
+        "scientific infrastructure",
+        "earth monitoring"
+      ],
+      "estimatedDurationSeconds": 110,
+      "source": {
+        "publisher": "Nature Geoscience",
+        "title": "Monitoring Strain Accumulation in Continental Interiors",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Deep%20Continental%20Drilling%20Network",
+        "publishedAt": "2026-11-26T13:24:53.355Z",
+        "retrievedAt": "2026-11-26T13:24:53.355Z"
+      },
+      "summary": "A consortium of geological surveys has completed a synchronized borehole array across continental rift fractures to study deep-crust strain.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Geophysicists have finalized the deployment of ultra-deep fiber interferometers and pressure sensors across several long-dormant continental rift zones. By lowering high-resolution strainmeters kilometers into crystalline bedrock, researchers are capturing subtle, micro-scale shifts in tectonic stress that were previously drowned out by surface weather, vehicular traffic, and industrial noise."
+        },
+        {
+          "type": "timeline",
+          "heading": "The Evolution of Deep Borehole Science",
+          "events": [
+            {
+              "year": "1970",
+              "title": "The Kola Superdeep Project",
+              "detail": "Soviet drilling begins in the Arctic, eventually reaching past 12 kilometers into Earth's crust."
+            },
+            {
+              "year": "2004",
+              "title": "SAFOD Fault Observatory",
+              "detail": "Engineers drill angled boreholes directly across California's active San Andreas fault zone."
+            },
+            {
+              "year": "2024",
+              "title": "Integrated Rift Arrays",
+              "detail": "Synchronized optical fiber networks start recording continental micro-strain at sub-millimeter precision."
+            }
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Deep Continental Drilling Network editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#C84B31"
+      },
+      "followUps": [
+        "What instruments survive temperatures found 5 kilometers underground?",
+        "How do tectonic rifts eventually birth new oceans?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-26T13:24:53.355Z",
+      "enrichedAt": "2026-11-26T13:24:53.355Z"
+    },
+    {
+      "id": "curio_gen_ce3212c2f5eb",
+      "schemaVersion": 1,
+      "contentType": "interactive_fact",
+      "cardVariant": "interactive_feature",
+      "title": "The Vanishing Chemistry of Roman Sea Concrete",
+      "subtitle": "How volcanic ash and seawater grew stronger over two millennia",
+      "category": "science",
+      "region": "global",
+      "topics": [
+        "materials science",
+        "ancient rome",
+        "chemistry",
+        "civil engineering"
+      ],
+      "estimatedDurationSeconds": 140,
+      "source": {
+        "publisher": "University of Utah News",
+        "title": "Roman Concrete Mineral Discovery",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Vanishing%20Chemistry%20of%20Roman%20Sea%20Concrete",
+        "publishedAt": "2026-11-26T13:24:53.355Z",
+        "retrievedAt": "2026-11-26T13:24:53.355Z"
+      },
+      "summary": "Roman maritime piers did not decay in salt water; instead, a rare mineral reaction actively reinforced the concrete over centuries.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Modern marine concrete structures reinforced with steel rebar typically degrade after a few decades of relentless exposure to corrosive ocean brine. Ancient Roman breakwaters and harbor piers, however, have remained structurally sound for over two thousand years. The secret lies not in waterproofing, but in embracing the seawater as an active chemical catalyst."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Mineral That Grows Inside Stone",
+          "text": "Roman concrete blends reactive volcanic ash with slaked lime. When seawater percolates through the porous matrix, it dissolves volcanic glass and triggers the growth of platy aluminous tobermorite, an extraordinarily durable crystal interlocking the stone."
+        },
+        {
+          "type": "quiz",
+          "question": "What primary volcanic ingredient gave Roman pozzolanic mortar its unique underwater reactivity?",
+          "options": [
+            "Pulverized obsidian glass",
+            "Pozzolanic tuff from the Gulf of Naples",
+            "Basaltic lava sand from Mount Etna"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "Ash deposits quarried near Pozzuoli around the Bay of Naples provided the reactive aluminosilicates essential to forming interlocking tobermorite and phillipsite crystals."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Vanishing Chemistry of Roman Sea Concrete editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#3B4F75"
+      },
+      "followUps": [
+        "Can modern green concrete replicate the Roman tobermorite reaction?",
+        "How did Roman engineers pour wet concrete underwater without dispersing it?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-26T13:24:53.355Z",
+      "enrichedAt": "2026-11-26T13:24:53.355Z"
+    },
     {
       "id": "curio_gen_28049818bdfb",
       "schemaVersion": 1,
@@ -5185,280 +5455,6 @@
       "qualityStatus": "approved",
       "createdAt": "2026-11-18T22:39:32.414Z",
       "enrichedAt": "2026-11-18T22:39:32.414Z"
-    },
-    {
-      "id": "curio_gen_136be0f1df7e",
-      "schemaVersion": 1,
-      "contentType": "interactive_fact",
-      "cardVariant": "interactive_feature",
-      "title": "The Mystery of the Singing Dunes",
-      "subtitle": "When sand grains synchronize into a desert acoustic pipe",
-      "category": "science",
-      "region": "global",
-      "topics": [
-        "physics",
-        "geology",
-        "acoustics",
-        "deserts"
-      ],
-      "estimatedDurationSeconds": 110,
-      "source": {
-        "publisher": "Smithsonian Magazine",
-        "title": "Why Do Some Sand Dunes Sing?",
-        "url": "https://www.smithsonianmag.com/science-nature/why-do-some-sand-dunes-sing-180959435/",
-        "publishedAt": "2026-11-18T22:39:32.414Z",
-        "retrievedAt": "2026-11-18T22:39:32.414Z"
-      },
-      "summary": "In roughly three dozen deserts around the globe, shifting dunes emit an eerie, resonant hum resembling an airplane motor or cello chord.",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "For centuries, travelers crossing arid landscapes from the Sahara to the Gobi reported hearing low, booming notes rising from shifting sand dunes. Early explorers attributed the droning tones to supernatural forces or whistling mountain winds, but the actual cause is an astonishing demonstration of collective acoustic physics."
-        },
-        {
-          "type": "quiz",
-          "question": "What primary physical condition is required for a sand dune to generate a sustained musical note?",
-          "options": [
-            "Grains of nearly identical size shearing together under strictly dry conditions",
-            "High concentrations of quartz crystal vibrating due to seismic tremors",
-            "Moisture trapped in lower layers vaporizing rapidly under afternoon heat"
-          ],
-          "correctOptionIndex": 0,
-          "explanation": "Sand grains must be well-sorted to roughly the same diameter and thoroughly dry. As an avalanche cascades down the dune face, the grains collide at a uniform frequency, synchronizing into a powerful acoustic wave."
-        },
-        {
-          "type": "paragraph",
-          "text": "When a slab of sand slides down the slip face, individual grain collisions occur thousands of times per second. If the grains are uniform in shape and diameter, these tiny impacts synchronize, turning the sliding layer into a loudspeaker membrane that produces a drone reaching up to 105 decibels."
-        }
-      ],
-      "visual": {
-        "type": "editorial_illustration",
-        "alt": "The Mystery of the Singing Dunes editorial card",
-        "attribution": "Curio Editorial",
-        "license": "First-party",
-        "provider": "Curio Design System",
-        "accentColor": "#3B4F75"
-      },
-      "followUps": [
-        "Why do rounded grains sing while jagged grains remain silent?",
-        "Where can you experience booming dunes in person today?"
-      ],
-      "isAiEnriched": true,
-      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
-      "qualityStatus": "approved",
-      "createdAt": "2026-11-18T22:39:32.414Z",
-      "enrichedAt": "2026-11-18T22:39:32.414Z"
-    },
-    {
-      "id": "curio_gen_2b20e7fa582b",
-      "schemaVersion": 1,
-      "contentType": "deep_dive",
-      "cardVariant": "article",
-      "title": "The 100-Baud Glass Cables on the Ocean Floor",
-      "subtitle": "The fragility and quiet genius of global intercontinental data",
-      "category": "technology",
-      "region": "global",
-      "topics": [
-        "internet infrastructure",
-        "telecommunications",
-        "oceanography"
-      ],
-      "estimatedDurationSeconds": 150,
-      "source": {
-        "publisher": "Wired",
-        "title": "The Secret Life of the Cables That Run the Internet",
-        "url": "https://www.wired.com/story/inside-the-subsea-cable-boom/",
-        "publishedAt": "2026-11-18T22:39:32.414Z",
-        "retrievedAt": "2026-11-18T22:39:32.414Z"
-      },
-      "summary": "Satellites may handle orbital communication, but more than 95 percent of international internet traffic travels through narrow glass cables running across abyssal plains.",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "While wireless and satellite networks dominate the public imagination, nearly the entirety of our transcontinental internet flows through unheralded physical tubes resting on the seabed. Over 500 submarine cable systems trace the floor of the world's oceans, stretching around 1.4 million kilometers in total length."
-        },
-        {
-          "type": "comparison",
-          "heading": "Deep Ocean vs. Shallow Waters",
-          "leftTitle": "Shallow Water (Continental Shelf)",
-          "rightTitle": "Deep Abyssal Plain",
-          "leftPoints": [
-            "Cables are heavily armored with steel wire and buried in seabed trenches.",
-            "Must withstand trawler nets, maritime anchors, and dredging operations.",
-            "Can be as thick as a soda can."
-          ],
-          "rightPoints": [
-            "Cables are unarmored, relying on deep water for protection.",
-            "Rests directly on the sediment with no burial required.",
-            "Often only as thick as an ordinary garden hose."
-          ]
-        },
-        {
-          "type": "timeline",
-          "heading": "Evolution of Underwater Signal Transmission",
-          "events": [
-            {
-              "year": "1858",
-              "title": "First Transatlantic Telegraph",
-              "detail": "Queen Victoria sent a 98-word telegram to President Buchanan; the signal took over 16 hours to transit."
-            },
-            {
-              "year": "1956",
-              "title": "TAT-1 Coaxial Telephone Cable",
-              "detail": "Enabled the first voice calls between North America and Europe, supporting 36 simultaneous channels."
-            },
-            {
-              "year": "1988",
-              "title": "TAT-8 Optical Fiber Cable",
-              "detail": "The first transatlantic fiber-optic system launched, expanding digital capacity thousands of times over."
-            }
-          ]
-        }
-      ],
-      "visual": {
-        "type": "editorial_illustration",
-        "alt": "The 100-Baud Glass Cables on the Ocean Floor editorial card",
-        "attribution": "Curio Editorial",
-        "license": "First-party",
-        "provider": "Curio Design System",
-        "accentColor": "#2563EB"
-      },
-      "followUps": [
-        "How do specialized ships repair snapped cables thousands of meters below sea level?",
-        "How do optical amplifiers function without external power on the sea floor?"
-      ],
-      "isAiEnriched": true,
-      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
-      "qualityStatus": "approved",
-      "createdAt": "2026-11-18T22:39:32.414Z",
-      "enrichedAt": "2026-11-18T22:39:32.414Z"
-    },
-    {
-      "id": "curio_gen_88eb8d08e61a",
-      "schemaVersion": 1,
-      "contentType": "short_story",
-      "cardVariant": "article",
-      "title": "The Saffron Hunters of the High Atlas",
-      "subtitle": "Why three purple threads per flower created the planet's costliest spice",
-      "category": "travel_food",
-      "region": "global",
-      "topics": [
-        "culinary history",
-        "agriculture",
-        "morocco",
-        "spices"
-      ],
-      "estimatedDurationSeconds": 120,
-      "source": {
-        "publisher": "BBC Travel",
-        "title": "The red gold of Morocco's High Atlas",
-        "url": "https://www.bbc.com/travel/article/20211116-the-red-gold-of-moroccos-high-atlas",
-        "publishedAt": "2026-11-18T22:39:32.414Z",
-        "retrievedAt": "2026-11-18T22:39:32.414Z"
-      },
-      "summary": "In the arid plateaus of Taliouine, Morocco, harvesting saffron requires picking delicate Crocus sativus blossoms before sunrise, yielding a spice valued higher than silver.",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "High on the volcanic slopes of Morocco's Anti-Atlas mountains lies the small Berber town of Taliouine, one of the premier saffron capitals of the Mediterranean basin. For two brief weeks every autumn, the barren landscape erupts into a sea of lilac-purple petals that must be harvested entirely by hand before the morning sun wilts the blooms."
-        },
-        {
-          "type": "fact_reveal",
-          "label": "The Labor of Milligrams",
-          "text": "It takes approximately 75,000 Crocus sativus flowers to yield just one single pound (453 grams) of dried saffron threads, as each blossom produces precisely three scarlet stigmas."
-        },
-        {
-          "type": "paragraph",
-          "text": "Because mechanical harvesting would pulverize the fragile pistils, entire families work in silence at dawn, stooping to pinch off whole flowers before spending afternoons plucking out the crimson filaments. The resulting spice, prized for its grassy, honeyed aroma and golden dye, remains one of the few culinary goods completely resistant to industrial automation."
-        },
-        {
-          "type": "key_takeaway",
-          "heading": "Culinary Footprint",
-          "points": [
-            "The chemical compound safranal creates the characteristic aroma, while crocin provides the radiant yellow pigment.",
-            "Genuine saffron stigmas will color warm water golden-orange, while counterfeit safflower or dyed corn silk releases a harsh red stain."
-          ]
-        }
-      ],
-      "visual": {
-        "type": "editorial_illustration",
-        "alt": "The Saffron Hunters of the High Atlas editorial card",
-        "attribution": "Curio Editorial",
-        "license": "First-party",
-        "provider": "Curio Design System",
-        "accentColor": "#0F766E"
-      },
-      "followUps": [
-        "How did saffron cultivation spread from ancient Greece across Asia and North Africa?",
-        "What chemical tests identify adulterated saffron in international trade?"
-      ],
-      "isAiEnriched": true,
-      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
-      "qualityStatus": "approved",
-      "createdAt": "2026-11-18T22:39:32.414Z",
-      "enrichedAt": "2026-11-18T22:39:32.414Z"
-    },
-    {
-      "id": "curio_gen_425fad2408f1",
-      "schemaVersion": 1,
-      "contentType": "interactive_fact",
-      "cardVariant": "interactive_feature",
-      "title": "The Sonic Blueprint of the Cathedral Ceiling",
-      "subtitle": "How medieval masons tuned stone chambers like musical instruments",
-      "category": "facts",
-      "topics": [
-        "acoustics",
-        "architecture",
-        "physics"
-      ],
-      "estimatedDurationSeconds": 95,
-      "source": {
-        "publisher": "Smithsonian Magazine",
-        "title": "How Medieval Cathedrals Were Tuned Like Mega-Instruments",
-        "url": "https://www.smithsonianmag.com/",
-        "publishedAt": "2026-11-18T16:37:33.296Z",
-        "retrievedAt": "2026-11-18T16:37:33.296Z"
-      },
-      "summary": "Gothic cathedrals were not simply engineered to impress the eye; their dimensions were deliberately proportioned to sustain polyphonic liturgical music.",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "Long before modern sound engineers mapped sound waves with digital sensors, medieval master masons operated as acoustic craftsmen. When constructing vaulted stone naves across Western Europe, builders calibrated ceiling heights and nave proportions to stretch reverberation times to five seconds or longer, turning entire halls into physical sound resonators."
-        },
-        {
-          "type": "fact_reveal",
-          "label": "The hidden musical resonance",
-          "text": "Architectural measurements across cathedrals like Notre-Dame de Paris revealed that choir bays were tuned so that Gregorian chant notes at specific lower frequencies naturally amplified by up to six decibels without requiring added vocal strain."
-        },
-        {
-          "type": "quiz",
-          "question": "Why did Gothic builders deliberately choose porous limestone over dense polished marble for choir walls?",
-          "options": [
-            "It was significantly cheaper to transport by barge",
-            "It subtly absorbed harsh high frequencies, preserving clear speech consonants",
-            "It reflected light better under candle illumination"
-          ],
-          "correctOptionIndex": 1,
-          "explanation": "Dense marble produces muddy, harsh echoes, whereas porous limestone naturally dampens higher frequencies, allowing intelligible spoken Latin while sustaining rich choral bass."
-        }
-      ],
-      "visual": {
-        "type": "editorial_illustration",
-        "alt": "The Sonic Blueprint of the Cathedral Ceiling editorial card",
-        "attribution": "Curio Editorial",
-        "license": "First-party",
-        "provider": "Curio Design System",
-        "accentColor": "#B45309"
-      },
-      "followUps": [
-        "How do acoustic engineers restore ancient cathedral resonances after modern fires?",
-        "What role did water-filled ceramic jars play in ancient Greek amphitheater acoustics?"
-      ],
-      "isAiEnriched": true,
-      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
-      "qualityStatus": "approved",
-      "createdAt": "2026-11-18T16:37:33.296Z",
-      "enrichedAt": "2026-11-18T16:37:33.296Z"
     }
   ]
 }
