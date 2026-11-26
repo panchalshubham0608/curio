@@ -1,10 +1,281 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-26T13:24:53.355Z",
+  "generatedAt": "2026-11-26T22:29:39.181Z",
   "generator": "gemini-textual-feed",
   "model": "gemini-flash-latest",
   "itemCount": 80,
   "items": [
+    {
+      "id": "curio_gen_bb1b1ad2549d",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Accidental Acoustic Spy of the Cold War",
+      "subtitle": "How oceanographers and intelligence agents mapped the deep ocean through underwater sound channels",
+      "category": "technology",
+      "region": "global",
+      "topics": [
+        "acoustics",
+        "oceanography",
+        "cold war",
+        "surveillance"
+      ],
+      "estimatedDurationSeconds": 150,
+      "source": {
+        "publisher": "National Oceanic and Atmospheric Administration",
+        "title": "The SOFAR Channel and Ocean Acoustics",
+        "url": "https://oceanexplorer.noaa.gov/",
+        "publishedAt": "2026-11-26T22:29:39.181Z",
+        "retrievedAt": "2026-11-26T22:29:39.181Z"
+      },
+      "summary": "In the mid-20th century, scientists discovered the SOFAR channel, a natural underwater sound conduit that transformed maritime surveillance and modern ocean tracking.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Deep beneath the ocean surface lies a horizontal layer of seawater where temperature and pressure combine to create an acoustic sweet spot known as the SOFAR channel, or Sound Fixing and Ranging channel. Within this depth zone, sound waves bend back toward the center rather than dispersing toward the surface or seabed, allowing low-frequency acoustic vibrations to travel thousands of kilometers with negligible loss of energy."
+        },
+        {
+          "type": "timeline",
+          "heading": "The Evolution of Deep Sea Acoustics",
+          "events": [
+            {
+              "year": "1943",
+              "title": "Theoretical Discovery",
+              "detail": "Oceanographer Maurice Ewing predicts the existence of a focused underwater sound corridor caused by the opposing effects of water temperature and pressure."
+            },
+            {
+              "year": "1954",
+              "title": "Project SOSUS",
+              "detail": "The United States Navy operationalizes the Sound Surveillance System, placing hydrophone arrays on continental shelves to track maritime traffic globally."
+            },
+            {
+              "year": "1991",
+              "title": "Dual-Use Transition",
+              "detail": "Declassified acoustic telemetry networks are repurposed by civilian researchers to monitor underwater earthquakes and migrating blue whale populations."
+            }
+          ]
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Core Takeaways",
+          "points": [
+            "The SOFAR channel acts like an underwater fiber-optic cable for low-frequency sound.",
+            "A small underwater explosive charge detonated in the channel off Australia was once detected near Bermuda over halfway around the globe.",
+            "Today, global acoustic arrays listen for clandestine nuclear testing and monitor shifts in ocean temperatures."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Accidental Acoustic Spy of the Cold War editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#2563EB"
+      },
+      "followUps": [
+        "How do marine mammals exploit the SOFAR channel?",
+        "What sensors monitor the Comprehensive Nuclear-Test-Ban Treaty today?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-26T22:29:39.181Z",
+      "enrichedAt": "2026-11-26T22:29:39.181Z"
+    },
+    {
+      "id": "curio_gen_fc8d684713cd",
+      "schemaVersion": 1,
+      "contentType": "interactive_fact",
+      "cardVariant": "interactive_feature",
+      "title": "The Rain of Metal Falling on Earth Every Day",
+      "subtitle": "Microscopic micrometeorites are collecting on the rooftops of world capitals",
+      "category": "facts",
+      "region": "global",
+      "topics": [
+        "astronomy",
+        "geology",
+        "urban science"
+      ],
+      "estimatedDurationSeconds": 120,
+      "source": {
+        "publisher": "Smithsonian Magazine",
+        "title": "You Can Find Stardust in Your Rain Gutters",
+        "url": "https://www.smithsonianmag.com/",
+        "publishedAt": "2026-11-26T22:29:39.181Z",
+        "retrievedAt": "2026-11-26T22:29:39.181Z"
+      },
+      "summary": "Every single day, dozens of metric tons of interplanetary dust filter through our atmosphere, and anyone with a gutter and a magnet can collect them.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "For over a century, scientists believed that micrometeorites—tiny extraterrestrial particles left behind by comets and asteroids—could only be collected in remote, pristine landscapes such as Antarctic ice sheets or the deep ocean floor. Urban pollution and industrial grit were thought to make locating them in populated areas completely impossible."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Rooftop Collector",
+          "text": "In 2016, amateur scientist Jon Larsen proved that urban rainwater gutters in cities like Paris and Oslo are teeming with pristine micrometeorites, distinguishing them from road grit using high-resolution electron microscopy."
+        },
+        {
+          "type": "quiz",
+          "question": "Roughly how much cosmic dust enters the Earth's atmosphere every year?",
+          "options": [
+            "Around 50 metric tons",
+            "Around 5,000 metric tons",
+            "Around 40,000 metric tons"
+          ],
+          "correctOptionIndex": 2,
+          "explanation": "Scientists estimate that between 30,000 and 40,000 metric tons of cosmic dust collide with Earth's atmosphere each year, most of it burning into microscopic spherules."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Rain of Metal Falling on Earth Every Day editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#B45309"
+      },
+      "followUps": [
+        "How can you filter urban dust to find magnetic micrometeorites?",
+        "What do cosmic dust grains tell us about early solar system chemistry?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-26T22:29:39.181Z",
+      "enrichedAt": "2026-11-26T22:29:39.181Z"
+    },
+    {
+      "id": "curio_gen_e383c9f5cd86",
+      "schemaVersion": 1,
+      "contentType": "short_story",
+      "cardVariant": "article",
+      "title": "The Great Camouflage of Lake Ladoga",
+      "subtitle": "How an invisible winter highway of rails over thin ice sustained a besieged metropolis",
+      "category": "history",
+      "region": "global",
+      "topics": [
+        "world war ii",
+        "engineering",
+        "logistics",
+        "ice mechanics"
+      ],
+      "estimatedDurationSeconds": 160,
+      "source": {
+        "publisher": "Encyclopaedia Britannica",
+        "title": "The Siege of Leningrad and the Road of Life",
+        "url": "https://www.britannica.com/",
+        "publishedAt": "2026-11-26T22:29:39.181Z",
+        "retrievedAt": "2026-11-26T22:29:39.181Z"
+      },
+      "summary": "During the brutal Siege of Leningrad, Soviet engineers constructed a miraculous arterial route directly over frozen water, mastering the resonant physics of moving ice.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "When German forces severed all land links to Leningrad in September 1941, over two million civilians were trapped with rapidly depleting supplies. The only avenue of escape or resupply was Lake Ladoga to the east. As winter temperatures plummeted, transport engineers set out to do what conventional wisdom deemed suicide: build a continuous logistical highway across living, shifting ice."
+        },
+        {
+          "type": "comparison",
+          "heading": "Navigating the Ice Highway",
+          "leftTitle": "Static Ice Assumptions",
+          "rightTitle": "Discovered Hydrodynamic Realities",
+          "leftPoints": [
+            "Assumed thick ice could hold any stationary load indefinitely.",
+            "Expected vehicles could travel at standard convoy speeds safely.",
+            "Believed surface cracking was solely due to load weight."
+          ],
+          "rightPoints": [
+            "Stationary trucks slowly deformed the ice sheet until it fractured.",
+            "Driving at the hydrodynamic resonance speed generated bow waves beneath the ice, shattering it instantly.",
+            "Vehicles were forced to maintain strict 35-meter intervals at exactly 35 kilometers per hour to survive."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Known as the Road of Life, this frozen corridor transported hundreds of thousands of tons of flour and fuel while evacuating over half a million civilians. Engineers even managed to lay electrical cables and a fuel pipeline across the lake bed beneath the ice sheet, keeping the city alive through the harshest winter in recorded regional history."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Great Camouflage of Lake Ladoga editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#7C2D12"
+      },
+      "followUps": [
+        "What are the resonance wave mechanics of vehicular traffic on ice?",
+        "How were underwater pipelines laid beneath ice sheets in wartime?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-26T22:29:39.181Z",
+      "enrichedAt": "2026-11-26T22:29:39.181Z"
+    },
+    {
+      "id": "curio_gen_4bff0e0f9099",
+      "schemaVersion": 1,
+      "contentType": "quick_bite",
+      "cardVariant": "interactive_feature",
+      "title": "The Island Invaded by Three Million Rabbits",
+      "subtitle": "The chaotic tale of Okunoshima and the world's most lopsided wildlife takeover",
+      "category": "humour",
+      "region": "global",
+      "topics": [
+        "japan",
+        "wildlife",
+        "travel",
+        "unintended consequences"
+      ],
+      "estimatedDurationSeconds": 110,
+      "source": {
+        "publisher": "BBC Travel",
+        "title": "The Curious Legacy of Japan's Rabbit Island",
+        "url": "https://www.bbc.com/travel",
+        "publishedAt": "2026-11-26T22:29:39.181Z",
+        "retrievedAt": "2026-11-26T22:29:39.181Z"
+      },
+      "summary": "A once-secret military outpost in the Inland Sea of Japan is now completely governed by thousands of remarkably bold, leafy-green-obsessed wild rabbits.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "For decades, Okunoshima was deliberately removed from Japanese geographical maps. During the early twentieth century, it housed a top-secret chemical plant, but after the facilities were abandoned and demolished following World War II, the small forested islet sat in relative obscurity. Then arrived a small group of schoolchildren with a fateful cage containing just eight pet rabbits."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Bunny Boom",
+          "text": "With zero natural predators, a ban on dogs and cats, and an endless stream of tourists carrying raw cabbage, those eight original rabbits multiplied into an inescapable, bounding army of thousands that swarms disembarking ferry passengers."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Lessons from Rabbit Island",
+          "points": [
+            "Predator-free microclimates can lead to rapid ecological takeovers.",
+            "Tourists now visit Okunoshima to be gently stampeded by dozens of hungry lagomorphs at once.",
+            "The island's primary municipal challenge is now managing an astronomical demand for fresh lettuce."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Island Invaded by Three Million Rabbits editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#9333EA"
+      },
+      "followUps": [
+        "How do isolated islands manage unchecked herbivore populations?",
+        "What other unusual animal-dominated islands exist globally?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-26T22:29:39.181Z",
+      "enrichedAt": "2026-11-26T22:29:39.181Z"
+    },
     {
       "id": "curio_gen_b35ae6b51245",
       "schemaVersion": 1,
@@ -5184,277 +5455,6 @@
       "qualityStatus": "approved",
       "createdAt": "2026-11-19T03:55:20.949Z",
       "enrichedAt": "2026-11-19T03:55:20.949Z"
-    },
-    {
-      "id": "curio_gen_39564fb50ed8",
-      "schemaVersion": 1,
-      "contentType": "quick_bite",
-      "cardVariant": "interactive_feature",
-      "title": "The Ultradian Pause",
-      "subtitle": "Working in 90-minute waves to beat cognitive exhaustion",
-      "category": "growth",
-      "region": "global",
-      "topics": [
-        "neuroscience",
-        "productivity",
-        "circadian biology"
-      ],
-      "estimatedDurationSeconds": 120,
-      "source": {
-        "publisher": "Harvard Business Review",
-        "title": "Manage Your Energy, Not Your Time",
-        "url": "https://hbr.org/2007/10/manage-your-energy-not-your-time",
-        "publishedAt": "2026-11-19T03:55:20.949Z",
-        "retrievedAt": "2026-11-19T03:55:20.949Z"
-      },
-      "summary": "Our brains cycle through natural 90-minute rhythms of alertness and fatigue throughout the day, known as the Basic Rest-Activity Cycle.",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "Most professionals are familiar with circadian rhythms that regulate our 24-hour sleep-wake cycle, but far fewer plan their days around ultradian rhythms. Pioneering sleep researcher Nathaniel Kleitman discovered that our brains operate on a 90-to-120-minute oscillation between peak cognitive arousal and physical replenishment."
-        },
-        {
-          "type": "comparison",
-          "heading": "Brute Force vs. Rhythmic Work",
-          "leftTitle": "Continuous Overdrive",
-          "rightTitle": "Ultradian Syncing",
-          "leftPoints": [
-            "Ignores yawn and fidget cues",
-            "Relies on caffeine spikes to mask adenosine buildup",
-            "Yields diminishing cognitive returns after two continuous hours"
-          ],
-          "rightPoints": [
-            "Caps intense focus sprints at 90 minutes",
-            "Incorporates 15-minute low-stimulation breaks",
-            "Restores neurotransmitter supplies before mental friction sets in"
-          ]
-        },
-        {
-          "type": "key_takeaway",
-          "heading": "The Practical Protocol",
-          "points": [
-            "Notice subtle exhaustion signals like eye blinking, physical fidgeting, or spontaneous daydreaming.",
-            "Take deliberate disconnections without digital input to allow the brain's default mode network to consolidate thoughts."
-          ]
-        }
-      ],
-      "visual": {
-        "type": "editorial_illustration",
-        "alt": "The Ultradian Pause editorial card",
-        "attribution": "Curio Editorial",
-        "license": "First-party",
-        "provider": "Curio Design System",
-        "accentColor": "#2D6A4F"
-      },
-      "followUps": [
-        "How does the Default Mode Network benefit from non-sleep deep rest?",
-        "Why do ultradian rhythms continue even while we are dreaming in REM sleep?"
-      ],
-      "isAiEnriched": true,
-      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
-      "qualityStatus": "approved",
-      "createdAt": "2026-11-19T03:55:20.949Z",
-      "enrichedAt": "2026-11-19T03:55:20.949Z"
-    },
-    {
-      "id": "curio_gen_b247661762ff",
-      "schemaVersion": 1,
-      "contentType": "short_story",
-      "cardVariant": "article",
-      "title": "The Ice King of Boston",
-      "subtitle": "How Frederic Tudor built a global commodity empire by shipping frozen New England ponds across the equator",
-      "category": "history",
-      "region": "global",
-      "topics": [
-        "economic history",
-        "maritime innovation",
-        "trade routes"
-      ],
-      "estimatedDurationSeconds": 160,
-      "source": {
-        "publisher": "Smithsonian Magazine",
-        "title": "The Ice King: How Boston Chilled the World",
-        "url": "https://www.smithsonianmag.com/history/the-ice-king-boston-chilled-the-world-180974898/",
-        "publishedAt": "2026-11-19T03:55:20.949Z",
-        "retrievedAt": "2026-11-19T03:55:20.949Z"
-      },
-      "summary": "In the early nineteenth century, a determined Bostonian figured out that sawdust, good hull insulation, and stubborn patience could turn winter pond ice into a global luxury.",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "In 1806, onlookers on Boston's docks openly mocked Frederic Tudor as he loaded 130 tons of solid Massachusetts pond ice aboard a ship bound for the sweltering Caribbean island of Martinique. Observers assumed the ice would vanish long before landfall, and early shipments indeed melted into tepid water puddles. Yet Tudor refused to surrender his bizarre ambition."
-        },
-        {
-          "type": "timeline",
-          "heading": "The Chilled Commercial Revolution",
-          "events": [
-            {
-              "year": "1806",
-              "title": "First Venture",
-              "detail": "Tudor ships lake ice to Martinique; customers have no insulated depots and the cargo melts into a heavy financial loss."
-            },
-            {
-              "year": "1825",
-              "title": "Sawdust Insulation",
-              "detail": "Inventor Nathaniel Wyeth designs horse-drawn ice cutters, and Tudor adopts dry wood sawdust to insulate cargo holds cheaply."
-            },
-            {
-              "year": "1833",
-              "title": "Arrival in Calcutta",
-              "detail": "The ship Tuscany delivers 100 tons of crystal-clear Boston ice to India after a four-month voyage across the equator, turning Tudor into an international industrial magnate."
-            }
-          ]
-        },
-        {
-          "type": "quiz",
-          "question": "What common byproduct proved to be the magic insulating ingredient that saved the global ice trade?",
-          "options": [
-            "Coarse sheep wool blankets",
-            "Dry pine sawdust from timber mills",
-            "Shredded tobacco leaves"
-          ],
-          "correctOptionIndex": 1,
-          "explanation": "Sawdust trapped pockets of stagnant air while absorbing moisture, creating an inexpensive insulating jacket that allowed blocks of ice to survive four-month voyages through tropical seas."
-        }
-      ],
-      "visual": {
-        "type": "editorial_illustration",
-        "alt": "The Ice King of Boston editorial card",
-        "attribution": "Curio Editorial",
-        "license": "First-party",
-        "provider": "Curio Design System",
-        "accentColor": "#7C2D12"
-      },
-      "followUps": [
-        "How did the invention of commercial refrigeration abruptly collapse the natural ice trade?",
-        "What architectural tricks kept early tropical icehouses cold without electricity?"
-      ],
-      "isAiEnriched": true,
-      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
-      "qualityStatus": "approved",
-      "createdAt": "2026-11-19T03:55:20.949Z",
-      "enrichedAt": "2026-11-19T03:55:20.949Z"
-    },
-    {
-      "id": "curio_gen_0dca9beef56c",
-      "schemaVersion": 1,
-      "contentType": "quick_bite",
-      "cardVariant": "interactive_feature",
-      "title": "The Bureaucratic War of the Moustache",
-      "subtitle": "When French waiters fought for the right to grow facial hair",
-      "category": "humour",
-      "region": "global",
-      "topics": [
-        "social satire",
-        "labor history",
-        "french culture"
-      ],
-      "estimatedDurationSeconds": 130,
-      "source": {
-        "publisher": "BBC History",
-        "title": "The Waiters Strike for the Right to a Moustache",
-        "url": "https://en.wikipedia.org/w/index.php?search=The%20Bureaucratic%20War%20of%20the%20Moustache",
-        "publishedAt": "2026-11-19T03:55:20.949Z",
-        "retrievedAt": "2026-11-19T03:55:20.949Z"
-      },
-      "summary": "In the spring of 1907, Parisian restaurant waiters walked off the job to demand an essential dignity: the legal freedom to grow a dashing moustache.",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "During France's Belle Époque, facial hair was not merely an aesthetic choice; it was a rigid social badge. Aristocrats, military officers, and wealthy patrons wore glorious, upturned moustaches, while domestic servants and cafe waiters were legally forced to remain clean-shaven to mark their subordinate status."
-        },
-        {
-          "type": "fact_reveal",
-          "label": "The Brasserie Strike of 1907",
-          "text": "Fed up with class subordination, hundreds of Parisian waiters organized coordinated strikes demanding shorter hours, an end to mandatory unpaid trials, and the explicit legal right to grow any facial hair they pleased."
-        },
-        {
-          "type": "paragraph",
-          "text": "Patrons were horrified when chic boulevards ground to a halt because nobody was pouring their aperitifs. Cafe owners quickly folded, granting the culinary strikers both wage concessions and total follicular freedom. Within weeks, the terraces of Paris were teeming with aggressively waxed, rebellious upper lips."
-        }
-      ],
-      "visual": {
-        "type": "editorial_illustration",
-        "alt": "The Bureaucratic War of the Moustache editorial card",
-        "attribution": "Curio Editorial",
-        "license": "First-party",
-        "provider": "Curio Design System",
-        "accentColor": "#9333EA"
-      },
-      "followUps": [
-        "Why were 19th-century British soldiers legally punished if they shaved their moustaches?",
-        "How did clean-shaven styles return to fashion during World War I due to chemical gas masks?"
-      ],
-      "isAiEnriched": true,
-      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
-      "qualityStatus": "approved",
-      "createdAt": "2026-11-19T03:55:20.949Z",
-      "enrichedAt": "2026-11-19T03:55:20.949Z"
-    },
-    {
-      "id": "curio_gen_627e5eb0205b",
-      "schemaVersion": 1,
-      "contentType": "short_story",
-      "cardVariant": "article",
-      "title": "The Global Seed Vault's First Withdrawal",
-      "subtitle": "How war in the Fertile Crescent triggered the Arctic backup system",
-      "category": "news",
-      "region": "global",
-      "topics": [
-        "agriculture",
-        "biodiversity",
-        "geopolitics",
-        "arctic"
-      ],
-      "estimatedDurationSeconds": 130,
-      "source": {
-        "publisher": "The Guardian",
-        "title": "Syrian war causes first withdrawal from Svalbard 'doomsday' seed vault",
-        "url": "https://www.theguardian.com/environment/2015/oct/19/syrian-war-causes-first-withdrawal-from-svalbard-doomsday-seed-vault",
-        "publishedAt": "2026-11-18T22:39:32.414Z",
-        "retrievedAt": "2026-11-18T22:39:32.414Z"
-      },
-      "summary": "Deep inside a frozen mountain on Spitsbergen island, the Svalbard Global Seed Vault holds millions of duplicate crop samples. In 2015, the vault faced its very first withdrawal after conflict devastated an ancient seed bank in Aleppo.",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "Buried more than one hundred meters inside a permafrost mountain on the Norwegian archipelago of Svalbard rests humanity's agricultural insurance policy. Opened in 2008, the facility was designed to remain untouched for centuries, quietly safeguarding backup duplicates of the world's most critical crops against natural disaster, climate collapse, or warfare."
-        },
-        {
-          "type": "paragraph",
-          "text": "The safety net was tested far sooner than planners anticipated. The International Center for Agricultural Research in the Dry Areas (ICARDA) had long maintained an indispensable gene bank in Aleppo, Syria, housing drought-tolerant varieties of wheat, barley, and lentils cultivated since the dawn of farming. When ongoing civil conflict forced scientists to abandon the facility, they turned to Svalbard to retrieve their deposited seeds."
-        },
-        {
-          "type": "fact_reveal",
-          "label": "The Replanting Miracle",
-          "text": "ICARDA withdrew over 38,000 seed samples in 2015, successfully regenerated them in new research fields across Lebanon and Morocco, and subsequently returned newly harvested replacement seeds back into the Arctic vault by 2017."
-        },
-        {
-          "type": "key_takeaway",
-          "heading": "Resilience in Action",
-          "points": [
-            "The Svalbard repository does not own the seeds; it acts as a black box safety deposit system for national and regional gene banks.",
-            "The successful retrieval proved that global botanical redundancy can rescue millennia of agricultural breeding from modern geopolitics."
-          ]
-        }
-      ],
-      "visual": {
-        "type": "editorial_illustration",
-        "alt": "The Global Seed Vault's First Withdrawal editorial card",
-        "attribution": "Curio Editorial",
-        "license": "First-party",
-        "provider": "Curio Design System",
-        "accentColor": "#C84B31"
-      },
-      "followUps": [
-        "How are seeds dried and frozen to survive for centuries?",
-        "What other deep-storage preservation projects exist globally?"
-      ],
-      "isAiEnriched": true,
-      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
-      "qualityStatus": "approved",
-      "createdAt": "2026-11-18T22:39:32.414Z",
-      "enrichedAt": "2026-11-18T22:39:32.414Z"
     }
   ]
 }
