@@ -1,10 +1,235 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-27T14:08:52.448Z",
+  "generatedAt": "2026-11-27T22:50:23.879Z",
   "generator": "gemini-textual-puzzles",
   "model": "gemini-flash-latest",
   "itemCount": 48,
   "items": [
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_65266d0fdfe8",
+      "kind": "visual_diagram",
+      "title": "Prism Face Sums",
+      "category": "science",
+      "difficulty": "Clever",
+      "prompt": "Each triangular face displays three corner numbers and a central product. What value belongs in place of the question mark?",
+      "svgDiagram": {
+        "caption": "Find the missing central value",
+        "background": "#FAF8F4",
+        "shapes": [
+          {
+            "shape": "polygon",
+            "points": [
+              [
+                80,
+                40
+              ],
+              [
+                30,
+                150
+              ],
+              [
+                130,
+                150
+              ]
+            ],
+            "fill": "#E2E8F0",
+            "stroke": "#3B4F75",
+            "strokeWidth": 2
+          },
+          {
+            "shape": "circle",
+            "cx": 80,
+            "cy": 40,
+            "r": 14,
+            "fill": "#3B4F75"
+          },
+          {
+            "shape": "text",
+            "x": 80,
+            "y": 45,
+            "text": "3",
+            "fontSize": 14,
+            "fill": "#FFFFFF",
+            "anchor": "middle"
+          },
+          {
+            "shape": "circle",
+            "cx": 30,
+            "cy": 150,
+            "r": 14,
+            "fill": "#3B4F75"
+          },
+          {
+            "shape": "text",
+            "x": 30,
+            "y": 155,
+            "text": "4",
+            "fontSize": 14,
+            "fill": "#FFFFFF",
+            "anchor": "middle"
+          },
+          {
+            "shape": "circle",
+            "cx": 130,
+            "cy": 150,
+            "r": 14,
+            "fill": "#3B4F75"
+          },
+          {
+            "shape": "text",
+            "x": 130,
+            "y": 155,
+            "text": "5",
+            "fontSize": 14,
+            "fill": "#FFFFFF",
+            "anchor": "middle"
+          },
+          {
+            "shape": "text",
+            "x": 80,
+            "y": 115,
+            "text": "60",
+            "fontSize": 18,
+            "fill": "#C84B31",
+            "anchor": "middle"
+          },
+          {
+            "shape": "polygon",
+            "points": [
+              [
+                240,
+                40
+              ],
+              [
+                190,
+                150
+              ],
+              [
+                290,
+                150
+              ]
+            ],
+            "fill": "#E2E8F0",
+            "stroke": "#2D6A4F",
+            "strokeWidth": 2
+          },
+          {
+            "shape": "circle",
+            "cx": 240,
+            "cy": 40,
+            "r": 14,
+            "fill": "#2D6A4F"
+          },
+          {
+            "shape": "text",
+            "x": 240,
+            "y": 45,
+            "text": "2",
+            "fontSize": 14,
+            "fill": "#FFFFFF",
+            "anchor": "middle"
+          },
+          {
+            "shape": "circle",
+            "cx": 190,
+            "cy": 150,
+            "r": 14,
+            "fill": "#2D6A4F"
+          },
+          {
+            "shape": "text",
+            "x": 190,
+            "y": 155,
+            "text": "6",
+            "fontSize": 14,
+            "fill": "#FFFFFF",
+            "anchor": "middle"
+          },
+          {
+            "shape": "circle",
+            "cx": 290,
+            "cy": 150,
+            "r": 14,
+            "fill": "#2D6A4F"
+          },
+          {
+            "shape": "text",
+            "x": 290,
+            "y": 155,
+            "text": "7",
+            "fontSize": 14,
+            "fill": "#FFFFFF",
+            "anchor": "middle"
+          },
+          {
+            "shape": "text",
+            "x": 240,
+            "y": 115,
+            "text": "?",
+            "fontSize": 20,
+            "fill": "#C84B31",
+            "anchor": "middle"
+          }
+        ]
+      },
+      "hint": "Multiply the three vertices of each triangle to determine the center.",
+      "options": [
+        "72",
+        "84",
+        "96",
+        "112"
+      ],
+      "correctIndex": 1,
+      "explanation": "The center number equals the product of the three corner values: 3 × 4 × 5 = 60, and 2 × 6 × 7 = 84.",
+      "origin": "ai",
+      "createdAt": "2026-11-27T22:50:23.879Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_7951b45cc78c",
+      "kind": "lateral_riddle",
+      "title": "The Weightless Anchor",
+      "category": "humour",
+      "difficulty": "Warm-up",
+      "prompt": "I can fill an entire room without taking up any physical space, and the more of me that enters, the less you can see. What am I?",
+      "hint": "Think of what surrounds you when the lights go out.",
+      "options": [
+        "Smoke",
+        "Darkness",
+        "Sound",
+        "Fog"
+      ],
+      "correctIndex": 1,
+      "explanation": "Darkness fills an entire room without occupying physical volume, and increasing darkness obscures your vision.",
+      "origin": "ai",
+      "createdAt": "2026-11-27T22:50:23.879Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_65d50eab61e0",
+      "kind": "logic_reasoning",
+      "title": "Server Cluster Priority",
+      "category": "technology",
+      "difficulty": "Clever",
+      "prompt": "Four server nodes (Alpha, Beta, Gamma, Delta) are rebooted sequentially based on priority protocols. Which node rebooted second?",
+      "clues": [
+        "1. Gamma was rebooted last.",
+        "2. Alpha rebooted immediately before Beta.",
+        "3. Delta was not the first node rebooted."
+      ],
+      "hint": "Determine the unique sequence by anchoring Alpha and Beta first.",
+      "options": [
+        "Alpha",
+        "Beta",
+        "Gamma",
+        "Delta"
+      ],
+      "correctIndex": 0,
+      "explanation": "Gamma must reboot last, Alpha directly precedes Beta, and Delta cannot be first, dictating the order Delta, Alpha, Beta, Gamma.",
+      "origin": "ai",
+      "createdAt": "2026-11-27T22:50:23.879Z"
+    },
     {
       "schemaVersion": 1,
       "id": "puz_ai_f76dc026df91",
@@ -2052,79 +2277,6 @@
       "explanation": "Selecting cells with values 27, 15, and 8 gives 27 + 15 + 8 = 50, successfully meeting the target sum with exactly 3 cells.",
       "origin": "ai",
       "createdAt": "2026-11-22T08:35:02.581Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_cea23341b612",
-      "kind": "odd_one_out",
-      "title": "Noble Gas Disrupter",
-      "category": "science",
-      "difficulty": "Warm-up",
-      "prompt": "Which of these chemical elements does not belong with the others?",
-      "hint": "Consider their periodic table group classification.",
-      "options": [
-        "Argon",
-        "Neon",
-        "Nitrogen",
-        "Krypton"
-      ],
-      "correctIndex": 2,
-      "explanation": "Argon, Neon, and Krypton are inert noble gases found in Group 18 of the periodic table, whereas Nitrogen is a diatomic nonmetal in Group 15.",
-      "origin": "ai",
-      "createdAt": "2026-11-22T01:29:37.569Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_0824b058f8e9",
-      "kind": "order_sequence",
-      "title": "Chronology of Communication",
-      "category": "technology",
-      "difficulty": "Clever",
-      "prompt": "Arrange these groundbreaking communication technologies in chronological order of their invention/introduction, from earliest to latest.",
-      "orderItems": [
-        "Radio communication",
-        "Electric telegraph",
-        "Telephone",
-        "ARPANET"
-      ],
-      "correctOrder": [
-        1,
-        2,
-        0,
-        3
-      ],
-      "hint": "Electric telegraph came before the acoustic telephone.",
-      "explanation": "The electric telegraph emerged in the 1830s-1840s, Alexander Graham Bell patented the telephone in 1876, Marconi demonstrated practical radio in 1895, and ARPANET debuted in 1969.",
-      "origin": "ai",
-      "createdAt": "2026-11-22T01:29:37.569Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_6bc7da9b5533",
-      "kind": "pattern_sequence",
-      "title": "Cubic Prime Shift",
-      "category": "science",
-      "difficulty": "Tricky",
-      "prompt": "Identify the logical pattern governing the sequence and determine the missing final number.",
-      "sequenceItems": [
-        "2",
-        "10",
-        "30",
-        "68",
-        "130",
-        "?"
-      ],
-      "hint": "Consider the relationship between consecutive cubes (n^3) and small integer adjustments.",
-      "options": [
-        "196",
-        "216",
-        "222",
-        "240"
-      ],
-      "correctIndex": 2,
-      "explanation": "The terms follow the formula n³ + n for n = 1, 2, 3, 4, 5, 6: 1+1=2, 8+2=10, 27+3=30, 64+4=68, 125+5=130, and 216+6=222.",
-      "origin": "ai",
-      "createdAt": "2026-11-22T01:29:37.569Z"
     }
   ]
 }

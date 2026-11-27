@@ -1,10 +1,279 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-27T14:08:21.737Z",
+  "generatedAt": "2026-11-27T22:49:50.014Z",
   "generator": "gemini-textual-feed",
   "model": "gemini-flash-latest",
   "itemCount": 80,
   "items": [
+    {
+      "id": "curio_gen_644a297db76b",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Atomic Clocks Guarding Deep Space Probes",
+      "subtitle": "How miniaturized ion traps let robotic explorers navigate the solar system autonomously",
+      "category": "technology",
+      "region": "global",
+      "topics": [
+        "space exploration",
+        "atomic clocks",
+        "navigation",
+        "physics"
+      ],
+      "estimatedDurationSeconds": 150,
+      "source": {
+        "publisher": "NASA Jet Propulsion Laboratory",
+        "title": "Deep Space Atomic Clock Overview",
+        "url": "https://www.jpl.nasa.gov/missions/deep-space-atomic-clock-dsac",
+        "publishedAt": "2026-11-27T22:49:50.014Z",
+        "retrievedAt": "2026-11-27T22:49:50.014Z"
+      },
+      "summary": "Modern interplanetary probes rely on ground-based radio antennas to calculate their positions, but miniaturized mercury-ion atomic clocks are shifting autonomous navigation directly aboard spacecraft.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "For decades, every probe venturing through deep space has operated like a kite on a very long string. Navigators on Earth bounce microwave signals off the craft, measure the tiny two-way round-trip delay, and send corrective steering commands back across the void. At the distance of Jupiter or Saturn, this conversational lag stretches into hours, turning critical entry burns into nail-biting gambles."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "Clock drift precision",
+          "text": "NASA Deep Space Atomic Clock loses merely one second every ten million years, making it up to fifty times more stable than the atomic clocks flown on GPS satellites."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Autonomous Interplanetary Cruising",
+          "points": [
+            "Trapping mercury ions with electromagnetic fields eliminates physical wear and wall collisions.",
+            "Onboard clocks allow one-way uplink tracking, cutting ground station antenna demand in half.",
+            "Future crewed missions to Mars can compute their orbital insertion maneuvers in real time without waiting for Earth confirmation."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Atomic Clocks Guarding Deep Space Probes editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#2563EB"
+      },
+      "followUps": [
+        "How do trapped mercury ions compare to rubidium or cesium standards?",
+        "What role will autonomous navigation play in landing on Jupiter moons?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-27T22:49:50.014Z",
+      "enrichedAt": "2026-11-27T22:49:50.014Z"
+    },
+    {
+      "id": "curio_gen_3afa7a3fd33a",
+      "schemaVersion": 1,
+      "contentType": "short_story",
+      "cardVariant": "article",
+      "title": "The Floating Orchards of Lake Inle",
+      "subtitle": "Centuries of indigenous engineering that turned open water into year-round tomato harvests",
+      "category": "travel_food",
+      "region": "global",
+      "topics": [
+        "agriculture",
+        "traditional engineering",
+        "myanmar",
+        "food systems"
+      ],
+      "estimatedDurationSeconds": 140,
+      "source": {
+        "publisher": "Smithsonian Magazine",
+        "title": "The Floating Gardens of Inle Lake",
+        "url": "https://www.smithsonianmag.com/",
+        "publishedAt": "2026-11-27T22:49:50.014Z",
+        "retrievedAt": "2026-11-27T22:49:50.014Z"
+      },
+      "summary": "On Myanmar's shallow Lake Inle, the Intha people weave floating mats of lake weeds, silt, and bamboo to cultivate lush agricultural fields that rise and fall with seasonal floods.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "High in the Shan Hills of eastern Myanmar, the surface of Lake Inle gleams with long green rows that resemble standard terrestrial farmland. Beneath the vines, however, lies several meters of clear water. Known locally as ye-chan, these floating gardens are entirely artificial rafts constructed from masses of tangled weeds collected from the lake bed and anchored with long bamboo poles driven into the mud."
+        },
+        {
+          "type": "timeline",
+          "heading": "The Life Cycle of a Floating Garden",
+          "events": [
+            {
+              "year": "Months 1-2",
+              "title": "Harvesting the Mat",
+              "detail": "Farmers gather submerged water hyacinth and marsh grasses, slicing them into strips up to a meter thick."
+            },
+            {
+              "year": "Month 3",
+              "title": "Layering and Anchoring",
+              "detail": "Dredged nutrient-rich silt is spread over the surface, and tall bamboo stakes pin the raft securely in place."
+            },
+            {
+              "year": "Yearly",
+              "title": "Harvest and Buoyancy Renewal",
+              "detail": "Crops like heirloom tomatoes and beans thrive for up to fifteen years before the rotting organic base is recycled into new plots."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Because the root systems can tap directly into the moisture below, the crops never suffer drought. Furthermore, the buoyant plots naturally adjust to seasonal monsoon surges, safeguarding the community food supply when conventional riverbanks are submerged."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Floating Orchards of Lake Inle editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#0F766E"
+      },
+      "followUps": [
+        "How do farmers prevent invasive hyacinth from overtaking the navigation canals?",
+        "What other civilizations developed hydroponic floating islands?",
+        "How does lake sedimentation affect the longevity of floating gardens?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-27T22:49:50.014Z",
+      "enrichedAt": "2026-11-27T22:49:50.014Z"
+    },
+    {
+      "id": "curio_gen_648ea7998b79",
+      "schemaVersion": 1,
+      "contentType": "interactive_fact",
+      "cardVariant": "interactive_feature",
+      "title": "The Million-Year Stalactite Memory",
+      "subtitle": "How prehistoric cave drips preserved records of Earth's ancient atmospheric fires",
+      "category": "facts",
+      "region": "global",
+      "topics": [
+        "geology",
+        "paleoclimatology",
+        "caves",
+        "chemistry"
+      ],
+      "estimatedDurationSeconds": 120,
+      "source": {
+        "publisher": "Nature Geoscience",
+        "title": "Speleothem Records of Past Environmental Change",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Million-Year%20Stalactite%20Memory",
+        "publishedAt": "2026-11-27T22:49:50.014Z",
+        "retrievedAt": "2026-11-27T22:49:50.014Z"
+      },
+      "summary": "Stalactites and stalagmites do not just record temperature and rainfall; their micro-layers lock in aerosol traces from ancient mega-fires and volcanic eruptions.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Deep underground, sheltered from surface winds and weathering, cave formations known as speleothems grow at an agonizing pace of roughly one millimeter every decade. As rainwater filters through overhead soil, it picks up dissolved minerals and atmospheric residues before depositing them in crystalline calcite rings that behave like geological tree rings."
+        },
+        {
+          "type": "quiz",
+          "question": "Which chemical marker trapped inside cave stalagmites allows researchers to date prehistoric wildfires?",
+          "options": [
+            "Levoglucosan produced by burning cellulose",
+            "Pure sulfur crystals",
+            "Free floating ozone molecules"
+          ],
+          "correctOptionIndex": 0,
+          "explanation": "Levoglucosan is an organic compound formed during the low-temperature combustion of plant biomass; when washed into cave systems, it remains intact inside the mineral lattice for tens of thousands of years."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "Unbroken climate archives",
+          "text": "Some continuous cave speleothems hold unbroken climatic chronologies spanning more than 500,000 years, outpacing all but the deepest polar ice cores."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Million-Year Stalactite Memory editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#B45309"
+      },
+      "followUps": [
+        "How do scientists extract samples without destroying delicate cave formations?",
+        "What do speleothems reveal about historical mega-droughts?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-27T22:49:50.014Z",
+      "enrichedAt": "2026-11-27T22:49:50.014Z"
+    },
+    {
+      "id": "curio_gen_13873d1c510c",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Paradox of the Glass Sponge Reef",
+      "subtitle": "Creatures that build massive architectural reefs using pure silica glass and electric nervous signals",
+      "category": "science",
+      "region": "global",
+      "topics": [
+        "marine biology",
+        "oceanography",
+        "materials science",
+        "evolution"
+      ],
+      "estimatedDurationSeconds": 160,
+      "source": {
+        "publisher": "National Geographic",
+        "title": "The Strange World of Living Glass Reefs",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Paradox%20of%20the%20Glass%20Sponge%20Reef",
+        "publishedAt": "2026-11-27T22:49:50.014Z",
+        "retrievedAt": "2026-11-27T22:49:50.014Z"
+      },
+      "summary": "Once thought extinct since the Jurassic era, living glass sponge reefs stretch along the dark seabed of the Pacific Northwest, constructed by animals made largely of spun silica.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Until 1987, marine paleontologists assumed that immense siliceous bioherms—reefs constructed entirely by glass sponges—vanished alongside the dinosaurs roughly sixty-six million years ago. Then, seismic surveys of the continental shelf off British Columbia detected colossal underwater ridges rising several stories above the seafloor, formed not by tropical coral, but by millions of living hexactinellid sponges."
+        },
+        {
+          "type": "comparison",
+          "heading": "Tropical Coral Reefs vs. Glass Sponge Reefs",
+          "leftTitle": "Tropical Coral Reef",
+          "rightTitle": "Glass Sponge Reef",
+          "leftPoints": [
+            "Built primarily from calcium carbonate",
+            "Thrives in warm, sunlit, nutrient-poor shallows",
+            "Dependent on photosynthetic symbiotic algae"
+          ],
+          "rightPoints": [
+            "Built entirely of spun silica glass",
+            "Thrives in freezing, pitch-black, high-silica depths",
+            "Relies on filtration of bacteria and suspended organic debris"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "These bizarre organisms lack individual cell membranes; instead, they share a continuous, multinucleated tissue web known as a syncytium. This allows the sponges to propagate rapid electrical impulses through their glass skeleton, shutting down pumping systems within seconds if sediment threatens to choke their delicate filters."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Paradox of the Glass Sponge Reef editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#3B4F75"
+      },
+      "followUps": [
+        "How do glass sponges extract dissolved silicon from seawater so efficiently?",
+        "What implications does hexactinellid fiber structure have for modern optical fiber engineering?",
+        "Why did these reefs survive exclusively in the northeastern Pacific?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-27T22:49:50.014Z",
+      "enrichedAt": "2026-11-27T22:49:50.014Z"
+    },
     {
       "id": "curio_gen_6b7aa7ffbe2b",
       "schemaVersion": 1,
@@ -5181,288 +5450,6 @@
       "qualityStatus": "approved",
       "createdAt": "2026-11-20T09:43:35.979Z",
       "enrichedAt": "2026-11-20T09:43:35.979Z"
-    },
-    {
-      "id": "curio_gen_ca061eb35eae",
-      "schemaVersion": 1,
-      "contentType": "quick_bite",
-      "cardVariant": "interactive_feature",
-      "title": "The Volcanic Wine Cellars of Santorini",
-      "subtitle": "How ancient Aegean viticulture trains vines into ground-hugging wreaths",
-      "category": "travel_food",
-      "region": "global",
-      "topics": [
-        "viticulture",
-        "santorini",
-        "volcanic agriculture",
-        "ancient history"
-      ],
-      "estimatedDurationSeconds": 110,
-      "source": {
-        "publisher": "Britannica",
-        "title": "Santorini: Geography, History, and Viticulture",
-        "url": "https://www.britannica.com/place/Santorini",
-        "publishedAt": "2026-11-20T09:43:35.979Z",
-        "retrievedAt": "2026-11-20T09:43:35.979Z"
-      },
-      "summary": "On an island blasted by Aegean gales and parched by summer droughts, winemakers weave Assyrtiko vines into low-lying circular baskets called kouloura to catch sea mist.",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "Santorini's landscape is famously shaped by the Minoan eruption 3,600 years ago, leaving behind porous pumice and volcanic ash devoid of organic matter. With almost no rainfall between May and October and ferocious Meltemi winds capable of stripping bark, traditional trellised vineyards cannot survive. The islanders solved this with an ingenious horticultural technique that has remained unchanged for millennia."
-        },
-        {
-          "type": "fact_reveal",
-          "label": "The Kouloura basket",
-          "text": "Growers prune the vine canes into a tightly coiled circular basket on the ground. The grapes grow inside the basket, protected from howling winds and sun-scorch, while porous volcanic ash absorbs moisture from evening sea fogs like a sponge."
-        },
-        {
-          "type": "quiz",
-          "question": "Why did Santorini's vineyards survive the 19th-century phylloxera blight that wiped out most European vineyards?",
-          "options": [
-            "The island's isolation prevented ships from landing infected soil",
-            "The volcanic sand contains no clay, preventing the microscopic aphids from tunneling to the roots",
-            "The high salinity of the sea breeze killed the pests on the vine leaves"
-          ],
-          "correctOptionIndex": 1,
-          "explanation": "Phylloxera insects cannot burrow through loose volcanic ash and sand because the grains collapse immediately into their tunnels, making Santorini home to some of the world's oldest original rootstocks."
-        }
-      ],
-      "visual": {
-        "type": "editorial_illustration",
-        "alt": "The Volcanic Wine Cellars of Santorini editorial card",
-        "attribution": "Curio Editorial",
-        "license": "First-party",
-        "provider": "Curio Design System",
-        "accentColor": "#0F766E"
-      },
-      "followUps": [
-        "How old can individual rootstocks in Santorini become?",
-        "Which other volcanic regions use unique vine training systems?"
-      ],
-      "isAiEnriched": true,
-      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
-      "qualityStatus": "approved",
-      "createdAt": "2026-11-20T09:43:35.979Z",
-      "enrichedAt": "2026-11-20T09:43:35.979Z"
-    },
-    {
-      "id": "curio_gen_328f1f775b28",
-      "schemaVersion": 1,
-      "contentType": "interactive_fact",
-      "cardVariant": "interactive_feature",
-      "title": "The Clockmaker Who Redefined the Metre",
-      "subtitle": "Why standard weights and measures were once tied to swinging pendulums",
-      "category": "facts",
-      "region": "global",
-      "topics": [
-        "metrology",
-        "history of science",
-        "physics",
-        "standardization"
-      ],
-      "estimatedDurationSeconds": 120,
-      "source": {
-        "publisher": "Nature",
-        "title": "A Brief History of the Metre: From Earth Surveys to Optical Clocks",
-        "url": "https://www.nature.com/",
-        "publishedAt": "2026-11-20T09:43:35.979Z",
-        "retrievedAt": "2026-11-20T09:43:35.979Z"
-      },
-      "summary": "Long before the platinum metre bar was forged in Paris, scientists nearly defined the universal unit of length by the natural tick of an ordinary seconds pendulum.",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "In 1668, polymath Tito Livio Burattini suggested that human measurement should be anchored in the cosmos rather than the foot of an arbitrary king. He proposed the 'metro cattolico'—or universal metre—defined as the exact length of a pendulum whose full swing from one side to the other took precisely one second. It seemed elegant, repeatable, and universally accessible."
-        },
-        {
-          "type": "timeline",
-          "heading": "The Quest for an Unchanging Unit",
-          "events": [
-            {
-              "year": "1668",
-              "title": "Burattini's Pendulum",
-              "detail": "Tito Livio Burattini publishes the proposal for a seconds pendulum as the universal metre."
-            },
-            {
-              "year": "1672",
-              "title": "The Cayenne Discrepancy",
-              "detail": "Jean Richer discovers that a clock calibrated in Paris loses two and a half minutes per day in French Guiana, proving gravity varies by latitude."
-            },
-            {
-              "year": "1791",
-              "title": "The Meridian Choice",
-              "detail": "The French Academy abandons the pendulum due to gravitational variance and defines the metre as one ten-millionth of the distance from the North Pole to the Equator."
-            }
-          ]
-        },
-        {
-          "type": "key_takeaway",
-          "heading": "Why the Pendulum Failed",
-          "points": [
-            "Earth is an oblate spheroid, bulging at the equator, meaning surface gravity is weaker near the tropics.",
-            "Centrifugal force from planetary rotation also slightly offsets gravity toward the equator.",
-            "A seconds pendulum at the equator is roughly 99.1 cm long, while at the poles it measures 99.6 cm."
-          ]
-        }
-      ],
-      "visual": {
-        "type": "editorial_illustration",
-        "alt": "The Clockmaker Who Redefined the Metre editorial card",
-        "attribution": "Curio Editorial",
-        "license": "First-party",
-        "provider": "Curio Design System",
-        "accentColor": "#B45309"
-      },
-      "followUps": [
-        "How is the metre officially defined today using the speed of light?",
-        "What role did the French expedition to Lapland play in proving Newton right?"
-      ],
-      "isAiEnriched": true,
-      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
-      "qualityStatus": "approved",
-      "createdAt": "2026-11-20T09:43:35.979Z",
-      "enrichedAt": "2026-11-20T09:43:35.979Z"
-    },
-    {
-      "id": "curio_gen_7c25b7977ca3",
-      "schemaVersion": 1,
-      "contentType": "quick_bite",
-      "cardVariant": "interactive_feature",
-      "title": "The Architecture of the 20-Minute Focus Sprint",
-      "subtitle": "Why shorter cycles outcompete grueling marathon work sessions",
-      "category": "growth",
-      "region": "global",
-      "topics": [
-        "neuroscience",
-        "productivity",
-        "habit design"
-      ],
-      "estimatedDurationSeconds": 90,
-      "source": {
-        "publisher": "Association for Psychological Science",
-        "title": "Sustained Attention and Cognitive Fatigue in Task Switching",
-        "url": "https://www.psychologicalscience.org/",
-        "publishedAt": "2026-11-20T01:58:41.650Z",
-        "retrievedAt": "2026-11-20T01:58:41.650Z"
-      },
-      "summary": "Cognitive psychology reveals that working in short, non-negotiable intervals avoids attentional drift and exploits the brain's natural goal-completion reward loops.",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "For decades, conventional wisdom celebrated uninterrupted multi-hour grinds. Modern cognitive neuroscience tells a starkly different story: sustained executive function degrades precipitously after approximately 20 to 25 minutes of continuous high-intensity focus. When the prefrontal cortex senses an undefined horizon, it preemptively rations energy, lowering vigilance and inviting microscopic distractions."
-        },
-        {
-          "type": "fact_reveal",
-          "label": "The Dopamine Trigger",
-          "text": "Breaking tasks into micro-deadlines triggers small bursts of dopamine upon each completion, resetting mental fatigue faster than passive rest periods."
-        },
-        {
-          "type": "key_takeaway",
-          "heading": "Principles of Sprint Design",
-          "points": [
-            "Define an absurdly specific deliverable before starting the timer.",
-            "Enforce a mandatory sensory break where visual stimulation is minimized.",
-            "Never negotiate the stopping point mid-sprint; respect the boundary to preserve mental reserves."
-          ]
-        }
-      ],
-      "visual": {
-        "type": "editorial_illustration",
-        "alt": "The Architecture of the 20-Minute Focus Sprint editorial card",
-        "attribution": "Curio Editorial",
-        "license": "First-party",
-        "provider": "Curio Design System",
-        "accentColor": "#2D6A4F"
-      },
-      "followUps": [
-        "How do ultradian rhythms regulate alertness during daylight hours?",
-        "What constitutes a true cognitive reset during scheduled work pauses?"
-      ],
-      "isAiEnriched": true,
-      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
-      "qualityStatus": "approved",
-      "createdAt": "2026-11-20T01:58:41.650Z",
-      "enrichedAt": "2026-11-20T01:58:41.650Z"
-    },
-    {
-      "id": "curio_gen_47e136abf7fe",
-      "schemaVersion": 1,
-      "contentType": "deep_dive",
-      "cardVariant": "article",
-      "title": "The Venetian Semaphore of the Lagoons",
-      "subtitle": "How waterborne couriers built Europe's earliest intelligence network",
-      "category": "history",
-      "region": "global",
-      "topics": [
-        "venice",
-        "maritime history",
-        "communication"
-      ],
-      "estimatedDurationSeconds": 130,
-      "source": {
-        "publisher": "Britannica",
-        "title": "Republic of Venice: Maritime and Commercial Empire",
-        "url": "https://www.britannica.com/place/Venice/The-commune",
-        "publishedAt": "2026-11-20T01:58:41.650Z",
-        "retrievedAt": "2026-11-20T01:58:41.650Z"
-      },
-      "summary": "Long before electronic telegraphs, the Venetian Republic created an intricate system of optical flags, shallow draft boats, and bell towers that transmitted news across the Mediterranean.",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "During the fourteenth century, the Republic of Venice relied on information velocity to protect its trade dominance. Merchants and naval commanders stationed along the Dalmatian coast and Greek outposts converted island bell towers into an early warning optical network, capable of signaling cargo arrivals or pirate raids hundreds of nautical miles back to the Doge within hours."
-        },
-        {
-          "type": "timeline",
-          "heading": "Milestones of Lagoon Telegraphy",
-          "events": [
-            {
-              "year": "1268",
-              "title": "Establishment of the Cursus",
-              "detail": "Venice formalizes a fleet of light rowing craft dedicated exclusively to carrying official state dispatches."
-            },
-            {
-              "year": "1380",
-              "title": "The Chioggia Signals",
-              "detail": "Torch beacons along the coastal lidi successfully coordinate a surprise encirclement against Genoese invaders."
-            },
-            {
-              "year": "1571",
-              "title": "The Post-Lepanto Relay",
-              "detail": "Coordinated visual relays allow Venice to receive the outcome of the Battle of Lepanto days before Rome or Madrid."
-            }
-          ]
-        },
-        {
-          "type": "quiz",
-          "question": "What primary method did Venetian beacon towers use to transmit signals during heavy sea fog?",
-          "options": [
-            "Acoustic mortars and coordinated bell cadences",
-            "Carrier pigeons trained for low-altitude flight",
-            "Underwater copper gong resonance"
-          ],
-          "correctOptionIndex": 0,
-          "explanation": "When sea fogs blanketed the lagoons, watchmen switched from torches and flags to precisely timed gunpowder reports and bell cadences to echo messages over the water."
-        }
-      ],
-      "visual": {
-        "type": "editorial_illustration",
-        "alt": "The Venetian Semaphore of the Lagoons editorial card",
-        "attribution": "Curio Editorial",
-        "license": "First-party",
-        "provider": "Curio Design System",
-        "accentColor": "#7C2D12"
-      },
-      "followUps": [
-        "How did Venetian intelligence compare with the postal runners of the Roman Empire?",
-        "What cryptographic methods did Venetian diplomats use to disguise trade manifests?"
-      ],
-      "isAiEnriched": true,
-      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
-      "qualityStatus": "approved",
-      "createdAt": "2026-11-20T01:58:41.650Z",
-      "enrichedAt": "2026-11-20T01:58:41.650Z"
     }
   ]
 }
