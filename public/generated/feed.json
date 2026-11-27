@@ -1,10 +1,276 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-27T04:27:01.094Z",
+  "generatedAt": "2026-11-27T14:08:21.737Z",
   "generator": "gemini-textual-feed",
   "model": "gemini-flash-latest",
   "itemCount": 80,
   "items": [
+    {
+      "id": "curio_gen_6b7aa7ffbe2b",
+      "schemaVersion": 1,
+      "contentType": "interactive_fact",
+      "cardVariant": "interactive_feature",
+      "title": "The Secret Architecture of Termite Mounds",
+      "subtitle": "How tiny insects engineered natural passive air conditioning long before humans",
+      "category": "facts",
+      "region": "global",
+      "topics": [
+        "biomimicry",
+        "architecture",
+        "entomology"
+      ],
+      "estimatedDurationSeconds": 110,
+      "source": {
+        "publisher": "BBC Future",
+        "title": "How termites inspire green buildings",
+        "url": "https://www.bbc.com/future",
+        "publishedAt": "2026-11-27T14:08:21.737Z",
+        "retrievedAt": "2026-11-27T14:08:21.737Z"
+      },
+      "summary": "Termites construct towering earthen mounds that regulate their interior climate through complex networks of self-ventilating chimneys, inspiring energy-efficient human skyscrapers.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In the arid savannas of sub-Saharan Africa, macrotermes bellicosus termites build cathedral-like structures reaching over five meters tall. Despite external temperatures that swing wildly from near-freezing at night to scorching desert heat during the day, the innermost chambers maintain an astonishingly stable temperature and humidity level necessary to cultivate the fungus they rely on for food."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "Passive Respiration",
+          "text": "The mounds do not store stagnant cool air; they continuously breathe. Thermal gradients drive warm, carbon-dioxide-rich air up a central flute while suction pulls fresh, oxygenated air inward through microporous outer walls, completely refreshing internal atmosphere multiple times an hour with zero moving parts."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Biomimetic Lessons",
+          "points": [
+            "Architect Mick Pearce used this principle to design the Eastgate Centre in Harare, Zimbabwe, which uses 90 percent less energy for climate control than conventional buildings.",
+            "Instead of relying on power-hungry mechanical air conditioning, buildings can manage convective airflow through internal thermal mass and purposeful venting."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Secret Architecture of Termite Mounds editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#B45309"
+      },
+      "followUps": [
+        "How do termites detect temperature fluctuations inside the mound?",
+        "What other animal constructions inspire modern civil engineering?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-27T14:08:21.737Z",
+      "enrichedAt": "2026-11-27T14:08:21.737Z"
+    },
+    {
+      "id": "curio_gen_3cba39360012",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Lost Watch of the Longitude Prize",
+      "subtitle": "John Harrison's forty-year solitary battle to navigate the world's oceans",
+      "category": "history",
+      "region": "global",
+      "topics": [
+        "maritime history",
+        "horology",
+        "innovation"
+      ],
+      "estimatedDurationSeconds": 160,
+      "source": {
+        "publisher": "Royal Museums Greenwich",
+        "title": "John Harrison and the Longitude Problem",
+        "url": "https://www.rmg.co.uk/",
+        "publishedAt": "2026-11-27T14:08:21.737Z",
+        "retrievedAt": "2026-11-27T14:08:21.737Z"
+      },
+      "summary": "In the 18th century, calculating longitude at sea seemed impossible until a self-taught carpenter created a pocket-sized marine chronometer that revolutionized global travel.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Following the Scilly naval disaster of 1707, where four warships were lost due to navigation errors, the British Parliament offered a king's ransom of twenty thousand pounds for a reliable method to calculate longitude at sea. While the academic establishment wagered on astronomical tables charting moon positions, an unassuming Yorkshire clockmaker named John Harrison pursued mechanical precision."
+        },
+        {
+          "type": "timeline",
+          "heading": "Harrison's Decades of Refinement",
+          "events": [
+            {
+              "year": "1735",
+              "title": "The H1 Chronometer",
+              "detail": "Harrison completes a heavy, brass counterbalanced machine that successfully resists the violent pitch and roll of ship decks."
+            },
+            {
+              "year": "1759",
+              "title": "The H4 Breakthrough",
+              "detail": "Abandoning massive clockwork, Harrison unveils a pocket-watch-sized masterpiece featuring diamond pallets and bi-metallic temperature compensation."
+            },
+            {
+              "year": "1764",
+              "title": "The Transatlantic Trial",
+              "detail": "Aboard the HMS Tartar across the Atlantic, the H4 loses just 5.1 seconds over forty-seven days, far exceeding parliament's exacting standards."
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "question": "What primary scientific rival method competed with Harrison's mechanical chronometers?",
+          "options": [
+            "Lunar distance observations and star catalogs",
+            "Magnetic declination mapping across latitude lines",
+            "Subsea pendulum wave tracking"
+          ],
+          "correctOptionIndex": 0,
+          "explanation": "Astronomers, including Astronomer Royal Nevil Maskelyne, championed the Lunar Distance method, which required complex mathematics and clear skies, pitting academic theory against mechanical craft."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Lost Watch of the Longitude Prize editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#7C2D12"
+      },
+      "followUps": [
+        "Why did the Board of Longitude resist paying John Harrison his full prize?",
+        "How did Captain James Cook use Harrison's replica chronometer on his voyages?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-27T14:08:21.737Z",
+      "enrichedAt": "2026-11-27T14:08:21.737Z"
+    },
+    {
+      "id": "curio_gen_4151c184f529",
+      "schemaVersion": 1,
+      "contentType": "quick_bite",
+      "cardVariant": "interactive_feature",
+      "title": "The Dawn of Space-Based Solar Power Arrays",
+      "subtitle": "Orbital satellites prepare to beam continuous energy down to terrestrial grids",
+      "category": "news",
+      "region": "global",
+      "topics": [
+        "clean energy",
+        "aerospace",
+        "technology"
+      ],
+      "estimatedDurationSeconds": 120,
+      "source": {
+        "publisher": "European Space Agency",
+        "title": "SOLARIS: Preparing for Space-Based Solar Power",
+        "url": "https://www.esa.int/",
+        "publishedAt": "2026-11-27T14:08:21.737Z",
+        "retrievedAt": "2026-11-27T14:08:21.737Z"
+      },
+      "summary": "Space agencies and engineering consortiums are executing pilot tests to capture uninterrupted sunlight in orbit and transmit wireless power directly to receiving stations on Earth.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Terrestrial solar farms inevitably suffer from nighttime downtime and atmospheric attenuation like cloud cover and seasonal dust. In response, orbital demonstrators launched by universities and international aerospace agencies have begun testing microwave and laser beam power transfer from low-Earth orbit directly to ground antennas."
+        },
+        {
+          "type": "comparison",
+          "heading": "Orbital vs Terrestrial Solar Collection",
+          "leftTitle": "Orbital Arrays",
+          "rightTitle": "Ground-Based Solar",
+          "leftPoints": [
+            "Continuous 24-hour collection without night cycles or clouds",
+            "Intensity roughly eight times higher than typical Earth surface sunlight",
+            "High orbital launch and automated assembly costs"
+          ],
+          "rightPoints": [
+            "Generation limited by daylight, weather, and seasonal tilt",
+            "Requires massive land footprint and utility-scale battery storage",
+            "Low maintenance cost and established worldwide manufacturing"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Recent small-scale in-orbit demonstrations, such as Caltech's Space Solar Power Demonstrator, have successfully demonstrated steerable wireless power transmission through space, shifting the concept from a science-fiction dream toward a functional renewable baseload strategy."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Dawn of Space-Based Solar Power Arrays editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#C84B31"
+      },
+      "followUps": [
+        "What safety mechanisms prevent microwave energy beams from harming wildlife?",
+        "How much launch cost reduction is required to make orbital solar commercially viable?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-27T14:08:21.737Z",
+      "enrichedAt": "2026-11-27T14:08:21.737Z"
+    },
+    {
+      "id": "curio_gen_878d719a879e",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Quantum Navigation of Migratory Birds",
+      "subtitle": "How cryptochrome proteins enable robins to literally see Earth's magnetic field",
+      "category": "science",
+      "region": "global",
+      "topics": [
+        "quantum biology",
+        "ornithology",
+        "biophysics"
+      ],
+      "estimatedDurationSeconds": 150,
+      "source": {
+        "publisher": "Nature",
+        "title": "Magnetic sensitivity of cryptochrome 4 from a migratory bird",
+        "url": "https://www.nature.com/",
+        "publishedAt": "2026-11-27T14:08:21.737Z",
+        "retrievedAt": "2026-11-27T14:08:21.737Z"
+      },
+      "summary": "European robins navigate thousands of miles across continents using quantum entanglement inside light-sensitive retinal proteins to perceive subtle magnetic field lines.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "For decades, scientists struggled to explain how songbirds traverse vast, featureless continents at night without drifting hundreds of miles off course. Classical magnetic navigation requires macroscopic magnets like iron deposits, yet the real sensor was found hidden inside the bird's eye within a specialized blue-light-activated protein called cryptochrome 4."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Radical Pair Mechanism",
+          "text": "When a single photon strikes cryptochrome 4 in a bird's retina, it triggers a rapid transfer of electrons across four tryptophan molecules. This creates an entangled pair of radical molecules whose paired quantum spins remain extraordinarily sensitive to the angle of Earth's magnetic field before collapsing."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Visualizing the Invisible",
+          "points": [
+            "Researchers believe this quantum transition overlays light and dark patterns across the bird's normal eyesight, turning magnetic inclination into a visual contour map.",
+            "Broadband urban radiofrequency noise can disrupt this radical pair reaction, explaining why migratory songbirds sometimes lose orientation near telecommunication hubs."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Quantum Navigation of Migratory Birds editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#3B4F75"
+      },
+      "followUps": [
+        "Can humans artificially synthesize cryptochrome proteins to build quantum sensors?",
+        "Do marine animals like sea turtles use radical pairs or iron magnetite crystals?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-27T14:08:21.737Z",
+      "enrichedAt": "2026-11-27T14:08:21.737Z"
+    },
     {
       "id": "curio_gen_131aa489e619",
       "schemaVersion": 1,
@@ -5197,255 +5463,6 @@
       "qualityStatus": "approved",
       "createdAt": "2026-11-20T01:58:41.650Z",
       "enrichedAt": "2026-11-20T01:58:41.650Z"
-    },
-    {
-      "id": "curio_gen_fd1af4200dfe",
-      "schemaVersion": 1,
-      "contentType": "short_story",
-      "cardVariant": "article",
-      "title": "The Great Herring War of the Scottish Commons",
-      "subtitle": "When a municipal dispute over salted fish paralyzed an entire city council",
-      "category": "humour",
-      "region": "global",
-      "topics": [
-        "scotland",
-        "culinary history",
-        "bureaucracy"
-      ],
-      "estimatedDurationSeconds": 105,
-      "source": {
-        "publisher": "National Library of Scotland",
-        "title": "Nineteenth-Century Scottish Municipal Disputes and Broadsides",
-        "url": "https://www.nls.uk/",
-        "publishedAt": "2026-11-20T01:58:41.650Z",
-        "retrievedAt": "2026-11-20T01:58:41.650Z"
-      },
-      "summary": "In nineteenth-century Aberdeen, an administrative oversight concerning the legal smell of pickled fish led to dueling municipal proclamations and the arrest of a wooden barrel.",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "In the spring of 1842, the burgh council of Aberdeen faced an unprecedented constitutional crisis: a single barrel of brine-cured herring had been deposited outside the town hall by a merchant protesting dockside tariffs. Unable to agree on whether the object was commercial cargo or an offensive weapon due to its pungent aroma, the council convened three emergency sessions across five days."
-        },
-        {
-          "type": "fact_reveal",
-          "label": "The Bailiff's Verdict",
-          "text": "A municipal bailiff formally took the wooden barrel into custody, locking it in the local jail cell to prevent either faction from tampering with the disputed evidence."
-        },
-        {
-          "type": "paragraph",
-          "text": "By the end of the week, local newspapers were publishing daily bulletins on the condition of the incarcerated fish. The saga concluded only when a stray cat slipped between the iron bars, devouring the state's central exhibit and rendering the litigation moot."
-        }
-      ],
-      "visual": {
-        "type": "editorial_illustration",
-        "alt": "The Great Herring War of the Scottish Commons editorial card",
-        "attribution": "Curio Editorial",
-        "license": "First-party",
-        "provider": "Curio Design System",
-        "accentColor": "#9333EA"
-      },
-      "followUps": [
-        "Why was salted herring such a critical component of Northern European trade laws?",
-        "What other unusual objects have been placed under official civil arrest throughout history?"
-      ],
-      "isAiEnriched": true,
-      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
-      "qualityStatus": "approved",
-      "createdAt": "2026-11-20T01:58:41.650Z",
-      "enrichedAt": "2026-11-20T01:58:41.650Z"
-    },
-    {
-      "id": "curio_gen_c599799f9273",
-      "schemaVersion": 1,
-      "contentType": "interactive_fact",
-      "cardVariant": "interactive_feature",
-      "title": "The Gravitational Wave Cartography of 2025",
-      "subtitle": "Global observatories deploy quantum squeezing to listen deeper into the cosmos",
-      "category": "news",
-      "region": "global",
-      "topics": [
-        "astrophysics",
-        "space",
-        "quantum technology"
-      ],
-      "estimatedDurationSeconds": 120,
-      "source": {
-        "publisher": "Smithsonian Magazine",
-        "title": "How Gravitational Wave Detectors Are Upgrading to Probe the Deep Universe",
-        "url": "https://www.smithsonianmag.com/science-nature",
-        "publishedAt": "2026-11-20T01:58:41.650Z",
-        "retrievedAt": "2026-11-20T01:58:41.650Z"
-      },
-      "summary": "International gravitational wave collaborations have achieved unprecedented sensitivity, detecting faint black hole mergers from the early universe using squeezed light techniques.",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "Astronomers operating the LIGO, Virgo, and KAGRA observatories have entered an expanded observation cycle, routinely recording spacetime ripples created by colliding neutron stars and distant black holes. The newly integrated frequency-dependent quantum squeezing technology has cut background quantum noise by half, effectively doubling the observable volume of the universe."
-        },
-        {
-          "type": "comparison",
-          "heading": "Observational Reach: First Run vs. Current Configuration",
-          "leftTitle": "Initial Runs (2015-2017)",
-          "rightTitle": "Current Multi-Observatory Network",
-          "leftPoints": [
-            "Detected events primarily within the local cosmological neighborhood",
-            "Single event detection occurred over intervals of weeks or months",
-            "Broad sky localization regions covering hundreds of square degrees"
-          ],
-          "rightPoints": [
-            "Detects ancient intermediate-mass mergers across billions of light years",
-            "Multiple candidate signals flagged per week via automated alerts",
-            "Pinpoint triangulation enabling instant follow-up by optical telescopes"
-          ]
-        },
-        {
-          "type": "key_takeaway",
-          "heading": "Why This Reshapes Astronomy",
-          "points": [
-            "Multi-messenger astronomy lets scientists both hear space ripples and see optical light from the same collision.",
-            "Testing general relativity under extreme conditions provides insights into dark energy and cosmic expansion."
-          ]
-        }
-      ],
-      "visual": {
-        "type": "editorial_illustration",
-        "alt": "The Gravitational Wave Cartography of 2025 editorial card",
-        "attribution": "Curio Editorial",
-        "license": "First-party",
-        "provider": "Curio Design System",
-        "accentColor": "#C84B31"
-      },
-      "followUps": [
-        "How does quantum squeezing reduce optical shot noise in interferometer arms?",
-        "What will the planned space-based gravitational wave antenna LISA add to current ground detectors?"
-      ],
-      "isAiEnriched": true,
-      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
-      "qualityStatus": "approved",
-      "createdAt": "2026-11-20T01:58:41.650Z",
-      "enrichedAt": "2026-11-20T01:58:41.650Z"
-    },
-    {
-      "id": "curio_gen_1d9075a1c4b2",
-      "schemaVersion": 1,
-      "contentType": "deep_dive",
-      "cardVariant": "article",
-      "title": "The Quantum Compass of the European Robin",
-      "subtitle": "How radical pair chemistry guides a tiny songbird across continents",
-      "category": "science",
-      "region": "global",
-      "topics": [
-        "biophysics",
-        "ornithology",
-        "quantum mechanics"
-      ],
-      "estimatedDurationSeconds": 140,
-      "source": {
-        "publisher": "Nature",
-        "title": "Magnetic sensitivity of cryptochrome 4 from a migratory songbird",
-        "url": "https://en.wikipedia.org/w/index.php?search=The%20Quantum%20Compass%20of%20the%20European%20Robin",
-        "publishedAt": "2026-11-19T20:52:57.288Z",
-        "retrievedAt": "2026-11-19T20:52:57.288Z"
-      },
-      "summary": "European robins navigate across continents not merely through sight or smell, but by using entangled quantum particles embedded inside specialized proteins in their retinas.",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "Every autumn, migratory European robins undertake perilous journeys covering thousands of kilometers. For decades, biologists puzzled over how a creature weighing barely twenty grams could pinpoint magnetic north without an iron compass. The answer lies in cryptochromes, light-sensitive proteins nestled directly within the photoreceptor cells of the bird's eye."
-        },
-        {
-          "type": "fact_reveal",
-          "label": "The Quantum Flash",
-          "text": "When blue daylight strikes cryptochrome-4, it triggers an ultrafast electron transfer that generates a transient pair of entangled radicals. The spin states of these paired electrons oscillate between singlet and triplet states, behaving with extraordinary sensitivity to Earth's faint geomagnetic field."
-        },
-        {
-          "type": "key_takeaway",
-          "heading": "Biological Quantum Mechanics",
-          "points": [
-            "Avian magnetic sensing is inclination-based: robins detect the tilt of field lines relative to Earth's surface rather than magnetic polarity alone.",
-            "Anthropogenic radiofrequency noise, such as AM radio broadcasts, can disrupt this radical pair mechanism, disorienting migrating birds in cities."
-          ]
-        }
-      ],
-      "visual": {
-        "type": "editorial_illustration",
-        "alt": "The Quantum Compass of the European Robin editorial card",
-        "attribution": "Curio Editorial",
-        "license": "First-party",
-        "provider": "Curio Design System",
-        "accentColor": "#3B4F75"
-      },
-      "followUps": [
-        "Can humans artificially engineer magnetoreception?",
-        "Do migratory sea turtles use cryptochromes or magnetite crystals?"
-      ],
-      "isAiEnriched": true,
-      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
-      "qualityStatus": "approved",
-      "createdAt": "2026-11-19T20:52:57.288Z",
-      "enrichedAt": "2026-11-19T20:52:57.288Z"
-    },
-    {
-      "id": "curio_gen_d9e672cdd706",
-      "schemaVersion": 1,
-      "contentType": "interactive_fact",
-      "cardVariant": "interactive_feature",
-      "title": "The Accidental Logic of the QWERTY Jam",
-      "subtitle": "Why mechanical pin collisions shaped the keyboards of the digital age",
-      "category": "technology",
-      "region": "global",
-      "topics": [
-        "history of technology",
-        "ergonomics",
-        "typing"
-      ],
-      "estimatedDurationSeconds": 110,
-      "source": {
-        "publisher": "Smithsonian Magazine",
-        "title": "The Fact and Fiction of the QWERTY Keyboard",
-        "url": "https://en.wikipedia.org/w/index.php?search=The%20Accidental%20Logic%20of%20the%20QWERTY%20Jam",
-        "publishedAt": "2026-11-19T20:52:57.288Z",
-        "retrievedAt": "2026-11-19T20:52:57.288Z"
-      },
-      "summary": "The ubiquitous layout beneath our fingertips was not engineered for maximum typing speed, but rather to space out frequent letter pairings so mechanical strike bars would stop tangling.",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "Christopher Latham Sholes received a patent in 1878 for a keyboard configuration designed to solve a purely mechanical annoyance. Early mechanical typewriters used swinging typebars arranged in a circular basket. When a clerk typed common English digraphs too quickly, adjacent bars collided and jammed the entire mechanism."
-        },
-        {
-          "type": "quiz",
-          "question": "Which commonly paired English letter combination was deliberately separated to the opposite side of the keyboard in early QWERTY designs?",
-          "options": [
-            "S and T",
-            "T and H",
-            "Q and U"
-          ],
-          "correctOptionIndex": 1,
-          "explanation": "Because 'th' appeared with such vast frequency in English telegraph transcriptions, placing T and H on separate sides of the basket reduced clashing bars."
-        },
-        {
-          "type": "paragraph",
-          "text": "Despite ergonomic alternatives like the Dvorak Simplified Keyboard demonstrating measurable efficiency gains in trials, path dependency locked the QWERTY standard into worldwide typing culture, eventually migrating to touchscreens and virtual reality interfaces intact."
-        }
-      ],
-      "visual": {
-        "type": "editorial_illustration",
-        "alt": "The Accidental Logic of the QWERTY Jam editorial card",
-        "attribution": "Curio Editorial",
-        "license": "First-party",
-        "provider": "Curio Design System",
-        "accentColor": "#2563EB"
-      },
-      "followUps": [
-        "Why did the French AZERTY layout deviate from standard QWERTY?",
-        "Did early Morse code telegraphers influence key layouts?"
-      ],
-      "isAiEnriched": true,
-      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
-      "qualityStatus": "approved",
-      "createdAt": "2026-11-19T20:52:57.288Z",
-      "enrichedAt": "2026-11-19T20:52:57.288Z"
     }
   ]
 }
