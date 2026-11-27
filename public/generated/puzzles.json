@@ -1,10 +1,55 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-26T22:30:09.115Z",
+  "generatedAt": "2026-11-27T04:27:33.734Z",
   "generator": "gemini-textual-puzzles",
   "model": "gemini-flash-latest",
   "itemCount": 48,
   "items": [
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_b19ac139ea1b",
+      "kind": "odd_one_out",
+      "title": "Noble Element Discovery",
+      "category": "science",
+      "difficulty": "Warm-up",
+      "prompt": "Identify the element that does not belong with the other three based on its natural chemical family.",
+      "hint": "Consider the group in the periodic table to which each element belongs.",
+      "options": [
+        "Argon",
+        "Krypton",
+        "Xenon",
+        "Bromine"
+      ],
+      "correctIndex": 3,
+      "explanation": "Argon, krypton, and xenon are noble gases (Group 18), whereas bromine is a halogen (Group 17).",
+      "origin": "ai",
+      "createdAt": "2026-11-27T04:27:33.734Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_a749a09d5b89",
+      "kind": "order_sequence",
+      "title": "Space Flight Milestones",
+      "category": "history",
+      "difficulty": "Clever",
+      "prompt": "Arrange these historic human spaceflight milestones in chronological order, from earliest to most recent.",
+      "orderItems": [
+        "First human orbital flight (Yuri Gagarin)",
+        "First spacewalk / EVA (Alexei Leonov)",
+        "First crewed lunar landing (Apollo 11)",
+        "First reusable space shuttle launch (Columbia STS-1)"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "hint": "Gagarin flew in 1961, while the first space shuttle launch took place two decades later in 1981.",
+      "explanation": "Gagarin orbited in April 1961, Leonov performed the first EVA in March 1965, Apollo 11 landed on the Moon in July 1969, and STS-1 launched in April 1981.",
+      "origin": "ai",
+      "createdAt": "2026-11-27T04:27:33.734Z"
+    },
     {
       "schemaVersion": 1,
       "id": "puz_ai_c08d496a9df2",
@@ -2115,98 +2160,6 @@
       "explanation": "Devi is in Bay 4 because she has the highest number. Aria and Blake are adjacent, and Blake is not at an end, placing Blake in Bay 2 and Aria in Bay 1, leaving Chen in Bay 3.",
       "origin": "ai",
       "createdAt": "2026-11-21T21:24:04.078Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_2fa3268c27c8",
-      "kind": "true_or_myth",
-      "title": "Sunken Buoyancy",
-      "category": "science",
-      "difficulty": "Warm-up",
-      "prompt": "Because water pressure increases dramatically with ocean depth, a solid steel ball dropped over the Mariana Trench will eventually stop sinking and float suspended in the water.",
-      "hint": "Consider the relative compressibility of liquid water compared to the density of solid steel.",
-      "options": [
-        "True — Real Fact",
-        "Myth — False"
-      ],
-      "correctIndex": 1,
-      "explanation": "Water is nearly incompressible, so its density increases by only a few percent at the bottom of the trench, remaining far below the density of steel (~7.8 g/cm³ versus ~1.08 g/cm³). Thus, the steel ball sinks all the way to the ocean floor.",
-      "origin": "ai",
-      "createdAt": "2026-11-21T15:51:32.930Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_74d68d2f00e5",
-      "kind": "interactive_grid",
-      "title": "Substation Power Surge",
-      "category": "technology",
-      "difficulty": "Clever",
-      "prompt": "Select exactly 3 transformer cells that together deliver a total output of 50 megawatts.",
-      "gridPuzzle": {
-        "mode": "target_sum",
-        "rows": 3,
-        "cols": 3,
-        "instruction": "Select 3 cells that sum to 50",
-        "cells": [
-          {
-            "label": "14",
-            "value": 14,
-            "initialOn": false
-          },
-          {
-            "label": "12",
-            "value": 12,
-            "initialOn": false
-          },
-          {
-            "label": "21",
-            "value": 21,
-            "initialOn": false
-          },
-          {
-            "label": "17",
-            "value": 17,
-            "initialOn": false
-          },
-          {
-            "label": "15",
-            "value": 15,
-            "initialOn": false
-          },
-          {
-            "label": "19",
-            "value": 19,
-            "initialOn": false
-          },
-          {
-            "label": "19",
-            "value": 19,
-            "initialOn": false
-          },
-          {
-            "label": "24",
-            "value": 24,
-            "initialOn": false
-          },
-          {
-            "label": "11",
-            "value": 11,
-            "initialOn": false
-          }
-        ],
-        "targetSum": 50,
-        "exactCount": 3,
-        "goalState": "all_on",
-        "solutionIndices": [
-          1,
-          5,
-          6
-        ]
-      },
-      "hint": "Identify three numbers that end with digits summing to a multiple of 10.",
-      "explanation": "Selecting 12, 19, and 19 sums to 50 (12 + 19 + 19 = 50).",
-      "origin": "ai",
-      "createdAt": "2026-11-21T15:51:32.930Z"
     }
   ]
 }

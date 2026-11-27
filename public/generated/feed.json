@@ -1,10 +1,291 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-26T22:29:39.181Z",
+  "generatedAt": "2026-11-27T04:27:01.094Z",
   "generator": "gemini-textual-feed",
   "model": "gemini-flash-latest",
   "itemCount": 80,
   "items": [
+    {
+      "id": "curio_gen_131aa489e619",
+      "schemaVersion": 1,
+      "contentType": "short_story",
+      "cardVariant": "article",
+      "title": "The Underground Orange Forests of Palermo",
+      "subtitle": "How medieval hydro-engineering turned scorching Sicilian rock into a citrus paradise",
+      "category": "travel_food",
+      "region": "global",
+      "topics": [
+        "sicily",
+        "citrus",
+        "qanat",
+        "agricultural history",
+        "palermo"
+      ],
+      "estimatedDurationSeconds": 135,
+      "source": {
+        "publisher": "UNESCO World Heritage Centre",
+        "title": "Arab-Norman Palermo and the Cathedral Churches of Cefalu and Monreale",
+        "url": "https://whc.unesco.org/en/list/1487",
+        "publishedAt": "2026-11-27T04:27:01.094Z",
+        "retrievedAt": "2026-11-27T04:27:01.094Z"
+      },
+      "summary": "Beneath modern Palermo lies the Qanat of the Conca d Oro, an intricate labyrinth of subterranean aqueducts built during the Arab-Norman era that enabled lush citrus groves to flourish in arid Mediterranean heat.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Beneath the bustling asphalt of modern Palermo lies a quiet, chilled labyrinth known as the qanats. Carved directly into soft limestone during the Arab-Norman period between the ninth and twelfth centuries, these sloping tunnels diverted underground springs over kilometers to transform the arid basin of the Conca d Oro into one of the most celebrated citrus gardens in the Mediterranean."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "Thermal contrast",
+          "text": "While temperatures on the Sicilian surface often soar above 40 degrees Celsius in midsummer, the air inside these subterranean channels remains a stable 12 to 15 degrees year-round, allowing subterranean gardeners and maintenance teams to work in natural subterranean climate control."
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Ingenious Mediterranean Engineering",
+          "points": [
+            "The engineering technique originated in ancient Persia and was adapted by Arab settlers to tap perched water tables beneath Palermo.",
+            "Water was transported purely by gravitational gradients, preventing evaporation losses that plagued open-air aqueducts.",
+            "The resulting microclimate nourished bitter orange, lemon, and sugarcane crops that formed the bedrock of medieval Sicilian cuisine."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Underground Orange Forests of Palermo editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#0F766E"
+      },
+      "followUps": [
+        "How did Persian qanat engineering spread across North Africa and Southern Europe?",
+        "What indigenous citrus varieties existed in Europe before the 10th century?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-27T04:27:01.094Z",
+      "enrichedAt": "2026-11-27T04:27:01.094Z"
+    },
+    {
+      "id": "curio_gen_089aba2f2c7f",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Redundancy Principle and System Antifragility",
+      "subtitle": "Why nature builds backup plans that human planners often mistake for waste",
+      "category": "growth",
+      "region": "global",
+      "topics": [
+        "mental models",
+        "systems thinking",
+        "biology",
+        "resilience"
+      ],
+      "estimatedDurationSeconds": 150,
+      "source": {
+        "publisher": "Nature Systems Biology",
+        "title": "Robustness and Redundancy in Biological Networks",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Redundancy%20Principle%20and%20System%20Antifragility",
+        "publishedAt": "2026-11-27T04:27:01.094Z",
+        "retrievedAt": "2026-11-27T04:27:01.094Z"
+      },
+      "summary": "Modern efficiency models ruthlessly cut slack, but evolutionary biology shows that intentional redundancy is the only shield against high-impact, unforeseen shocks.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Modern supply chains, corporate balance sheets, and personal calendars are typically engineered for maximal efficiency, purging any component that does not yield immediate utility. Biological systems take the diametrically opposite approach: the human body carries two kidneys, duplicate genetic codes, and substantial metabolic fat reserves. What lean business consultants categorize as waste, evolutionary biology recognizes as insurance against extinction."
+        },
+        {
+          "type": "comparison",
+          "heading": "Efficiency Versus Redundancy",
+          "leftTitle": "Hyper-Efficient Systems",
+          "rightTitle": "Antifragile Systems",
+          "leftPoints": [
+            "Eliminates buffers and excess capacity to lower operating cost",
+            "Relies on predictable conditions and precise forecasts",
+            "Experiences catastrophic failure during unexpected bottlenecks"
+          ],
+          "rightPoints": [
+            "Maintains intentional surplus and parallel operational pathways",
+            "Expects variance, disruption, and incomplete information",
+            "Absorbs systemic shocks and often adapts stronger"
+          ]
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Applying the Heuristic",
+          "points": [
+            "Schedule unscheduled slack: leave 15 to 20 percent of calendar time uncommitted to absorb emergencies without derailment.",
+            "Decouple critical dependencies by cultivating parallel income streams or secondary technical workflows."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Redundancy Principle and System Antifragility editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#2D6A4F"
+      },
+      "followUps": [
+        "How did Nassim Nicholas Taleb define antifragility in socio-economic systems?",
+        "What are modern engineering examples of passive safety redundancies?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-27T04:27:01.094Z",
+      "enrichedAt": "2026-11-27T04:27:01.094Z"
+    },
+    {
+      "id": "curio_gen_46ea58138074",
+      "schemaVersion": 1,
+      "contentType": "quick_bite",
+      "cardVariant": "interactive_feature",
+      "title": "The Diplomatic Passport Issued to a Dead Pharaoh",
+      "subtitle": "How French bureaucratic protocol solved a fungal emergency on Ramesses II",
+      "category": "humour",
+      "region": "global",
+      "topics": [
+        "egyptology",
+        "bureaucracy",
+        "ramesses ii",
+        "paris",
+        "history"
+      ],
+      "estimatedDurationSeconds": 90,
+      "source": {
+        "publisher": "Smithsonian Magazine",
+        "title": "The Strange Journey of Ramesses II to Paris",
+        "url": "https://www.smithsonianmag.com/",
+        "publishedAt": "2026-11-27T04:27:01.094Z",
+        "retrievedAt": "2026-11-27T04:27:01.094Z"
+      },
+      "summary": "When the mummy of Pharaoh Ramesses II needed emergency conservation in Paris in 1976, French law demanded that all arrivals carry a valid passport—even those deceased for three millennia.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In 1976, conservators noticed that the 3,000-year-old mummy of Pharaoh Ramesses II was deteriorating rapidly due to an aggressive fungal proliferation. To save the remains, the Egyptian government arranged for the body to be flown to Paris for specialized irradiation treatment at the Musee de l Homme. There was only one logistical snag: contemporary French border regulations mandated that every individual entering the country, living or dead, must carry a legal travel document."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Official Occupation",
+          "text": "The Egyptian government officially issued Ramesses II an authentic passport featuring his mummified portrait, listing his date of birth as roughly 1303 BC and his primary occupation plainly as King (deceased)."
+        },
+        {
+          "type": "quiz",
+          "question": "What military protocol greeted Ramesses II upon landing at Le Bourget Airport near Paris?",
+          "options": [
+            "A standard forensic impound by customs border control",
+            "Full head-of-state military honours, including a guard of honour and red carpet",
+            "An immediate quarantine tent on the tarmac with zero ceremonial greeting"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "Because his passport verified him as a reigning monarch of state, French protocol compelled the armed forces to receive the pharaoh with the full ceremonial honors accorded to visiting heads of state."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Diplomatic Passport Issued to a Dead Pharaoh editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#9333EA"
+      },
+      "followUps": [
+        "What specific fungus threatened the preservation of Egyptian mummies in European museums?",
+        "How are historic human remains classified in international air freight today?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-27T04:27:01.094Z",
+      "enrichedAt": "2026-11-27T04:27:01.094Z"
+    },
+    {
+      "id": "curio_gen_468c52c45ba2",
+      "schemaVersion": 1,
+      "contentType": "interactive_fact",
+      "cardVariant": "interactive_feature",
+      "title": "The Great Neutrino Mapping of Earth Core Heat",
+      "subtitle": "Particle physicists use ghost particles to finally weigh the planet inner furnace",
+      "category": "news",
+      "region": "global",
+      "topics": [
+        "physics",
+        "geology",
+        "neutrinos",
+        "geothermal energy",
+        "earth science"
+      ],
+      "estimatedDurationSeconds": 120,
+      "source": {
+        "publisher": "Physical Review D",
+        "title": "Comprehensive Geoneutrino Analysis with Borexino",
+        "url": "https://journals.aps.org/prd",
+        "publishedAt": "2026-11-27T04:27:01.094Z",
+        "retrievedAt": "2026-11-27T04:27:01.094Z"
+      },
+      "summary": "Deep underground detectors have succeeded in capturing geoneutrinos emitted from decaying radioactive isotopes in Earth mantle, providing humanity first direct measurement of internal planetary heat generation.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "For over two centuries, geophysicists could only estimate the proportion of Earth internal heat that comes from primordial energy left over from its formation versus radioactive decay occurring inside the mantle. Now, massive ultra-pure liquid scintillator detectors buried deep beneath mountains in Italy and Japan are capturing geoneutrinos—nearly massless subatomic particles that slip unimpeded through thousands of kilometers of solid rock directly from radioactive isotopes."
+        },
+        {
+          "type": "timeline",
+          "heading": "Tracing Earth's Internal Particle Signals",
+          "events": [
+            {
+              "year": "2005",
+              "title": "KamLAND First Detection",
+              "detail": "The KamLAND detector in central Japan records the first tentative evidence of geoneutrinos generated by radioactive decay inside Earth."
+            },
+            {
+              "year": "2020",
+              "title": "Borexino Radiogenic Measurement",
+              "detail": "The Borexino collaboration beneath the Gran Sasso mountain establishes that radioactive thorium and uranium produce roughly half of Earth total 47-terawatt thermal output."
+            },
+            {
+              "year": "2025",
+              "title": "Global Geoneutrino Tomography",
+              "detail": "Next-generation detectors like JUNO begin cross-referencing subatomic signatures to build full 3D thermal maps of the lower mantle boundary."
+            }
+          ]
+        },
+        {
+          "type": "quiz",
+          "question": "Which two radioactive elements account for the vast majority of Earth radiogenic heat measured by neutrino observatories?",
+          "options": [
+            "Uranium-238 and Thorium-232",
+            "Plutonium-239 and Radium-226",
+            "Carbon-14 and Potassium-40"
+          ],
+          "correctOptionIndex": 0,
+          "explanation": "The decay chains of Uranium-238 and Thorium-232, along with Potassium-40, drive planetary geodynamics, plate tectonics, and the convective motion generating Earth protective magnetic field."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Great Neutrino Mapping of Earth Core Heat editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#C84B31"
+      },
+      "followUps": [
+        "How do liquid scintillator tanks differentiate between solar neutrinos and geoneutrinos?",
+        "What does the cooling rate of Earth core tell us about the future lifespan of its magnetic field?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-27T04:27:01.094Z",
+      "enrichedAt": "2026-11-27T04:27:01.094Z"
+    },
     {
       "id": "curio_gen_bb1b1ad2549d",
       "schemaVersion": 1,
@@ -5165,296 +5446,6 @@
       "qualityStatus": "approved",
       "createdAt": "2026-11-19T20:52:57.288Z",
       "enrichedAt": "2026-11-19T20:52:57.288Z"
-    },
-    {
-      "id": "curio_gen_cbe1f1239e31",
-      "schemaVersion": 1,
-      "contentType": "short_story",
-      "cardVariant": "article",
-      "title": "The Underground Subways of Oaxacan Mole",
-      "subtitle": "How pre-Columbian chillies married colonial spices in New Spain convent kitchens",
-      "category": "travel_food",
-      "region": "global",
-      "topics": [
-        "gastronomy",
-        "mexican history",
-        "culinary chemistry"
-      ],
-      "estimatedDurationSeconds": 130,
-      "source": {
-        "publisher": "BBC Travel",
-        "title": "Mexico's Complex Sauce That Defines a Nation",
-        "url": "https://en.wikipedia.org/w/index.php?search=The%20Underground%20Subways%20of%20Oaxacan%20Mole",
-        "publishedAt": "2026-11-19T20:52:57.288Z",
-        "retrievedAt": "2026-11-19T20:52:57.288Z"
-      },
-      "summary": "Modern mole negro is neither simple chocolate sauce nor rustic stew, but a hyper-complex reduction of smoke, bitter seeds, and burnt tortillas forged across centuries of intercultural blending.",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "In the valley markets of Oaxaca, smoke rises each morning from massive comals where chilhuacle and pasilla oaxaqueño chiles are intentionally charred until pitch-black. Rather than discarding burnt components as culinary errors, Oaxacan cooks harness carefully managed carbonization to impart deep, velvety bitterness without acrid ashiness."
-        },
-        {
-          "type": "timeline",
-          "heading": "Evolution of the Mole Complex",
-          "events": [
-            {
-              "year": "1500s",
-              "title": "Mōlli Traditions",
-              "detail": "Indigenous Nahua cooks grind squash seeds, tomatoes, and chiles on stone metates to create silky sauces named mōlli."
-            },
-            {
-              "year": "1680s",
-              "title": "The Convent Synthesis",
-              "detail": "Puebla and Oaxaca convents introduce Old World spices: cinnamon, clove, coriander, and anise, enriching native pastes with dried plantains and cacao."
-            },
-            {
-              "year": "Modern Era",
-              "title": "The Seven Moles Canon",
-              "detail": "Oaxaca formalizes regional variations, ranging from bright herb-infused verde to deeply fermented negro."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Balancing more than thirty disparate ingredients requires strict grinding orders. Seeds release naturally stabilizing emulsifiers, allowing high proportions of lard, toasted aromatics, and rich broth to stay suspended in a glossy emulsion without breaking."
-        }
-      ],
-      "visual": {
-        "type": "editorial_illustration",
-        "alt": "The Underground Subways of Oaxacan Mole editorial card",
-        "attribution": "Curio Editorial",
-        "license": "First-party",
-        "provider": "Curio Design System",
-        "accentColor": "#0F766E"
-      },
-      "followUps": [
-        "What gives chilhuacle chiles their unique raisin profile?",
-        "How did stone metates shape early food textures across Mesoamerica?"
-      ],
-      "isAiEnriched": true,
-      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
-      "qualityStatus": "approved",
-      "createdAt": "2026-11-19T20:52:57.288Z",
-      "enrichedAt": "2026-11-19T20:52:57.288Z"
-    },
-    {
-      "id": "curio_gen_7a596ca81ee7",
-      "schemaVersion": 1,
-      "contentType": "quick_bite",
-      "cardVariant": "interactive_feature",
-      "title": "The Strange Physics of Negative Absolute Temperature",
-      "subtitle": "Why reaching beyond absolute zero creates a system that is paradoxically hotter than infinity",
-      "category": "facts",
-      "region": "global",
-      "topics": [
-        "thermodynamics",
-        "statistical mechanics",
-        "physics"
-      ],
-      "estimatedDurationSeconds": 120,
-      "source": {
-        "publisher": "Science",
-        "title": "Negative Absolute Temperature for Motional Degrees of Freedom",
-        "url": "https://en.wikipedia.org/w/index.php?search=The%20Strange%20Physics%20of%20Negative%20Absolute%20Temperature",
-        "publishedAt": "2026-11-19T20:52:57.288Z",
-        "retrievedAt": "2026-11-19T20:52:57.288Z"
-      },
-      "summary": "In quantum systems with bounded energy levels, stepping into negative Kelvin temperatures does not mean plunging below absolute freeze—it creates an inverted state hotter than any positive temperature.",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "Absolute zero, or zero Kelvin, represents the total cessation of extractable classical thermal motion. For two centuries, popular science treated it as an impenetrable floor. Yet in statistical thermodynamics, temperature is formally defined not by raw particle speed, but by how entropy shifts when energy is added to a system."
-        },
-        {
-          "type": "comparison",
-          "heading": "Positive vs. Negative Absolute Temperatures",
-          "leftTitle": "Positive Temperature (+T)",
-          "rightTitle": "Negative Temperature (-T)",
-          "leftPoints": [
-            "Low energy states are more populated than high energy states.",
-            "Adding energy increases overall microscopic disorder (entropy).",
-            "Absorbs heat when brought into contact with hotter bodies."
-          ],
-          "rightPoints": [
-            "Higher energy states hold more particles than lower ones (population inversion).",
-            "Adding energy forces particles into upper limits, actually decreasing entropy.",
-            "Spontaneously dumps heat into any positive-temperature reservoir."
-          ]
-        },
-        {
-          "type": "fact_reveal",
-          "label": "The Thermodynamic Paradox",
-          "text": "Because heat always flows spontaneously from negative Kelvin states into positive Kelvin states, a quantum gas at minus two Kelvin is mathematically hotter than the center of the Sun."
-        }
-      ],
-      "visual": {
-        "type": "editorial_illustration",
-        "alt": "The Strange Physics of Negative Absolute Temperature editorial card",
-        "attribution": "Curio Editorial",
-        "license": "First-party",
-        "provider": "Curio Design System",
-        "accentColor": "#B45309"
-      },
-      "followUps": [
-        "How do physicists trap ultracold potassium atoms to demonstrate negative temperatures?",
-        "What is the mathematical connection between negative temperature and optical lasers?"
-      ],
-      "isAiEnriched": true,
-      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
-      "qualityStatus": "approved",
-      "createdAt": "2026-11-19T20:52:57.288Z",
-      "enrichedAt": "2026-11-19T20:52:57.288Z"
-    },
-    {
-      "id": "curio_gen_f8e2b39ab530",
-      "schemaVersion": 1,
-      "contentType": "deep_dive",
-      "cardVariant": "article",
-      "title": "The High Seas Treaty Crosses the Threshold",
-      "subtitle": "Inside the historic international pact securing protections for two-thirds of the planet's oceans.",
-      "category": "news",
-      "region": "global",
-      "topics": [
-        "oceans",
-        "international law",
-        "conservation",
-        "global governance"
-      ],
-      "estimatedDurationSeconds": 180,
-      "source": {
-        "publisher": "United Nations News",
-        "title": "Intergovernmental Conference on Marine Biodiversity of Areas Beyond National Jurisdiction",
-        "url": "https://www.un.org/bbnj",
-        "publishedAt": "2026-11-19T09:04:52.155Z",
-        "retrievedAt": "2026-11-19T09:04:52.155Z"
-      },
-      "summary": "After nearly two decades of diplomatic gridlock, the United Nations finalized the High Seas Treaty, creating the first comprehensive legal framework to establish marine protected areas in international waters.",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "Beyond the 200-nautical-mile economic boundary lines drawn by sovereign coastal nations lies the high seas: an aquatic expanse covering nearly half the Earth's surface and roughly two-thirds of the global ocean. For centuries, this watery commons was governed by an open-access philosophy known as the 'freedom of the seas,' leaving vast habitats of hydrothermal vents, migratory pelagic highways, and abyssal plains almost entirely unprotected from overexploitation."
-        },
-        {
-          "type": "fact_reveal",
-          "label": "The Conservation Gap",
-          "text": "Before the formal adoption of the High Seas Treaty, barely one percent of international waters enjoyed comprehensive environmental protections, despite harboring over ninety percent of the planet's habitable volume."
-        },
-        {
-          "type": "timeline",
-          "heading": "The Road to Ratification",
-          "events": [
-            {
-              "year": "2004",
-              "title": "Working Group Formed",
-              "detail": "The UN General Assembly establishes an informal working group to explore marine biodiversity conservation beyond national jurisdiction."
-            },
-            {
-              "year": "2018",
-              "title": "Intergovernmental Talks Begin",
-              "detail": "Formal negotiations launch at the UN headquarters in New York to draft a legally binding treaty."
-            },
-            {
-              "year": "2023",
-              "title": "Consensus Reached",
-              "detail": "Delegates finalize the text of the BBNJ Agreement after marathon around-the-clock sessions."
-            },
-            {
-              "year": "2025",
-              "title": "Ratification Milestone",
-              "detail": "Dozens of nations formally ratify the pact, moving the treaty toward international enforcement."
-            }
-          ]
-        },
-        {
-          "type": "quiz",
-          "question": "What does the treaty's mandate regarding Marine Genetic Resources (MGRs) require?",
-          "options": [
-            "Private companies retain exclusive patents without disclosure",
-            "Benefits derived from high-seas biological material must be equitably shared internationally",
-            "All offshore sampling of genetic material is permanently banned"
-          ],
-          "correctOptionIndex": 1,
-          "explanation": "The treaty includes landmark provisions ensuring that the commercial and scientific benefits of genetic discoveries made in international waters are shared equitably with developing nations."
-        }
-      ],
-      "visual": {
-        "type": "editorial_illustration",
-        "alt": "The High Seas Treaty Crosses the Threshold editorial card",
-        "attribution": "Curio Editorial",
-        "license": "First-party",
-        "provider": "Curio Design System",
-        "accentColor": "#C84B31"
-      },
-      "followUps": [
-        "How will marine protected areas in international waters be monitored and enforced?",
-        "What role do deep-sea mineral rights play in modern maritime treaties?"
-      ],
-      "isAiEnriched": true,
-      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
-      "qualityStatus": "approved",
-      "createdAt": "2026-11-19T09:04:52.155Z",
-      "enrichedAt": "2026-11-19T09:04:52.155Z"
-    },
-    {
-      "id": "curio_gen_769018583649",
-      "schemaVersion": 1,
-      "contentType": "deep_dive",
-      "cardVariant": "article",
-      "title": "The Deep Ocean's Glass Architects",
-      "subtitle": "How glass sponges weave fiber optics and skyscraper physics in the abyss",
-      "category": "facts",
-      "region": "global",
-      "topics": [
-        "marine biology",
-        "biomimicry",
-        "materials science"
-      ],
-      "estimatedDurationSeconds": 150,
-      "source": {
-        "publisher": "Nature Materials",
-        "title": "Structural and Optical Properties of Sponge Spicules",
-        "url": "https://www.nature.com/articles/nmat968",
-        "publishedAt": "2026-11-19T03:55:20.949Z",
-        "retrievedAt": "2026-11-19T03:55:20.949Z"
-      },
-      "summary": "Centuries before human engineers manufactured fiber-optic cables, Venus flower basket sponges were weaving glass skeletons that rival modern structural engineering.",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "In the perpetual darkness of the deep Pacific, Euplectella aspergillum, commonly known as the Venus flower basket, builds a home entirely out of glass. By pulling dissolved silicic acid from cold seawater, this sponge creates delicate glass spicules arranged in a reinforced cylindrical lattice that withstands immense ocean pressures."
-        },
-        {
-          "type": "fact_reveal",
-          "label": "Nature's Fiber Optics",
-          "text": "The glassy basalia anchoring the sponge to the seafloor trap and channel light almost identically to commercial fiber-optic cables, but with natural organic coatings that prevent micro-cracks from shattering the brittle strands."
-        },
-        {
-          "type": "key_takeaway",
-          "heading": "Engineering Lessons from the Abyss",
-          "points": [
-            "Their alternating square and diagonal grid pattern distributes mechanical stress so efficiently that civil engineers study them to reinforce skyscrapers.",
-            "Unlike industrial glass fabrication that requires temperatures exceeding 1,000 degrees Celsius, glass sponges synthesize structural silica at near-freezing temperatures using enzymatic catalysts."
-          ]
-        }
-      ],
-      "visual": {
-        "type": "editorial_illustration",
-        "alt": "The Deep Ocean's Glass Architects editorial card",
-        "attribution": "Curio Editorial",
-        "license": "First-party",
-        "provider": "Curio Design System",
-        "accentColor": "#B45309"
-      },
-      "followUps": [
-        "How do symbiotic shrimp live their entire lives inside these glass cages?",
-        "Can synthetic materials copy the cold-temperature glass production process?"
-      ],
-      "isAiEnriched": true,
-      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
-      "qualityStatus": "approved",
-      "createdAt": "2026-11-19T03:55:20.949Z",
-      "enrichedAt": "2026-11-19T03:55:20.949Z"
     }
   ]
 }
