@@ -1,10 +1,236 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-28T04:28:10.224Z",
+  "generatedAt": "2026-11-28T13:26:11.865Z",
   "generator": "gemini-textual-puzzles",
   "model": "gemini-flash-latest",
   "itemCount": 48,
   "items": [
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_3d4be89708d2",
+      "kind": "true_or_myth",
+      "title": "Wombat Cube Geometry",
+      "category": "science",
+      "difficulty": "Warm-up",
+      "prompt": "Fact or Myth: Bare-nosed wombats naturally produce distinctly cube-shaped feces due to unique horizontal elasticity variations in their intestinal walls.",
+      "hint": "Consider the mechanical structure of their digestive tract.",
+      "options": [
+        "True — Real Fact",
+        "Myth — False"
+      ],
+      "correctIndex": 0,
+      "explanation": "Wombats are the only known animals that produce cubic feces, shaped by the alternating stiff and flexible sections of their lower intestines.",
+      "origin": "ai",
+      "createdAt": "2026-11-28T13:26:11.865Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_ef3687b2585f",
+      "kind": "visual_diagram",
+      "title": "Perimeter Hub Weights",
+      "category": "science",
+      "difficulty": "Clever",
+      "prompt": "Each colored vertex contributes to the value in the center circle according to a simple rule: subtract the sum of the blue nodes from the sum of the red nodes. What value belongs in the center question mark?",
+      "svgDiagram": {
+        "caption": "Four outer nodes linked to a central circle",
+        "background": "#FAF8F4",
+        "shapes": [
+          {
+            "shape": "line",
+            "x1": 160,
+            "y1": 45,
+            "x2": 160,
+            "y2": 155,
+            "stroke": "#CBD5E1",
+            "strokeWidth": 3
+          },
+          {
+            "shape": "line",
+            "x1": 60,
+            "y1": 100,
+            "x2": 260,
+            "y2": 100,
+            "stroke": "#CBD5E1",
+            "strokeWidth": 3
+          },
+          {
+            "shape": "circle",
+            "cx": 160,
+            "cy": 100,
+            "r": 32,
+            "fill": "#FFFFFF",
+            "stroke": "#1E293B",
+            "strokeWidth": 2
+          },
+          {
+            "shape": "text",
+            "x": 160,
+            "y": 106,
+            "text": "?",
+            "fontSize": 20,
+            "fill": "#1E293B",
+            "anchor": "middle"
+          },
+          {
+            "shape": "circle",
+            "cx": 160,
+            "cy": 45,
+            "r": 20,
+            "fill": "#C84B31",
+            "stroke": "#8B1E0F",
+            "strokeWidth": 2
+          },
+          {
+            "shape": "text",
+            "x": 160,
+            "y": 51,
+            "text": "12",
+            "fontSize": 14,
+            "fill": "#FFFFFF",
+            "anchor": "middle"
+          },
+          {
+            "shape": "circle",
+            "cx": 160,
+            "cy": 155,
+            "r": 20,
+            "fill": "#C84B31",
+            "stroke": "#8B1E0F",
+            "strokeWidth": 2
+          },
+          {
+            "shape": "text",
+            "x": 160,
+            "y": 161,
+            "text": "16",
+            "fontSize": 14,
+            "fill": "#FFFFFF",
+            "anchor": "middle"
+          },
+          {
+            "shape": "circle",
+            "cx": 60,
+            "cy": 100,
+            "r": 20,
+            "fill": "#3B4F75",
+            "stroke": "#1E293B",
+            "strokeWidth": 2
+          },
+          {
+            "shape": "text",
+            "x": 60,
+            "y": 105,
+            "text": "4",
+            "fontSize": 14,
+            "fill": "#FFFFFF",
+            "anchor": "middle"
+          },
+          {
+            "shape": "circle",
+            "cx": 260,
+            "cy": 100,
+            "r": 20,
+            "fill": "#3B4F75",
+            "stroke": "#1E293B",
+            "strokeWidth": 2
+          },
+          {
+            "shape": "text",
+            "x": 260,
+            "y": 105,
+            "text": "7",
+            "fontSize": 14,
+            "fill": "#FFFFFF",
+            "anchor": "middle"
+          }
+        ]
+      },
+      "hint": "Add the red circles (top and bottom), then subtract the blue circles (left and right).",
+      "options": [
+        "15",
+        "17",
+        "19",
+        "21"
+      ],
+      "correctIndex": 1,
+      "explanation": "The red nodes sum to 28 (12 + 16), and the blue nodes sum to 11 (4 + 7). Subtracting blue from red yields 17.",
+      "origin": "ai",
+      "createdAt": "2026-11-28T13:26:11.865Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_675b7a4b9e86",
+      "kind": "interactive_grid",
+      "title": "Quantum Flux Cell",
+      "category": "technology",
+      "difficulty": "Clever",
+      "prompt": "Select exactly 3 energy cells that sum to a target flux of 50 megawatts.",
+      "gridPuzzle": {
+        "mode": "target_sum",
+        "rows": 3,
+        "cols": 3,
+        "instruction": "Select 3 cells that sum to 50",
+        "cells": [
+          {
+            "label": "23",
+            "value": 23,
+            "initialOn": false
+          },
+          {
+            "label": "14",
+            "value": 14,
+            "initialOn": false
+          },
+          {
+            "label": "6",
+            "value": 6,
+            "initialOn": false
+          },
+          {
+            "label": "11",
+            "value": 11,
+            "initialOn": false
+          },
+          {
+            "label": "19",
+            "value": 19,
+            "initialOn": false
+          },
+          {
+            "label": "15",
+            "value": 15,
+            "initialOn": false
+          },
+          {
+            "label": "8",
+            "value": 8,
+            "initialOn": false
+          },
+          {
+            "label": "27",
+            "value": 27,
+            "initialOn": false
+          },
+          {
+            "label": "12",
+            "value": 12,
+            "initialOn": false
+          }
+        ],
+        "targetSum": 50,
+        "exactCount": 3,
+        "goalState": "all_on",
+        "solutionIndices": [
+          0,
+          4,
+          6
+        ]
+      },
+      "hint": "Try pairing the largest value with two smaller components.",
+      "explanation": "Selecting cells 23, 19, and 8 gives exactly 23 + 19 + 8 = 50 megawatts.",
+      "origin": "ai",
+      "createdAt": "2026-11-28T13:26:11.865Z"
+    },
     {
       "schemaVersion": 1,
       "id": "puz_ai_ec0b52a66658",
@@ -1937,71 +2163,6 @@
       "explanation": "A joke can be 'cracked', made up, and told to others, but can hurt if taken too far.",
       "origin": "ai",
       "createdAt": "2026-11-22T22:16:36.661Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_c93500afce2d",
-      "kind": "lateral_riddle",
-      "title": "The Weightless Vessel",
-      "category": "humour",
-      "difficulty": "Warm-up",
-      "prompt": "I can fill an entire room without taking up any space, and the more of me you add, the lighter the room feels. What am I?",
-      "hint": "Flip a switch to invite me in.",
-      "options": [
-        "Light",
-        "Smoke",
-        "Air",
-        "A whisper"
-      ],
-      "correctIndex": 0,
-      "explanation": "Light permeates a room completely without displacing any physical matter or adding weight, brightening the space instantly.",
-      "origin": "ai",
-      "createdAt": "2026-11-22T16:49:44.630Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_a64926acb214",
-      "kind": "logic_reasoning",
-      "title": "Observatory Shift Roster",
-      "category": "science",
-      "difficulty": "Clever",
-      "prompt": "Four astronomers (Aria, Blake, Chen, and Dev) each monitored a different telescope: Optical, Radio, Infrared, or X-ray. Who operated the Infrared telescope?",
-      "clues": [
-        "1. Aria and Dev operated non-optical telescopes that detect longer wavelengths than visible light.",
-        "2. Chen operated the X-ray telescope.",
-        "3. Aria did not operate the Radio telescope."
-      ],
-      "hint": "Infrared and Radio are both longer in wavelength than visible light.",
-      "options": [
-        "Aria",
-        "Blake",
-        "Chen",
-        "Dev"
-      ],
-      "correctIndex": 0,
-      "explanation": "Because Aria and Dev operated longer-wavelength instruments (Radio and Infrared) and Aria did not use the Radio telescope, Aria must have operated the Infrared telescope.",
-      "origin": "ai",
-      "createdAt": "2026-11-22T16:49:44.630Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_29fa7b02b99e",
-      "kind": "odd_one_out",
-      "title": "Monarchic Terminations",
-      "category": "history",
-      "difficulty": "Clever",
-      "prompt": "Which of these European monarchs is the odd one out regarding how their reign ended?",
-      "hint": "Consider whether each monarch lost their life or voluntarily gave up power.",
-      "options": [
-        "Edward VIII of the United Kingdom",
-        "Charles I of England",
-        "Louis XVI of France",
-        "Nicholas II of Russia"
-      ],
-      "correctIndex": 0,
-      "explanation": "Edward VIII voluntarily abdicated his throne in 1936, whereas Charles I, Louis XVI, and Nicholas II were all executed during revolutions.",
-      "origin": "ai",
-      "createdAt": "2026-11-22T16:49:44.630Z"
     }
   ]
 }
