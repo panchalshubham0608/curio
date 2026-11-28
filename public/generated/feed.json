@@ -1,10 +1,272 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-27T22:49:50.014Z",
+  "generatedAt": "2026-11-28T04:27:39.456Z",
   "generator": "gemini-textual-feed",
   "model": "gemini-flash-latest",
   "itemCount": 80,
   "items": [
+    {
+      "id": "curio_gen_870f503e80e4",
+      "schemaVersion": 1,
+      "contentType": "deep_dive",
+      "cardVariant": "article",
+      "title": "The Deep-Sea Organisms That Run on Pure Rust",
+      "subtitle": "How hydrothermal vent microbes survive by literally breathing rock",
+      "category": "facts",
+      "region": "global",
+      "topics": [
+        "microbiology",
+        "deep sea",
+        "geochemistry"
+      ],
+      "estimatedDurationSeconds": 130,
+      "source": {
+        "publisher": "Nature Geoscience",
+        "title": "Extracellular electron transfer and microbial mineral respiration",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Deep-Sea%20Organisms%20That%20Run%20on%20Pure%20Rust",
+        "publishedAt": "2026-11-28T04:27:39.456Z",
+        "retrievedAt": "2026-11-28T04:27:39.456Z"
+      },
+      "summary": "Miles beneath the ocean surface, miles away from sunlight, chemolithoautotrophic bacteria survive by oxidizing solid mineral iron, effectively breathing the rusting crust of the planet.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Deep in the abyssal plains, beyond the reach of any photon of solar energy, life discovered a completely different currency for survival. While terrestrial life relies on photosynthesis, deep-ocean microbes known as chemolithoautotrophs power their metabolic machinery directly through the chemical bonds of solid minerals, using dissolved oxygen or nitrates to chemically oxidize iron."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Metal Diet",
+          "text": "These organisms do not simply absorb dissolved nutrients; some species produce specialized extracellular conductive filaments, biological nanowires, to transfer electrons straight onto the surfaces of solid rocks."
+        },
+        {
+          "type": "quiz",
+          "question": "What is the primary biological challenge of deriving energy from solid iron minerals?",
+          "options": [
+            "Solid mineral particles cannot cross the microbial cell membrane",
+            "Iron dissolves completely before bacteria can reach it",
+            "Rusting creates intense heat that denatures bacterial proteins"
+          ],
+          "correctOptionIndex": 0,
+          "explanation": "Because solid minerals are too large to pass through cellular membranes, these organisms developed external electron transfer pathways to process minerals from the outside."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Deep-Sea Organisms That Run on Pure Rust editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#B45309"
+      },
+      "followUps": [
+        "How might deep-sea iron oxidizers help scientists identify life on Mars or Europa?",
+        "What industrial uses exist for bacterial biological nanowires?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-28T04:27:39.456Z",
+      "enrichedAt": "2026-11-28T04:27:39.456Z"
+    },
+    {
+      "id": "curio_gen_688aff5d880a",
+      "schemaVersion": 1,
+      "contentType": "interactive_fact",
+      "cardVariant": "interactive_feature",
+      "title": "The Focusing Illusion and Emotional Forecasting",
+      "subtitle": "Why nothing in life is as important as you think it is while you are thinking about it",
+      "category": "growth",
+      "region": "global",
+      "topics": [
+        "cognitive psychology",
+        "decision making",
+        "mental models"
+      ],
+      "estimatedDurationSeconds": 110,
+      "source": {
+        "publisher": "American Psychologist",
+        "title": "Would You Be Happier in California? A Focusing Illusion in Judgments of Life Satisfaction",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Focusing%20Illusion%20and%20Emotional%20Forecasting",
+        "publishedAt": "2026-11-28T04:27:39.456Z",
+        "retrievedAt": "2026-11-28T04:27:39.456Z"
+      },
+      "summary": "Psychologist Daniel Kahneman demonstrated that humans consistently misjudge future happiness because focusing on a single life change exaggerates its true long-term emotional impact.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "When we ponder a major life transition, such as moving to a sunny coastal city or securing a promotion, our attention zooms into that solitary factor. We imagine perpetual beach walks and effortless contentment. Cognitive scientists call this the focusing illusion: the mental tendency to dramatically overestimate the impact of one event while ignoring all the mundane baseline routines that remain unchanged."
+        },
+        {
+          "type": "comparison",
+          "heading": "Perceived Impact vs. Reality",
+          "leftTitle": "When Predicting (Zoomed In)",
+          "rightTitle": "When Living (Zoomed Out)",
+          "leftPoints": [
+            "Sunshine directly dictates daily mood",
+            "The new salary eliminates ambient daily stress",
+            "Every day feels defined by the upgrade"
+          ],
+          "rightPoints": [
+            "Traffic, sleep debt, and grocery shopping dominate attention",
+            "Hedonic adaptation resets your baseline satisfaction",
+            "The upgrade quickly recedes into the background"
+          ]
+        },
+        {
+          "type": "key_takeaway",
+          "heading": "Takeaway",
+          "points": [
+            "Before making major decisions, consciously catalog the mundane daily routines that will remain completely identical.",
+            "Recognize that attention acts as an amplifier: whatever you focus on feels temporarily all-encompassing."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Focusing Illusion and Emotional Forecasting editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#2D6A4F"
+      },
+      "followUps": [
+        "How does hedonic adaptation interact with the focusing illusion?",
+        "What questions can you ask yourself during major career transitions to counterbalance emotional forecasting?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-28T04:27:39.456Z",
+      "enrichedAt": "2026-11-28T04:27:39.456Z"
+    },
+    {
+      "id": "curio_gen_d88f698d9e62",
+      "schemaVersion": 1,
+      "contentType": "short_story",
+      "cardVariant": "article",
+      "title": "The Venice Quarantine of 1377 and the Forty-Day Rule",
+      "subtitle": "How an Adriatic seaport invented modern public health isolation",
+      "category": "history",
+      "region": "global",
+      "topics": [
+        "medical history",
+        "maritime trade",
+        "epidemiology"
+      ],
+      "estimatedDurationSeconds": 140,
+      "source": {
+        "publisher": "World Health Organization",
+        "title": "Origin of the word quarantine",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Venice%20Quarantine%20of%201377%20and%20the%20Forty-Day%20Rule",
+        "publishedAt": "2026-11-28T04:27:39.456Z",
+        "retrievedAt": "2026-11-28T04:27:39.456Z"
+      },
+      "summary": "Facing devastating waves of the Black Death, the Venetian Republic established isolated island stations to hold arriving ships for exactly forty days, creating the word quarantine.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "In the fourteenth century, maritime trade was both the economic lifeblood of the Venetian Empire and its primary vector of lethal contagion. Recognizing that plague ships brought disaster, the Venetian-administered port of Ragusa (modern-day Dubrovnik) instituted an isolation decree in 1377, which Venice expanded into the islands of the Venetian Lagoon known as the Lazarettos."
+        },
+        {
+          "type": "timeline",
+          "heading": "Evolution of the Forty-Day Policy",
+          "events": [
+            {
+              "year": "1377",
+              "title": "The Trentino Decree",
+              "detail": "Ragusa mandates a thirty-day waiting period, a trentino, on nearby islands for incoming merchants and vessels."
+            },
+            {
+              "year": "1423",
+              "title": "Lazaretto Vecchio Founded",
+              "detail": "Venice establishes the first designated state hospital island in the lagoon for infected travelers."
+            },
+            {
+              "year": "1448",
+              "title": "Quaranta Giorni Established",
+              "detail": "Venice lengthens isolation to forty days (quarantena), matching both medical observations and biblical periods of renewal."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "While Venetian magistrates had no knowledge of bacteria or flea vectors, forty days proved to be remarkably close to the biological window needed to clear both bubonic and pneumonic forms of infection among an isolated crew."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Venice Quarantine of 1377 and the Forty-Day Rule editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#7C2D12"
+      },
+      "followUps": [
+        "What were the architectural designs of the Venetian Lazarettos?",
+        "How did goods and cargo undergo decontamination during fourteenth-century quarantines?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-28T04:27:39.456Z",
+      "enrichedAt": "2026-11-28T04:27:39.456Z"
+    },
+    {
+      "id": "curio_gen_23a3480ce7e9",
+      "schemaVersion": 1,
+      "contentType": "quick_bite",
+      "cardVariant": "interactive_feature",
+      "title": "The Great Australian Emu War Truce",
+      "subtitle": "The time the military surrendered to six-foot flightless birds",
+      "category": "humour",
+      "region": "global",
+      "topics": [
+        "odd history",
+        "australian wildlife",
+        "unintended consequences"
+      ],
+      "estimatedDurationSeconds": 100,
+      "source": {
+        "publisher": "National Library of Australia",
+        "title": "The Emu War of 1932",
+        "url": "https://en.wikipedia.org/w/index.php?search=The%20Great%20Australian%20Emu%20War%20Truce",
+        "publishedAt": "2026-11-28T04:27:39.456Z",
+        "retrievedAt": "2026-11-28T04:27:39.456Z"
+      },
+      "summary": "In 1932, the Australian military deployed soldiers armed with machine guns to cull nuisance emus in Western Australia, only to be comprehensively outmaneuvered by the birds.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Following the Great Depression, thousands of migrating emus invaded the wheat farms of Western Australia, trampling fences and devouring crops. In response, the Minister of Defence deployed soldiers equipped with two Lewis machine guns and 10,000 rounds of ammunition, fully expecting a swift and decisive victory over the flightless avians."
+        },
+        {
+          "type": "fact_reveal",
+          "label": "The Avian Strategy",
+          "text": "The emus responded not by stampeding in a predictable pack, but by splitting into tiny independent guerilla clusters led by tall, vigilant male lookouts who ran in conflicting zig-zags."
+        },
+        {
+          "type": "paragraph",
+          "text": "Within days, machine guns jammed, trucks carrying gunners failed to keep pace over rocky dirt, and the emus shrugged off multiple non-vital hits. The operation commander, Major Meredith, reportedly praised the birds' uncanny tactical discipline, noting that if the military had a division with their bullet-carrying capacity, they would face any army in the world. The military withdrew within weeks."
+        }
+      ],
+      "visual": {
+        "type": "editorial_illustration",
+        "alt": "The Great Australian Emu War Truce editorial card",
+        "attribution": "Curio Editorial",
+        "license": "First-party",
+        "provider": "Curio Design System",
+        "accentColor": "#9333EA"
+      },
+      "followUps": [
+        "How did the Australian government successfully resolve the emu fence problems in later decades?",
+        "What other unusual animal conflicts exist in military history?"
+      ],
+      "isAiEnriched": true,
+      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
+      "qualityStatus": "approved",
+      "createdAt": "2026-11-28T04:27:39.456Z",
+      "enrichedAt": "2026-11-28T04:27:39.456Z"
+    },
     {
       "id": "curio_gen_644a297db76b",
       "schemaVersion": 1,
@@ -5196,260 +5458,6 @@
       "qualityStatus": "approved",
       "createdAt": "2026-11-21T00:05:29.258Z",
       "enrichedAt": "2026-11-21T00:05:29.258Z"
-    },
-    {
-      "id": "curio_gen_7a55f1bad9b1",
-      "schemaVersion": 1,
-      "contentType": "interactive_fact",
-      "cardVariant": "interactive_feature",
-      "title": "The Great Butter Meltdown of Dublin",
-      "subtitle": "When municipal firemen battled an uncontainable river of dairy fat",
-      "category": "humour",
-      "region": "global",
-      "topics": [
-        "urban lore",
-        "odd disasters",
-        "food history"
-      ],
-      "estimatedDurationSeconds": 105,
-      "source": {
-        "publisher": "The Irish Times",
-        "title": "The Curious Night Dublin Streets Ran Golden with Melted Butter",
-        "url": "https://www.irishtimes.com/",
-        "publishedAt": "2026-11-21T00:05:29.258Z",
-        "retrievedAt": "2026-11-21T00:05:29.258Z"
-      },
-      "summary": "During an 1875 warehouse blaze in Dublin, thousands of casks of commercial butter melted into a scorching, greasy tidal wave that outwitted the capital's bravest first responders.",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "On an otherwise brisk autumn evening in 1875, a commercial storage depot in the Liberties neighborhood of Dublin caught fire. While burning timber is regular business for fire brigades, this specific warehouse housed five thousand wooden casks filled to the brim with salt-cured export butter. Within thirty minutes, radiant heat dissolved the wooden staves, transforming the dairy supply into a three-foot-deep, boiling yellow flash-flood that descended on the city streets."
-        },
-        {
-          "type": "quiz",
-          "question": "What made fighting the Dublin butter fire of 1875 extraordinarily difficult for firemen?",
-          "options": [
-            "Water jets merely floated the burning grease and carried flames further downhill",
-            "The escaping steam smelled overwhelmingly like hot waffles and drew cheering crowds",
-            "City horses refused to step into the lukewarm dairy slurry"
-          ],
-          "correctOptionIndex": 0,
-          "explanation": "Pouring pressurized cold water onto boiling butter acts like throwing water into a grease pan: the liquid sank, vaporized instantly into steam, and launched airborne plumes of flaming fat down the avenue."
-        },
-        {
-          "type": "paragraph",
-          "text": "The Dublin Fire Brigade finally halted the runaway dairy torrent by commandeering cartloads of dry stable manure and river gravel, throwing together emergency dams across street corners until the molten fat cooled into an enormous, foul-smelling crust that city laborers spent three full weeks scraping off the cobblestones."
-        }
-      ],
-      "visual": {
-        "type": "editorial_illustration",
-        "alt": "The Great Butter Meltdown of Dublin editorial card",
-        "attribution": "Curio Editorial",
-        "license": "First-party",
-        "provider": "Curio Design System",
-        "accentColor": "#9333EA"
-      },
-      "followUps": [
-        "How did the 1875 Dublin Whiskey Fire compare in terms of fluid mechanics?",
-        "What are modern fire codes for commercial edible oil storage facilities?"
-      ],
-      "isAiEnriched": true,
-      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
-      "qualityStatus": "approved",
-      "createdAt": "2026-11-21T00:05:29.258Z",
-      "enrichedAt": "2026-11-21T00:05:29.258Z"
-    },
-    {
-      "id": "curio_gen_139857f6bc3f",
-      "schemaVersion": 1,
-      "contentType": "deep_dive",
-      "cardVariant": "article",
-      "title": "The Helium-3 Race on the Lunar South Pole",
-      "subtitle": "Mining teams target cold traps for the ultimate clean fusion isotope",
-      "category": "news",
-      "region": "global",
-      "topics": [
-        "space exploration",
-        "nuclear energy",
-        "astrophysics"
-      ],
-      "estimatedDurationSeconds": 140,
-      "source": {
-        "publisher": "Nature Astronomy",
-        "title": "Lunar Volatiles and the Prospects for Future In-Situ Resource Utilization",
-        "url": "https://www.nature.com/natastron",
-        "publishedAt": "2026-11-21T00:05:29.258Z",
-        "retrievedAt": "2026-11-21T00:05:29.258Z"
-      },
-      "summary": "As multi-national lunar landers touch down near the Moon's Shackleton crater, researchers are mapping vast surface reserves of Helium-3, an isotope capable of powering clean fusion reactors without producing radioactive neutron bombardment.",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "Earth is shielded by a thick magnetosphere that deflects solar wind ions into space, leaving our planet almost entirely devoid of Helium-3. The Moon, however, has endured four billion years of unshielded cosmic bombardment. The lunar regolith acts as an enormous sponge, capturing solar wind helium inside crushed silicate grains. With recent polar landings confirming water ice inside permanently shadowed craters, aerospace consortia are now focusing on extraction technologies for this rare isotope."
-        },
-        {
-          "type": "fact_reveal",
-          "label": "The Power Density Equation",
-          "text": "Just forty metric tons of Helium-3 combined with deuterium in an aneutronic fusion reactor could generate enough electricity to satisfy the United States' total power demands for an entire calendar year."
-        },
-        {
-          "type": "key_takeaway",
-          "heading": "Why Lunar Regolith Matters",
-          "points": [
-            "Helium-3 fusion produces charged protons rather than destructive high-energy neutrons, eliminating reactor embrittlement and long-lived nuclear waste.",
-            "Regolith must be heated to approximately 600 degrees Celsius to outgas the trapped volatile isotopes, requiring large-scale solar concentrators.",
-            "The international Artemis Accords and outer-space resource treaties are racing to clarify mineral claims before the first robotic processing refineries launch."
-          ]
-        }
-      ],
-      "visual": {
-        "type": "editorial_illustration",
-        "alt": "The Helium-3 Race on the Lunar South Pole editorial card",
-        "attribution": "Curio Editorial",
-        "license": "First-party",
-        "provider": "Curio Design System",
-        "accentColor": "#C84B31"
-      },
-      "followUps": [
-        "How do magnetic field coils capture electricity directly from aneutronic fusion reactions?",
-        "What legal framework governs private extraction rights on celestial bodies?"
-      ],
-      "isAiEnriched": true,
-      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
-      "qualityStatus": "approved",
-      "createdAt": "2026-11-21T00:05:29.258Z",
-      "enrichedAt": "2026-11-21T00:05:29.258Z"
-    },
-    {
-      "id": "curio_gen_5a78a967c928",
-      "schemaVersion": 1,
-      "contentType": "deep_dive",
-      "cardVariant": "article",
-      "title": "The Bioluminescent Clocks of the Midnight Zone",
-      "subtitle": "How siphonophores synchronize light shows a mile beneath the surface",
-      "category": "science",
-      "region": "global",
-      "topics": [
-        "marine biology",
-        "deep ocean",
-        "bioluminescence",
-        "chronobiology"
-      ],
-      "estimatedDurationSeconds": 150,
-      "source": {
-        "publisher": "Smithsonian Magazine",
-        "title": "The Secret Language of Deep-Sea Light",
-        "url": "https://www.smithsonianmag.com/science-nature/bioluminescence-deep-ocean-creatures-180975412/",
-        "publishedAt": "2026-11-20T09:43:35.979Z",
-        "retrievedAt": "2026-11-20T09:43:35.979Z"
-      },
-      "summary": "A mile beneath the sunlit ocean, siphonophores coordinate flashing light patterns across colonial bodies that can stretch longer than a blue whale, functioning without a central brain.",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "In the bathypelagic zone, where sunlight never penetrates, organisms do not experience dawn or dusk. Yet researchers using deep-diving submersibles have found that massive siphonophores—composite organisms made of thousands of specialized zooids—display synchronized rhythmic bioluminescent waves along their hundred-foot bodies. These pulses occur at precise temporal intervals, serving as both predatory lures and coordinated defensive displays against deep-diving squids."
-        },
-        {
-          "type": "fact_reveal",
-          "label": "Brainless synchronization",
-          "text": "Siphonophores possess no centralized brain; instead, they coordinate thousands of independent organisms via a diffuse, giant-axon nerve net that propagates electrical impulses faster than most vertebrate peripheral nerves."
-        },
-        {
-          "type": "key_takeaway",
-          "heading": "Mechanisms of Deep-Sea Light",
-          "points": [
-            "Luciferin-luciferase reactions generate cold blue-green light that travels furthest through dense seawater.",
-            "Rhythmic flashing creates an optical illusion of rapid retreat, confusing potential predators.",
-            "Colonial zooids specialize completely: some only produce propulsion, others digest food, and specific bracts handle luminescence."
-          ]
-        }
-      ],
-      "visual": {
-        "type": "editorial_illustration",
-        "alt": "The Bioluminescent Clocks of the Midnight Zone editorial card",
-        "attribution": "Curio Editorial",
-        "license": "First-party",
-        "provider": "Curio Design System",
-        "accentColor": "#3B4F75"
-      },
-      "followUps": [
-        "How do colonial organisms evolve division of labor without a central nervous system?",
-        "What other deep-sea animals produce red rather than blue bioluminescence?"
-      ],
-      "isAiEnriched": true,
-      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
-      "qualityStatus": "approved",
-      "createdAt": "2026-11-20T09:43:35.979Z",
-      "enrichedAt": "2026-11-20T09:43:35.979Z"
-    },
-    {
-      "id": "curio_gen_cf495d754c53",
-      "schemaVersion": 1,
-      "contentType": "short_story",
-      "cardVariant": "article",
-      "title": "The Ferrofluid Revolution in Mechanical Seals",
-      "subtitle": "How NASA rocket fuel research accidentally solved semiconductor contamination",
-      "category": "technology",
-      "region": "global",
-      "topics": [
-        "materials science",
-        "space history",
-        "manufacturing",
-        "nanotechnology"
-      ],
-      "estimatedDurationSeconds": 130,
-      "source": {
-        "publisher": "NASA Technical Reports Server",
-        "title": "Low-Gravity Liquid Fuel Handling and the Genesis of Ferrofluids",
-        "url": "https://ntrs.nasa.gov/",
-        "publishedAt": "2026-11-20T09:43:35.979Z",
-        "retrievedAt": "2026-11-20T09:43:35.979Z"
-      },
-      "summary": "Engineers in the 1960s tried to control liquid rocket fuel in zero gravity using magnets, leading to the invention of ferrofluids that now quietly protect the fabrication of every microchip on Earth.",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": "In the early days of the Apollo program, NASA engineer Steve Papell faced an unprecedented problem: without gravity, liquid propellant floated aimlessly in spacecraft tanks, refusing to flow toward the fuel pump. Papell's solution was to suspend microscopic magnetic iron oxide particles in kerosene, allowing external electromagnets to draw the fluid directly into the engine intake."
-        },
-        {
-          "type": "comparison",
-          "heading": "Propellant Seal Evolution",
-          "leftTitle": "Traditional Mechanical Seals",
-          "rightTitle": "Ferrofluidic Magnetic Seals",
-          "leftPoints": [
-            "Wear down through friction",
-            "Generate microscopic particulate debris",
-            "Suffer catastrophic vacuum leaks over time"
-          ],
-          "rightPoints": [
-            "Zero friction between moving surfaces",
-            "Hermetically traps particles with magnetic force",
-            "Maintains ultra-high vacuum indefinitely"
-          ]
-        },
-        {
-          "type": "fact_reveal",
-          "label": "The unexpected microchip savior",
-          "text": "Today, ferrofluidic seals are used in nearly all vacuum chambers for semiconductor fabrication, because a single mechanical flake of dust would ruin a silicon wafer."
-        }
-      ],
-      "visual": {
-        "type": "editorial_illustration",
-        "alt": "The Ferrofluid Revolution in Mechanical Seals editorial card",
-        "attribution": "Curio Editorial",
-        "license": "First-party",
-        "provider": "Curio Design System",
-        "accentColor": "#2563EB"
-      },
-      "followUps": [
-        "Why did NASA eventually abandon ferrofluids as practical rocket fuel?",
-        "What medical applications are emerging for magnetic nanoparticle fluids?"
-      ],
-      "isAiEnriched": true,
-      "enrichmentNotice": "Textual edition generated via Curio scheduled Gemini feed pipeline.",
-      "qualityStatus": "approved",
-      "createdAt": "2026-11-20T09:43:35.979Z",
-      "enrichedAt": "2026-11-20T09:43:35.979Z"
     }
   ]
 }

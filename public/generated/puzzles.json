@@ -1,10 +1,84 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-27T22:50:23.879Z",
+  "generatedAt": "2026-11-28T04:28:10.224Z",
   "generator": "gemini-textual-puzzles",
   "model": "gemini-flash-latest",
   "itemCount": 48,
   "items": [
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_ec0b52a66658",
+      "kind": "odd_one_out",
+      "title": "Noble Gas Isolation",
+      "category": "science",
+      "difficulty": "Clever",
+      "prompt": "Identify the element that does not belong with the others based on a distinct chemical property.",
+      "hint": "Consider the electron shell configuration and chemical family.",
+      "options": [
+        "Argon",
+        "Krypton",
+        "Nitrogen",
+        "Xenon"
+      ],
+      "correctIndex": 2,
+      "explanation": "Argon, Krypton, and Xenon are noble gases found in Group 18 of the periodic table, whereas Nitrogen is a reactive diatomic nonmetal in Group 15.",
+      "origin": "ai",
+      "createdAt": "2026-11-28T04:28:10.224Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_3222b05c75c5",
+      "kind": "order_sequence",
+      "title": "Mars Rover Touchdowns",
+      "category": "technology",
+      "difficulty": "Tricky",
+      "prompt": "Arrange these NASA Mars exploration missions in chronological order of their successful landings on the Martian surface (earliest to most recent).",
+      "orderItems": [
+        "Curiosity",
+        "Mars Pathfinder (Sojourner)",
+        "Perseverance",
+        "Opportunity"
+      ],
+      "correctOrder": [
+        1,
+        3,
+        0,
+        2
+      ],
+      "hint": "Pathfinder and its Sojourner rover landed in the late 1990s.",
+      "explanation": "Mars Pathfinder landed in 1997, Opportunity in January 2004, Curiosity in August 2012, and Perseverance in February 2021.",
+      "origin": "ai",
+      "createdAt": "2026-11-28T04:28:10.224Z"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "puz_ai_7929bc7f22e3",
+      "kind": "pattern_sequence",
+      "title": "Fibonacci Prime Shift",
+      "category": "science",
+      "difficulty": "Clever",
+      "prompt": "Find the missing number in this progressive sequence: 2, 3, 5, 8, 13, 21, ?",
+      "sequenceItems": [
+        "2",
+        "3",
+        "5",
+        "8",
+        "13",
+        "21",
+        "?"
+      ],
+      "hint": "Each term after the first two is formed by summing previous values.",
+      "options": [
+        "31",
+        "34",
+        "37",
+        "42"
+      ],
+      "correctIndex": 1,
+      "explanation": "This is the classic Fibonacci sequence where each number is the sum of the preceding two terms (13 + 21 = 34).",
+      "origin": "ai",
+      "createdAt": "2026-11-28T04:28:10.224Z"
+    },
     {
       "schemaVersion": 1,
       "id": "puz_ai_65266d0fdfe8",
@@ -1928,355 +2002,6 @@
       "explanation": "Edward VIII voluntarily abdicated his throne in 1936, whereas Charles I, Louis XVI, and Nicholas II were all executed during revolutions.",
       "origin": "ai",
       "createdAt": "2026-11-22T16:49:44.630Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_1d2c4ef8fcae",
-      "kind": "true_or_myth",
-      "title": "Glass in Ancient Cathedrals",
-      "category": "science",
-      "difficulty": "Warm-up",
-      "prompt": "Antique stained-glass windows in medieval European cathedrals are noticeably thicker at the base because glass is an ultra-slow liquid that has sagged downward over hundreds of years.",
-      "hint": "Consider the medieval manufacturing techniques used by glassblowers.",
-      "options": [
-        "True — Real Fact",
-        "Myth — False"
-      ],
-      "correctIndex": 1,
-      "explanation": "Glass is an amorphous solid, not a slow-flowing liquid at room temperature. Medieval window panes vary in thickness because artisans created sheets by spinning molten glass into cylinders or discs and naturally installed the heavier, thicker edges at the bottom for structural stability.",
-      "origin": "ai",
-      "createdAt": "2026-11-22T08:35:02.581Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_0b9d363a4d9f",
-      "kind": "visual_diagram",
-      "title": "Symmetric Balance Point",
-      "category": "technology",
-      "difficulty": "Clever",
-      "prompt": "Examine the three numbered balance arms displayed in the diagram. Which value correctly replaces the question mark (?) to keep the right arm in equilibrium?",
-      "svgDiagram": {
-        "caption": "Torque balance arms with distances and masses",
-        "background": "#FAF8F4",
-        "shapes": [
-          {
-            "shape": "line",
-            "x1": 30,
-            "y1": 50,
-            "x2": 290,
-            "y2": 50,
-            "stroke": "#3B4F75",
-            "strokeWidth": 4
-          },
-          {
-            "shape": "polygon",
-            "points": [
-              [
-                160,
-                50
-              ],
-              [
-                150,
-                70
-              ],
-              [
-                170,
-                70
-              ]
-            ],
-            "fill": "#C84B31"
-          },
-          {
-            "shape": "circle",
-            "cx": 80,
-            "cy": 38,
-            "r": 10,
-            "fill": "#2D6A4F"
-          },
-          {
-            "shape": "text",
-            "x": 80,
-            "y": 42,
-            "text": "6",
-            "fontSize": 12,
-            "fill": "#FAF8F4",
-            "anchor": "middle"
-          },
-          {
-            "shape": "circle",
-            "cx": 220,
-            "cy": 38,
-            "r": 10,
-            "fill": "#2D6A4F"
-          },
-          {
-            "shape": "text",
-            "x": 220,
-            "y": 42,
-            "text": "8",
-            "fontSize": 12,
-            "fill": "#FAF8F4",
-            "anchor": "middle"
-          },
-          {
-            "shape": "text",
-            "x": 80,
-            "y": 66,
-            "text": "d=4",
-            "fontSize": 10,
-            "fill": "#3B4F75",
-            "anchor": "middle"
-          },
-          {
-            "shape": "text",
-            "x": 220,
-            "y": 66,
-            "text": "d=3",
-            "fontSize": 10,
-            "fill": "#3B4F75",
-            "anchor": "middle"
-          },
-          {
-            "shape": "line",
-            "x1": 30,
-            "y1": 110,
-            "x2": 290,
-            "y2": 110,
-            "stroke": "#3B4F75",
-            "strokeWidth": 4
-          },
-          {
-            "shape": "polygon",
-            "points": [
-              [
-                160,
-                110
-              ],
-              [
-                150,
-                130
-              ],
-              [
-                170,
-                130
-              ]
-            ],
-            "fill": "#C84B31"
-          },
-          {
-            "shape": "circle",
-            "cx": 60,
-            "cy": 98,
-            "r": 10,
-            "fill": "#2D6A4F"
-          },
-          {
-            "shape": "text",
-            "x": 60,
-            "y": 102,
-            "text": "5",
-            "fontSize": 12,
-            "fill": "#FAF8F4",
-            "anchor": "middle"
-          },
-          {
-            "shape": "circle",
-            "cx": 210,
-            "cy": 98,
-            "r": 10,
-            "fill": "#2D6A4F"
-          },
-          {
-            "shape": "text",
-            "x": 210,
-            "y": 102,
-            "text": "10",
-            "fontSize": 12,
-            "fill": "#FAF8F4",
-            "anchor": "middle"
-          },
-          {
-            "shape": "text",
-            "x": 60,
-            "y": 126,
-            "text": "d=6",
-            "fontSize": 10,
-            "fill": "#3B4F75",
-            "anchor": "middle"
-          },
-          {
-            "shape": "text",
-            "x": 210,
-            "y": 126,
-            "text": "d=3",
-            "fontSize": 10,
-            "fill": "#3B4F75",
-            "anchor": "middle"
-          },
-          {
-            "shape": "line",
-            "x1": 30,
-            "y1": 170,
-            "x2": 290,
-            "y2": 170,
-            "stroke": "#3B4F75",
-            "strokeWidth": 4
-          },
-          {
-            "shape": "polygon",
-            "points": [
-              [
-                160,
-                170
-              ],
-              [
-                150,
-                190
-              ],
-              [
-                170,
-                190
-              ]
-            ],
-            "fill": "#C84B31"
-          },
-          {
-            "shape": "circle",
-            "cx": 45,
-            "cy": 158,
-            "r": 10,
-            "fill": "#2D6A4F"
-          },
-          {
-            "shape": "text",
-            "x": 45,
-            "y": 162,
-            "text": "4",
-            "fontSize": 12,
-            "fill": "#FAF8F4",
-            "anchor": "middle"
-          },
-          {
-            "shape": "circle",
-            "cx": 220,
-            "cy": 158,
-            "r": 10,
-            "fill": "#C84B31"
-          },
-          {
-            "shape": "text",
-            "x": 220,
-            "y": 162,
-            "text": "?",
-            "fontSize": 12,
-            "fill": "#FAF8F4",
-            "anchor": "middle"
-          },
-          {
-            "shape": "text",
-            "x": 45,
-            "y": 186,
-            "text": "d=9",
-            "fontSize": 10,
-            "fill": "#3B4F75",
-            "anchor": "middle"
-          },
-          {
-            "shape": "text",
-            "x": 220,
-            "y": 186,
-            "text": "d=6",
-            "fontSize": 10,
-            "fill": "#3B4F75",
-            "anchor": "middle"
-          }
-        ]
-      },
-      "hint": "Calculate the product of weight and distance from the central fulcrum for each arm.",
-      "options": [
-        "4",
-        "6",
-        "8",
-        "9"
-      ],
-      "correctIndex": 1,
-      "explanation": "In balance arms 1 and 2, the left and right moments match: 6 × 4 = 8 × 3 (24) and 5 × 6 = 10 × 3 (30). For arm 3, the left moment is 4 × 9 = 36, so the right side needs ? × 6 = 36, which yields 6.",
-      "origin": "ai",
-      "createdAt": "2026-11-22T08:35:02.581Z"
-    },
-    {
-      "schemaVersion": 1,
-      "id": "puz_ai_841c94c35110",
-      "kind": "interactive_grid",
-      "title": "Cryogenic Cell Matrix",
-      "category": "science",
-      "difficulty": "Tricky",
-      "prompt": "Select exactly 3 cells whose thermal unit values sum to exactly 50 to stabilize the core.",
-      "gridPuzzle": {
-        "mode": "target_sum",
-        "rows": 3,
-        "cols": 3,
-        "instruction": "Select exactly 3 cells that sum to 50.",
-        "cells": [
-          {
-            "label": "12",
-            "value": 12,
-            "initialOn": false
-          },
-          {
-            "label": "27",
-            "value": 27,
-            "initialOn": false
-          },
-          {
-            "label": "19",
-            "value": 19,
-            "initialOn": false
-          },
-          {
-            "label": "15",
-            "value": 15,
-            "initialOn": false
-          },
-          {
-            "label": "22",
-            "value": 22,
-            "initialOn": false
-          },
-          {
-            "label": "14",
-            "value": 14,
-            "initialOn": false
-          },
-          {
-            "label": "8",
-            "value": 8,
-            "initialOn": false
-          },
-          {
-            "label": "21",
-            "value": 21,
-            "initialOn": false
-          },
-          {
-            "label": "16",
-            "value": 16,
-            "initialOn": false
-          }
-        ],
-        "targetSum": 50,
-        "exactCount": 3,
-        "goalState": "all_on",
-        "solutionIndices": [
-          1,
-          3,
-          6
-        ]
-      },
-      "hint": "Try combining one large value in the twenties with two smaller compatible values.",
-      "explanation": "Selecting cells with values 27, 15, and 8 gives 27 + 15 + 8 = 50, successfully meeting the target sum with exactly 3 cells.",
-      "origin": "ai",
-      "createdAt": "2026-11-22T08:35:02.581Z"
     }
   ]
 }
